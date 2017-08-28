@@ -1,0 +1,81 @@
+<include file="Public/header" /> <!-- 头部 -->
+<div class="content">
+<include file="Public/left" /> <!-- 左边 -->
+ <div class="right" style="height: 894px;">
+<div class="now" style="width: 1679px;">
+	<a href="Site settings.html" class="sel">网站设置</a>
+	<a href="Member settings.html">会员设置</a>
+	<a href="Integral setting.html">积分设置</a>
+	<a href="Express settings.html">快递设置</a>
+	<a href="SMS settings.html">短信设置</a>
+	<a href="Mailbox settings.html">邮箱设置</a>
+	<a href="Notification settings.html">通知设置</a>
+	<div class="clear"></div>
+</div>
+	<div class="right_main">
+		<form method="post" enctype="multipart/form-data">
+		<table width="100%" border="0" cellspacing="0" cellpadding="0" class="wenzhang mat20">
+		<tbody><tr>
+			<td align="right" width="150">网站标题：</td>
+			<td><input type="text" name="info[web_title]" value="PHPSHE B2C商城系统演示站" class="inputall input500"></td>
+		</tr>
+		<tr>
+			<td align="right">关 键 词：</td>
+			<td><input type="text" name="info[web_keywords]" value="phpshe,php,shop,php商城系统,b2c商城系统,php商城源码,b2c商城源码,开源免费网上商城系统" class="inputall input500"></td>
+		</tr>
+		<tr>
+			<td align="right">网站描述：</td>
+			<td><textarea name="info[web_description]" style="width:500px;height:100px;">phpshe,php,shop,php商城系统,b2c商城系统,php商城源码,b2c商城源码,开源免费网上商城系统</textarea></td>
+		</tr>
+		<tr>
+			<td align="right">网站Logo：</td>
+			<td>
+								<p class="mab5"><img src="images/20170215143741r.jpg" height="60" style="border:1px solid #ddd"></p>
+								<p><input type="file" name="web_logo"></p>
+			</td>
+		</tr>
+		<tr>
+			<td align="right">微信二维码：</td>
+			<td>
+								<p class="mab5"><img src="images/nopic.png" height="70" style="border:1px solid #ddd"></p>
+								<p><input type="file" name="web_qrcode"></p>
+			</td>
+		</tr>
+		<tr>
+			<td align="right">咨询电话：</td>
+			<td><input type="text" name="info[web_phone]" value="15839823500" class="inputall input500"></td>
+		</tr>
+		<tr>
+			<td align="right">咨询 Q Q：</td>
+			<td><input type="text" name="info[web_qq]" value="76265959" class="inputall input500"></td>
+		</tr>
+		<tr>
+			<td align="right">版权所有：</td>
+			<td><input type="text" name="info[web_copyright]" value="2008-2017 简好网络" class="inputall input500"></td>
+		</tr>
+		<tr>
+			<td align="right">备 案 号：</td>
+			<td><input type="text" name="info[web_icp]" value="豫ICP备17013559号-1" class="inputall input500"></td>
+		</tr>
+		<tr>
+			<td align="right">热门搜索：</td>
+			<td><input type="text" name="info[web_hotword]" value="PHPSHE,B2C商城系统,简好网络" class="inputall input500"><span class="c888">（多个请用“,”隔开）</span></td>
+		</tr>
+		<tr>
+			<td align="right">统计代码：</td>
+			<td><textarea name="info[web_tongji]" style="width:500px;height:150px;"></textarea><span class="c888">（第三方流量统计代码）</span></td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td>
+				<input type="hidden" name="pe_token" value="bc127a40363dfcec978226909f4e8f2e">
+				<input type="submit" name="pesubmit" value="提 交" class="tjbtn">
+			</td>
+		</tr>
+		</tbody></table>
+		</form>
+	</div>
+</div>
+	<div class="clear"></div>
+</div>
+<include file="Public/footer" /> <!-- 左边 -->

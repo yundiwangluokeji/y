@@ -1,0 +1,873 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0061)http://phpshe.com/demo/phpshe/admin.php?mod=order&state=close -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>订单列表 - 欢迎使用PHPSHE商城系统</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<link rel="shortcut icon" type="image/ico" href="http://phpshe.com/demo/phpshe/favicon.ico">
+<link type="text/css" rel="stylesheet" href="css/style.css">
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/global.js"></script>
+<script type="text/javascript" src="js/arttpl.js"></script>
+<script type="text/javascript" src="js/layer.js"></script>
+<link rel="stylesheet" href="./订单列表 - 欢迎使用PHPSHE商城系统_files/layer.css" id="layuicss-skinlayercss">
+<link href="./订单列表 - 欢迎使用PHPSHE商城系统_files/WdatePicker.css" rel="stylesheet" type="text/css"></head>
+<body style="overflow-y:hidden">
+<div class="bgimg"></div>
+<div class="pagetop">
+	<div class="head">
+		<div class="logo fl"><img src="./订单列表 - 欢迎使用PHPSHE商城系统_files/logo.png"></div>
+		<div class="head_r fr">
+			<a href="http://phpshe.com/demo/phpshe/admin.php" class="head_tb1" style="border-left:0"><s></s>概况</a>
+			<a href="http://phpshe.com/demo/phpshe/admin.php?mod=moban" class="head_tb8"><s></s>模板</a>
+			<a href="http://phpshe.com/demo/phpshe/admin.php?mod=tongji" class="head_tb3"><s></s>统计</a>
+			<a href="http://phpshe.com/demo/phpshe/admin.php?mod=db" class="head_tb5"><s></s>备份</a>
+			<a href="http://phpshe.com/demo/phpshe/admin.php?mod=cache" class="head_tb6"><s></s>缓存</a>
+			<a href="http://phpshe.com/demo/phpshe/" target="_blank" class="head_tb7"><s></s>首页</a>
+			<a href="http://phpshe.com/demo/phpshe/admin.php?mod=do&amp;act=logout" class="head_tb2" style="background:none"><s></s>退出</a>
+		</div>
+		<div class="clear"></div>
+	</div>
+</div>
+<div class="content">
+	<div class="left" style="height: 894px;">
+				<div class="fenlei">
+			<h3 class="fl_tb1"><s></s>商品中心</h3>
+			<ul>
+								<li class=""><a href="http://phpshe.com/demo/phpshe/admin.php?mod=product&amp;state=1"><span>├</span>商品列表</a></li>
+								<li class=""><a href="http://phpshe.com/demo/phpshe/admin.php?mod=category"><span>├</span>商品分类</a></li>
+								<li class=""><a href="http://phpshe.com/demo/phpshe/admin.php?mod=brand"><span>├</span>品牌管理</a></li>
+								<li class=""><a href="http://phpshe.com/demo/phpshe/admin.php?mod=rule"><span>├</span>规格管理</a></li>
+								<li class=""><a href="http://phpshe.com/demo/phpshe/admin.php?mod=comment"><span>├</span>评价管理</a></li>
+								<li class=""><a href="http://phpshe.com/demo/phpshe/admin.php?mod=quan"><span>├</span>优 惠 券</a></li>
+								<li class=""><a href="http://phpshe.com/demo/phpshe/admin.php?mod=huodong"><span>├</span>促销活动</a></li>
+							</ul>
+			<div class="clear"></div>
+			<div class="xian"></div>		</div>
+				<div class="fenlei">
+			<h3 class="fl_tb3"><s></s>交易中心</h3>
+			<ul>
+								<li class="sel"><a href="http://phpshe.com/demo/phpshe/admin.php?mod=order"><span>├</span>订单列表</a></li>
+								<li class=""><a href="http://phpshe.com/demo/phpshe/admin.php?mod=moneylog"><span>├</span>资金明细</a></li>
+								<li class=""><a href="http://phpshe.com/demo/phpshe/admin.php?mod=pointlog"><span>├</span>积分明细</a></li>
+								<li class=""><a href="http://phpshe.com/demo/phpshe/admin.php?mod=order_pay"><span>├</span>充值记录</a></li>
+								<li class=""><a href="http://phpshe.com/demo/phpshe/admin.php?mod=cashout"><span>├</span>提现管理</a></li>
+							</ul>
+			<div class="clear"></div>
+			<div class="xian"></div>		</div>
+				<div class="fenlei">
+			<h3 class="fl_tb4"><s></s>用户中心</h3>
+			<ul>
+								<li class=""><a href="http://phpshe.com/demo/phpshe/admin.php?mod=user"><span>├</span>会员列表</a></li>
+								<li class=""><a href="http://phpshe.com/demo/phpshe/admin.php?mod=admin"><span>├</span>管 理 员</a></li>
+								<li class=""><a href="http://phpshe.com/demo/phpshe/admin.php?mod=adminlevel"><span>├</span>管理权限</a></li>
+							</ul>
+			<div class="clear"></div>
+			<div class="xian"></div>		</div>
+				<div class="fenlei">
+			<h3 class="fl_tb2"><s></s>文章中心</h3>
+			<ul>
+								<li class=""><a href="http://phpshe.com/demo/phpshe/admin.php?mod=class"><span>├</span>文章分类</a></li>
+								<li class=""><a href="http://phpshe.com/demo/phpshe/admin.php?mod=article"><span>├</span>文章列表</a></li>
+							</ul>
+			<div class="clear"></div>
+			<div class="xian"></div>		</div>
+				<div class="fenlei">
+			<h3 class="fl_tb6"><s></s>控制面板</h3>
+			<ul>
+								<li class=""><a href="http://phpshe.com/demo/phpshe/admin.php?mod=setting&amp;act=base"><span>├</span>网站设置</a></li>
+								<li class=""><a href="http://phpshe.com/demo/phpshe/admin.php?mod=wechat&amp;act=base"><span>├</span>微信设置</a></li>
+								<li class=""><a href="http://phpshe.com/demo/phpshe/admin.php?mod=payway"><span>├</span>支付设置</a></li>
+								<li class=""><a href="http://phpshe.com/demo/phpshe/admin.php?mod=menu"><span>├</span>导航管理</a></li>
+								<li class=""><a href="http://phpshe.com/demo/phpshe/admin.php?mod=ad"><span>├</span>广告管理</a></li>
+								<li class=""><a href="http://phpshe.com/demo/phpshe/admin.php?mod=link"><span>├</span>友情链接</a></li>
+								<li class=""><a href="http://phpshe.com/demo/phpshe/admin.php?mod=express"><span>├</span>运单模板</a></li>
+								<li class=""><a href="http://phpshe.com/demo/phpshe/admin.php?mod=noticelog"><span>├</span>短/邮记录</a></li>
+							</ul>
+			<div class="clear"></div>
+					</div>
+			</div><div class="right" style="height: 894px;">
+	<div class="now" style="width: 1679px;">
+		<a href="http://phpshe.com/demo/phpshe/admin.php?mod=order">全部订单（135）</a>
+		<a href="http://phpshe.com/demo/phpshe/admin.php?mod=order&amp;state=wpay">等待付款（81）</a>
+		<a href="http://phpshe.com/demo/phpshe/admin.php?mod=order&amp;state=wsend">等待发货（19）</a>
+		<a href="http://phpshe.com/demo/phpshe/admin.php?mod=order&amp;state=wget">已发货（8）</a>
+		<a href="http://phpshe.com/demo/phpshe/admin.php?mod=order&amp;state=success">交易完成（9）</a>
+		<a href="http://phpshe.com/demo/phpshe/admin.php?mod=order&amp;state=close" class="sel">交易关闭（18）</a>
+		<div class="clear"></div>
+	</div>
+	<div class="right_main">
+		<div class="search">
+			<form method="get">
+				<input type="hidden" name="mod" value="order">
+				<input type="hidden" name="state" value="close">
+				订单编号：<input type="text" name="id" value="" class="inputtext input100 mar5">
+				姓名：<input type="text" name="user_tname" value="" class="inputtext input80 mar5">
+				电话：<input type="text" name="user_phone" value="" class="inputtext input80 mar5">
+				帐号：<input type="text" name="user_name" value="" class="inputtext input80 mar5">
+				下单时间：<input type="text" name="date1" value="" onfocus="WdatePicker({dateFmt:&#39;yyyy-MM-dd&#39;})" class="Wdate inputtext" style="width:90px;height:20px;">	
+				至 <input type="text" name="date2" value="" onfocus="WdatePicker({dateFmt:&#39;yyyy-MM-dd&#39;})" class="Wdate inputtext" style="width:90px;height:20px;">			
+				<input type="submit" value="搜索" class="input_btn">
+			</form>
+		</div>
+		<table width="100%" border="0" cellspacing="0" cellpadding="0" class="list">
+		<tbody><tr>
+			<th class="bgtt" style="border-bottom:0;">商品详情</th>
+			<th class="bgtt" style="border-bottom:0;" width="111">实付款(元)</th>
+			<th class="bgtt" style="border-bottom:0;" width="251">收货信息</th>
+			<th class="bgtt" style="border-bottom:0;" width="81">支付/发货</th>
+			<th class="bgtt" style="border-bottom:0;" width="86">状态</th>
+			<th class="bgtt" style="border-bottom:0;" width="86">操作</th>
+		</tr>
+		</tbody></table>
+						<div class="hy_ordertw c666 mat10">
+			订单编号：<span class="num" style="margin-right:60px">170808225918986</span>
+			下单时间：<span class="num">2017-08-08 22:59</span>
+		</div>
+		<table width="100%" border="0" cellspacing="0" cellpadding="0" class="hy_orderlist">
+		<tbody><tr>
+			<td class="aleft" style="border-left:0;padding-left:10px;padding-right:15px">
+								<div class="dingdan_list" style="padding-top:0">
+					<a href="http://phpshe.com/demo/phpshe/product/41" class="fl mar5" target="_blank"><img src="./订单列表 - 欢迎使用PHPSHE商城系统_files/thumb_100x100_20170503142203c.jpg" width="40" height="40" class="imgbg"></a>
+					<div class="fl">
+						<a href="http://phpshe.com/demo/phpshe/product/41" title="phpshe测试商品韩版女装夏装新款韩范衬衣系带V领七分袖衬衫" target="_blank" class="cblue dd_name">phpshe测试商品韩版女装夏装新款韩范衬衣系带V...</a>
+												<p class="c999 mat5">[尺码：M]&nbsp;&nbsp;[主要颜色：白日梦]&nbsp;&nbsp;</p>
+											</div>
+					<span class="fr"><span class="num">128.0</span>(×1)</span>
+					<div class="clear"></div>
+				</div>
+								<div class="dingdan_list">
+					<a href="http://phpshe.com/demo/phpshe/product/35" class="fl mar5" target="_blank"><img src="./订单列表 - 欢迎使用PHPSHE商城系统_files/thumb_100x100_20170503113828l.jpg" width="40" height="40" class="imgbg"></a>
+					<div class="fl">
+						<a href="http://phpshe.com/demo/phpshe/product/35" title="phpshe测试商品新款宽松背带牛仔裙A字连衣裙预" target="_blank" class="cblue dd_name">phpshe测试商品新款宽松背带牛仔裙A字连衣裙预</a>
+												<p class="c999 mat5">[尺码：L]&nbsp;&nbsp;[主要颜色：萱草蓝]&nbsp;&nbsp;</p>
+											</div>
+					<span class="fr"><span class="num">190.0</span>(×1)</span>
+					<div class="clear"></div>
+				</div>
+								<div class="dingdan_list">
+					<a href="http://phpshe.com/demo/phpshe/product/30" class="fl mar5" target="_blank"><img src="http://phpshe.com/demo/phpshe/data/cache/thumb/2017-08/thumb_100x100_20170503112123i.jpg" width="40" height="40" class="imgbg"></a>
+					<div class="fl">
+						<a href="http://phpshe.com/demo/phpshe/product/30" title="phpshe测试商品夏装2017新款宽松荷叶边喇叭袖露肩衬衫女预" target="_blank" class="cblue dd_name">phpshe测试商品夏装2017新款宽松荷叶边喇叭袖露...</a>
+												<p class="c999 mat5">[尺码：S]&nbsp;&nbsp;[主要颜色：萱草蓝]&nbsp;&nbsp;</p>
+											</div>
+					<span class="fr"><span class="num">120.0</span>(×1)</span>
+					<div class="clear"></div>
+				</div>
+							</td>
+			<td width="110">
+				<p class="corg num strong">438.0</p>
+				<p class="c999">（含运费：0.0）</p>
+				<p class="c999">云支付</p>
+			</td>
+			<td width="250" class="aleft" valign="top" style="color:#555">
+				<p>【姓名】是的发生 <span class="c888">(13298696941)</span></p>
+				<p>【地址】福建泉州洛江区的负担发的</p>
+				<p>【留言】<span class="c888"></span></p>
+			</td>
+			<td width="80">
+				<img src="./订单列表 - 欢迎使用PHPSHE商城系统_files/fu_1.png" title="2017-08-10 16:55">
+				<img src="./订单列表 - 欢迎使用PHPSHE商城系统_files/huo_1.png" title="2017-08-10 17:35">
+				<p><a href="http://phpshe.com/demo/phpshe/admin.php?mod=order&amp;act=print_express&amp;id=170808225918986" class="cblue" onclick="return pe_dialog(this, &#39;打印快递单&#39;, 1000, 600)">[快递单]</a></p>
+			</td>
+			<td width="85"><del class="corg">交易关闭</del><p class="mat5"><a href="http://phpshe.com/demo/phpshe/admin.php?mod=order&amp;act=edit&amp;id=170808225918986" target="_blank" class="c999">订单详情</a></p></td>
+			<td width="85" style="border-right:0;">
+								<a href="http://phpshe.com/demo/phpshe/admin.php?mod=order&amp;act=del&amp;id=170808225918986&amp;token=09360b8c4d39343533c1675afcf3733e" onclick="return pe_cfone(this, &#39;删除订单&#39;)" class="c999">删除</a>
+							</td>
+		</tr>
+		</tbody></table>
+						<div class="hy_ordertw c666 mat10">
+			订单编号：<span class="num" style="margin-right:60px">170806165117199</span>
+			下单时间：<span class="num">2017-08-06 16:51</span>
+		</div>
+		<table width="100%" border="0" cellspacing="0" cellpadding="0" class="hy_orderlist">
+		<tbody><tr>
+			<td class="aleft" style="border-left:0;padding-left:10px;padding-right:15px">
+								<div class="dingdan_list" style="padding-top:0">
+					<a href="http://phpshe.com/demo/phpshe/product/41" class="fl mar5" target="_blank"><img src="./订单列表 - 欢迎使用PHPSHE商城系统_files/thumb_100x100_20170503142203c.jpg" width="40" height="40" class="imgbg"></a>
+					<div class="fl">
+						<a href="http://phpshe.com/demo/phpshe/product/41" title="phpshe测试商品韩版女装夏装新款韩范衬衣系带V领七分袖衬衫" target="_blank" class="cblue dd_name">phpshe测试商品韩版女装夏装新款韩范衬衣系带V...</a>
+												<p class="c999 mat5">[尺码：L]&nbsp;&nbsp;[主要颜色：白日梦]&nbsp;&nbsp;</p>
+											</div>
+					<span class="fr"><span class="num">128.0</span>(×2)</span>
+					<div class="clear"></div>
+				</div>
+							</td>
+			<td width="110">
+				<p class="corg num strong">256.0</p>
+				<p class="c999">（含运费：0.0）</p>
+				<p class="c999">云支付</p>
+			</td>
+			<td width="250" class="aleft" valign="top" style="color:#555">
+				<p>【姓名】辣么 <span class="c888">(15263655255)</span></p>
+				<p>【地址】天津天津市南开区打车去吧，荷花</p>
+				<p>【留言】<span class="c888"></span></p>
+			</td>
+			<td width="80">
+				<img src="./订单列表 - 欢迎使用PHPSHE商城系统_files/fu_1.png" title="2017-08-10 17:34">
+				<img src="./订单列表 - 欢迎使用PHPSHE商城系统_files/huo_1.png" title="2017-08-10 17:39">
+				<p><a href="http://phpshe.com/demo/phpshe/admin.php?mod=order&amp;act=print_express&amp;id=170806165117199" class="cblue" onclick="return pe_dialog(this, &#39;打印快递单&#39;, 1000, 600)">[快递单]</a></p>
+			</td>
+			<td width="85"><del class="corg">交易关闭</del><p class="mat5"><a href="http://phpshe.com/demo/phpshe/admin.php?mod=order&amp;act=edit&amp;id=170806165117199" target="_blank" class="c999">订单详情</a></p></td>
+			<td width="85" style="border-right:0;">
+								<a href="http://phpshe.com/demo/phpshe/admin.php?mod=order&amp;act=del&amp;id=170806165117199&amp;token=09360b8c4d39343533c1675afcf3733e" onclick="return pe_cfone(this, &#39;删除订单&#39;)" class="c999">删除</a>
+							</td>
+		</tr>
+		</tbody></table>
+						<div class="hy_ordertw c666 mat10">
+			订单编号：<span class="num" style="margin-right:60px">170807143059713</span>
+			下单时间：<span class="num">2017-08-07 14:30</span>
+		</div>
+		<table width="100%" border="0" cellspacing="0" cellpadding="0" class="hy_orderlist">
+		<tbody><tr>
+			<td class="aleft" style="border-left:0;padding-left:10px;padding-right:15px">
+								<div class="dingdan_list" style="padding-top:0">
+					<a href="http://phpshe.com/demo/phpshe/product/33" class="fl mar5" target="_blank"><img src="http://phpshe.com/demo/phpshe/data/cache/thumb/2017-08/thumb_100x100_20170503113100x.jpg" width="40" height="40" class="imgbg"></a>
+					<div class="fl">
+						<a href="http://phpshe.com/demo/phpshe/product/33" title="phpshe测试商品公主模样夏装2017新款宽松刺绣七分袖蕾丝衫女短款预" target="_blank" class="cblue dd_name">phpshe测试商品公主模样夏装2017新款宽松刺绣七...</a>
+												<p class="c999 mat5">[尺码：M]&nbsp;&nbsp;[主要颜色：白日梦]&nbsp;&nbsp;</p>
+											</div>
+					<span class="fr"><span class="num">220.0</span>(×1)</span>
+					<div class="clear"></div>
+				</div>
+							</td>
+			<td width="110">
+				<p class="corg num strong">220.0</p>
+				<p class="c999">（含运费：0.0）</p>
+				<p class="c999">微信支付</p>
+			</td>
+			<td width="250" class="aleft" valign="top" style="color:#555">
+				<p>【姓名】11 <span class="c888">(13872108866)</span></p>
+				<p>【地址】天津天津市和平区11</p>
+				<p>【留言】<span class="c888"></span></p>
+			</td>
+			<td width="80">
+				<img src="http://phpshe.com/demo/phpshe/template/default/admin/images/fu_0.png" title="">
+				<img src="http://phpshe.com/demo/phpshe/template/default/admin/images/huo_0.png" title="">
+				<p><a href="http://phpshe.com/demo/phpshe/admin.php?mod=order&amp;act=print_express&amp;id=170807143059713" class="cblue" onclick="return pe_dialog(this, &#39;打印快递单&#39;, 1000, 600)">[快递单]</a></p>
+			</td>
+			<td width="85"><del class="corg">交易关闭</del><p class="mat5"><a href="http://phpshe.com/demo/phpshe/admin.php?mod=order&amp;act=edit&amp;id=170807143059713" target="_blank" class="c999">订单详情</a></p></td>
+			<td width="85" style="border-right:0;">
+								<a href="http://phpshe.com/demo/phpshe/admin.php?mod=order&amp;act=del&amp;id=170807143059713&amp;token=09360b8c4d39343533c1675afcf3733e" onclick="return pe_cfone(this, &#39;删除订单&#39;)" class="c999">删除</a>
+							</td>
+		</tr>
+		</tbody></table>
+						<div class="hy_ordertw c666 mat10">
+			订单编号：<span class="num" style="margin-right:60px">170719114926312</span>
+			下单时间：<span class="num">2017-07-19 11:49</span>
+		</div>
+		<table width="100%" border="0" cellspacing="0" cellpadding="0" class="hy_orderlist">
+		<tbody><tr>
+			<td class="aleft" style="border-left:0;padding-left:10px;padding-right:15px">
+								<div class="dingdan_list" style="padding-top:0">
+					<a href="http://phpshe.com/demo/phpshe/product/41" class="fl mar5" target="_blank"><img src="./订单列表 - 欢迎使用PHPSHE商城系统_files/thumb_100x100_20170503142203c.jpg" width="40" height="40" class="imgbg"></a>
+					<div class="fl">
+						<a href="http://phpshe.com/demo/phpshe/product/41" title="phpshe测试商品韩版女装夏装新款韩范衬衣系带V领七分袖衬衫" target="_blank" class="cblue dd_name">phpshe测试商品韩版女装夏装新款韩范衬衣系带V...</a>
+												<p class="c999 mat5">[尺码：M]&nbsp;&nbsp;[主要颜色：白日梦]&nbsp;&nbsp;</p>
+											</div>
+					<span class="fr"><span class="num">128.0</span>(×1)</span>
+					<div class="clear"></div>
+				</div>
+								<div class="dingdan_list">
+					<a href="http://phpshe.com/demo/phpshe/product/33" class="fl mar5" target="_blank"><img src="http://phpshe.com/demo/phpshe/data/cache/thumb/2017-08/thumb_100x100_20170503113100x.jpg" width="40" height="40" class="imgbg"></a>
+					<div class="fl">
+						<a href="http://phpshe.com/demo/phpshe/product/33" title="phpshe测试商品公主模样夏装2017新款宽松刺绣七分袖蕾丝衫女短款预" target="_blank" class="cblue dd_name">phpshe测试商品公主模样夏装2017新款宽松刺绣七...</a>
+												<p class="c999 mat5">[尺码：M]&nbsp;&nbsp;[主要颜色：春草绿]&nbsp;&nbsp;</p>
+											</div>
+					<span class="fr"><span class="num">220.0</span>(×1)</span>
+					<div class="clear"></div>
+				</div>
+							</td>
+			<td width="110">
+				<p class="corg num strong">348.0</p>
+				<p class="c999">（含运费：0.0）</p>
+				<p class="c999">余额支付</p>
+			</td>
+			<td width="250" class="aleft" valign="top" style="color:#555">
+				<p>【姓名】木木 <span class="c888">(13312341234)</span></p>
+				<p>【地址】北京北京市东城区30号</p>
+				<p>【留言】<span class="c888"></span></p>
+			</td>
+			<td width="80">
+				<img src="http://phpshe.com/demo/phpshe/template/default/admin/images/fu_0.png" title="">
+				<img src="http://phpshe.com/demo/phpshe/template/default/admin/images/huo_0.png" title="">
+				<p><a href="http://phpshe.com/demo/phpshe/admin.php?mod=order&amp;act=print_express&amp;id=170719114926312" class="cblue" onclick="return pe_dialog(this, &#39;打印快递单&#39;, 1000, 600)">[快递单]</a></p>
+			</td>
+			<td width="85"><del class="corg">交易关闭</del><p class="mat5"><a href="http://phpshe.com/demo/phpshe/admin.php?mod=order&amp;act=edit&amp;id=170719114926312" target="_blank" class="c999">订单详情</a></p></td>
+			<td width="85" style="border-right:0;">
+								<a href="http://phpshe.com/demo/phpshe/admin.php?mod=order&amp;act=del&amp;id=170719114926312&amp;token=09360b8c4d39343533c1675afcf3733e" onclick="return pe_cfone(this, &#39;删除订单&#39;)" class="c999">删除</a>
+							</td>
+		</tr>
+		</tbody></table>
+						<div class="hy_ordertw c666 mat10">
+			订单编号：<span class="num" style="margin-right:60px">170718175628103</span>
+			下单时间：<span class="num">2017-07-18 17:56</span>
+		</div>
+		<table width="100%" border="0" cellspacing="0" cellpadding="0" class="hy_orderlist">
+		<tbody><tr>
+			<td class="aleft" style="border-left:0;padding-left:10px;padding-right:15px">
+								<div class="dingdan_list" style="padding-top:0">
+					<a href="http://phpshe.com/demo/phpshe/product/41" class="fl mar5" target="_blank"><img src="./订单列表 - 欢迎使用PHPSHE商城系统_files/thumb_100x100_20170503142203c.jpg" width="40" height="40" class="imgbg"></a>
+					<div class="fl">
+						<a href="http://phpshe.com/demo/phpshe/product/41" title="phpshe测试商品韩版女装夏装新款韩范衬衣系带V领七分袖衬衫" target="_blank" class="cblue dd_name">phpshe测试商品韩版女装夏装新款韩范衬衣系带V...</a>
+												<p class="c999 mat5">[尺码：M]&nbsp;&nbsp;[主要颜色：白日梦]&nbsp;&nbsp;</p>
+											</div>
+					<span class="fr"><span class="num">128.0</span>(×1)</span>
+					<div class="clear"></div>
+				</div>
+							</td>
+			<td width="110">
+				<p class="corg num strong">128.0</p>
+				<p class="c999">（含运费：0.0）</p>
+				<p class="c999">余额支付</p>
+			</td>
+			<td width="250" class="aleft" valign="top" style="color:#555">
+				<p>【姓名】木木 <span class="c888">(13312341234)</span></p>
+				<p>【地址】北京北京市东城区30号</p>
+				<p>【留言】<span class="c888"></span></p>
+			</td>
+			<td width="80">
+				<img src="http://phpshe.com/demo/phpshe/template/default/admin/images/fu_0.png" title="">
+				<img src="http://phpshe.com/demo/phpshe/template/default/admin/images/huo_0.png" title="">
+				<p><a href="http://phpshe.com/demo/phpshe/admin.php?mod=order&amp;act=print_express&amp;id=170718175628103" class="cblue" onclick="return pe_dialog(this, &#39;打印快递单&#39;, 1000, 600)">[快递单]</a></p>
+			</td>
+			<td width="85"><del class="corg">交易关闭</del><p class="mat5"><a href="http://phpshe.com/demo/phpshe/admin.php?mod=order&amp;act=edit&amp;id=170718175628103" target="_blank" class="c999">订单详情</a></p></td>
+			<td width="85" style="border-right:0;">
+								<a href="http://phpshe.com/demo/phpshe/admin.php?mod=order&amp;act=del&amp;id=170718175628103&amp;token=09360b8c4d39343533c1675afcf3733e" onclick="return pe_cfone(this, &#39;删除订单&#39;)" class="c999">删除</a>
+							</td>
+		</tr>
+		</tbody></table>
+						<div class="hy_ordertw c666 mat10">
+			订单编号：<span class="num" style="margin-right:60px">170719114809090</span>
+			下单时间：<span class="num">2017-07-19 11:48</span>
+		</div>
+		<table width="100%" border="0" cellspacing="0" cellpadding="0" class="hy_orderlist">
+		<tbody><tr>
+			<td class="aleft" style="border-left:0;padding-left:10px;padding-right:15px">
+								<div class="dingdan_list" style="padding-top:0">
+					<a href="http://phpshe.com/demo/phpshe/product/42" class="fl mar5" target="_blank"><img src="./订单列表 - 欢迎使用PHPSHE商城系统_files/thumb_100x100_20170503142409i.jpg" width="40" height="40" class="imgbg"></a>
+					<div class="fl">
+						<a href="http://phpshe.com/demo/phpshe/product/42" title="phpshe测试商品韩版女夏装新款系带流苏拼接V领七分袖衬衫" target="_blank" class="cblue dd_name">phpshe测试商品韩版女夏装新款系带流苏拼接V领...</a>
+												<p class="c999 mat5">[尺码：M]&nbsp;&nbsp;[主要颜色：白日梦]&nbsp;&nbsp;</p>
+											</div>
+					<span class="fr"><span class="num">139.0</span>(×2)</span>
+					<div class="clear"></div>
+				</div>
+							</td>
+			<td width="110">
+				<p class="corg num strong">278.0</p>
+				<p class="c999">（含运费：0.0）</p>
+				<p class="c999">余额支付</p>
+			</td>
+			<td width="250" class="aleft" valign="top" style="color:#555">
+				<p>【姓名】木木 <span class="c888">(13312341234)</span></p>
+				<p>【地址】北京北京市东城区30号</p>
+				<p>【留言】<span class="c888"></span></p>
+			</td>
+			<td width="80">
+				<img src="http://phpshe.com/demo/phpshe/template/default/admin/images/fu_0.png" title="">
+				<img src="http://phpshe.com/demo/phpshe/template/default/admin/images/huo_0.png" title="">
+				<p><a href="http://phpshe.com/demo/phpshe/admin.php?mod=order&amp;act=print_express&amp;id=170719114809090" class="cblue" onclick="return pe_dialog(this, &#39;打印快递单&#39;, 1000, 600)">[快递单]</a></p>
+			</td>
+			<td width="85"><del class="corg">交易关闭</del><p class="mat5"><a href="http://phpshe.com/demo/phpshe/admin.php?mod=order&amp;act=edit&amp;id=170719114809090" target="_blank" class="c999">订单详情</a></p></td>
+			<td width="85" style="border-right:0;">
+								<a href="http://phpshe.com/demo/phpshe/admin.php?mod=order&amp;act=del&amp;id=170719114809090&amp;token=09360b8c4d39343533c1675afcf3733e" onclick="return pe_cfone(this, &#39;删除订单&#39;)" class="c999">删除</a>
+							</td>
+		</tr>
+		</tbody></table>
+						<div class="hy_ordertw c666 mat10">
+			订单编号：<span class="num" style="margin-right:60px">170619105051168</span>
+			下单时间：<span class="num">2017-06-19 10:50</span>
+		</div>
+		<table width="100%" border="0" cellspacing="0" cellpadding="0" class="hy_orderlist">
+		<tbody><tr>
+			<td class="aleft" style="border-left:0;padding-left:10px;padding-right:15px">
+								<div class="dingdan_list" style="padding-top:0">
+					<a href="http://phpshe.com/demo/phpshe/product/42" class="fl mar5" target="_blank"><img src="./订单列表 - 欢迎使用PHPSHE商城系统_files/thumb_100x100_20170503142409i.jpg" width="40" height="40" class="imgbg"></a>
+					<div class="fl">
+						<a href="http://phpshe.com/demo/phpshe/product/42" title="phpshe测试商品韩版女夏装新款系带流苏拼接V领七分袖衬衫" target="_blank" class="cblue dd_name">phpshe测试商品韩版女夏装新款系带流苏拼接V领...</a>
+												<p class="c999 mat5">[尺码：S]&nbsp;&nbsp;[主要颜色：白日梦]&nbsp;&nbsp;</p>
+											</div>
+					<span class="fr"><span class="num">139.0</span>(×1)</span>
+					<div class="clear"></div>
+				</div>
+							</td>
+			<td width="110">
+				<p class="corg num strong">139.0</p>
+				<p class="c999">（含运费：0.0）</p>
+				<p class="c999">货到付款</p>
+			</td>
+			<td width="250" class="aleft" valign="top" style="color:#555">
+				<p>【姓名】ces <span class="c888">(15835525125)</span></p>
+				<p>【地址】北京北京市东城区asdasd</p>
+				<p>【留言】<span class="c888"></span></p>
+			</td>
+			<td width="80">
+				<img src="http://phpshe.com/demo/phpshe/template/default/admin/images/fu_0.png" title="">
+				<img src="./订单列表 - 欢迎使用PHPSHE商城系统_files/huo_1.png" title="2017-06-19 11:27">
+				<p><a href="http://phpshe.com/demo/phpshe/admin.php?mod=order&amp;act=print_express&amp;id=170619105051168" class="cblue" onclick="return pe_dialog(this, &#39;打印快递单&#39;, 1000, 600)">[快递单]</a></p>
+			</td>
+			<td width="85"><del class="corg">交易关闭</del><p class="mat5"><a href="http://phpshe.com/demo/phpshe/admin.php?mod=order&amp;act=edit&amp;id=170619105051168" target="_blank" class="c999">订单详情</a></p></td>
+			<td width="85" style="border-right:0;">
+								<a href="http://phpshe.com/demo/phpshe/admin.php?mod=order&amp;act=del&amp;id=170619105051168&amp;token=09360b8c4d39343533c1675afcf3733e" onclick="return pe_cfone(this, &#39;删除订单&#39;)" class="c999">删除</a>
+							</td>
+		</tr>
+		</tbody></table>
+						<div class="hy_ordertw c666 mat10">
+			订单编号：<span class="num" style="margin-right:60px">170617105609690</span>
+			下单时间：<span class="num">2017-06-17 10:56</span>
+		</div>
+		<table width="100%" border="0" cellspacing="0" cellpadding="0" class="hy_orderlist">
+		<tbody><tr>
+			<td class="aleft" style="border-left:0;padding-left:10px;padding-right:15px">
+								<div class="dingdan_list" style="padding-top:0">
+					<a href="http://phpshe.com/demo/phpshe/product/41" class="fl mar5" target="_blank"><img src="./订单列表 - 欢迎使用PHPSHE商城系统_files/thumb_100x100_20170503142203c.jpg" width="40" height="40" class="imgbg"></a>
+					<div class="fl">
+						<a href="http://phpshe.com/demo/phpshe/product/41" title="phpshe测试商品韩版女装夏装新款韩范衬衣系带V领七分袖衬衫" target="_blank" class="cblue dd_name">phpshe测试商品韩版女装夏装新款韩范衬衣系带V...</a>
+												<p class="c999 mat5">[尺码：L]&nbsp;&nbsp;[主要颜色：白日梦]&nbsp;&nbsp;</p>
+											</div>
+					<span class="fr"><span class="num">128.0</span>(×1)</span>
+					<div class="clear"></div>
+				</div>
+							</td>
+			<td width="110">
+				<p class="corg num strong">128.0</p>
+				<p class="c999">（含运费：0.0）</p>
+				<p class="c999">支付宝</p>
+			</td>
+			<td width="250" class="aleft" valign="top" style="color:#555">
+				<p>【姓名】LIE <span class="c888">(18500487344)</span></p>
+				<p>【地址】山西朔州山阴县XDSFREGTHB</p>
+				<p>【留言】<span class="c888"></span></p>
+			</td>
+			<td width="80">
+				<img src="./订单列表 - 欢迎使用PHPSHE商城系统_files/fu_1.png" title="2017-06-17 15:06">
+				<img src="http://phpshe.com/demo/phpshe/template/default/admin/images/huo_0.png" title="">
+				<p><a href="http://phpshe.com/demo/phpshe/admin.php?mod=order&amp;act=print_express&amp;id=170617105609690" class="cblue" onclick="return pe_dialog(this, &#39;打印快递单&#39;, 1000, 600)">[快递单]</a></p>
+			</td>
+			<td width="85"><del class="corg">交易关闭</del><p class="mat5"><a href="http://phpshe.com/demo/phpshe/admin.php?mod=order&amp;act=edit&amp;id=170617105609690" target="_blank" class="c999">订单详情</a></p></td>
+			<td width="85" style="border-right:0;">
+								<a href="http://phpshe.com/demo/phpshe/admin.php?mod=order&amp;act=del&amp;id=170617105609690&amp;token=09360b8c4d39343533c1675afcf3733e" onclick="return pe_cfone(this, &#39;删除订单&#39;)" class="c999">删除</a>
+							</td>
+		</tr>
+		</tbody></table>
+						<div class="hy_ordertw c666 mat10">
+			订单编号：<span class="num" style="margin-right:60px">170614091758093</span>
+			下单时间：<span class="num">2017-06-14 09:17</span>
+		</div>
+		<table width="100%" border="0" cellspacing="0" cellpadding="0" class="hy_orderlist">
+		<tbody><tr>
+			<td class="aleft" style="border-left:0;padding-left:10px;padding-right:15px">
+								<div class="dingdan_list" style="padding-top:0">
+					<a href="http://phpshe.com/demo/phpshe/product/33" class="fl mar5" target="_blank"><img src="http://phpshe.com/demo/phpshe/data/cache/thumb/2017-08/thumb_100x100_20170503113100x.jpg" width="40" height="40" class="imgbg"></a>
+					<div class="fl">
+						<a href="http://phpshe.com/demo/phpshe/product/33" title="phpshe测试商品公主模样夏装2017新款宽松刺绣七分袖蕾丝衫女短款预" target="_blank" class="cblue dd_name">phpshe测试商品公主模样夏装2017新款宽松刺绣七...</a>
+												<p class="c999 mat5">[尺码：M]&nbsp;&nbsp;[主要颜色：白日梦]&nbsp;&nbsp;</p>
+											</div>
+					<span class="fr"><span class="num">220.0</span>(×1)</span>
+					<div class="clear"></div>
+				</div>
+							</td>
+			<td width="110">
+				<p class="corg num strong">220.0</p>
+				<p class="c999">（含运费：0.0）</p>
+				<p class="c999">支付宝</p>
+			</td>
+			<td width="250" class="aleft" valign="top" style="color:#555">
+				<p>【姓名】现在 <span class="c888">(15689953092)</span></p>
+				<p>【地址】山西长治襄垣县哦良民</p>
+				<p>【留言】<span class="c888"></span></p>
+			</td>
+			<td width="80">
+				<img src="http://phpshe.com/demo/phpshe/template/default/admin/images/fu_0.png" title="">
+				<img src="http://phpshe.com/demo/phpshe/template/default/admin/images/huo_0.png" title="">
+				<p><a href="http://phpshe.com/demo/phpshe/admin.php?mod=order&amp;act=print_express&amp;id=170614091758093" class="cblue" onclick="return pe_dialog(this, &#39;打印快递单&#39;, 1000, 600)">[快递单]</a></p>
+			</td>
+			<td width="85"><del class="corg">交易关闭</del><p class="mat5"><a href="http://phpshe.com/demo/phpshe/admin.php?mod=order&amp;act=edit&amp;id=170614091758093" target="_blank" class="c999">订单详情</a></p></td>
+			<td width="85" style="border-right:0;">
+								<a href="http://phpshe.com/demo/phpshe/admin.php?mod=order&amp;act=del&amp;id=170614091758093&amp;token=09360b8c4d39343533c1675afcf3733e" onclick="return pe_cfone(this, &#39;删除订单&#39;)" class="c999">删除</a>
+							</td>
+		</tr>
+		</tbody></table>
+						<div class="hy_ordertw c666 mat10">
+			订单编号：<span class="num" style="margin-right:60px">170503103514279</span>
+			下单时间：<span class="num">2017-05-03 10:35</span>
+		</div>
+		<table width="100%" border="0" cellspacing="0" cellpadding="0" class="hy_orderlist">
+		<tbody><tr>
+			<td class="aleft" style="border-left:0;padding-left:10px;padding-right:15px">
+								<div class="dingdan_list" style="padding-top:0">
+					<a href="http://phpshe.com/demo/phpshe/product/27" class="fl mar5" target="_blank"><img src="http://phpshe.com/demo/phpshe/data/cache/thumb/2017-08/thumb_100x100_20170502164958o.jpg" width="40" height="40" class="imgbg"></a>
+					<div class="fl">
+						<a href="http://phpshe.com/demo/phpshe/product/27" title="测试商品1" target="_blank" class="cblue dd_name">测试商品1</a>
+												<p class="c999 mat5">[套餐：套餐1]&nbsp;&nbsp;[尺码：36]&nbsp;&nbsp;[测试规格：尺码]&nbsp;&nbsp;</p>
+											</div>
+					<span class="fr"><span class="num">0.1</span>(×1)</span>
+					<div class="clear"></div>
+				</div>
+							</td>
+			<td width="110">
+				<p class="corg num strong">0.0</p>
+				<p class="c999">（含运费：0.0）</p>
+				<p class="c999">微信支付</p>
+			</td>
+			<td width="250" class="aleft" valign="top" style="color:#555">
+				<p>【姓名】王女士 <span class="c888">(15839803501)</span></p>
+				<p>【地址】山西长治长治县新华街</p>
+				<p>【留言】<span class="c888"></span></p>
+			</td>
+			<td width="80">
+				<img src="./订单列表 - 欢迎使用PHPSHE商城系统_files/fu_1.png" title="2017-05-03 10:35">
+				<img src="http://phpshe.com/demo/phpshe/template/default/admin/images/huo_0.png" title="">
+				<p><a href="http://phpshe.com/demo/phpshe/admin.php?mod=order&amp;act=print_express&amp;id=170503103514279" class="cblue" onclick="return pe_dialog(this, &#39;打印快递单&#39;, 1000, 600)">[快递单]</a></p>
+			</td>
+			<td width="85"><del class="corg">交易关闭</del><p class="mat5"><a href="http://phpshe.com/demo/phpshe/admin.php?mod=order&amp;act=edit&amp;id=170503103514279" target="_blank" class="c999">订单详情</a></p></td>
+			<td width="85" style="border-right:0;">
+								<a href="http://phpshe.com/demo/phpshe/admin.php?mod=order&amp;act=del&amp;id=170503103514279&amp;token=09360b8c4d39343533c1675afcf3733e" onclick="return pe_cfone(this, &#39;删除订单&#39;)" class="c999">删除</a>
+							</td>
+		</tr>
+		</tbody></table>
+						<div class="hy_ordertw c666 mat10">
+			订单编号：<span class="num" style="margin-right:60px">170502172123132</span>
+			下单时间：<span class="num">2017-05-02 17:21</span>
+		</div>
+		<table width="100%" border="0" cellspacing="0" cellpadding="0" class="hy_orderlist">
+		<tbody><tr>
+			<td class="aleft" style="border-left:0;padding-left:10px;padding-right:15px">
+								<div class="dingdan_list" style="padding-top:0">
+					<a href="http://phpshe.com/demo/phpshe/product/27" class="fl mar5" target="_blank"><img src="http://phpshe.com/demo/phpshe/data/cache/thumb/2017-08/thumb_100x100_20170502164958o.jpg" width="40" height="40" class="imgbg"></a>
+					<div class="fl">
+						<a href="http://phpshe.com/demo/phpshe/product/27" title="测试商品1" target="_blank" class="cblue dd_name">测试商品1</a>
+												<p class="c999 mat5">[套餐：套餐1]&nbsp;&nbsp;[尺码：36]&nbsp;&nbsp;[测试规格：尺码]&nbsp;&nbsp;</p>
+											</div>
+					<span class="fr"><span class="num">2.0</span>(×1)</span>
+					<div class="clear"></div>
+				</div>
+							</td>
+			<td width="110">
+				<p class="corg num strong">0.0</p>
+				<p class="c999">（含运费：0.0）</p>
+				<p class="c999">余额支付</p>
+			</td>
+			<td width="250" class="aleft" valign="top" style="color:#555">
+				<p>【姓名】王女士 <span class="c888">(15839803501)</span></p>
+				<p>【地址】山西长治长治县新华街</p>
+				<p>【留言】<span class="c888"></span></p>
+			</td>
+			<td width="80">
+				<img src="http://phpshe.com/demo/phpshe/template/default/admin/images/fu_0.png" title="">
+				<img src="http://phpshe.com/demo/phpshe/template/default/admin/images/huo_0.png" title="">
+				<p><a href="http://phpshe.com/demo/phpshe/admin.php?mod=order&amp;act=print_express&amp;id=170502172123132" class="cblue" onclick="return pe_dialog(this, &#39;打印快递单&#39;, 1000, 600)">[快递单]</a></p>
+			</td>
+			<td width="85"><del class="corg">交易关闭</del><p class="mat5"><a href="http://phpshe.com/demo/phpshe/admin.php?mod=order&amp;act=edit&amp;id=170502172123132" target="_blank" class="c999">订单详情</a></p></td>
+			<td width="85" style="border-right:0;">
+								<a href="http://phpshe.com/demo/phpshe/admin.php?mod=order&amp;act=del&amp;id=170502172123132&amp;token=09360b8c4d39343533c1675afcf3733e" onclick="return pe_cfone(this, &#39;删除订单&#39;)" class="c999">删除</a>
+							</td>
+		</tr>
+		</tbody></table>
+						<div class="hy_ordertw c666 mat10">
+			订单编号：<span class="num" style="margin-right:60px">170502170442879</span>
+			下单时间：<span class="num">2017-05-02 17:04</span>
+		</div>
+		<table width="100%" border="0" cellspacing="0" cellpadding="0" class="hy_orderlist">
+		<tbody><tr>
+			<td class="aleft" style="border-left:0;padding-left:10px;padding-right:15px">
+								<div class="dingdan_list" style="padding-top:0">
+					<a href="http://phpshe.com/demo/phpshe/product/27" class="fl mar5" target="_blank"><img src="http://phpshe.com/demo/phpshe/data/cache/thumb/2017-08/thumb_100x100_20170502164958o.jpg" width="40" height="40" class="imgbg"></a>
+					<div class="fl">
+						<a href="http://phpshe.com/demo/phpshe/product/27" title="测试商品1" target="_blank" class="cblue dd_name">测试商品1</a>
+												<p class="c999 mat5">[套餐：套餐1]&nbsp;&nbsp;[尺码：36]&nbsp;&nbsp;[测试规格：尺码]&nbsp;&nbsp;</p>
+											</div>
+					<span class="fr"><span class="num">4.5</span>(×2)</span>
+					<div class="clear"></div>
+				</div>
+							</td>
+			<td width="110">
+				<p class="corg num strong">5.9</p>
+				<p class="c999">（含运费：0.0）</p>
+				<p class="c999">支付宝</p>
+			</td>
+			<td width="250" class="aleft" valign="top" style="color:#555">
+				<p>【姓名】王女士 <span class="c888">(15839803501)</span></p>
+				<p>【地址】山西长治长治县新华街</p>
+				<p>【留言】<span class="c888"></span></p>
+			</td>
+			<td width="80">
+				<img src="http://phpshe.com/demo/phpshe/template/default/admin/images/fu_0.png" title="">
+				<img src="http://phpshe.com/demo/phpshe/template/default/admin/images/huo_0.png" title="">
+				<p><a href="http://phpshe.com/demo/phpshe/admin.php?mod=order&amp;act=print_express&amp;id=170502170442879" class="cblue" onclick="return pe_dialog(this, &#39;打印快递单&#39;, 1000, 600)">[快递单]</a></p>
+			</td>
+			<td width="85"><del class="corg">交易关闭</del><p class="mat5"><a href="http://phpshe.com/demo/phpshe/admin.php?mod=order&amp;act=edit&amp;id=170502170442879" target="_blank" class="c999">订单详情</a></p></td>
+			<td width="85" style="border-right:0;">
+								<a href="http://phpshe.com/demo/phpshe/admin.php?mod=order&amp;act=del&amp;id=170502170442879&amp;token=09360b8c4d39343533c1675afcf3733e" onclick="return pe_cfone(this, &#39;删除订单&#39;)" class="c999">删除</a>
+							</td>
+		</tr>
+		</tbody></table>
+						<div class="hy_ordertw c666 mat10">
+			订单编号：<span class="num" style="margin-right:60px">170425180151541</span>
+			下单时间：<span class="num">2017-04-25 18:01</span>
+		</div>
+		<table width="100%" border="0" cellspacing="0" cellpadding="0" class="hy_orderlist">
+		<tbody><tr>
+			<td class="aleft" style="border-left:0;padding-left:10px;padding-right:15px">
+								<div class="dingdan_list" style="padding-top:0">
+					<a href="http://phpshe.com/demo/phpshe/product/24" class="fl mar5" target="_blank"><img src="http://phpshe.com/demo/phpshe/data/cache/thumb/2017-08/thumb_100x100_nopic.png" width="40" height="40" class="imgbg"></a>
+					<div class="fl">
+						<a href="http://phpshe.com/demo/phpshe/product/24" title="简好科技PHPSHE商城模板测试商品" target="_blank" class="cblue dd_name">简好科技PHPSHE商城模板测试商品</a>
+												<p class="c999 mat5">[颜色：红色]&nbsp;&nbsp;[尺码：36]&nbsp;&nbsp;[尺码：L]&nbsp;&nbsp;</p>
+											</div>
+					<span class="fr"><span class="num">0.0</span>(×1)</span>
+					<div class="clear"></div>
+				</div>
+								<div class="dingdan_list">
+					<a href="http://phpshe.com/demo/phpshe/product/17" class="fl mar5" target="_blank"><img src="http://phpshe.com/demo/phpshe/data/cache/thumb/2017-08/thumb_100x100_nopic.png" width="40" height="40" class="imgbg"></a>
+					<div class="fl">
+						<a href="http://phpshe.com/demo/phpshe/product/17" title="简好科技PHPSHE商城模板测试商品" target="_blank" class="cblue dd_name">简好科技PHPSHE商城模板测试商品</a>
+											</div>
+					<span class="fr"><span class="num">0.0</span>(×1)</span>
+					<div class="clear"></div>
+				</div>
+							</td>
+			<td width="110">
+				<p class="corg num strong">10.0</p>
+				<p class="c999">（含运费：10.0）</p>
+				<p class="c999">余额支付</p>
+			</td>
+			<td width="250" class="aleft" valign="top" style="color:#555">
+				<p>【姓名】刘洋 <span class="c888">(15839811521)</span></p>
+				<p>【地址】河南三门峡灵宝市新华路同心堂东100米简好网络</p>
+				<p>【留言】<span class="c888"></span></p>
+			</td>
+			<td width="80">
+				<img src="./订单列表 - 欢迎使用PHPSHE商城系统_files/fu_1.png" title="2017-04-25 18:03">
+				<img src="http://phpshe.com/demo/phpshe/template/default/admin/images/huo_0.png" title="">
+				<p><a href="http://phpshe.com/demo/phpshe/admin.php?mod=order&amp;act=print_express&amp;id=170425180151541" class="cblue" onclick="return pe_dialog(this, &#39;打印快递单&#39;, 1000, 600)">[快递单]</a></p>
+			</td>
+			<td width="85"><del class="corg">交易关闭</del><p class="mat5"><a href="http://phpshe.com/demo/phpshe/admin.php?mod=order&amp;act=edit&amp;id=170425180151541" target="_blank" class="c999">订单详情</a></p></td>
+			<td width="85" style="border-right:0;">
+								<a href="http://phpshe.com/demo/phpshe/admin.php?mod=order&amp;act=del&amp;id=170425180151541&amp;token=09360b8c4d39343533c1675afcf3733e" onclick="return pe_cfone(this, &#39;删除订单&#39;)" class="c999">删除</a>
+							</td>
+		</tr>
+		</tbody></table>
+						<div class="hy_ordertw c666 mat10">
+			订单编号：<span class="num" style="margin-right:60px">170313153321910</span>
+			下单时间：<span class="num">2017-03-13 15:33</span>
+		</div>
+		<table width="100%" border="0" cellspacing="0" cellpadding="0" class="hy_orderlist">
+		<tbody><tr>
+			<td class="aleft" style="border-left:0;padding-left:10px;padding-right:15px">
+								<div class="dingdan_list" style="padding-top:0">
+					<a href="http://phpshe.com/demo/phpshe/product/19" class="fl mar5" target="_blank"><img src="./订单列表 - 欢迎使用PHPSHE商城系统_files/thumb_100x100_20140801164821m.jpg" width="40" height="40" class="imgbg"></a>
+					<div class="fl">
+						<a href="http://phpshe.com/demo/phpshe/product/19" title="简好科技PHPSHE商城模板测试商品" target="_blank" class="cblue dd_name">简好科技PHPSHE商城模板测试商品</a>
+											</div>
+					<span class="fr"><span class="num">174.4</span>(×1)</span>
+					<div class="clear"></div>
+				</div>
+							</td>
+			<td width="110">
+				<p class="corg num strong">174.4</p>
+				<p class="c999">（含运费：0.0）</p>
+				<p class="c999">支付宝</p>
+			</td>
+			<td width="250" class="aleft" valign="top" style="color:#555">
+				<p>【姓名】猪脸菲菲 <span class="c888">(15555555555)</span></p>
+				<p>【地址】天津河西区33333333333333</p>
+				<p>【留言】<span class="c888">555555555555555555</span></p>
+			</td>
+			<td width="80">
+				<img src="./订单列表 - 欢迎使用PHPSHE商城系统_files/fu_1.png" title="2017-03-13 15:33">
+				<img src="http://phpshe.com/demo/phpshe/template/default/admin/images/huo_0.png" title="">
+				<p><a href="http://phpshe.com/demo/phpshe/admin.php?mod=order&amp;act=print_express&amp;id=170313153321910" class="cblue" onclick="return pe_dialog(this, &#39;打印快递单&#39;, 1000, 600)">[快递单]</a></p>
+			</td>
+			<td width="85"><del class="corg">交易关闭</del><p class="mat5"><a href="http://phpshe.com/demo/phpshe/admin.php?mod=order&amp;act=edit&amp;id=170313153321910" target="_blank" class="c999">订单详情</a></p></td>
+			<td width="85" style="border-right:0;">
+								<a href="http://phpshe.com/demo/phpshe/admin.php?mod=order&amp;act=del&amp;id=170313153321910&amp;token=09360b8c4d39343533c1675afcf3733e" onclick="return pe_cfone(this, &#39;删除订单&#39;)" class="c999">删除</a>
+							</td>
+		</tr>
+		</tbody></table>
+						<div class="hy_ordertw c666 mat10">
+			订单编号：<span class="num" style="margin-right:60px">170314163801903</span>
+			下单时间：<span class="num">2017-03-14 16:38</span>
+		</div>
+		<table width="100%" border="0" cellspacing="0" cellpadding="0" class="hy_orderlist">
+		<tbody><tr>
+			<td class="aleft" style="border-left:0;padding-left:10px;padding-right:15px">
+								<div class="dingdan_list" style="padding-top:0">
+					<a href="http://phpshe.com/demo/phpshe/product/19" class="fl mar5" target="_blank"><img src="./订单列表 - 欢迎使用PHPSHE商城系统_files/thumb_100x100_20140801164821m.jpg" width="40" height="40" class="imgbg"></a>
+					<div class="fl">
+						<a href="http://phpshe.com/demo/phpshe/product/19" title="简好科技PHPSHE商城模板测试商品" target="_blank" class="cblue dd_name">简好科技PHPSHE商城模板测试商品</a>
+											</div>
+					<span class="fr"><span class="num">174.4</span>(×3)</span>
+					<div class="clear"></div>
+				</div>
+							</td>
+			<td width="110">
+				<p class="corg num strong">523.2</p>
+				<p class="c999">（含运费：0.0）</p>
+				<p class="c999">余额支付</p>
+			</td>
+			<td width="250" class="aleft" valign="top" style="color:#555">
+				<p>【姓名】1233123 <span class="c888">(15555555555)</span></p>
+				<p>【地址】河北秦皇岛北戴河区2222222222222222</p>
+				<p>【留言】<span class="c888"></span></p>
+			</td>
+			<td width="80">
+				<img src="./订单列表 - 欢迎使用PHPSHE商城系统_files/fu_1.png" title="2017-03-31 15:45">
+				<img src="http://phpshe.com/demo/phpshe/template/default/admin/images/huo_0.png" title="">
+				<p><a href="http://phpshe.com/demo/phpshe/admin.php?mod=order&amp;act=print_express&amp;id=170314163801903" class="cblue" onclick="return pe_dialog(this, &#39;打印快递单&#39;, 1000, 600)">[快递单]</a></p>
+			</td>
+			<td width="85"><del class="corg">交易关闭</del><p class="mat5"><a href="http://phpshe.com/demo/phpshe/admin.php?mod=order&amp;act=edit&amp;id=170314163801903" target="_blank" class="c999">订单详情</a></p></td>
+			<td width="85" style="border-right:0;">
+								<a href="http://phpshe.com/demo/phpshe/admin.php?mod=order&amp;act=del&amp;id=170314163801903&amp;token=09360b8c4d39343533c1675afcf3733e" onclick="return pe_cfone(this, &#39;删除订单&#39;)" class="c999">删除</a>
+							</td>
+		</tr>
+		</tbody></table>
+						<div class="hy_ordertw c666 mat10">
+			订单编号：<span class="num" style="margin-right:60px">170314170120730</span>
+			下单时间：<span class="num">2017-03-14 17:01</span>
+		</div>
+		<table width="100%" border="0" cellspacing="0" cellpadding="0" class="hy_orderlist">
+		<tbody><tr>
+			<td class="aleft" style="border-left:0;padding-left:10px;padding-right:15px">
+								<div class="dingdan_list" style="padding-top:0">
+					<a href="http://phpshe.com/demo/phpshe/product/19" class="fl mar5" target="_blank"><img src="./订单列表 - 欢迎使用PHPSHE商城系统_files/thumb_100x100_20140801164821m.jpg" width="40" height="40" class="imgbg"></a>
+					<div class="fl">
+						<a href="http://phpshe.com/demo/phpshe/product/19" title="简好科技PHPSHE商城模板测试商品" target="_blank" class="cblue dd_name">简好科技PHPSHE商城模板测试商品</a>
+											</div>
+					<span class="fr"><span class="num">174.4</span>(×1)</span>
+					<div class="clear"></div>
+				</div>
+							</td>
+			<td width="110">
+				<p class="corg num strong">174.4</p>
+				<p class="c999">（含运费：0.0）</p>
+				<p class="c999">支付宝</p>
+			</td>
+			<td width="250" class="aleft" valign="top" style="color:#555">
+				<p>【姓名】1233123 <span class="c888">(15555555555)</span></p>
+				<p>【地址】河北秦皇岛北戴河区2222222222222222</p>
+				<p>【留言】<span class="c888"></span></p>
+			</td>
+			<td width="80">
+				<img src="http://phpshe.com/demo/phpshe/template/default/admin/images/fu_0.png" title="">
+				<img src="http://phpshe.com/demo/phpshe/template/default/admin/images/huo_0.png" title="">
+				<p><a href="http://phpshe.com/demo/phpshe/admin.php?mod=order&amp;act=print_express&amp;id=170314170120730" class="cblue" onclick="return pe_dialog(this, &#39;打印快递单&#39;, 1000, 600)">[快递单]</a></p>
+			</td>
+			<td width="85"><del class="corg">交易关闭</del><p class="mat5"><a href="http://phpshe.com/demo/phpshe/admin.php?mod=order&amp;act=edit&amp;id=170314170120730" target="_blank" class="c999">订单详情</a></p></td>
+			<td width="85" style="border-right:0;">
+								<a href="http://phpshe.com/demo/phpshe/admin.php?mod=order&amp;act=del&amp;id=170314170120730&amp;token=09360b8c4d39343533c1675afcf3733e" onclick="return pe_cfone(this, &#39;删除订单&#39;)" class="c999">删除</a>
+							</td>
+		</tr>
+		</tbody></table>
+						<div class="hy_ordertw c666 mat10">
+			订单编号：<span class="num" style="margin-right:60px">170314171045392</span>
+			下单时间：<span class="num">2017-03-14 17:10</span>
+		</div>
+		<table width="100%" border="0" cellspacing="0" cellpadding="0" class="hy_orderlist">
+		<tbody><tr>
+			<td class="aleft" style="border-left:0;padding-left:10px;padding-right:15px">
+								<div class="dingdan_list" style="padding-top:0">
+					<a href="http://phpshe.com/demo/phpshe/product/8" class="fl mar5" target="_blank"><img src="http://phpshe.com/demo/phpshe/data/cache/thumb/2017-08/thumb_100x100_20140801162413e.jpg" width="40" height="40" class="imgbg"></a>
+					<div class="fl">
+						<a href="http://phpshe.com/demo/phpshe/product/8" title="简好科技PHPSHE商城模板测试商品" target="_blank" class="cblue dd_name">简好科技PHPSHE商城模板测试商品</a>
+											</div>
+					<span class="fr"><span class="num">189.6</span>(×4)</span>
+					<div class="clear"></div>
+				</div>
+							</td>
+			<td width="110">
+				<p class="corg num strong">758.4</p>
+				<p class="c999">（含运费：0.0）</p>
+				<p class="c999">余额支付</p>
+			</td>
+			<td width="250" class="aleft" valign="top" style="color:#555">
+				<p>【姓名】1233123 <span class="c888">(15555555555)</span></p>
+				<p>【地址】河北秦皇岛北戴河区2222222222222222</p>
+				<p>【留言】<span class="c888"></span></p>
+			</td>
+			<td width="80">
+				<img src="http://phpshe.com/demo/phpshe/template/default/admin/images/fu_0.png" title="">
+				<img src="http://phpshe.com/demo/phpshe/template/default/admin/images/huo_0.png" title="">
+				<p><a href="http://phpshe.com/demo/phpshe/admin.php?mod=order&amp;act=print_express&amp;id=170314171045392" class="cblue" onclick="return pe_dialog(this, &#39;打印快递单&#39;, 1000, 600)">[快递单]</a></p>
+			</td>
+			<td width="85"><del class="corg">交易关闭</del><p class="mat5"><a href="http://phpshe.com/demo/phpshe/admin.php?mod=order&amp;act=edit&amp;id=170314171045392" target="_blank" class="c999">订单详情</a></p></td>
+			<td width="85" style="border-right:0;">
+								<a href="http://phpshe.com/demo/phpshe/admin.php?mod=order&amp;act=del&amp;id=170314171045392&amp;token=09360b8c4d39343533c1675afcf3733e" onclick="return pe_cfone(this, &#39;删除订单&#39;)" class="c999">删除</a>
+							</td>
+		</tr>
+		</tbody></table>
+						<div class="hy_ordertw c666 mat10">
+			订单编号：<span class="num" style="margin-right:60px">170313141620325</span>
+			下单时间：<span class="num">2017-03-13 14:16</span>
+		</div>
+		<table width="100%" border="0" cellspacing="0" cellpadding="0" class="hy_orderlist">
+		<tbody><tr>
+			<td class="aleft" style="border-left:0;padding-left:10px;padding-right:15px">
+								<div class="dingdan_list" style="padding-top:0">
+					<a href="http://phpshe.com/demo/phpshe/product/19" class="fl mar5" target="_blank"><img src="./订单列表 - 欢迎使用PHPSHE商城系统_files/thumb_100x100_20140801164821m.jpg" width="40" height="40" class="imgbg"></a>
+					<div class="fl">
+						<a href="http://phpshe.com/demo/phpshe/product/19" title="简好科技PHPSHE商城模板测试商品" target="_blank" class="cblue dd_name">简好科技PHPSHE商城模板测试商品</a>
+											</div>
+					<span class="fr"><span class="num">174.4</span>(×3)</span>
+					<div class="clear"></div>
+				</div>
+							</td>
+			<td width="110">
+				<p class="corg num strong">523.2</p>
+				<p class="c999">（含运费：0.0）</p>
+				<p class="c999">支付宝</p>
+			</td>
+			<td width="250" class="aleft" valign="top" style="color:#555">
+				<p>【姓名】猪脸菲菲 <span class="c888">(15555555555)</span></p>
+				<p>【地址】天津河西区33333333333333</p>
+				<p>【留言】<span class="c888"></span></p>
+			</td>
+			<td width="80">
+				<img src="http://phpshe.com/demo/phpshe/template/default/admin/images/fu_0.png" title="">
+				<img src="http://phpshe.com/demo/phpshe/template/default/admin/images/huo_0.png" title="">
+				<p><a href="http://phpshe.com/demo/phpshe/admin.php?mod=order&amp;act=print_express&amp;id=170313141620325" class="cblue" onclick="return pe_dialog(this, &#39;打印快递单&#39;, 1000, 600)">[快递单]</a></p>
+			</td>
+			<td width="85"><del class="corg">交易关闭</del><p class="mat5"><a href="http://phpshe.com/demo/phpshe/admin.php?mod=order&amp;act=edit&amp;id=170313141620325" target="_blank" class="c999">订单详情</a></p></td>
+			<td width="85" style="border-right:0;">
+								<a href="http://phpshe.com/demo/phpshe/admin.php?mod=order&amp;act=del&amp;id=170313141620325&amp;token=09360b8c4d39343533c1675afcf3733e" onclick="return pe_cfone(this, &#39;删除订单&#39;)" class="c999">删除</a>
+							</td>
+		</tr>
+		</tbody></table>
+			</div>
+	
+</div>
+<script type="text/javascript" src="./订单列表 - 欢迎使用PHPSHE商城系统_files/WdatePicker.js"></script>
+	<div class="clear"></div>
+	<!--<div class="foot">Copyright <span class="num">©</span> 2008-2014 <a target="_blank" href="http://www.phpshe.com">灵宝简好网络科技有限公司</a> 版权所有</div>-->
+</div>
+<script type="text/javascript">
+function win_init() {
+	$(".left").add(".right").css("height", $(window).height() - $(".pagetop").height());
+	$(".now").css("width", $(".right_main").outerWidth());
+	//$(".right_main").css("height", $(window).height() -  $(".pagetop").height() - $(".now:eq(0)").outerHeight() - $(".right_bottom").outerHeight() + 38);
+}
+$(function(){
+	if ($(".right_bottom").height() == 0) {
+		$(".right_bottom").remove();
+	}
+	win_init();
+	$(window).resize(function() {
+		win_init();
+	});
+	$(".list").find("td").hover(
+		function(){
+			if ($(this).hasClass("bgtt") || $(this).is("[nosel=1]")) return;
+			$(this).parent("tr").children("td[nosel!=1]").css("background-color", "#fbfbfb");
+		},
+		function(){
+			if ($(this).hasClass("bgtt") || $(this).is("[nosel=1]")) return;
+			$(this).parent("tr").children("td[nosel!=1]").css("background-color", "#fff");
+		}
+	)
+})
+pe_loadscript("http://phpshe.com/demo/phpshe/index.php?mod=notice");
+</script>
+
+</body></html>

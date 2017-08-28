@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0086)http://phpshe.com/demo/phpshe/admin.php?mod=order&act=print_express&id=170815222159899 -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>打印快递单 - 欢迎使用PHPSHE商城系统</title>
+<link href="css/style.css" rel="stylesheet" media="screen" type="text/css">
+<link href="css/style.css" rel="stylesheet" media="print" type="text/css">
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/global.js"></script>
+<script type="text/javascript" src="js/jquery.printarea.js"></script>
+<style type="text/css">
+body{padding-bottom:50px !important;}
+#express_html{line-height:20px; font-size:14px; position:relative; display:block; color:#000}
+#express_logo{position:absolute; top:0; left:0; z-index:1px;}
+.order_tag{position:absolute; z-index:999; height:22px; width:120px; font-weight:bold}
+.foot_btn{position:fixed; display:block; bottom:0; left:0; height:45px; line-height:45px; width:100%; color:#fff; border-top:1px solid #ddd; background:#f2f2f2; text-align:center; font-size:14px; z-index:1;}
+.select_btn{display:block; padding:0 20px; border-right:1px solid #ddd}
+.select_btn.sel{background:#fff;color:#ff6600}
+.print_btn{background:#ffa500; font-weight:bold; text-align:center; color:#fff; display:block;}
+.print_btn:hover{color:#fff}
+@media print {#express2_logo {display:none;} }
+</style>
+</head>
+<body style="background:#fff;padding:5px;">
+<div style="width:203mm; height:113mm; margin:0 auto">
+<!--startprint1-->
+<div id="express_html" style="width:203mm; height:113mm;">
+	<div id="express_logo"><img src="images/20170819113310u.jpg" style="width:203mm; height:113mm;"></div>
+						<div class="order_tag" style="width:23.026075619295955mm;height:5.29335071707953mm;top:57.19024202627806mm;left:121.99850388269536mm"></div>	
+							<div class="order_tag" style="width:31.230769230769226mm;height:5.558018252933507mm;top:23.440721156233447mm;left:118.42549214866668mm"></div>	
+							<div class="order_tag" style="width:74.90091264667535mm;height:13.498044328552801mm;top:40.87349005628285mm;left:114.09375819637691mm"></div>	
+						<div class="order_tag" style="width:5.29335071707953mm;height:5.822685788787483mm;top:65.20084907302956mm;left:3.3524568003190693mm">√</div>	
+							<div class="order_tag" style="width:31.76010430247718mm;height:5.822685788787483mm;top:23.88624511082138mm;left:22.412933468974085mm">菲菲</div>	
+							<div class="order_tag" style="width:55.050847457627114mm;height:5.822685788787483mm;top:31.32340448372056mm;left:29.722161045596682mm">灵宝简好网络科技有限公司</div>	
+							<div class="order_tag" style="width:72.51890482398956mm;height:13.233376792698825mm;top:40.08830754604613mm;left:18.350277101200902mm">河南省灵宝市新华路同心堂东100米</div>	
+							<div class="order_tag" style="width:18.26205997392438mm;height:5.558018252933507mm;top:94.94947848761407mm;left:75.39936122372066mm"></div>	
+							<div class="order_tag" style="width:31.76010430247718mm;height:5.822685788787483mm;top:55.78309322988815mm;left:23.72303292524395mm">15839823500</div>	
+		</div>
+<!--endprint1-->
+</div>
+<div class="foot_btn">
+		<a href="http://phpshe.com/demo/phpshe/admin.php?mod=order&amp;act=print_express&amp;id=170815222159899&amp;express_id=1" class="fl select_btn sel">天天快递</a>
+		<a href="javascript:printhtml(1);" class="fr print_btn" style="width:20%">打印快递单 &gt;&gt;</a>
+</div>
+<script type="text/javascript">
+function printhtml(num) {  
+	if (num < 10) {
+		html = window.document.body.innerHTML;//获取当前页的html代码  
+		sprnstr = "<!--startprint"+num+"-->";//设置打印开始区域  
+		eprnstr = "<!--endprint"+num+"-->";//设置打印结束区域  
+		prnhtml = html.substring(html.indexOf(sprnstr)+18); //从开始代码向后取html  
+		prnhtml = prnhtml.substring(0, prnhtml.indexOf(eprnstr));//从结束代码向前取html  
+		window.document.body.innerHTML = prnhtml;  
+		window.print();  
+		window.document.body.innerHTML = html;  
+	}
+	else {
+		window.print();  
+	} 
+}
+$(function(){
+	$("select").change(function(){
+		window.location.href = 'admin.php' + $(this).find("option:selected").attr("href");
+	})
+})
+</script>
+
+</body></html>

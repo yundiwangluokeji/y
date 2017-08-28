@@ -1,0 +1,623 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0052)http://phpshe.com/demo/phpshe/admin.php?mod=pointlog -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>积分明细 - PHPSHE B2C商城系统演示站 - Powered by phpshe</title>
+<meta name="keywords" content="phpshe,php,shop,php商城系统,b2c商城系统,php商城源码,b2c商城源码,开源免费网上商城系统">
+<meta name="description" content="phpshe,php,shop,php商城系统,b2c商城系统,php商城源码,b2c商城源码,开源免费网上商城系统">
+<link rel="shortcut icon" type="image/ico" href="http://phpshe.com/demo/phpshe/favicon.ico">
+<link type="text/css" rel="stylesheet" href="css/style.css">
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/global.js"></script>
+<script type="text/javascript" src="js/arttpl.js"></script>
+<script type="text/javascript" src="js/layer.js"></script>
+<link rel="stylesheet" href="css/layer.css" id="layuicss-skinlayercss">
+</head>
+<body style="overflow-y:hidden">
+<div class="bgimg"></div>
+<div class="pagetop">
+	<div class="head">
+		<div class="logo fl"><img src="images/logo.png"></div>
+		<div class="head_r fr">
+			<a href="index.html" class="head_tb1" style="border-left:0"><s></s>概况</a>
+			<a href="Local template.html" class="head_tb8"><s></s>模板</a>
+			<a href="Guest.html" class="head_tb3"><s></s>统计</a>
+			<a href="backups.html" class="head_tb5"><s></s>备份</a>
+			<a href="cache.html" class="head_tb6"><s></s>缓存</a>
+			<a href="" target="_blank" class="head_tb7"><s></s>首页</a>
+			<a href="" class="head_tb2" style="background:none"><s></s>退出</a>
+		</div>
+		<div class="clear"></div>
+	</div>
+</div>
+<div class="content">
+	<div class="left" style="height: 894px;">
+				<div class="fenlei">
+			<h3 class="fl_tb1"><s></s>商品中心</h3>
+		<ul>
+								<li class=""><a href="product-list.html"><span>├</span>商品列表</a></li>
+								<li class=""><a href="Classification of goods.html"><span>├</span>商品分类</a></li>
+								<li class=""><a href="Brand management.html"><span>├</span>品牌管理</a></li>
+								<li class=""><a href="Specification management.html"><span>├</span>规格管理</a></li>
+								<li class=""><a href="A-Evaluation management.html"><span>├</span>评价管理</a></li>
+								<li class=""><a href="Coupon-list.html"><span>├</span>优 惠 券</a></li>
+								<li class=""><a href="Sales promotion-list.html"><span>├</span>促销活动</a></li>
+							</ul>
+			<div class="clear"></div>
+			<div class="xian"></div>		</div>
+				<div class="fenlei">
+			<h3 class="fl_tb3"><s></s>交易中心</h3>
+			<ul>
+								<li class=""><a href="A-Order list.html"><span>├</span>订单列表</a></li>
+								<li class=""><a href="Fund details.html"><span>├</span>资金明细</a></li>
+								<li class="sel"><a href="Integration details.html"><span>├</span>积分明细</a></li>
+								<li class=""><a href="Recharge record.html"><span>├</span>充值记录</a></li>
+								<li class=""><a href="Waiting for settlement.html"><span>├</span>提现管理</a></li>
+							</ul>
+			<div class="clear"></div>
+			<div class="xian"></div>		</div>
+				<div class="fenlei">
+			<h3 class="fl_tb4"><s></s>用户中心</h3>
+			<ul>
+								<li class=""><a href="Member list.html"><span>├</span>会员列表</a></li>
+								<li class=""><a href="Management list.html"><span>├</span>管 理 员</a></li>
+								<li class=""><a href="Administrative authority.html"><span>├</span>管理权限</a></li>
+							</ul>
+			<div class="clear"></div>
+			<div class="xian"></div>		</div>
+				<div class="fenlei">
+			<h3 class="fl_tb2"><s></s>文章中心</h3>
+			<ul>
+								<li class=""><a href="Article classification-I.html"><span>├</span>文章分类</a></li>
+								<li class=""><a href="Article list-I.html"><span>├</span>文章列表</a></li>
+							</ul>
+			<div class="clear"></div>
+			<div class="xian"></div>		</div>
+				<div class="fenlei">
+			<h3 class="fl_tb6"><s></s>控制面板</h3>
+			<ul>
+								<li class=""><a href="Site settings.html"><span>├</span>网站设置</a></li>
+								<li class=""><a href="WeChat settings.html"><span>├</span>微信设置</a></li>
+								<li class=""><a href="Payment settings.html"><span>├</span>支付设置</a></li>
+								<li class=""><a href="Navigation list.html"><span>├</span>导航管理</a></li>
+								<li class=""><a href="thp top ad1.html"><span>├</span>广告管理</a></li>
+								<li class=""><a href="link list.html"><span>├</span>友情链接</a></li>
+								<li class=""><a href="Express template.html"><span>├</span>运单模板</a></li>
+								<li class=""><a href="mess mail record.html"><span>├</span>短/邮记录</a></li>
+							</ul>
+			<div class="clear"></div>
+					</div>
+			</div><div class="right" style="height: 894px;">
+	<div class="now" style="width: 1679px;">
+		<a href="http://phpshe.com/demo/phpshe/admin.php?mod=pointlog" class="sel">积分明细（233）</a>
+		<div class="clear"></div>
+	</div>
+	<div class="right_main">
+		<div class="search">
+			<form method="get">
+				<input type="hidden" name="mod" value="pointlog">
+				用户名：<input type="text" name="user_name" value="" class="inputtext inputtext_100">
+				<select name="type" class="selectmini">
+				<option value="" href="?mod=pointlog">= 积分类型 =</option>
+								<option value="give" href="?mod=pointlog&amp;type=give">1)系统赠送</option>
+								<option value="add" href="?mod=pointlog&amp;type=add">2)系统充值</option>
+								<option value="back" href="?mod=pointlog&amp;type=back">3)交易退还</option>
+								<option value="order_pay" href="?mod=pointlog&amp;type=order_pay">4)抵现扣除</option>
+								<option value="del" href="?mod=pointlog&amp;type=del">5)系统扣除</option>
+								</select>
+				<input type="submit" value="搜索" class="input_btn">
+			</form>
+		</div>
+		<form method="post" id="form">
+		<table width="100%" border="0" cellspacing="0" cellpadding="0" class="list">
+		<tbody><tr>
+			<th class="bgtt" width="140">交易日期</th>
+			<th class="bgtt" width="150">用户名</th>
+			<th class="bgtt" width="100">交易类型</th>
+			<th class="bgtt" width="100">增加(点)</th>
+			<th class="bgtt" width="100">支出(点)</th>
+			<th class="bgtt" width="100">结余(点)</th>
+			<th class="bgtt">备注</th>
+		</tr>
+				<tr>
+			<td class="num" style="background-color: rgb(255, 255, 255);"><span>2017-08-15 18:59</span></td>
+			<td style="background-color: rgb(255, 255, 255);">xiaqianjing</td>
+			<td style="background-color: rgb(255, 255, 255);">系统赠送</td>
+			<td style="background-color: rgb(255, 255, 255);"><span class="num strong cgreen">+10</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span class="num strong cred"></span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span class="num">10</span></td>
+			<td style="background-color: rgb(255, 255, 255);">新用户注册</td>
+		</tr>
+				<tr>
+			<td class="num" style="background-color: rgb(255, 255, 255);"><span>2017-08-15 00:14</span></td>
+			<td style="background-color: rgb(255, 255, 255);">aaaaaaaa</td>
+			<td style="background-color: rgb(255, 255, 255);">系统赠送</td>
+			<td style="background-color: rgb(255, 255, 255);"><span class="num strong cgreen">+10</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span class="num strong cred"></span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span class="num">10</span></td>
+			<td style="background-color: rgb(255, 255, 255);">新用户注册</td>
+		</tr>
+				<tr>
+			<td class="num" style="background-color: rgb(255, 255, 255);"><span>2017-08-14 11:48</span></td>
+			<td style="background-color: rgb(255, 255, 255);">1234567</td>
+			<td style="background-color: rgb(255, 255, 255);">系统赠送</td>
+			<td style="background-color: rgb(255, 255, 255);"><span class="num strong cgreen">+10</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span class="num strong cred"></span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span class="num">10</span></td>
+			<td style="background-color: rgb(255, 255, 255);">新用户注册</td>
+		</tr>
+				<tr>
+			<td class="num" style="background-color: rgb(255, 255, 255);"><span>2017-08-13 21:17</span></td>
+			<td style="background-color: rgb(255, 255, 255);">wc924088479</td>
+			<td style="background-color: rgb(255, 255, 255);">系统赠送</td>
+			<td style="background-color: rgb(255, 255, 255);"><span class="num strong cgreen">+10</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span class="num strong cred"></span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span class="num">10</span></td>
+			<td style="background-color: rgb(255, 255, 255);">新用户注册</td>
+		</tr>
+				<tr>
+			<td class="num" style="background-color: rgb(255, 255, 255);"><span>2017-08-13 17:15</span></td>
+			<td style="background-color: rgb(255, 255, 255);">test123456</td>
+			<td style="background-color: rgb(255, 255, 255);">系统赠送</td>
+			<td style="background-color: rgb(255, 255, 255);"><span class="num strong cgreen">+10</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span class="num strong cred"></span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span class="num">10</span></td>
+			<td style="background-color: rgb(255, 255, 255);">新用户注册</td>
+		</tr>
+				<tr>
+			<td class="num" style="background-color: rgb(255, 255, 255);"><span>2017-08-11 14:20</span></td>
+			<td style="background-color: rgb(255, 255, 255);">LH122476</td>
+			<td style="background-color: rgb(255, 255, 255);">系统赠送</td>
+			<td style="background-color: rgb(255, 255, 255);"><span class="num strong cgreen">+10</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span class="num strong cred"></span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span class="num">10</span></td>
+			<td style="background-color: rgb(255, 255, 255);">新用户注册</td>
+		</tr>
+				<tr>
+			<td class="num" style="background-color: rgb(255, 255, 255);"><span>2017-08-09 06:50</span></td>
+			<td style="background-color: rgb(255, 255, 255);">zxcvbn</td>
+			<td style="background-color: rgb(255, 255, 255);">系统赠送</td>
+			<td style="background-color: rgb(255, 255, 255);"><span class="num strong cgreen">+10</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span class="num strong cred"></span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span class="num">10</span></td>
+			<td style="background-color: rgb(255, 255, 255);">新用户注册</td>
+		</tr>
+				<tr>
+			<td class="num" style="background-color: rgb(255, 255, 255);"><span>2017-08-07 14:25</span></td>
+			<td style="background-color: rgb(255, 255, 255);">songjun</td>
+			<td style="background-color: rgb(255, 255, 255);">系统赠送</td>
+			<td style="background-color: rgb(255, 255, 255);"><span class="num strong cgreen">+10</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span class="num strong cred"></span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span class="num">10</span></td>
+			<td style="background-color: rgb(255, 255, 255);">新用户注册</td>
+		</tr>
+				<tr>
+			<td class="num" style="background-color: rgb(255, 255, 255);"><span>2017-08-06 15:13</span></td>
+			<td style="background-color: rgb(255, 255, 255);">2169812672</td>
+			<td style="background-color: rgb(255, 255, 255);">系统赠送</td>
+			<td style="background-color: rgb(255, 255, 255);"><span class="num strong cgreen">+10</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span class="num strong cred"></span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span class="num">10</span></td>
+			<td style="background-color: rgb(255, 255, 255);">新用户注册</td>
+		</tr>
+				<tr>
+			<td class="num" style="background-color: rgb(255, 255, 255);"><span>2017-08-06 09:44</span></td>
+			<td style="background-color: rgb(255, 255, 255);">16888</td>
+			<td style="background-color: rgb(255, 255, 255);">系统赠送</td>
+			<td style="background-color: rgb(255, 255, 255);"><span class="num strong cgreen">+10</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span class="num strong cred"></span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span class="num">10</span></td>
+			<td style="background-color: rgb(255, 255, 255);">新用户注册</td>
+		</tr>
+				<tr>
+			<td class="num" style="background-color: rgb(255, 255, 255);"><span>2017-08-05 20:07</span></td>
+			<td style="background-color: rgb(255, 255, 255);">地狱之主小龙</td>
+			<td style="background-color: rgb(255, 255, 255);">系统赠送</td>
+			<td style="background-color: rgb(255, 255, 255);"><span class="num strong cgreen">+10</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span class="num strong cred"></span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span class="num">10</span></td>
+			<td style="background-color: rgb(255, 255, 255);">新用户注册</td>
+		</tr>
+				<tr>
+			<td class="num" style="background-color: rgb(255, 255, 255);"><span>2017-08-05 20:01</span></td>
+			<td style="background-color: rgb(255, 255, 255);">a11029749</td>
+			<td style="background-color: rgb(255, 255, 255);">系统赠送</td>
+			<td style="background-color: rgb(255, 255, 255);"><span class="num strong cgreen">+10</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span class="num strong cred"></span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span class="num">10</span></td>
+			<td style="background-color: rgb(255, 255, 255);">新用户注册</td>
+		</tr>
+				<tr>
+			<td class="num" style="background-color: rgb(255, 255, 255);"><span>2017-08-04 18:25</span></td>
+			<td style="background-color: rgb(255, 255, 255);">butian</td>
+			<td style="background-color: rgb(255, 255, 255);">系统赠送</td>
+			<td style="background-color: rgb(255, 255, 255);"><span class="num strong cgreen">+10</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span class="num strong cred"></span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span class="num">10</span></td>
+			<td style="background-color: rgb(255, 255, 255);">新用户注册</td>
+		</tr>
+				<tr>
+			<td class="num" style="background-color: rgb(255, 255, 255);"><span>2017-08-03 15:17</span></td>
+			<td style="background-color: rgb(255, 255, 255);">cs312</td>
+			<td style="background-color: rgb(255, 255, 255);">系统赠送</td>
+			<td style="background-color: rgb(255, 255, 255);"><span class="num strong cgreen">+10</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span class="num strong cred"></span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span class="num">10</span></td>
+			<td style="background-color: rgb(255, 255, 255);">新用户注册</td>
+		</tr>
+				<tr>
+			<td class="num" style="background-color: rgb(255, 255, 255);"><span>2017-08-01 16:02</span></td>
+			<td style="background-color: rgb(255, 255, 255);">RRRRR</td>
+			<td style="background-color: rgb(255, 255, 255);">系统赠送</td>
+			<td style="background-color: rgb(255, 255, 255);"><span class="num strong cgreen">+10</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span class="num strong cred"></span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span class="num">10</span></td>
+			<td style="background-color: rgb(255, 255, 255);">新用户注册</td>
+		</tr>
+				<tr>
+			<td class="num" style="background-color: rgb(255, 255, 255);"><span>2017-08-01 11:44</span></td>
+			<td style="background-color: rgb(255, 255, 255);">2568361827</td>
+			<td style="background-color: rgb(255, 255, 255);">系统赠送</td>
+			<td style="background-color: rgb(255, 255, 255);"><span class="num strong cgreen">+10</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span class="num strong cred"></span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span class="num">10</span></td>
+			<td style="background-color: rgb(255, 255, 255);">新用户注册</td>
+		</tr>
+				<tr>
+			<td class="num" style="background-color: rgb(255, 255, 255);"><span>2017-07-26 10:15</span></td>
+			<td style="background-color: rgb(255, 255, 255);">yyyyyy</td>
+			<td style="background-color: rgb(255, 255, 255);">系统赠送</td>
+			<td style="background-color: rgb(255, 255, 255);"><span class="num strong cgreen">+10</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span class="num strong cred"></span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span class="num">10</span></td>
+			<td style="background-color: rgb(255, 255, 255);">新用户注册</td>
+		</tr>
+				<tr>
+			<td class="num" style="background-color: rgb(255, 255, 255);"><span>2017-07-25 13:48</span></td>
+			<td style="background-color: rgb(255, 255, 255);">jijiji</td>
+			<td style="background-color: rgb(255, 255, 255);">系统赠送</td>
+			<td style="background-color: rgb(255, 255, 255);"><span class="num strong cgreen">+10</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span class="num strong cred"></span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span class="num">10</span></td>
+			<td style="background-color: rgb(255, 255, 255);">新用户注册</td>
+		</tr>
+				<tr>
+			<td class="num" style="background-color: rgb(255, 255, 255);"><span>2017-07-23 16:20</span></td>
+			<td style="background-color: rgb(255, 255, 255);">yangsirno1</td>
+			<td style="background-color: rgb(255, 255, 255);">系统赠送</td>
+			<td style="background-color: rgb(255, 255, 255);"><span class="num strong cgreen">+10</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span class="num strong cred"></span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span class="num">10</span></td>
+			<td style="background-color: rgb(255, 255, 255);">新用户注册</td>
+		</tr>
+				<tr>
+			<td class="num"><span>2017-07-22 17:22</span></td>
+			<td>a123567</td>
+			<td>系统赠送</td>
+			<td><span class="num strong cgreen">+10</span></td>
+			<td><span class="num strong cred"></span></td>
+			<td><span class="num">10</span></td>
+			<td>新用户注册</td>
+		</tr>
+				<tr>
+			<td class="num"><span>2017-07-20 15:02</span></td>
+			<td>mm123</td>
+			<td>系统赠送</td>
+			<td><span class="num strong cgreen">+10</span></td>
+			<td><span class="num strong cred"></span></td>
+			<td><span class="num">10</span></td>
+			<td>新用户注册</td>
+		</tr>
+				<tr>
+			<td class="num"><span>2017-07-20 10:40</span></td>
+			<td>admin</td>
+			<td>系统赠送</td>
+			<td><span class="num strong cgreen">+10</span></td>
+			<td><span class="num strong cred"></span></td>
+			<td><span class="num">10</span></td>
+			<td>新用户注册</td>
+		</tr>
+				<tr>
+			<td class="num"><span>2017-07-20 01:47</span></td>
+			<td>bichengs</td>
+			<td>系统赠送</td>
+			<td><span class="num strong cgreen">+10</span></td>
+			<td><span class="num strong cred"></span></td>
+			<td><span class="num">10</span></td>
+			<td>新用户注册</td>
+		</tr>
+				<tr>
+			<td class="num"><span>2017-07-20 01:37</span></td>
+			<td>xiaoming</td>
+			<td>系统赠送</td>
+			<td><span class="num strong cgreen">+10</span></td>
+			<td><span class="num strong cred"></span></td>
+			<td><span class="num">10</span></td>
+			<td>新用户注册</td>
+		</tr>
+				<tr>
+			<td class="num"><span>2017-07-18 11:42</span></td>
+			<td>adminn</td>
+			<td>系统赠送</td>
+			<td><span class="num strong cgreen">+10</span></td>
+			<td><span class="num strong cred"></span></td>
+			<td><span class="num">10</span></td>
+			<td>新用户注册</td>
+		</tr>
+				<tr>
+			<td class="num"><span>2017-07-07 14:11</span></td>
+			<td>1716320035</td>
+			<td>系统赠送</td>
+			<td><span class="num strong cgreen">+10</span></td>
+			<td><span class="num strong cred"></span></td>
+			<td><span class="num">10</span></td>
+			<td>新用户注册</td>
+		</tr>
+				<tr>
+			<td class="num"><span>2017-07-06 16:17</span></td>
+			<td>13804907420</td>
+			<td>系统赠送</td>
+			<td><span class="num strong cgreen">+50</span></td>
+			<td><span class="num strong cred"></span></td>
+			<td><span class="num">60</span></td>
+			<td>发表评价获得，单号【170706161644086】</td>
+		</tr>
+				<tr>
+			<td class="num"><span>2017-07-06 16:15</span></td>
+			<td>13804907420</td>
+			<td>系统赠送</td>
+			<td><span class="num strong cgreen">+10</span></td>
+			<td><span class="num strong cred"></span></td>
+			<td><span class="num">10</span></td>
+			<td>新用户注册</td>
+		</tr>
+				<tr>
+			<td class="num"><span>2017-06-19 15:21</span></td>
+			<td>zhangsan</td>
+			<td>系统赠送</td>
+			<td><span class="num strong cgreen">+10</span></td>
+			<td><span class="num strong cred"></span></td>
+			<td><span class="num">10</span></td>
+			<td>新用户注册</td>
+		</tr>
+				<tr>
+			<td class="num"><span>2017-06-18 23:50</span></td>
+			<td>mirat</td>
+			<td>系统赠送</td>
+			<td><span class="num strong cgreen">+10</span></td>
+			<td><span class="num strong cred"></span></td>
+			<td><span class="num">10</span></td>
+			<td>新用户注册</td>
+		</tr>
+				<tr>
+			<td class="num"><span>2017-06-17 21:31</span></td>
+			<td>22www</td>
+			<td>系统赠送</td>
+			<td><span class="num strong cgreen">+10</span></td>
+			<td><span class="num strong cred"></span></td>
+			<td><span class="num">10</span></td>
+			<td>新用户注册</td>
+		</tr>
+				<tr>
+			<td class="num"><span>2017-06-17 11:50</span></td>
+			<td>xxflzj</td>
+			<td>系统赠送</td>
+			<td><span class="num strong cgreen">+10</span></td>
+			<td><span class="num strong cred"></span></td>
+			<td><span class="num">10</span></td>
+			<td>新用户注册</td>
+		</tr>
+				<tr>
+			<td class="num"><span>2017-06-17 11:36</span></td>
+			<td>sedel</td>
+			<td>系统赠送</td>
+			<td><span class="num strong cgreen">+10</span></td>
+			<td><span class="num strong cred"></span></td>
+			<td><span class="num">10</span></td>
+			<td>新用户注册</td>
+		</tr>
+				<tr>
+			<td class="num"><span>2017-06-15 23:26</span></td>
+			<td>zhailiancan</td>
+			<td>系统赠送</td>
+			<td><span class="num strong cgreen">+10</span></td>
+			<td><span class="num strong cred"></span></td>
+			<td><span class="num">10</span></td>
+			<td>新用户注册</td>
+		</tr>
+				<tr>
+			<td class="num"><span>2017-06-15 11:24</span></td>
+			<td>attrib</td>
+			<td>系统赠送</td>
+			<td><span class="num strong cgreen">+10</span></td>
+			<td><span class="num strong cred"></span></td>
+			<td><span class="num">10</span></td>
+			<td>新用户注册</td>
+		</tr>
+				<tr>
+			<td class="num"><span>2017-06-14 22:50</span></td>
+			<td>111111</td>
+			<td>系统赠送</td>
+			<td><span class="num strong cgreen">+10</span></td>
+			<td><span class="num strong cred"></span></td>
+			<td><span class="num">10</span></td>
+			<td>新用户注册</td>
+		</tr>
+				<tr>
+			<td class="num"><span>2017-06-13 17:13</span></td>
+			<td>whoami</td>
+			<td>系统赠送</td>
+			<td><span class="num strong cgreen">+10</span></td>
+			<td><span class="num strong cred"></span></td>
+			<td><span class="num">10</span></td>
+			<td>新用户注册</td>
+		</tr>
+				<tr>
+			<td class="num"><span>2017-06-13 10:42</span></td>
+			<td>liuxiang</td>
+			<td>系统赠送</td>
+			<td><span class="num strong cgreen">+10</span></td>
+			<td><span class="num strong cred"></span></td>
+			<td><span class="num">10</span></td>
+			<td>新用户注册</td>
+		</tr>
+				<tr>
+			<td class="num"><span>2017-06-12 20:18</span></td>
+			<td>963kk</td>
+			<td>系统赠送</td>
+			<td><span class="num strong cgreen">+10</span></td>
+			<td><span class="num strong cred"></span></td>
+			<td><span class="num">10</span></td>
+			<td>新用户注册</td>
+		</tr>
+				<tr>
+			<td class="num"><span>2017-06-11 18:23</span></td>
+			<td>123456</td>
+			<td>系统赠送</td>
+			<td><span class="num strong cgreen">+2</span></td>
+			<td><span class="num strong cred"></span></td>
+			<td><span class="num">12</span></td>
+			<td>每日登录</td>
+		</tr>
+				<tr>
+			<td class="num"><span>2017-06-11 16:48</span></td>
+			<td>123456</td>
+			<td>系统赠送</td>
+			<td><span class="num strong cgreen">+10</span></td>
+			<td><span class="num strong cred"></span></td>
+			<td><span class="num">10</span></td>
+			<td>新用户注册</td>
+		</tr>
+				<tr>
+			<td class="num"><span>2017-05-04 17:13</span></td>
+			<td>迪迪234</td>
+			<td>抵现扣除</td>
+			<td><span class="num strong cgreen"></span></td>
+			<td><span class="num strong cred">-10</span></td>
+			<td><span class="num">0</span></td>
+			<td>订单支付抵现，单号【170504171311120】</td>
+		</tr>
+				<tr>
+			<td class="num"><span>2017-05-04 17:10</span></td>
+			<td>迪迪234</td>
+			<td>系统赠送</td>
+			<td><span class="num strong cgreen">+10</span></td>
+			<td><span class="num strong cred"></span></td>
+			<td><span class="num">10</span></td>
+			<td>新用户注册</td>
+		</tr>
+				<tr>
+			<td class="num"><span>2017-05-03 10:36</span></td>
+			<td>feier</td>
+			<td>交易退还</td>
+			<td><span class="num strong cgreen">+100</span></td>
+			<td><span class="num strong cred"></span></td>
+			<td><span class="num">1012</span></td>
+			<td>订单取消退还，单号【170503103514279】</td>
+		</tr>
+				<tr>
+			<td class="num"><span>2017-05-03 10:35</span></td>
+			<td>feier</td>
+			<td>抵现扣除</td>
+			<td><span class="num strong cgreen"></span></td>
+			<td><span class="num strong cred">-100</span></td>
+			<td><span class="num">912</span></td>
+			<td>订单支付抵现，单号【170503103514279】</td>
+		</tr>
+				<tr>
+			<td class="num"><span>2017-05-03 10:34</span></td>
+			<td>feier</td>
+			<td>交易退还</td>
+			<td><span class="num strong cgreen">+10</span></td>
+			<td><span class="num strong cred"></span></td>
+			<td><span class="num">1012</span></td>
+			<td>订单取消退还，单号【170502172123132】</td>
+		</tr>
+				<tr>
+			<td class="num"><span>2017-05-02 17:21</span></td>
+			<td>feier</td>
+			<td>抵现扣除</td>
+			<td><span class="num strong cgreen"></span></td>
+			<td><span class="num strong cred">-10</span></td>
+			<td><span class="num">1002</span></td>
+			<td>订单支付抵现，单号【170502172123132】</td>
+		</tr>
+				<tr>
+			<td class="num"><span>2017-05-02 17:16</span></td>
+			<td>feier</td>
+			<td>交易退还</td>
+			<td><span class="num strong cgreen">+12</span></td>
+			<td><span class="num strong cred"></span></td>
+			<td><span class="num">1012</span></td>
+			<td>订单取消退还，单号【170502170442879】</td>
+		</tr>
+				<tr>
+			<td class="num"><span>2017-05-02 17:08</span></td>
+			<td>feier</td>
+			<td>系统充值</td>
+			<td><span class="num strong cgreen">+1000</span></td>
+			<td><span class="num strong cred"></span></td>
+			<td><span class="num">1000</span></td>
+			<td>11</td>
+		</tr>
+				<tr>
+			<td class="num"><span>2017-05-02 17:04</span></td>
+			<td>feier</td>
+			<td>抵现扣除</td>
+			<td><span class="num strong cgreen"></span></td>
+			<td><span class="num strong cred">-12</span></td>
+			<td><span class="num">0</span></td>
+			<td>订单支付抵现，单号【170502170442879】</td>
+		</tr>
+				</tbody></table>
+		</form>
+	</div>
+	<div class="right_bottom">
+		<span class="fr fenye"><a href="http://phpshe.com/demo/phpshe/admin.php?mod=pointlog&amp;page=1">首页</a><a href="http://phpshe.com/demo/phpshe/admin.php?mod=pointlog&amp;page=1" class="sel">1</a><a href="http://phpshe.com/demo/phpshe/admin.php?mod=pointlog&amp;page=2">2</a><a href="http://phpshe.com/demo/phpshe/admin.php?mod=pointlog&amp;page=3">3</a><a href="http://phpshe.com/demo/phpshe/admin.php?mod=pointlog&amp;page=4">4</a><a href="http://phpshe.com/demo/phpshe/admin.php?mod=pointlog&amp;page=5">5</a><a href="http://phpshe.com/demo/phpshe/admin.php?mod=pointlog&amp;page=5">末页</a><style type="text/css">
+.fenye{text-align:right;}
+.fenye a{border:1px #ccc solid; padding:0 10px; border-radius:2px; color:#666; background:#fff;display:inline-block;  height:24px; line-height:24px; font-weight:normal; margin-left:3px;}
+.fenye a:hover,.fenye .sel{background:#1DABDF; color:#fff; border:1px #0D95C7 solid;  padding:0 10px;}
+.fenye .sel{ font-weight:bold;}
+</style></span>
+		<div class="clear"></div>
+	</div>
+</div>
+<script type="text/javascript">
+$(function(){
+	$("select").change(function(){
+		window.location.href = 'admin.php' + $(this).find("option:selected").attr("href");
+	})
+})
+</script>
+	<div class="clear"></div>
+	<!--<div class="foot">Copyright <span class="num">©</span> 2008-2014 <a target="_blank" href="http://www.phpshe.com">灵宝简好网络科技有限公司</a> 版权所有</div>-->
+</div>
+<script type="text/javascript">
+function win_init() {
+	$(".left").add(".right").css("height", $(window).height() - $(".pagetop").height());
+	$(".now").css("width", $(".right_main").outerWidth());
+	//$(".right_main").css("height", $(window).height() -  $(".pagetop").height() - $(".now:eq(0)").outerHeight() - $(".right_bottom").outerHeight() + 38);
+}
+$(function(){
+	if ($(".right_bottom").height() == 0) {
+		$(".right_bottom").remove();
+	}
+	win_init();
+	$(window).resize(function() {
+		win_init();
+	});
+	$(".list").find("td").hover(
+		function(){
+			if ($(this).hasClass("bgtt") || $(this).is("[nosel=1]")) return;
+			$(this).parent("tr").children("td[nosel!=1]").css("background-color", "#fbfbfb");
+		},
+		function(){
+			if ($(this).hasClass("bgtt") || $(this).is("[nosel=1]")) return;
+			$(this).parent("tr").children("td[nosel!=1]").css("background-color", "#fff");
+		}
+	)
+})
+pe_loadscript("http://phpshe.com/demo/phpshe/index.php?mod=notice");
+</script>
+
+</body></html>

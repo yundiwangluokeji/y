@@ -1,0 +1,507 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0060)http://phpshe.com/demo/phpshe/admin.php?mod=tongji&act=order -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>订单统计 - 欢迎使用PHPSHE商城系统</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<link rel="shortcut icon" type="image/ico" href="http://phpshe.com/demo/phpshe/favicon.ico">
+<link type="text/css" rel="stylesheet" href="css/style.css">
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/global.js"></script>
+<script type="text/javascript" src="js/arttpl.js"></script>
+<script type="text/javascript" src="js/layer.js"></script>
+<link rel="stylesheet" href="css/layer.css" id="layuicss-skinlayercss">
+<link href="css/WdatePicker.css" rel="stylesheet" type="text/css"></head>
+<body style="overflow-y:hidden">
+<div class="bgimg"></div>
+<div class="pagetop">
+	<div class="head">
+		<div class="logo fl"><img src="images/logo.png"></div>
+		<div class="head_r fr">
+			<a href="index.html" class="head_tb1" style="border-left:0"><s></s>概况</a>
+			<a href="Local template.html" class="head_tb8"><s></s>模板</a>
+			<a href="Guest.html" class="head_tb3"><s></s>统计</a>
+			<a href="backups.html" class="head_tb5"><s></s>备份</a>
+			<a href="cache.html" class="head_tb6"><s></s>缓存</a>
+			<a href="" target="_blank" class="head_tb7"><s></s>首页</a>
+			<a href="" class="head_tb2" style="background:none"><s></s>退出</a>
+		</div>
+		<div class="clear"></div>
+	</div>
+</div>
+<div class="content">
+	<div class="left" style="height: 894px;">
+				<div class="fenlei">
+			<h3 class="fl_tb1"><s></s>商品中心</h3>
+		<ul>
+								<li class=""><a href="product-list.html"><span>├</span>商品列表</a></li>
+								<li class=""><a href="Classification of goods.html"><span>├</span>商品分类</a></li>
+								<li class=""><a href="Brand management.html"><span>├</span>品牌管理</a></li>
+								<li class=""><a href="Specification management.html"><span>├</span>规格管理</a></li>
+								<li class=""><a href="A-Evaluation management.html"><span>├</span>评价管理</a></li>
+								<li class=""><a href="Coupon-list.html"><span>├</span>优 惠 券</a></li>
+								<li class=""><a href="Sales promotion-list.html"><span>├</span>促销活动</a></li>
+							</ul>
+			<div class="clear"></div>
+			<div class="xian"></div>		</div>
+				<div class="fenlei">
+			<h3 class="fl_tb3"><s></s>交易中心</h3>
+			<ul>
+								<li class=""><a href="A-Order list.html"><span>├</span>订单列表</a></li>
+								<li class=""><a href="Fund details.html"><span>├</span>资金明细</a></li>
+								<li class=""><a href="Integration details.html"><span>├</span>积分明细</a></li>
+								<li class=""><a href="Recharge record.html"><span>├</span>充值记录</a></li>
+								<li class=""><a href="Waiting for settlement.html"><span>├</span>提现管理</a></li>
+							</ul>
+			<div class="clear"></div>
+			<div class="xian"></div>		</div>
+				<div class="fenlei">
+			<h3 class="fl_tb4"><s></s>用户中心</h3>
+			<ul>
+								<li class=""><a href="Member list.html"><span>├</span>会员列表</a></li>
+								<li class=""><a href="Management list.html"><span>├</span>管 理 员</a></li>
+								<li class=""><a href="Administrative authority.html"><span>├</span>管理权限</a></li>
+							</ul>
+			<div class="clear"></div>
+			<div class="xian"></div>		</div>
+				<div class="fenlei">
+			<h3 class="fl_tb2"><s></s>文章中心</h3>
+			<ul>
+								<li class=""><a href="Article classification-I.html"><span>├</span>文章分类</a></li>
+								<li class=""><a href="Article list-I.html"><span>├</span>文章列表</a></li>
+							</ul>
+			<div class="clear"></div>
+			<div class="xian"></div>		</div>
+				<div class="fenlei">
+			<h3 class="fl_tb6"><s></s>控制面板</h3>
+			<ul>
+								<li class=""><a href="Site settings.html"><span>├</span>网站设置</a></li>
+								<li class=""><a href="WeChat settings.html"><span>├</span>微信设置</a></li>
+								<li class=""><a href="Payment settings.html"><span>├</span>支付设置</a></li>
+								<li class=""><a href="Navigation list.html"><span>├</span>导航管理</a></li>
+								<li class=""><a href="thp top ad1.html"><span>├</span>广告管理</a></li>
+								<li class=""><a href="link list.html"><span>├</span>友情链接</a></li>
+								<li class=""><a href="Express template.html"><span>├</span>运单模板</a></li>
+								<li class=""><a href="mess mail record.html"><span>├</span>短/邮记录</a></li>
+							</ul>
+			<div class="clear"></div>
+					</div>
+			</div><div class="right" style="height: 894px;">
+	<div class="now" style="width: 1679px;">
+	<a href="Guest.html">访客统计</a>
+	<a href="Order statistics.html" class="sel">订单统计</a>
+	<a href="Top selling.html">热销排行</a>
+	<a href="Consumption ranking.html">消费排行</a>
+	<div class="clear"></div>
+</div>	
+	<div class="right_main">
+		<div class="search">
+			<form method="get">
+				<input type="hidden" name="mod" value="tongji">
+				<input type="hidden" name="act" value="order">
+				日期从：<input type="text" name="date1" value="2017-07-17" onfocus="WdatePicker({dateFmt:&#39;yyyy-MM-dd&#39;})" style="height:22px" class="Wdate inputtext input100">
+				至 <input type="text" name="date2" value="2017-08-16" onfocus="WdatePicker({dateFmt:&#39;yyyy-MM-dd&#39;})" style="height:22px" class="Wdate inputtext input100">
+				<input type="submit" value="搜索" class="input_btn">
+			</form>
+		</div>
+		<form method="post" id="form">
+		<table border="0" cellspacing="0" cellpadding="0" class="list">
+		<tbody><tr>
+			<td class="bgtt" rowspan="2" style="border-left:0">统计日期<p class="mat5 cblue font13">（2017-07-17 至 2017-08-16）</p></td>
+			<td class="bgtt" colspan="2">新增订单</td>
+			<td class="bgtt" colspan="2">付款订单</td>
+			<td class="bgtt" colspan="2">发货订单</td>
+			<td class="bgtt" colspan="2" style="border-right:0">成交订单</td>
+		</tr>
+		<tr>
+			<td class="bgtt" width="80">数量<br>（66笔）</td>
+			<td class="bgtt" width="100">金额<br>（17693元）</td>
+			<td class="bgtt" width="80">数量<br>（17笔）</td>
+			<td class="bgtt" width="100">金额<br>（6445元）</td>
+			<td class="bgtt" width="80">数量<br>（9笔）</td>
+			<td class="bgtt" width="100">金额<br>（3559元）</td>
+			<td class="bgtt" width="80">数量<br>（3笔）</td>
+			<td class="bgtt" width="100" style="border-right:0">金额<br>（1716元）</td>
+		</tr>
+				<tr>
+			<td style="border-left-width: 0px; background-color: rgb(255, 255, 255);">2017-08-16</td>
+			<td style="background-color: rgb(255, 255, 255);"><span style="color:green">1</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span style="color:red">139</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span style="color:green">-</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span style="color:red">-</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span style="color:green">-</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span style="color:red">-</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span style="color:green">-</span></td>
+			<td style="border-right-width: 0px; background-color: rgb(255, 255, 255);"><span style="color:red">-</span></td>
+		</tr>
+				<tr>
+			<td style="border-left-width: 0px; background-color: rgb(255, 255, 255);">2017-08-15</td>
+			<td style="background-color: rgb(255, 255, 255);"><span style="color:green">4</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span style="color:red">985</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span style="color:green">3</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span style="color:red">548</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span style="color:green">2</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span style="color:red">400</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span style="color:green">1</span></td>
+			<td style="border-right-width: 0px; background-color: rgb(255, 255, 255);"><span style="color:red">180</span></td>
+		</tr>
+				<tr>
+			<td style="border-left-width: 0px; background-color: rgb(255, 255, 255);">2017-08-14</td>
+			<td style="background-color: rgb(255, 255, 255);"><span style="color:green">-</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span style="color:red">-</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span style="color:green">1</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span style="color:red">180</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span style="color:green">-</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span style="color:red">-</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span style="color:green">-</span></td>
+			<td style="border-right-width: 0px; background-color: rgb(255, 255, 255);"><span style="color:red">-</span></td>
+		</tr>
+				<tr>
+			<td style="border-left-width: 0px; background-color: rgb(255, 255, 255);">2017-08-13</td>
+			<td style="background-color: rgb(255, 255, 255);"><span style="color:green">1</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span style="color:red">180</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span style="color:green">-</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span style="color:red">-</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span style="color:green">-</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span style="color:red">-</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span style="color:green">-</span></td>
+			<td style="border-right-width: 0px; background-color: rgb(255, 255, 255);"><span style="color:red">-</span></td>
+		</tr>
+				<tr>
+			<td style="border-left-width: 0px; background-color: rgb(255, 255, 255);">2017-08-12</td>
+			<td style="background-color: rgb(255, 255, 255);"><span style="color:green">3</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span style="color:red">237</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span style="color:green">-</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span style="color:red">-</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span style="color:green">-</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span style="color:red">-</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span style="color:green">-</span></td>
+			<td style="border-right-width: 0px; background-color: rgb(255, 255, 255);"><span style="color:red">-</span></td>
+		</tr>
+				<tr>
+			<td style="border-left-width: 0px; background-color: rgb(255, 255, 255);">2017-08-11</td>
+			<td style="background-color: rgb(255, 255, 255);"><span style="color:green">2</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span style="color:red">776</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span style="color:green">-</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span style="color:red">-</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span style="color:green">-</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span style="color:red">-</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span style="color:green">-</span></td>
+			<td style="border-right-width: 0px; background-color: rgb(255, 255, 255);"><span style="color:red">-</span></td>
+		</tr>
+				<tr>
+			<td style="border-left-width: 0px; background-color: rgb(255, 255, 255);">2017-08-10</td>
+			<td style="background-color: rgb(255, 255, 255);"><span style="color:green">2</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span style="color:red">359</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span style="color:green">2</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span style="color:red">694</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span style="color:green">2</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span style="color:red">694</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span style="color:green">-</span></td>
+			<td style="border-right-width: 0px; background-color: rgb(255, 255, 255);"><span style="color:red">-</span></td>
+		</tr>
+				<tr>
+			<td style="border-left-width: 0px; background-color: rgb(255, 255, 255);">2017-08-09</td>
+			<td style="background-color: rgb(255, 255, 255);"><span style="color:green">1</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span style="color:red">128</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span style="color:green">1</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span style="color:red">128</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span style="color:green">1</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span style="color:red">128</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span style="color:green">1</span></td>
+			<td style="border-right-width: 0px; background-color: rgb(255, 255, 255);"><span style="color:red">128</span></td>
+		</tr>
+				<tr>
+			<td style="border-left-width: 0px; background-color: rgb(255, 255, 255);">2017-08-08</td>
+			<td style="background-color: rgb(255, 255, 255);"><span style="color:green">1</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span style="color:red">438</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span style="color:green">-</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span style="color:red">-</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span style="color:green">-</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span style="color:red">-</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span style="color:green">-</span></td>
+			<td style="border-right-width: 0px; background-color: rgb(255, 255, 255);"><span style="color:red">-</span></td>
+		</tr>
+				<tr>
+			<td style="border-left-width: 0px; background-color: rgb(255, 255, 255);">2017-08-07</td>
+			<td style="background-color: rgb(255, 255, 255);"><span style="color:green">1</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span style="color:red">220</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span style="color:green">1</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span style="color:red">278</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span style="color:green">-</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span style="color:red">-</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span style="color:green">-</span></td>
+			<td style="border-right-width: 0px; background-color: rgb(255, 255, 255);"><span style="color:red">-</span></td>
+		</tr>
+				<tr>
+			<td style="border-left-width: 0px; background-color: rgb(255, 255, 255);">2017-08-06</td>
+			<td style="background-color: rgb(255, 255, 255);"><span style="color:green">4</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span style="color:red">873</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span style="color:green">-</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span style="color:red">-</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span style="color:green">-</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span style="color:red">-</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span style="color:green">-</span></td>
+			<td style="border-right-width: 0px; background-color: rgb(255, 255, 255);"><span style="color:red">-</span></td>
+		</tr>
+				<tr>
+			<td style="border-left-width: 0px; background-color: rgb(255, 255, 255);">2017-08-05</td>
+			<td style="background-color: rgb(255, 255, 255);"><span style="color:green">3</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span style="color:red">615</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span style="color:green">1</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span style="color:red">128</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span style="color:green">1</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span style="color:red">220</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span style="color:green">-</span></td>
+			<td style="border-right-width: 0px; background-color: rgb(255, 255, 255);"><span style="color:red">-</span></td>
+		</tr>
+				<tr>
+			<td style="border-left-width: 0px; background-color: rgb(255, 255, 255);">2017-08-04</td>
+			<td style="background-color: rgb(255, 255, 255);"><span style="color:green">3</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span style="color:red">577</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span style="color:green">-</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span style="color:red">-</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span style="color:green">-</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span style="color:red">-</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span style="color:green">-</span></td>
+			<td style="border-right-width: 0px; background-color: rgb(255, 255, 255);"><span style="color:red">-</span></td>
+		</tr>
+				<tr>
+			<td style="border-left-width: 0px; background-color: rgb(255, 255, 255);">2017-08-03</td>
+			<td style="background-color: rgb(255, 255, 255);"><span style="color:green">9</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span style="color:red">3428</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span style="color:green">-</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span style="color:red">-</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span style="color:green">-</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span style="color:red">-</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span style="color:green">-</span></td>
+			<td style="border-right-width: 0px; background-color: rgb(255, 255, 255);"><span style="color:red">-</span></td>
+		</tr>
+				<tr>
+			<td style="border-left-width: 0px; background-color: rgb(255, 255, 255);">2017-08-02</td>
+			<td style="background-color: rgb(255, 255, 255);"><span style="color:green">1</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span style="color:red">220</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span style="color:green">-</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span style="color:red">-</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span style="color:green">-</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span style="color:red">-</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span style="color:green">-</span></td>
+			<td style="border-right-width: 0px; background-color: rgb(255, 255, 255);"><span style="color:red">-</span></td>
+		</tr>
+				<tr>
+			<td style="border-left-width: 0px; background-color: rgb(255, 255, 255);">2017-08-01</td>
+			<td style="background-color: rgb(255, 255, 255);"><span style="color:green">1</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span style="color:red">128</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span style="color:green">-</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span style="color:red">-</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span style="color:green">-</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span style="color:red">-</span></td>
+			<td style="background-color: rgb(255, 255, 255);"><span style="color:green">-</span></td>
+			<td style="border-right-width: 0px; background-color: rgb(255, 255, 255);"><span style="color:red">-</span></td>
+		</tr>
+				<tr>
+			<td style="border-left:0">2017-07-31</td>
+			<td><span style="color:green">-</span></td>
+			<td><span style="color:red">-</span></td>
+			<td><span style="color:green">2</span></td>
+			<td><span style="color:red">1506</span></td>
+			<td><span style="color:green">1</span></td>
+			<td><span style="color:red">1408</span></td>
+			<td><span style="color:green">1</span></td>
+			<td style="border-right:0"><span style="color:red">1408</span></td>
+		</tr>
+				<tr>
+			<td style="border-left:0">2017-07-30</td>
+			<td><span style="color:green">2</span></td>
+			<td><span style="color:red">198</span></td>
+			<td><span style="color:green">-</span></td>
+			<td><span style="color:red">-</span></td>
+			<td><span style="color:green">-</span></td>
+			<td><span style="color:red">-</span></td>
+			<td><span style="color:green">-</span></td>
+			<td style="border-right:0"><span style="color:red">-</span></td>
+		</tr>
+				<tr>
+			<td style="border-left:0">2017-07-29</td>
+			<td><span style="color:green">1</span></td>
+			<td><span style="color:red">139</span></td>
+			<td><span style="color:green">-</span></td>
+			<td><span style="color:red">-</span></td>
+			<td><span style="color:green">-</span></td>
+			<td><span style="color:red">-</span></td>
+			<td><span style="color:green">-</span></td>
+			<td style="border-right:0"><span style="color:red">-</span></td>
+		</tr>
+				<tr>
+			<td style="border-left:0">2017-07-28</td>
+			<td><span style="color:green">-</span></td>
+			<td><span style="color:red">-</span></td>
+			<td><span style="color:green">-</span></td>
+			<td><span style="color:red">-</span></td>
+			<td><span style="color:green">-</span></td>
+			<td><span style="color:red">-</span></td>
+			<td><span style="color:green">-</span></td>
+			<td style="border-right:0"><span style="color:red">-</span></td>
+		</tr>
+				<tr>
+			<td style="border-left:0">2017-07-27</td>
+			<td><span style="color:green">1</span></td>
+			<td><span style="color:red">240</span></td>
+			<td><span style="color:green">-</span></td>
+			<td><span style="color:red">-</span></td>
+			<td><span style="color:green">-</span></td>
+			<td><span style="color:red">-</span></td>
+			<td><span style="color:green">-</span></td>
+			<td style="border-right:0"><span style="color:red">-</span></td>
+		</tr>
+				<tr>
+			<td style="border-left:0">2017-07-26</td>
+			<td><span style="color:green">1</span></td>
+			<td><span style="color:red">1408</span></td>
+			<td><span style="color:green">-</span></td>
+			<td><span style="color:red">-</span></td>
+			<td><span style="color:green">-</span></td>
+			<td><span style="color:red">-</span></td>
+			<td><span style="color:green">-</span></td>
+			<td style="border-right:0"><span style="color:red">-</span></td>
+		</tr>
+				<tr>
+			<td style="border-left:0">2017-07-25</td>
+			<td><span style="color:green">2</span></td>
+			<td><span style="color:red">317</span></td>
+			<td><span style="color:green">-</span></td>
+			<td><span style="color:red">-</span></td>
+			<td><span style="color:green">-</span></td>
+			<td><span style="color:red">-</span></td>
+			<td><span style="color:green">-</span></td>
+			<td style="border-right:0"><span style="color:red">-</span></td>
+		</tr>
+				<tr>
+			<td style="border-left:0">2017-07-24</td>
+			<td><span style="color:green">-</span></td>
+			<td><span style="color:red">-</span></td>
+			<td><span style="color:green">-</span></td>
+			<td><span style="color:red">-</span></td>
+			<td><span style="color:green">-</span></td>
+			<td><span style="color:red">-</span></td>
+			<td><span style="color:green">-</span></td>
+			<td style="border-right:0"><span style="color:red">-</span></td>
+		</tr>
+				<tr>
+			<td style="border-left:0">2017-07-23</td>
+			<td><span style="color:green">1</span></td>
+			<td><span style="color:red">190</span></td>
+			<td><span style="color:green">1</span></td>
+			<td><span style="color:red">1832</span></td>
+			<td><span style="color:green">-</span></td>
+			<td><span style="color:red">-</span></td>
+			<td><span style="color:green">-</span></td>
+			<td style="border-right:0"><span style="color:red">-</span></td>
+		</tr>
+				<tr>
+			<td style="border-left:0">2017-07-22</td>
+			<td><span style="color:green">2</span></td>
+			<td><span style="color:red">408</span></td>
+			<td><span style="color:green">2</span></td>
+			<td><span style="color:red">438</span></td>
+			<td><span style="color:green">1</span></td>
+			<td><span style="color:red">139</span></td>
+			<td><span style="color:green">-</span></td>
+			<td style="border-right:0"><span style="color:red">-</span></td>
+		</tr>
+				<tr>
+			<td style="border-left:0">2017-07-21</td>
+			<td><span style="color:green">6</span></td>
+			<td><span style="color:red">1047</span></td>
+			<td><span style="color:green">1</span></td>
+			<td><span style="color:red">139</span></td>
+			<td><span style="color:green">-</span></td>
+			<td><span style="color:red">-</span></td>
+			<td><span style="color:green">-</span></td>
+			<td style="border-right:0"><span style="color:red">-</span></td>
+		</tr>
+				<tr>
+			<td style="border-left:0">2017-07-20</td>
+			<td><span style="color:green">3</span></td>
+			<td><span style="color:red">2099</span></td>
+			<td><span style="color:green">1</span></td>
+			<td><span style="color:red">128</span></td>
+			<td><span style="color:green">-</span></td>
+			<td><span style="color:red">-</span></td>
+			<td><span style="color:green">-</span></td>
+			<td style="border-right:0"><span style="color:red">-</span></td>
+		</tr>
+				<tr>
+			<td style="border-left:0">2017-07-19</td>
+			<td><span style="color:green">4</span></td>
+			<td><span style="color:red">863</span></td>
+			<td><span style="color:green">1</span></td>
+			<td><span style="color:red">446</span></td>
+			<td><span style="color:green">-</span></td>
+			<td><span style="color:red">-</span></td>
+			<td><span style="color:green">-</span></td>
+			<td style="border-right:0"><span style="color:red">-</span></td>
+		</tr>
+				<tr>
+			<td style="border-left:0">2017-07-18</td>
+			<td><span style="color:green">6</span></td>
+			<td><span style="color:red">1481</span></td>
+			<td><span style="color:green">-</span></td>
+			<td><span style="color:red">-</span></td>
+			<td><span style="color:green">1</span></td>
+			<td><span style="color:red">570</span></td>
+			<td><span style="color:green">-</span></td>
+			<td style="border-right:0"><span style="color:red">-</span></td>
+		</tr>
+				<tr>
+			<td style="border-left:0">2017-07-17</td>
+			<td><span style="color:green">-</span></td>
+			<td><span style="color:red">-</span></td>
+			<td><span style="color:green">-</span></td>
+			<td><span style="color:red">-</span></td>
+			<td><span style="color:green">-</span></td>
+			<td><span style="color:red">-</span></td>
+			<td><span style="color:green">-</span></td>
+			<td style="border-right:0"><span style="color:red">-</span></td>
+		</tr>
+				</tbody></table>
+		</form>
+	</div>
+</div>  
+<script type="text/javascript" src="js/WdatePicker.js"></script>
+<style type="text/css">
+td {border-top:1px solid #e6e6e6 !important; border-right:1px solid #e6e6e6}
+</style>
+	<div class="clear"></div>
+	<!--<div class="foot">Copyright <span class="num">©</span> 2008-2014 <a target="_blank" href="http://www.phpshe.com">灵宝简好网络科技有限公司</a> 版权所有</div>-->
+</div>
+<script type="text/javascript">
+function win_init() {
+	$(".left").add(".right").css("height", $(window).height() - $(".pagetop").height());
+	$(".now").css("width", $(".right_main").outerWidth());
+	//$(".right_main").css("height", $(window).height() -  $(".pagetop").height() - $(".now:eq(0)").outerHeight() - $(".right_bottom").outerHeight() + 38);
+}
+$(function(){
+	if ($(".right_bottom").height() == 0) {
+		$(".right_bottom").remove();
+	}
+	win_init();
+	$(window).resize(function() {
+		win_init();
+	});
+	$(".list").find("td").hover(
+		function(){
+			if ($(this).hasClass("bgtt") || $(this).is("[nosel=1]")) return;
+			$(this).parent("tr").children("td[nosel!=1]").css("background-color", "#fbfbfb");
+		},
+		function(){
+			if ($(this).hasClass("bgtt") || $(this).is("[nosel=1]")) return;
+			$(this).parent("tr").children("td[nosel!=1]").css("background-color", "#fff");
+		}
+	)
+})
+pe_loadscript("http://phpshe.com/demo/phpshe/index.php?mod=notice");
+</script>
+
+</body></html>

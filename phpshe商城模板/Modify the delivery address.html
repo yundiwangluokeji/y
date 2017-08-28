@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0067)http://phpshe.com/demo/phpshe/admin.php?mod=useraddr&act=edit&id=87 -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>修改地址 - PHPSHE B2C商城系统演示站 - Powered by phpshe</title>
+<meta name="keywords" content="免费商城系统,网上商城系统,多用户商城系统,分销商城系统,微信商城系统,商城源码,手机移动商城系统,b2b2c商城系统,网店系统,购物系统,php商城系统,phpshe,简好网络">
+<meta name="description" content="PHPSHE网上商城系统具备电商零售业务所需的所有基本功能，以其安全稳定、简单易用、高效专业等优势赢得了用户的广泛好评，为用户提供了一个低成本、高效率的网上商城建设方案。">
+<link type="text/css" rel="stylesheet" href="css/style.css">
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/global.js"></script>
+</head>
+<body style="background:#fff;padding:5px">
+<form method="post" id="form" autocomplete="off">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="wenzhang_bak">
+<tbody><tr>
+	<td class="bgtt aright c888" width="120">用 户 名：</td>
+	<td></td>
+</tr>
+<tr>
+	<td class="bgtt aright c888">收 货 人：</td>
+	<td><input type="text" name="info[user_tname]" value="" class="inputall input200"> <span id="user_tname_show"></span></td>
+</tr>
+<tr>
+	<td class="bgtt aright c888">手机号码：</td>
+	<td><input type="text" name="info[user_phone]" value="" class="inputall input200"> <span id="user_phone_show"></span></td>
+</tr>
+<tr>
+	<td class="bgtt aright c888">所在城市：</td>
+	<td id="cityselect">
+		<select name="info[address_province]" class="js_prov inputselect"><option value="">请选择省</option><option value="北京">北京</option><option value="天津">天津</option><option value="河北">河北</option><option value="山西">山西</option><option value="内蒙古">内蒙古</option><option value="辽宁">辽宁</option><option value="吉林">吉林</option><option value="黑龙江">黑龙江</option><option value="上海">上海</option><option value="江苏">江苏</option><option value="浙江">浙江</option><option value="安徽">安徽</option><option value="福建">福建</option><option value="江西">江西</option><option value="山东">山东</option><option value="河南">河南</option><option value="湖北">湖北</option><option value="湖南">湖南</option><option value="广东">广东</option><option value="广西">广西</option><option value="海南">海南</option><option value="重庆">重庆</option><option value="四川">四川</option><option value="贵州">贵州</option><option value="云南">云南</option><option value="西藏">西藏</option><option value="陕西">陕西</option><option value="甘肃">甘肃</option><option value="青海">青海</option><option value="宁夏">宁夏</option><option value="新疆">新疆</option><option value="香港">香港</option><option value="澳门">澳门</option><option value="台湾">台湾</option></select>
+		<select name="info[address_city]" class="js_city inputselect"><option value="">请选择市</option></select>
+		<select name="info[address_area]" class="js_area inputselect"><option value="">请选择区县</option></select>
+		<span id="address_province_show"></span>
+		<span id="address_city_show"></span>
+		<span id="address_area_show"></span>
+	</td>
+</tr>
+<tr>
+	<td class="bgtt aright c888">详细地址：</td>
+	<td><input type="text" name="info[address_text]" value="" class="inputall input400"> <span id="address_text_show"></span></td>
+</tr>
+<tr>
+	<td class="bgtt aright c888">添加日期：</td>
+	<td class="num"></td>
+</tr>
+</tbody></table>
+<div class="acenter mat20">
+	<input type="hidden" name="pesubmit">
+	<input type="hidden" name="pe_token" value="0cc747398a180470815b69711ea0efc3">
+	<input type="button" value="提 交" class="tjbtn">
+</div>
+</form>
+<script type="text/javascript" src="js/formcheck.js"></script>
+<script type="text/javascript" src="js/shengshi.js"></script> 
+<script type="text/javascript">
+$(function(){
+	$("#cityselect").shengshi({
+	    prov:"",
+	    city:"",
+	    area:""
+	});
+})
+var form_info = [
+	{"name":"info[address_province]", "mod":"str", "act":"change", "arg":"", "show_id":"address_province_show","show_error":"省份必选"},
+	{"name":"info[address_city]", "mod":"str", "act":"change", "arg":"", "show_id":"address_city_show","show_error":"城市必选"},
+	{"name":"info[address_area]", "mod":"str", "act":"change", "arg":"", "show_id":"address_area_show","show_error":"区县必选"},
+	{"name":"info[address_text]", "mod":"str", "act":"blur", "arg":"", "show_id":"address_text_show","show_error":"必填"},
+	{"name":"info[user_tname]", "mod":"str", "act":"blur", "arg":"", "show_id":"user_tname_show","show_error":"必填"},
+	{"name":"info[user_phone]", "mod":"match", "act":"blur", "arg":"phone", "show_id":"user_phone_show","show_error":"格式有误"}
+]
+$(":button").pe_submit(form_info, 'form');
+</script>
+
+</body></html>

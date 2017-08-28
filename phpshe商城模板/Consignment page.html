@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0077)http://phpshe.com/demo/phpshe/admin.php?mod=order&act=send&id=170510181227024 -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title></title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<link type="text/css" rel="stylesheet" href="css/style.css">
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/global.js"></script>
+</head>
+<body style="background:#fff;padding:5px">
+<form method="post" id="form" autocomplete="off">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="wenzhang_bak">
+<tbody><tr>
+	<td class="bgtt aright c888" width="120">订单编号</td>
+	<td>170510181227024 </td>
+</tr>
+<tr>
+	<td class="bgtt aright c888">收 货 人</td>
+	<td>多撒多 <span class="num c888">【电话：15222123512】</span></td>
+</tr>
+<tr>
+	<td class="bgtt aright c888">收货地址</td>
+	<td>天津天津市和平区撒大声地</td>
+</tr>
+<tr>
+	<td class="bgtt aright c888">实付金额</td>
+	<td><span class="num strong corg">99.0 元</span> <span class="cgreen">[已支付]</span></td>
+</tr>
+<tr>
+	<td class="bgtt aright c888">支付方式</td>
+	<td>微信支付</td>
+</tr>
+<tr>
+	<td class="bgtt aright c888">快递公司</td>
+	<td>
+		<select name="order_wl_name" class="inputselect">
+		<option value="">无需快递</option>
+						<option value="顺丰快递">顺丰快递</option>
+						<option value="申通快递">申通快递</option>
+						<option value="圆通快递">圆通快递</option>
+						<option value="韵达快递">韵达快递</option>
+						<option value="中通快递">中通快递</option>
+						<option value="天天快递">天天快递</option>
+						<option value="宅急送">宅急送</option>
+						<option value="EMS快递">EMS快递</option>
+						<option value="百事汇通">百事汇通</option>
+						<option value="全峰快递">全峰快递</option>
+						<option value="德邦物流">德邦物流</option>
+												</select>
+	</td>
+</tr>
+<tr>
+	<td class="bgtt aright c888">快递单号</td>
+	<td><input type="text" name="order_wl_id" class="inputall input200"></td>
+</tr>
+</tbody></table>
+<div class="acenter mat20">
+	<input type="hidden" name="pesubmit">
+	<input type="hidden" name="pe_token" value="22f76c2bb6608575e45b33d1d4e70126">
+	<input type="button" value="发 货" class="tjbtn">
+</div>
+</form>
+<script type="text/javascript">
+$(function(){
+$(":button").click(function(){
+	if ($(":input[name='order_wl_name']").val() != '' && $(":input[name='order_wl_id']").val() == '') {
+		alert('快递单号必须填写');
+		return false;
+	}
+	$("form").submit();
+})
+})
+</script>
+
+</body></html>
