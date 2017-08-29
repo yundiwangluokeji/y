@@ -24,11 +24,22 @@ $(function(){
 		}
 	)
 })
-pe_loadscript("http://phpshe.com/demo/phpshe/index.php?mod=notice");
+
+
+
+// pe_loadscript("http://phpshe.com/demo/phpshe/index.php?mod=notice");
 </script>
 
 <style type="text/css">
 .right{background:#fff;}
 </style>
 </body>
+<script type="text/javascript">
+var lilist = $('.left>.fenlei>ul>li');
+for(var i = 0;i < lilist.length;i++){
+	if(lilist.eq(i).attr('class') == "{:CONTROLLER_NAME}"){
+		lilist.eq(i).addClass('sel');
+	}
+}
+</script>
 </html>

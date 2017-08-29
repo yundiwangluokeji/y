@@ -28,3 +28,27 @@ function decryption($str,$vi)
     return $Xcrypt->decrypt($str, 'base64');  
 
 }
+
+
+    /**
+     * 生成随机字符串
+     */
+	function createluan($length){
+		$str = '01234567899876543210012345678998745612300123456789987456321012';
+		$strlen = 36; 
+		while($length > $strlen){
+			$str.= $str;
+			$strlen += 36;
+		}
+		$str = str_shuffle($str); //随机打乱
+		return substr($str,mt_rand(6,30),$length); 
+	}
+
+
+
+	//用ip获取地址
+	function getip($ip){
+		$ip = json_decode(file_get_contents('http://ip.taobao.com//service/getIpInfo.php?ip='.$ip));
+		$data = $ip->data;
+		return $data->country.'.'.$data->area.'.'.$data->region.'.'.$data->city.'.'.$data->county.'.'.$data->isp.'.'.$data->ip;
+	}
