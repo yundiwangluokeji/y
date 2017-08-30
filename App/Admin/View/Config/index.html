@@ -11,65 +11,66 @@
 	<a href="Mailbox settings.html">邮箱设置</a>
 	<a href="Notification settings.html">通知设置</a>
 	<div class="clear"></div>
+
 </div>
 	<div class="right_main">
-		<form method="post" enctype="multipart/form-data">
+		<form method="post" enctype="multipart/form-data" action="__CONTROLLER__/editConfig">
 		<table width="100%" border="0" cellspacing="0" cellpadding="0" class="wenzhang mat20">
 		<tbody><tr>
 			<td align="right" width="150">网站标题：</td>
-			<td><input type="text" name="info[web_title]" value="PHPSHE B2C商城系统演示站" class="inputall input500"></td>
+			<td><input type="text" name="info[title]" value="{$configData.title}" class="inputall input500"></td>
 		</tr>
 		<tr>
 			<td align="right">关 键 词：</td>
-			<td><input type="text" name="info[web_keywords]" value="phpshe,php,shop,php商城系统,b2c商城系统,php商城源码,b2c商城源码,开源免费网上商城系统" class="inputall input500"></td>
+			<td><input type="text" name="info[keywords]" value="{$configData.keywords}" class="inputall input500"></td>
 		</tr>
 		<tr>
 			<td align="right">网站描述：</td>
-			<td><textarea name="info[web_description]" style="width:500px;height:100px;">phpshe,php,shop,php商城系统,b2c商城系统,php商城源码,b2c商城源码,开源免费网上商城系统</textarea></td>
+			<td><textarea name="info[description]" style="width:500px;height:100px;">{$configData.description}</textarea></td>
 		</tr>
 		<tr>
 			<td align="right">网站Logo：</td>
 			<td>
-								<p class="mab5"><img src="images/20170215143741r.jpg" height="60" style="border:1px solid #ddd"></p>
-								<p><input type="file" name="web_logo"></p>
+								<p class="mab5"><img src="__PUBLIC__/Admin/config/{$configData.logo}" height="60" style="border:1px solid #ddd"></p>
+								<p><input type="file" name="logo"></p>
 			</td>
 		</tr>
 		<tr>
 			<td align="right">微信二维码：</td>
 			<td>
-								<p class="mab5"><img src="images/nopic.png" height="70" style="border:1px solid #ddd"></p>
-								<p><input type="file" name="web_qrcode"></p>
+								<p class="mab5"><img src="__PUBLIC__/Admin/config/{$configData.wechat}" height="70" style="border:1px solid #ddd"></p>
+								<p><input type="file" name="wechat"></p>
 			</td>
 		</tr>
 		<tr>
 			<td align="right">咨询电话：</td>
-			<td><input type="text" name="info[web_phone]" value="15839823500" class="inputall input500"></td>
+			<td><input type="text" name="info[tel]" value="{$configData.tel}" class="inputall input500"></td>
 		</tr>
 		<tr>
 			<td align="right">咨询 Q Q：</td>
-			<td><input type="text" name="info[web_qq]" value="76265959" class="inputall input500"></td>
+			<td><input type="text" name="info[qq]" value="{$configData.qq}" class="inputall input500"></td>
 		</tr>
 		<tr>
 			<td align="right">版权所有：</td>
-			<td><input type="text" name="info[web_copyright]" value="2008-2017 简好网络" class="inputall input500"></td>
+			<td><input type="text" name="info[copyright]" value="{$configData.copyright}" class="inputall input500"></td>
 		</tr>
 		<tr>
 			<td align="right">备 案 号：</td>
-			<td><input type="text" name="info[web_icp]" value="豫ICP备17013559号-1" class="inputall input500"></td>
+			<td><input type="text" name="info[record_no]" value="{$configData.record_no}" class="inputall input500"></td>
 		</tr>
 		<tr>
 			<td align="right">热门搜索：</td>
-			<td><input type="text" name="info[web_hotword]" value="PHPSHE,B2C商城系统,简好网络" class="inputall input500"><span class="c888">（多个请用“,”隔开）</span></td>
+			<td><input type="text" name="info[hot]" value="{$configData.hot}" class="inputall input500"><span class="c888">（多个请用“,”隔开）</span></td>
 		</tr>
 		<tr>
 			<td align="right">统计代码：</td>
-			<td><textarea name="info[web_tongji]" style="width:500px;height:150px;"></textarea><span class="c888">（第三方流量统计代码）</span></td>
+			<td><textarea name="info[count]" style="width:500px;height:150px;">{$configData.count}</textarea><span class="c888">（第三方流量统计代码）</span></td>
 		</tr>
 		<tr>
 			<td>&nbsp;</td>
 			<td>
 				<input type="hidden" name="pe_token" value="bc127a40363dfcec978226909f4e8f2e">
-				<input type="submit" name="pesubmit" value="提 交" class="tjbtn">
+				<input type="submit" value="提 交" class="tjbtn">
 			</td>
 		</tr>
 		</tbody></table>
