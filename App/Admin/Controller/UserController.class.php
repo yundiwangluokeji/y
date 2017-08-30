@@ -62,7 +62,6 @@ class UserController extends PublicController
     		$agent = M('agent');
     		// $data = $agent->datas($input);
     		if($input['password']){
-    			$input['password'] = 
 				$input['secret'] = createluan(32);//创建vi
 				$input['password'] = encryption($input['password'],$input['secret']);//创建密码
     			$res = $agent->save($input);

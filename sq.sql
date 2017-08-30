@@ -1,3 +1,4 @@
+http://pan.baidu.com/share/qrcode?w=150&h=150&url=http://www.baidu.com--二维码接口
 --------------------------
 -- 创建数据库
 --------------------------
@@ -26,7 +27,8 @@ create table if not exists `yd_config`(
 `configkey` char(50) unique not null default '' COMMENT '配置key' ,
 `configval` varchar(255) not null default '' COMMENT '配置值',
 `configsorting` int(11) unsigned not null default 0 COMMENT '配置排序',
-`configaddtime` int unsigned COMMENT '添加配置时间'
+`configaddtime` int unsigned COMMENT '添加配置时间',
+`configupdatetime` timestamp
 )engine=innodb default charset="utf8";
 INSERT INTO `yd_config` VALUES ('1', '网站标题', 'title', '某某钟表有限公司', '0', '1503900186', '1503969557');
 INSERT INTO `yd_config` VALUES ('2', 'logo', 'logo', '2017-08-28/59a43bd9961ec.jpg', '0', '1503905263', '1503935449');
@@ -40,7 +42,6 @@ INSERT INTO `yd_config` VALUES ('9', '备案号', 'record_no', '豫ICP备1701355
 INSERT INTO `yd_config` VALUES ('10', '热门搜索', 'hot', 'PHPSHE,B2C商城系统,简好网络', '0', '1503914233', '1503969558');
 INSERT INTO `yd_config` VALUES ('11', '统计代码', 'count', '', '0', '1503931018', '1503969558');
 
-
 /*
 --品牌表
 */
@@ -49,7 +50,8 @@ create table if not exists `yd_brand`(
 `name` char(30) not null default ''  COMMENT '品牌名称',
 `logo` varchar(255) not null default '' COMMENT '品牌logo',
 `sorting` int(11) unsigned not null default 0 COMMENT '排序',
-`addtime` int unsigned COMMENT '添加时间'
+`addtime` int unsigned COMMENT '添加时间',
+`updateitme` timestamp
 )engine=innodb default charset="utf8";
 
 
@@ -61,7 +63,8 @@ create table if not exists `yd_classification`(
 `brand_id` int(11) unsigned not null auto_increment primary key,
 `name` char(30) not null default ''  COMMENT '分类名称',
 `sorting` int(11) unsigned not null default 0 COMMENT '排序',
-`addtime` int unsigned COMMENT '添加时间'
+`addtime` int unsigned COMMENT '添加时间',
+`updateitme` timestamp
 )engine=innodb default charset="utf8";
 
 
@@ -86,7 +89,8 @@ create table if not exists `yd_goods`(
 `color` char(20) not null default '' COMMENT '商品颜色多选(格式：红色,白色,黑色...)',
 `body` text COMMENT '商品主体内容',
 `sorting` int(11) unsigned not null default 0 COMMENT '排序',
-`addtime` int unsigned COMMENT '商品添加时间' 
+`addtime` int unsigned COMMENT '商品添加时间',
+`updateitme` timestamp
 )engine=innodb default charset="utf8";
 /*
 --商品颜色：钢壳白面,白壳黑面,介金白面,介金黑面,介金金面,金壳白面,金壳金面,金壳黑面,玫瑰金壳白面玫瑰金壳黑面,玫瑰金壳玫瑰金面,介玫瑰金壳白面,介玫瑰金壳黑面,介玫瑰金壳玫瑰金面
@@ -110,6 +114,7 @@ create table if not exists `yd_agent_goods`(
 `agent_sorting` int(11) unsigned not null default 0 COMMENT '排序',
 `goods_permissions` tinyint(1) unsigned not null default 0 COMMENT '商品浏览权限(0不公开,1对登录用户公开,2代理商可以在后台分享一个二维码普通用户扫描二维码查看此商品--30分钟内有效)',
 `agent_addtime` int unsigned COMMENT '商品添加时间' 
+`updateitme` timestamp,
 )engine=innodb default charset="utf8";
 
 
@@ -125,7 +130,8 @@ create table if not exists `yd_agent_config`(
 `tel` char(20) not null default '' COMMENT '电话',
 `address` varchar(255)  not null default ''  COMMENT '地址',
 `weixin` varchar(255)  not null default ''  COMMENT '代理商微信二维码',
-`addtime` int COMMENT '创建时间'
+`addtime` int COMMENT '创建时间',
+`updateitme` timestamp
 )engine=innodb default charset="utf8";
 
 
@@ -142,7 +148,8 @@ create table if not exists `yd_agent`(
 `father` int(11) unsigned not null default 0 COMMENT '父id',
 `path` varchar(255) not null default '' COMMENT '代理商关系路径(0_1_5_66)',
 `status` tinyint(1) unsigned not null default 0 COMMENT '用户状态(0禁用,1正常)',
-`addtime` int COMMENT '创建时间'
+`addtime` int COMMENT '创建时间',
+`updateitme` timestamp
 )engine=innodb default charset="utf8";
 
 /*
@@ -151,7 +158,8 @@ create table if not exists `yd_agent`(
 create table if not exists `yd_money`(
 `id` int(11) unsigned not null auto_increment primary key,
 `agent_id` int(11) not null default 0 COMMENT '代理商id',
-`money` varchar(255) not null default '0' COMMENT '货币(分为单位)'
+`money` varchar(255) not null default '0' COMMENT '货币(分为单位)',
+`updateitme` timestamp
 )engine=innodb default charset="utf8";
 
 /*
@@ -168,7 +176,8 @@ create table if not exists `yd_money_log`(
 `res` tinyint(1) not null default 0 COMMENT '操作结果(1成功,0否)',
 `type` tinyint(1) not null default 0 COMMENT '操作内型(1收入,0支出)',
 `msg` char(50) not null default '' COMMENT '操作信息',
-`time` int(11) unsigned COMMENT '操作时间'
+`time` int(11) unsigned COMMENT '操作时间',
+`updateitme` timestamp
 )engine=innodb default charset="utf8";
 
 
@@ -184,7 +193,8 @@ create table if not exists `yd_agent`(
 `address` varchar(255) not null default '' COMMENT '登录地址',
 `res` tinyint(1) not null default 0 COMMENT '登录结果(1成功,0否)',
 `msg` char(50) not null default '' COMMENT '登录信息',
-`time` int(11) unsigned COMMENT '登录时间'
+`time` int(11) unsigned COMMENT '登录时间',
+`updateitme` timestamp
 )engine=innodb default charset="utf8";
 
 
