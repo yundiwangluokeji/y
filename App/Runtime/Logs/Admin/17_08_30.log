@@ -1,0 +1,1135 @@
+[ 2017-08-30T09:33:49+08:00 ] 127.0.0.1 /Admin/Goods/Member%20list.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000352s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000445s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000539s ]
+ERR: 无法加载控制器:Goods
+
+[ 2017-08-30T09:33:56+08:00 ] 127.0.0.1 /Admin/Goods/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000331s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000382s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000471s ]
+ERR: 无法加载控制器:Goods
+
+[ 2017-08-30T09:34:03+08:00 ] 127.0.0.1 /Admin/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000327s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000389s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000472s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000112s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000199s ]
+NOTIC: [8] Use of undefined constant Index - assumed 'Index' D:\wamp64\www\y\App\Runtime\Cache\Admin\9df924d9a2d217daa77a359c5bee0c33.php 第 18 行.
+NOTIC: [8] Use of undefined constant index - assumed 'index' D:\wamp64\www\y\App\Runtime\Cache\Admin\9df924d9a2d217daa77a359c5bee0c33.php 第 18 行.
+NOTIC: [2] Division by zero D:\wamp64\www\y\App\Runtime\Cache\Admin\9df924d9a2d217daa77a359c5bee0c33.php 第 18 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008393s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008475s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000284s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000621s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001026s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000518s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000612s ]
+
+[ 2017-08-30T09:34:05+08:00 ] 127.0.0.1 /Admin/User/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000326s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000335s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000425s ]
+NOTIC: [8] Undefined index: p D:\wamp64\www\y\App\Admin\Controller\UserController.class.php 第 10 行.
+ERR: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
+[ 2017-08-30T09:34:47+08:00 ] 127.0.0.1 /Admin/User/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000346s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000514s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000646s ]
+NOTIC: [8] Undefined index: p D:\wamp64\www\y\App\Admin\Controller\UserController.class.php 第 10 行.
+SQL: SHOW COLUMNS FROM `yd_agent` [ RunTime:0.0081s ]
+SQL: SELECT * FROM `yd_agent` INNER JOIN yd_money ON yd_money.agent_id = yd_agent.id  LIMIT 0,20   [ RunTime:0.0909s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yd_agent` INNER JOIN yd_money ON yd_money.agent_id = yd_agent.id  LIMIT 1   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000098s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000182s ]
+NOTIC: [8] Use of undefined constant Index - assumed 'Index' D:\wamp64\www\y\App\Runtime\Cache\Admin\4295d5db477f3199c8db51638416159f.php 第 18 行.
+NOTIC: [8] Use of undefined constant index - assumed 'index' D:\wamp64\www\y\App\Runtime\Cache\Admin\4295d5db477f3199c8db51638416159f.php 第 18 行.
+NOTIC: [2] Division by zero D:\wamp64\www\y\App\Runtime\Cache\Admin\4295d5db477f3199c8db51638416159f.php 第 18 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009752s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009853s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000336s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000724s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001180s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000499s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000611s ]
+
+[ 2017-08-30T09:34:47+08:00 ] 127.0.0.1 /Admin/User/favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000495s ]
+
+[ 2017-08-30T09:34:55+08:00 ] 127.0.0.1 /Admin/User/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000287s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000308s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000394s ]
+NOTIC: [8] Undefined index: p D:\wamp64\www\y\App\Admin\Controller\UserController.class.php 第 10 行.
+SQL: SHOW COLUMNS FROM `yd_agent` [ RunTime:0.0122s ]
+SQL: SELECT * FROM `yd_agent` INNER JOIN yd_money ON yd_money.agent_id = yd_agent.id  LIMIT 0,20   [ RunTime:0.0247s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yd_agent` INNER JOIN yd_money ON yd_money.agent_id = yd_agent.id  LIMIT 1   [ RunTime:0.0011s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000161s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000313s ]
+NOTIC: [8] Use of undefined constant Index - assumed 'Index' D:\wamp64\www\y\App\Runtime\Cache\Admin\4295d5db477f3199c8db51638416159f.php 第 18 行.
+NOTIC: [8] Use of undefined constant index - assumed 'index' D:\wamp64\www\y\App\Runtime\Cache\Admin\4295d5db477f3199c8db51638416159f.php 第 18 行.
+NOTIC: [2] Division by zero D:\wamp64\www\y\App\Runtime\Cache\Admin\4295d5db477f3199c8db51638416159f.php 第 18 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010954s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011039s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000226s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000713s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001059s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000376s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000490s ]
+
+[ 2017-08-30T09:35:00+08:00 ] 127.0.0.1 /Admin/Config/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000313s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000412s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000498s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000111s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000267s ]
+NOTIC: [8] Use of undefined constant Index - assumed 'Index' D:\wamp64\www\y\App\Runtime\Cache\Admin\cde95318103d8265d44ce02d47932406.php 第 18 行.
+NOTIC: [8] Use of undefined constant index - assumed 'index' D:\wamp64\www\y\App\Runtime\Cache\Admin\cde95318103d8265d44ce02d47932406.php 第 18 行.
+NOTIC: [2] Division by zero D:\wamp64\www\y\App\Runtime\Cache\Admin\cde95318103d8265d44ce02d47932406.php 第 18 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008452s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008584s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000390s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000607s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001121s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000578s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000690s ]
+
+[ 2017-08-30T09:35:00+08:00 ] 127.0.0.1 /Admin/Config/images/20170215143741r.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000375s ]
+
+[ 2017-08-30T09:35:00+08:00 ] 127.0.0.1 /Admin/Config/images/nopic.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000386s ]
+
+[ 2017-08-30T09:35:00+08:00 ] 127.0.0.1 /Admin/Config/favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000037s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000805s ]
+
+[ 2017-08-30T09:35:04+08:00 ] 127.0.0.1 /Admin/Config/product-list.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000455s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000304s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000388s ]
+ERR: 非法操作:product-list
+
+[ 2017-08-30T09:35:08+08:00 ] 127.0.0.1 /Admin/Config/Brand%20management.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000289s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000301s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000385s ]
+ERR: 非法操作:Brand management
+
+[ 2017-08-30T09:41:14+08:00 ] 127.0.0.1 /Admin/Config/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000327s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000392s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000478s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000099s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000193s ]
+NOTIC: [8] Use of undefined constant Index - assumed 'Index' D:\wamp64\www\y\App\Runtime\Cache\Admin\cde95318103d8265d44ce02d47932406.php 第 18 行.
+NOTIC: [8] Use of undefined constant index - assumed 'index' D:\wamp64\www\y\App\Runtime\Cache\Admin\cde95318103d8265d44ce02d47932406.php 第 18 行.
+NOTIC: [2] Division by zero D:\wamp64\www\y\App\Runtime\Cache\Admin\cde95318103d8265d44ce02d47932406.php 第 18 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009042s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009131s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000257s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000573s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000948s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000505s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000646s ]
+
+[ 2017-08-30T09:41:14+08:00 ] 127.0.0.1 /Admin/Config/images/20170215143741r.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000478s ]
+
+[ 2017-08-30T09:41:14+08:00 ] 127.0.0.1 /Admin/Config/images/nopic.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000037s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000455s ]
+
+[ 2017-08-30T09:41:14+08:00 ] 127.0.0.1 /Admin/Config/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000335s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000908s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001021s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000094s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000181s ]
+NOTIC: [8] Use of undefined constant Index - assumed 'Index' D:\wamp64\www\y\App\Runtime\Cache\Admin\cde95318103d8265d44ce02d47932406.php 第 18 行.
+NOTIC: [8] Use of undefined constant index - assumed 'index' D:\wamp64\www\y\App\Runtime\Cache\Admin\cde95318103d8265d44ce02d47932406.php 第 18 行.
+NOTIC: [2] Division by zero D:\wamp64\www\y\App\Runtime\Cache\Admin\cde95318103d8265d44ce02d47932406.php 第 18 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007220s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007304s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000270s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000572s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000961s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000448s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000554s ]
+
+[ 2017-08-30T09:41:14+08:00 ] 127.0.0.1 /Admin/Config/images/20170215143741r.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000708s ]
+
+[ 2017-08-30T09:41:14+08:00 ] 127.0.0.1 /Admin/Config/images/nopic.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000445s ]
+
+[ 2017-08-30T09:41:15+08:00 ] 127.0.0.1 /Admin/Goods/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000303s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000332s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000416s ]
+ERR: 无法加载控制器:Goods
+
+[ 2017-08-30T09:41:18+08:00 ] 127.0.0.1 /Admin/Config/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000301s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000351s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000439s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000164s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000342s ]
+NOTIC: [8] Use of undefined constant Index - assumed 'Index' D:\wamp64\www\y\App\Runtime\Cache\Admin\cde95318103d8265d44ce02d47932406.php 第 18 行.
+NOTIC: [8] Use of undefined constant index - assumed 'index' D:\wamp64\www\y\App\Runtime\Cache\Admin\cde95318103d8265d44ce02d47932406.php 第 18 行.
+NOTIC: [2] Division by zero D:\wamp64\www\y\App\Runtime\Cache\Admin\cde95318103d8265d44ce02d47932406.php 第 18 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009309s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009493s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000288s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000591s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000452s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000601s ]
+
+[ 2017-08-30T09:41:18+08:00 ] 127.0.0.1 /Admin/Config/images/20170215143741r.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000038s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001003s ]
+
+[ 2017-08-30T09:41:18+08:00 ] 127.0.0.1 /Admin/Config/images/nopic.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001297s ]
+
+[ 2017-08-30T09:41:18+08:00 ] 127.0.0.1 /Admin/Config/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000451s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000543s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000687s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000161s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000330s ]
+NOTIC: [8] Use of undefined constant Index - assumed 'Index' D:\wamp64\www\y\App\Runtime\Cache\Admin\cde95318103d8265d44ce02d47932406.php 第 18 行.
+NOTIC: [8] Use of undefined constant index - assumed 'index' D:\wamp64\www\y\App\Runtime\Cache\Admin\cde95318103d8265d44ce02d47932406.php 第 18 行.
+NOTIC: [2] Division by zero D:\wamp64\www\y\App\Runtime\Cache\Admin\cde95318103d8265d44ce02d47932406.php 第 18 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009465s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009588s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000298s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000596s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001036s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000469s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000619s ]
+
+[ 2017-08-30T09:41:18+08:00 ] 127.0.0.1 /Admin/Config/images/20170215143741r.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000536s ]
+
+[ 2017-08-30T09:41:18+08:00 ] 127.0.0.1 /Admin/Config/images/nopic.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000639s ]
+
+[ 2017-08-30T09:41:24+08:00 ] 127.0.0.1 /Admin/Type/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000297s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000544s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000685s ]
+ERR: 无法加载控制器:Type
+
+[ 2017-08-30T09:44:11+08:00 ] 127.0.0.1 /Admin/Config/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000340s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000479s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000576s ]
+SQL: SHOW COLUMNS FROM `yd_config` [ RunTime:0.0480s ]
+SQL: SELECT * FROM `yd_config`  [ RunTime:0.0929s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000108s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000220s ]
+NOTIC: [8] Use of undefined constant Index - assumed 'Index' D:\wamp64\www\y\App\Runtime\Cache\Admin\cde95318103d8265d44ce02d47932406.php 第 18 行.
+NOTIC: [8] Use of undefined constant index - assumed 'index' D:\wamp64\www\y\App\Runtime\Cache\Admin\cde95318103d8265d44ce02d47932406.php 第 18 行.
+NOTIC: [2] Division by zero D:\wamp64\www\y\App\Runtime\Cache\Admin\cde95318103d8265d44ce02d47932406.php 第 18 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007400s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007488s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000363s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000813s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001347s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000608s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000707s ]
+
+[ 2017-08-30T09:44:11+08:00 ] 127.0.0.1 /Admin/Config/images/20170215143741r.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000471s ]
+
+[ 2017-08-30T09:44:11+08:00 ] 127.0.0.1 /Admin/Config/images/nopic.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000509s ]
+
+[ 2017-08-30T09:44:12+08:00 ] 127.0.0.1 /Admin/Goods/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000295s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000791s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001020s ]
+SQL: SHOW COLUMNS FROM `yd_goods` [ RunTime:0.0504s ]
+SQL: SELECT * FROM `yd_goods`  [ RunTime:0.0229s ]
+SQL: SHOW COLUMNS FROM `yd_classification` [ RunTime:0.0017s ]
+SQL: SELECT * FROM `yd_classification` WHERE `brand_id` = 15 LIMIT 1   [ RunTime:0.0175s ]
+SQL: SHOW COLUMNS FROM `yd_brand` [ RunTime:0.0017s ]
+SQL: SELECT * FROM `yd_brand` WHERE `brand_id` = 4 LIMIT 1   [ RunTime:0.0290s ]
+SQL: SELECT * FROM `yd_classification` WHERE `brand_id` = 14 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `yd_brand` WHERE `brand_id` = 5 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `yd_classification`  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `yd_brand`  [ RunTime:0.0012s ]
+ERR: 模板不存在:./App/Admin/View/Goods/index.html
+
+[ 2017-08-30T09:45:42+08:00 ] 127.0.0.1 /Admin/Goods/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000326s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000348s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000433s ]
+SQL: SHOW COLUMNS FROM `yd_goods` [ RunTime:0.0026s ]
+SQL: SELECT * FROM `yd_goods`  [ RunTime:0.0306s ]
+SQL: SHOW COLUMNS FROM `yd_classification` [ RunTime:0.0014s ]
+SQL: SELECT * FROM `yd_classification` WHERE `brand_id` = 15 LIMIT 1   [ RunTime:0.0502s ]
+SQL: SHOW COLUMNS FROM `yd_brand` [ RunTime:0.0014s ]
+SQL: SELECT * FROM `yd_brand` WHERE `brand_id` = 4 LIMIT 1   [ RunTime:0.0471s ]
+SQL: SELECT * FROM `yd_classification` WHERE `brand_id` = 14 LIMIT 1   [ RunTime:0.0011s ]
+SQL: SELECT * FROM `yd_brand` WHERE `brand_id` = 5 LIMIT 1   [ RunTime:0.0012s ]
+SQL: SELECT * FROM `yd_classification`  [ RunTime:0.0013s ]
+SQL: SELECT * FROM `yd_brand`  [ RunTime:0.0013s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000130s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000215s ]
+NOTIC: [8] Use of undefined constant Index - assumed 'Index' D:\wamp64\www\y\App\Runtime\Cache\Admin\aa143db074a4ae068af099999d56ed88.php 第 18 行.
+NOTIC: [8] Use of undefined constant index - assumed 'index' D:\wamp64\www\y\App\Runtime\Cache\Admin\aa143db074a4ae068af099999d56ed88.php 第 18 行.
+NOTIC: [2] Division by zero D:\wamp64\www\y\App\Runtime\Cache\Admin\aa143db074a4ae068af099999d56ed88.php 第 18 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012113s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012207s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000247s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000751s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001120s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000506s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000603s ]
+
+[ 2017-08-30T09:45:45+08:00 ] 127.0.0.1 /Admin/Type/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000291s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000336s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000422s ]
+SQL: SHOW COLUMNS FROM `yd_classification` [ RunTime:0.0017s ]
+SQL: SELECT * FROM `yd_classification`  [ RunTime:0.0195s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000094s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000190s ]
+NOTIC: [8] Use of undefined constant Index - assumed 'Index' D:\wamp64\www\y\App\Runtime\Cache\Admin\b90703ca8b2bf3535fa3d9139253085d.php 第 18 行.
+NOTIC: [8] Use of undefined constant index - assumed 'index' D:\wamp64\www\y\App\Runtime\Cache\Admin\b90703ca8b2bf3535fa3d9139253085d.php 第 18 行.
+NOTIC: [2] Division by zero D:\wamp64\www\y\App\Runtime\Cache\Admin\b90703ca8b2bf3535fa3d9139253085d.php 第 18 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007837s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007924s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000224s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000578s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000919s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000394s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000505s ]
+
+[ 2017-08-30T09:45:45+08:00 ] 127.0.0.1 /Admin/Type/favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000342s ]
+
+[ 2017-08-30T09:45:47+08:00 ] 127.0.0.1 /Admin/Type/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000302s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000403s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000498s ]
+SQL: SHOW COLUMNS FROM `yd_classification` [ RunTime:0.0018s ]
+SQL: SELECT * FROM `yd_classification`  [ RunTime:0.0206s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000098s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000197s ]
+NOTIC: [8] Use of undefined constant Index - assumed 'Index' D:\wamp64\www\y\App\Runtime\Cache\Admin\b90703ca8b2bf3535fa3d9139253085d.php 第 18 行.
+NOTIC: [8] Use of undefined constant index - assumed 'index' D:\wamp64\www\y\App\Runtime\Cache\Admin\b90703ca8b2bf3535fa3d9139253085d.php 第 18 行.
+NOTIC: [2] Division by zero D:\wamp64\www\y\App\Runtime\Cache\Admin\b90703ca8b2bf3535fa3d9139253085d.php 第 18 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008431s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008525s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000260s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000564s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000946s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000594s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000721s ]
+
+[ 2017-08-30T09:46:04+08:00 ] 127.0.0.1 /Admin/Type/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000283s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000378s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000464s ]
+SQL: SHOW COLUMNS FROM `yd_classification` [ RunTime:0.0300s ]
+SQL: SELECT * FROM `yd_classification`  [ RunTime:0.0186s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000096s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000193s ]
+NOTIC: [8] Use of undefined constant Index - assumed 'Index' D:\wamp64\www\y\App\Runtime\Cache\Admin\b90703ca8b2bf3535fa3d9139253085d.php 第 18 行.
+NOTIC: [8] Use of undefined constant index - assumed 'index' D:\wamp64\www\y\App\Runtime\Cache\Admin\b90703ca8b2bf3535fa3d9139253085d.php 第 18 行.
+NOTIC: [2] Division by zero D:\wamp64\www\y\App\Runtime\Cache\Admin\b90703ca8b2bf3535fa3d9139253085d.php 第 18 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008195s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008289s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000236s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000568s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000923s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000356s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000446s ]
+
+[ 2017-08-30T09:46:04+08:00 ] 127.0.0.1 /Admin/Type/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000330s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000376s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000460s ]
+SQL: SHOW COLUMNS FROM `yd_classification` [ RunTime:0.0016s ]
+SQL: SELECT * FROM `yd_classification`  [ RunTime:0.0014s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000097s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000181s ]
+NOTIC: [8] Use of undefined constant Index - assumed 'Index' D:\wamp64\www\y\App\Runtime\Cache\Admin\b90703ca8b2bf3535fa3d9139253085d.php 第 18 行.
+NOTIC: [8] Use of undefined constant index - assumed 'index' D:\wamp64\www\y\App\Runtime\Cache\Admin\b90703ca8b2bf3535fa3d9139253085d.php 第 18 行.
+NOTIC: [2] Division by zero D:\wamp64\www\y\App\Runtime\Cache\Admin\b90703ca8b2bf3535fa3d9139253085d.php 第 18 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008014s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008109s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000224s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000561s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000903s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000393s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000494s ]
+
+[ 2017-08-30T09:46:04+08:00 ] 127.0.0.1 /Admin/Type/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000295s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000349s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000437s ]
+SQL: SHOW COLUMNS FROM `yd_classification` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `yd_classification`  [ RunTime:0.0011s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000104s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000193s ]
+NOTIC: [8] Use of undefined constant Index - assumed 'Index' D:\wamp64\www\y\App\Runtime\Cache\Admin\b90703ca8b2bf3535fa3d9139253085d.php 第 18 行.
+NOTIC: [8] Use of undefined constant index - assumed 'index' D:\wamp64\www\y\App\Runtime\Cache\Admin\b90703ca8b2bf3535fa3d9139253085d.php 第 18 行.
+NOTIC: [2] Division by zero D:\wamp64\www\y\App\Runtime\Cache\Admin\b90703ca8b2bf3535fa3d9139253085d.php 第 18 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009277s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009362s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000229s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000572s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000922s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000360s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000462s ]
+
+[ 2017-08-30T09:46:04+08:00 ] 127.0.0.1 /Admin/Type/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000340s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000342s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000428s ]
+SQL: SHOW COLUMNS FROM `yd_classification` [ RunTime:0.1092s ]
+SQL: SELECT * FROM `yd_classification`  [ RunTime:0.0235s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000096s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000182s ]
+NOTIC: [8] Use of undefined constant Index - assumed 'Index' D:\wamp64\www\y\App\Runtime\Cache\Admin\b90703ca8b2bf3535fa3d9139253085d.php 第 18 行.
+NOTIC: [8] Use of undefined constant index - assumed 'index' D:\wamp64\www\y\App\Runtime\Cache\Admin\b90703ca8b2bf3535fa3d9139253085d.php 第 18 行.
+NOTIC: [2] Division by zero D:\wamp64\www\y\App\Runtime\Cache\Admin\b90703ca8b2bf3535fa3d9139253085d.php 第 18 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008940s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009027s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000230s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000578s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000928s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000655s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000760s ]
+
+[ 2017-08-30T09:46:05+08:00 ] 127.0.0.1 /Admin/Goods/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000285s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000332s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000417s ]
+SQL: SHOW COLUMNS FROM `yd_goods` [ RunTime:0.0027s ]
+SQL: SELECT * FROM `yd_goods`  [ RunTime:0.0248s ]
+SQL: SHOW COLUMNS FROM `yd_classification` [ RunTime:0.0019s ]
+SQL: SELECT * FROM `yd_classification` WHERE `brand_id` = 15 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yd_brand` [ RunTime:0.0016s ]
+SQL: SELECT * FROM `yd_brand` WHERE `brand_id` = 4 LIMIT 1   [ RunTime:0.0206s ]
+SQL: SELECT * FROM `yd_classification` WHERE `brand_id` = 14 LIMIT 1   [ RunTime:0.0011s ]
+SQL: SELECT * FROM `yd_brand` WHERE `brand_id` = 5 LIMIT 1   [ RunTime:0.0012s ]
+SQL: SELECT * FROM `yd_classification`  [ RunTime:0.0012s ]
+SQL: SELECT * FROM `yd_brand`  [ RunTime:0.0013s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000132s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000220s ]
+NOTIC: [8] Use of undefined constant Index - assumed 'Index' D:\wamp64\www\y\App\Runtime\Cache\Admin\aa143db074a4ae068af099999d56ed88.php 第 18 行.
+NOTIC: [8] Use of undefined constant index - assumed 'index' D:\wamp64\www\y\App\Runtime\Cache\Admin\aa143db074a4ae068af099999d56ed88.php 第 18 行.
+NOTIC: [2] Division by zero D:\wamp64\www\y\App\Runtime\Cache\Admin\aa143db074a4ae068af099999d56ed88.php 第 18 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012047s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012133s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000216s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000734s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001070s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000393s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000496s ]
+
+[ 2017-08-30T09:46:05+08:00 ] 127.0.0.1 /Admin/Type/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000287s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000332s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000416s ]
+SQL: SHOW COLUMNS FROM `yd_classification` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `yd_classification`  [ RunTime:0.0011s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000094s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000179s ]
+NOTIC: [8] Use of undefined constant Index - assumed 'Index' D:\wamp64\www\y\App\Runtime\Cache\Admin\b90703ca8b2bf3535fa3d9139253085d.php 第 18 行.
+NOTIC: [8] Use of undefined constant index - assumed 'index' D:\wamp64\www\y\App\Runtime\Cache\Admin\b90703ca8b2bf3535fa3d9139253085d.php 第 18 行.
+NOTIC: [2] Division by zero D:\wamp64\www\y\App\Runtime\Cache\Admin\b90703ca8b2bf3535fa3d9139253085d.php 第 18 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008765s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008853s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000261s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000577s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000957s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000464s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000599s ]
+
+[ 2017-08-30T09:46:06+08:00 ] 127.0.0.1 /Admin/Brand/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000288s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000333s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000449s ]
+SQL: SHOW COLUMNS FROM `yd_brand` [ RunTime:0.0019s ]
+SQL: SELECT * FROM `yd_brand`  [ RunTime:0.0196s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000103s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000192s ]
+NOTIC: [8] Use of undefined constant Index - assumed 'Index' D:\wamp64\www\y\App\Runtime\Cache\Admin\ab4b9af6790308501cce30a58d6505ed.php 第 18 行.
+NOTIC: [8] Use of undefined constant index - assumed 'index' D:\wamp64\www\y\App\Runtime\Cache\Admin\ab4b9af6790308501cce30a58d6505ed.php 第 18 行.
+NOTIC: [2] Division by zero D:\wamp64\www\y\App\Runtime\Cache\Admin\ab4b9af6790308501cce30a58d6505ed.php 第 18 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008318s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008406s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000219s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000643s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000984s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000449s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000541s ]
+
+[ 2017-08-30T09:46:07+08:00 ] 127.0.0.1 /Admin/Brand/favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000317s ]
+
+[ 2017-08-30T09:46:08+08:00 ] 127.0.0.1 /Admin/Type/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000337s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000445s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000530s ]
+SQL: SHOW COLUMNS FROM `yd_classification` [ RunTime:0.0023s ]
+SQL: SELECT * FROM `yd_classification`  [ RunTime:0.0225s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000095s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000184s ]
+NOTIC: [8] Use of undefined constant Index - assumed 'Index' D:\wamp64\www\y\App\Runtime\Cache\Admin\b90703ca8b2bf3535fa3d9139253085d.php 第 18 行.
+NOTIC: [8] Use of undefined constant index - assumed 'index' D:\wamp64\www\y\App\Runtime\Cache\Admin\b90703ca8b2bf3535fa3d9139253085d.php 第 18 行.
+NOTIC: [2] Division by zero D:\wamp64\www\y\App\Runtime\Cache\Admin\b90703ca8b2bf3535fa3d9139253085d.php 第 18 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010963s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011092s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000438s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000823s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001464s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000732s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000890s ]
+
+[ 2017-08-30T09:46:10+08:00 ] 127.0.0.1 /Admin/Type/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000381s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000438s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000529s ]
+SQL: SHOW COLUMNS FROM `yd_classification` [ RunTime:0.0025s ]
+SQL: SELECT * FROM `yd_classification`  [ RunTime:0.0158s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000128s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000303s ]
+NOTIC: [8] Use of undefined constant Index - assumed 'Index' D:\wamp64\www\y\App\Runtime\Cache\Admin\b90703ca8b2bf3535fa3d9139253085d.php 第 18 行.
+NOTIC: [8] Use of undefined constant index - assumed 'index' D:\wamp64\www\y\App\Runtime\Cache\Admin\b90703ca8b2bf3535fa3d9139253085d.php 第 18 行.
+NOTIC: [2] Division by zero D:\wamp64\www\y\App\Runtime\Cache\Admin\b90703ca8b2bf3535fa3d9139253085d.php 第 18 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010841s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010939s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000421s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000640s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001213s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000736s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000854s ]
+
+[ 2017-08-30T09:46:12+08:00 ] 127.0.0.1 /Admin/Brand/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000330s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000418s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000504s ]
+SQL: SHOW COLUMNS FROM `yd_brand` [ RunTime:0.0481s ]
+SQL: SELECT * FROM `yd_brand`  [ RunTime:0.0802s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000113s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000219s ]
+NOTIC: [8] Use of undefined constant Index - assumed 'Index' D:\wamp64\www\y\App\Runtime\Cache\Admin\ab4b9af6790308501cce30a58d6505ed.php 第 18 行.
+NOTIC: [8] Use of undefined constant index - assumed 'index' D:\wamp64\www\y\App\Runtime\Cache\Admin\ab4b9af6790308501cce30a58d6505ed.php 第 18 行.
+NOTIC: [2] Division by zero D:\wamp64\www\y\App\Runtime\Cache\Admin\ab4b9af6790308501cce30a58d6505ed.php 第 18 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009252s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009338s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000294s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000638s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001052s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000590s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000683s ]
+
+[ 2017-08-30T09:46:13+08:00 ] 127.0.0.1 /Admin/Goods/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000447s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000602s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000752s ]
+SQL: SHOW COLUMNS FROM `yd_goods` [ RunTime:0.0104s ]
+SQL: SELECT * FROM `yd_goods`  [ RunTime:0.0243s ]
+SQL: SHOW COLUMNS FROM `yd_classification` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `yd_classification` WHERE `brand_id` = 15 LIMIT 1   [ RunTime:0.0198s ]
+SQL: SHOW COLUMNS FROM `yd_brand` [ RunTime:0.0016s ]
+SQL: SELECT * FROM `yd_brand` WHERE `brand_id` = 4 LIMIT 1   [ RunTime:0.0244s ]
+SQL: SELECT * FROM `yd_classification` WHERE `brand_id` = 14 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT * FROM `yd_brand` WHERE `brand_id` = 5 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `yd_classification`  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `yd_brand`  [ RunTime:0.0011s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000126s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000215s ]
+NOTIC: [8] Use of undefined constant Index - assumed 'Index' D:\wamp64\www\y\App\Runtime\Cache\Admin\aa143db074a4ae068af099999d56ed88.php 第 18 行.
+NOTIC: [8] Use of undefined constant index - assumed 'index' D:\wamp64\www\y\App\Runtime\Cache\Admin\aa143db074a4ae068af099999d56ed88.php 第 18 行.
+NOTIC: [2] Division by zero D:\wamp64\www\y\App\Runtime\Cache\Admin\aa143db074a4ae068af099999d56ed88.php 第 18 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012932s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013048s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000403s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000784s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001346s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000542s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000673s ]
+
+[ 2017-08-30T09:50:35+08:00 ] 127.0.0.1 /Admin/Goods/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000331s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000398s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000483s ]
+SQL: SHOW COLUMNS FROM `yd_goods` [ RunTime:0.0184s ]
+SQL: SELECT * FROM `yd_goods`  [ RunTime:0.0124s ]
+SQL: SHOW COLUMNS FROM `yd_classification` [ RunTime:0.0017s ]
+SQL: SELECT * FROM `yd_classification` WHERE `brand_id` = 15 LIMIT 1   [ RunTime:0.0253s ]
+SQL: SHOW COLUMNS FROM `yd_brand` [ RunTime:0.0018s ]
+SQL: SELECT * FROM `yd_brand` WHERE `brand_id` = 4 LIMIT 1   [ RunTime:0.0206s ]
+SQL: SELECT * FROM `yd_classification` WHERE `brand_id` = 14 LIMIT 1   [ RunTime:0.0011s ]
+SQL: SELECT * FROM `yd_brand` WHERE `brand_id` = 5 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `yd_classification`  [ RunTime:0.0012s ]
+SQL: SELECT * FROM `yd_brand`  [ RunTime:0.0012s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000130s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000219s ]
+NOTIC: [8] Use of undefined constant Index - assumed 'Index' D:\wamp64\www\y\App\Runtime\Cache\Admin\aa143db074a4ae068af099999d56ed88.php 第 18 行.
+NOTIC: [8] Use of undefined constant index - assumed 'index' D:\wamp64\www\y\App\Runtime\Cache\Admin\aa143db074a4ae068af099999d56ed88.php 第 18 行.
+NOTIC: [2] Division by zero D:\wamp64\www\y\App\Runtime\Cache\Admin\aa143db074a4ae068af099999d56ed88.php 第 18 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.029606s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.029713s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000371s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000909s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001431s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000507s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000619s ]
+
+[ 2017-08-30T09:50:37+08:00 ] 127.0.0.1 /Admin/Goods/addGood
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000291s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000381s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000465s ]
+SQL: SHOW COLUMNS FROM `yd_classification` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `yd_classification`  [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `yd_brand` [ RunTime:0.0014s ]
+SQL: SELECT * FROM `yd_brand`  [ RunTime:0.0013s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000124s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000210s ]
+NOTIC: [8] Use of undefined constant Index - assumed 'Index' D:\wamp64\www\y\App\Runtime\Cache\Admin\eb9181df74bbb06eb922d7d7284df59a.php 第 18 行.
+NOTIC: [8] Use of undefined constant index - assumed 'index' D:\wamp64\www\y\App\Runtime\Cache\Admin\eb9181df74bbb06eb922d7d7284df59a.php 第 18 行.
+NOTIC: [2] Division by zero D:\wamp64\www\y\App\Runtime\Cache\Admin\eb9181df74bbb06eb922d7d7284df59a.php 第 18 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010498s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010607s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000382s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000870s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001428s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000787s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000937s ]
+
+[ 2017-08-30T09:51:49+08:00 ] 127.0.0.1 /Admin/Goods/addGood
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000302s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000466s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000566s ]
+ERR: Think\Controller:uploadOne方法不存在！
+
+[ 2017-08-30T09:53:00+08:00 ] 127.0.0.1 /Admin/Goods/addGood
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000308s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000381s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000467s ]
+SQL: SHOW COLUMNS FROM `yd_classification` [ RunTime:0.0209s ]
+SQL: SELECT * FROM `yd_classification`  [ RunTime:0.0101s ]
+SQL: SHOW COLUMNS FROM `yd_brand` [ RunTime:0.0014s ]
+SQL: SELECT * FROM `yd_brand`  [ RunTime:0.0051s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000125s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000208s ]
+NOTIC: [8] Use of undefined constant Index - assumed 'Index' D:\wamp64\www\y\App\Runtime\Cache\Admin\eb9181df74bbb06eb922d7d7284df59a.php 第 18 行.
+NOTIC: [8] Use of undefined constant index - assumed 'index' D:\wamp64\www\y\App\Runtime\Cache\Admin\eb9181df74bbb06eb922d7d7284df59a.php 第 18 行.
+NOTIC: [2] Division by zero D:\wamp64\www\y\App\Runtime\Cache\Admin\eb9181df74bbb06eb922d7d7284df59a.php 第 18 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010672s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010768s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000269s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000759s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001147s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000508s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000615s ]
+
+[ 2017-08-30T09:53:01+08:00 ] 127.0.0.1 /Admin/Goods/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000302s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000334s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000418s ]
+SQL: SHOW COLUMNS FROM `yd_goods` [ RunTime:0.0055s ]
+SQL: SELECT * FROM `yd_goods`  [ RunTime:0.0073s ]
+SQL: SHOW COLUMNS FROM `yd_classification` [ RunTime:0.0017s ]
+SQL: SELECT * FROM `yd_classification` WHERE `brand_id` = 15 LIMIT 1   [ RunTime:0.0018s ]
+SQL: SHOW COLUMNS FROM `yd_brand` [ RunTime:0.0017s ]
+SQL: SELECT * FROM `yd_brand` WHERE `brand_id` = 4 LIMIT 1   [ RunTime:0.0022s ]
+SQL: SELECT * FROM `yd_classification` WHERE `brand_id` = 14 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `yd_brand` WHERE `brand_id` = 5 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `yd_classification`  [ RunTime:0.0013s ]
+SQL: SELECT * FROM `yd_brand`  [ RunTime:0.0013s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000177s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000359s ]
+NOTIC: [8] Use of undefined constant Index - assumed 'Index' D:\wamp64\www\y\App\Runtime\Cache\Admin\aa143db074a4ae068af099999d56ed88.php 第 18 行.
+NOTIC: [8] Use of undefined constant index - assumed 'index' D:\wamp64\www\y\App\Runtime\Cache\Admin\aa143db074a4ae068af099999d56ed88.php 第 18 行.
+NOTIC: [2] Division by zero D:\wamp64\www\y\App\Runtime\Cache\Admin\aa143db074a4ae068af099999d56ed88.php 第 18 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012136s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012229s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000283s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000766s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001167s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000416s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000519s ]
+
+[ 2017-08-30T09:53:02+08:00 ] 127.0.0.1 /Admin/Goods/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000297s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000414s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000506s ]
+SQL: SHOW COLUMNS FROM `yd_goods` [ RunTime:0.0046s ]
+SQL: SELECT * FROM `yd_goods`  [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `yd_classification` [ RunTime:0.0019s ]
+SQL: SELECT * FROM `yd_classification` WHERE `brand_id` = 15 LIMIT 1   [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `yd_brand` [ RunTime:0.0017s ]
+SQL: SELECT * FROM `yd_brand` WHERE `brand_id` = 4 LIMIT 1   [ RunTime:0.0012s ]
+SQL: SELECT * FROM `yd_classification` WHERE `brand_id` = 14 LIMIT 1   [ RunTime:0.0013s ]
+SQL: SELECT * FROM `yd_brand` WHERE `brand_id` = 5 LIMIT 1   [ RunTime:0.0013s ]
+SQL: SELECT * FROM `yd_classification`  [ RunTime:0.0013s ]
+SQL: SELECT * FROM `yd_brand`  [ RunTime:0.0014s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000122s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000209s ]
+NOTIC: [8] Use of undefined constant Index - assumed 'Index' D:\wamp64\www\y\App\Runtime\Cache\Admin\aa143db074a4ae068af099999d56ed88.php 第 18 行.
+NOTIC: [8] Use of undefined constant index - assumed 'index' D:\wamp64\www\y\App\Runtime\Cache\Admin\aa143db074a4ae068af099999d56ed88.php 第 18 行.
+NOTIC: [2] Division by zero D:\wamp64\www\y\App\Runtime\Cache\Admin\aa143db074a4ae068af099999d56ed88.php 第 18 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012462s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012552s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000279s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000748s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001147s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000499s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000593s ]
+
+[ 2017-08-30T09:53:04+08:00 ] 127.0.0.1 /Admin/Goods/addGood
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000325s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000361s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000452s ]
+SQL: SHOW COLUMNS FROM `yd_classification` [ RunTime:0.0022s ]
+SQL: SELECT * FROM `yd_classification`  [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `yd_brand` [ RunTime:0.0019s ]
+SQL: SELECT * FROM `yd_brand`  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000136s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000223s ]
+NOTIC: [8] Use of undefined constant Index - assumed 'Index' D:\wamp64\www\y\App\Runtime\Cache\Admin\eb9181df74bbb06eb922d7d7284df59a.php 第 18 行.
+NOTIC: [8] Use of undefined constant index - assumed 'index' D:\wamp64\www\y\App\Runtime\Cache\Admin\eb9181df74bbb06eb922d7d7284df59a.php 第 18 行.
+NOTIC: [2] Division by zero D:\wamp64\www\y\App\Runtime\Cache\Admin\eb9181df74bbb06eb922d7d7284df59a.php 第 18 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011404s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011548s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000433s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.001112s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001792s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000534s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000662s ]
+
+[ 2017-08-30T09:53:26+08:00 ] 127.0.0.1 /Admin/Goods/addGood
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000283s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000378s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000471s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000063s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000151s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005292s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005421s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000387s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000650s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001258s ]
+
+[ 2017-08-30T09:53:29+08:00 ] 127.0.0.1 /Admin/Goods/addGood
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000293s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000333s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000418s ]
+SQL: SHOW COLUMNS FROM `yd_classification` [ RunTime:0.0053s ]
+SQL: SELECT * FROM `yd_classification`  [ RunTime:0.0101s ]
+SQL: SHOW COLUMNS FROM `yd_brand` [ RunTime:0.0016s ]
+SQL: SELECT * FROM `yd_brand`  [ RunTime:0.0126s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000133s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000218s ]
+NOTIC: [8] Use of undefined constant Index - assumed 'Index' D:\wamp64\www\y\App\Runtime\Cache\Admin\eb9181df74bbb06eb922d7d7284df59a.php 第 18 行.
+NOTIC: [8] Use of undefined constant index - assumed 'index' D:\wamp64\www\y\App\Runtime\Cache\Admin\eb9181df74bbb06eb922d7d7284df59a.php 第 18 行.
+NOTIC: [2] Division by zero D:\wamp64\www\y\App\Runtime\Cache\Admin\eb9181df74bbb06eb922d7d7284df59a.php 第 18 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010335s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010426s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000231s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000753s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001106s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000543s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000633s ]
+
+[ 2017-08-30T09:55:01+08:00 ] 127.0.0.1 /Admin/Goods/addGood
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000601s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000425s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000542s ]
+SQL: SHOW COLUMNS FROM `yd_classification` [ RunTime:0.0166s ]
+SQL: SELECT * FROM `yd_classification`  [ RunTime:0.0102s ]
+SQL: SHOW COLUMNS FROM `yd_brand` [ RunTime:0.0017s ]
+SQL: SELECT * FROM `yd_brand`  [ RunTime:0.0209s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000165s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000303s ]
+NOTIC: [8] Use of undefined constant Index - assumed 'Index' D:\wamp64\www\y\App\Runtime\Cache\Admin\eb9181df74bbb06eb922d7d7284df59a.php 第 18 行.
+NOTIC: [8] Use of undefined constant index - assumed 'index' D:\wamp64\www\y\App\Runtime\Cache\Admin\eb9181df74bbb06eb922d7d7284df59a.php 第 18 行.
+NOTIC: [2] Division by zero D:\wamp64\www\y\App\Runtime\Cache\Admin\eb9181df74bbb06eb922d7d7284df59a.php 第 18 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010838s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010935s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000279s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000764s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001165s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000552s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000643s ]
+
+[ 2017-08-30T09:55:51+08:00 ] 127.0.0.1 /Admin/Goods/addGood
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000318s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000494s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000579s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\wamp64\www\y\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+NOTIC: [8] Undefined variable: str D:\wamp64\www\y\App\Admin\Controller\GoodsController.class.php 第 65 行.
+SQL: SHOW COLUMNS FROM `yd_goods` [ RunTime:0.0250s ]
+SQL: INSERT INTO `yd_goods` (`name`,`keywords`,`description`,`sorting`,`click_count`,`class_id`,`brand_id`,`price`,`color`,`inventory`,`body`,`images`,`goods_sn`,`addtime`) VALUES ('','','2133','213','231','14','4','213','0,3,','213','&lt;p&gt;&lt;img src=&quot;/Uploads/image/20170830/1504058106727151.jpg&quot; title=&quot;1504058106727151.jpg&quot; alt=&quot;a1ec08fa513d2697aa5604ff53fbb2fb4216d88f.jpg&quot;/&gt;&lt;/p&gt;&lt;p&gt;&lt;img src=&quot;/Uploads/image/20170830/1504058115119899.jpg&quot; style=&quot;&quot; title=&quot;1504058115119899.jpg&quot;/&gt;&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;','2017-08-30/59a61b274b6e5.JPG','201708300955513658','1504058151') [ RunTime:0.0502s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000060s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000144s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004689s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004783s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000623s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000529s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001320s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000487s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000571s ]
+
+[ 2017-08-30T09:55:52+08:00 ] 127.0.0.1 /Admin/Goods/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000699s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000598s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000750s ]
+SQL: SHOW COLUMNS FROM `yd_goods` [ RunTime:0.0055s ]
+SQL: SELECT * FROM `yd_goods`  [ RunTime:0.0155s ]
+SQL: SHOW COLUMNS FROM `yd_classification` [ RunTime:0.0016s ]
+SQL: SELECT * FROM `yd_classification` WHERE `brand_id` = 15 LIMIT 1   [ RunTime:0.0170s ]
+SQL: SHOW COLUMNS FROM `yd_brand` [ RunTime:0.0016s ]
+SQL: SELECT * FROM `yd_brand` WHERE `brand_id` = 4 LIMIT 1   [ RunTime:0.0125s ]
+SQL: SELECT * FROM `yd_classification` WHERE `brand_id` = 14 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `yd_brand` WHERE `brand_id` = 5 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT * FROM `yd_classification` WHERE `brand_id` = 14 LIMIT 1   [ RunTime:0.0012s ]
+SQL: SELECT * FROM `yd_brand` WHERE `brand_id` = 4 LIMIT 1   [ RunTime:0.0011s ]
+SQL: SELECT * FROM `yd_classification`  [ RunTime:0.0012s ]
+SQL: SELECT * FROM `yd_brand`  [ RunTime:0.0011s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000137s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000247s ]
+NOTIC: [8] Use of undefined constant Index - assumed 'Index' D:\wamp64\www\y\App\Runtime\Cache\Admin\aa143db074a4ae068af099999d56ed88.php 第 18 行.
+NOTIC: [8] Use of undefined constant index - assumed 'index' D:\wamp64\www\y\App\Runtime\Cache\Admin\aa143db074a4ae068af099999d56ed88.php 第 18 行.
+NOTIC: [2] Division by zero D:\wamp64\www\y\App\Runtime\Cache\Admin\aa143db074a4ae068af099999d56ed88.php 第 18 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016109s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016231s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000469s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.001156s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001834s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000830s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001003s ]
+
+[ 2017-08-30T09:57:16+08:00 ] 127.0.0.1 /Admin/Goods/addGood
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000324s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000395s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000483s ]
+SQL: SHOW COLUMNS FROM `yd_classification` [ RunTime:0.0026s ]
+SQL: SELECT * FROM `yd_classification`  [ RunTime:0.0150s ]
+SQL: SHOW COLUMNS FROM `yd_brand` [ RunTime:0.0018s ]
+SQL: SELECT * FROM `yd_brand`  [ RunTime:0.0131s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000155s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000254s ]
+NOTIC: [8] Use of undefined constant Index - assumed 'Index' D:\wamp64\www\y\App\Runtime\Cache\Admin\eb9181df74bbb06eb922d7d7284df59a.php 第 18 行.
+NOTIC: [8] Use of undefined constant index - assumed 'index' D:\wamp64\www\y\App\Runtime\Cache\Admin\eb9181df74bbb06eb922d7d7284df59a.php 第 18 行.
+NOTIC: [2] Division by zero D:\wamp64\www\y\App\Runtime\Cache\Admin\eb9181df74bbb06eb922d7d7284df59a.php 第 18 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010864s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010950s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000300s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000764s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001186s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000560s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000706s ]
+

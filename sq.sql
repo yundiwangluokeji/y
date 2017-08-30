@@ -28,7 +28,17 @@ create table if not exists `yd_config`(
 `configsorting` int(11) unsigned not null default 0 COMMENT '配置排序',
 `configaddtime` int unsigned COMMENT '添加配置时间'
 )engine=innodb default charset="utf8";
-insert into yd_config(configname,configkey,configval,configaddtime) values('网站标题','title','某某钟表有限公司',unix_timestamp(now()));
+INSERT INTO `yd_config` VALUES ('1', '网站标题', 'title', '某某钟表有限公司', '0', '1503900186', '1503969557');
+INSERT INTO `yd_config` VALUES ('2', 'logo', 'logo', '2017-08-28/59a43bd9961ec.jpg', '0', '1503905263', '1503935449');
+INSERT INTO `yd_config` VALUES ('3', '关键词', 'keywords', 'phpshe,php,shop,php商城系统', '0', '1503914214', '1503969557');
+INSERT INTO `yd_config` VALUES ('4', '网站描述', 'description', 'phpshe,php,shop,php商城系统,b2c商城系统', '0', '1503914214', '1503969557');
+INSERT INTO `yd_config` VALUES ('5', '微信二维码', 'wechat', '2017-08-28/59a43bd996a31.jpg', '0', '1503914214', '1503935449');
+INSERT INTO `yd_config` VALUES ('6', '咨询电话', 'tel', '15839823500', '0', '1503914232', '1503969557');
+INSERT INTO `yd_config` VALUES ('7', '咨询QQ', 'qq', '76265959', '0', '1503914233', '1503969557');
+INSERT INTO `yd_config` VALUES ('8', '版权所有', 'copyright', '云狄网版权所有', '0', '1503914233', '1503969557');
+INSERT INTO `yd_config` VALUES ('9', '备案号', 'record_no', '豫ICP备17013559号-1', '0', '1503914233', '1503969557');
+INSERT INTO `yd_config` VALUES ('10', '热门搜索', 'hot', 'PHPSHE,B2C商城系统,简好网络', '0', '1503914233', '1503969558');
+INSERT INTO `yd_config` VALUES ('11', '统计代码', 'count', '', '0', '1503931018', '1503969558');
 
 
 /*

@@ -1,0 +1,82 @@
+<include file="Public/header" /> <!-- 头部 -->
+<div class="content">
+<include file="Public/left" /> <!-- 左边 -->
+<div class="right" style="height: 573px;">
+	<div class="now" style="width: 1679px;">
+		<a href="Brand management.html" class="sel">品牌列表（13）</a>
+		<a href="__CONTROLLER__/addBrand" id="fabu">添加品牌</a>
+		<div class="clear"></div>
+	</div>
+	<div class="right_main">
+		<form method="post" id="form">
+		<table width="100%" border="0" cellspacing="0" cellpadding="0" class="list">
+		<tbody><tr>
+			<th class="bgtt" width="20"><input type="checkbox" name="checkall" onclick="pe_checkall(this, &#39;brand_id&#39;)"></th>
+			<th class="bgtt" width="50">ID号</th>
+			<th class="bgtt" width="60">排序
+			</th><th class="bgtt" width="150">品牌名称</th>
+			<th class="bgtt" width="150">品牌图片</th>
+			<!-- <th class="bgtt">品牌简介</th> -->
+			<th class="bgtt" width="110">操作</th>
+		</tr>
+        <foreach name="brandData" item="vo">
+		<tr>
+			<td style="background-color: rgb(255, 255, 255);"><input type="checkbox" name="brand_id[]" value="{$vo.brand_id}"></td>
+			<td style="background-color: rgb(255, 255, 255);">{$vo.brand_id}</td>
+			<td style="background-color: rgb(255, 255, 255);"><input type="text" name="sorting[{$vo.brand_id}]" value="{$vo.sorting}" class="inputtext input30 center"></td>
+			<td style="background-color: rgb(255, 255, 255);"><a href="http://phpshe.com/demo/phpshe/brand/22" target="_blank">{$vo.name}</a></td>
+			<td style="background-color: rgb(255, 255, 255);"><a href="http://phpshe.com/demo/phpshe/brand/22" target="_blank"><img src="__PUBLIC__/Admin/brand/{$vo.logo}" style="border:width:140px;height:56px"></a></td>
+			<!-- <td class="aleft" valign="top" style="background-color: rgb(255, 255, 255);">妖精的口袋，与时尚紧密接轨的年轻女装品牌，在淘宝立足不久即登上了电子商务大舞台。妖精的口袋专注于打造独立、自信、优雅、小...</td> -->
+			<td style="background-color: rgb(255, 255, 255);">
+				<a href="__CONTROLLER__/editBrand/brand_id/{$vo.brand_id}" class="admin_edit mar3">修改</a>
+				<a href="__CONTROLLER__/delBrand/brand_id/{$vo.brand_id}" class="admin_del" onclick="return pe_cfone(this, &#39;删除&#39;)">删除</a>
+			</td>
+		</tr>
+    </foreach>
+
+				</tbody></table>
+		</form>
+	</div>
+	<div class="right_bottom">
+		<span class="fl mal10">
+			<input type="checkbox" name="checkall" onclick="pe_checkall(this, &#39;brand_id&#39;)">
+			<button href="__CONTROLLER__/delBrand" onclick="return pe_cfall(this, &#39;brand_id&#39;, &#39;form&#39;, &#39;批量删除&#39;)">批量删除</button>
+			<button href="__CONTROLLER__/updateBrand" onclick="pe_doall(this,&#39;form&#39;)">更新排序</button>
+		</span>
+		<span class="fr fenye"></span>
+		<div class="clear"></div>
+	</div>
+</div>
+	<div class="clear"></div>
+	<!--<div class="foot">Copyright <span class="num">©</span> 2008-2014 <a target="_blank" href="http://www.phpshe.com">灵宝简好网络科技有限公司</a> 版权所有</div>-->
+</div>
+<include file="Public/footer" />
+<script type="text/javascript">
+function win_init() {
+	$(".left").add(".right").css("height", $(window).height() - $(".pagetop").height());
+	$(".now").css("width", $(".right_main").outerWidth());
+	//$(".right_main").css("height", $(window).height() -  $(".pagetop").height() - $(".now:eq(0)").outerHeight() - $(".right_bottom").outerHeight() + 38);
+}
+$(function(){
+	if ($(".right_bottom").height() == 0) {
+		$(".right_bottom").remove();
+	}
+	win_init();
+	$(window).resize(function() {
+		win_init();
+	});
+	$(".list").find("td").hover(
+		function(){
+			if ($(this).hasClass("bgtt") || $(this).is("[nosel=1]")) return;
+			$(this).parent("tr").children("td[nosel!=1]").css("background-color", "#fbfbfb");
+		},
+		function(){
+			if ($(this).hasClass("bgtt") || $(this).is("[nosel=1]")) return;
+			$(this).parent("tr").children("td[nosel!=1]").css("background-color", "#fff");
+		}
+	)
+})
+pe_loadscript("http://phpshe.com/demo/phpshe/index.php?mod=notice");
+</script>
+
+</body></html>
