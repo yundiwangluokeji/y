@@ -33,9 +33,9 @@
 				<div class="fenlei">
 			<h3 class="fl_tb1"><s></s>商品中心</h3>
 			<ul>
-								<li class=""><a href="product-list.html"><span>├</span>商品列表</a></li>
-								<li class=""><a href="Classification of goods.html"><span>├</span>商品分类</a></li>
-								<li class=""><a href="Brand management.html"><span>├</span>品牌管理</a></li>
+								<li class="Goods"><a href="<?php echo U('Goods/index');?>"><span>├</span>商品列表</a></li>
+								<li class="Type"><a href="<?php echo U('Type/index');?>"><span>├</span>商品分类</a></li>
+								<li class="Brand"><a href="<?php echo U('Brand/index');?>"><span>├</span>品牌管理</a></li>
 								<li class=""><a href="Specification management.html"><span>├</span>规格管理</a></li>
 								<li class=""><a href="A-Evaluation management.html"><span>├</span>评价管理</a></li>
 								<li class=""><a href="Coupon-list.html"><span>├</span>优 惠 券</a></li>

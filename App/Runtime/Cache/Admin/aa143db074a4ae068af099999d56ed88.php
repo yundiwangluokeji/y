@@ -98,30 +98,28 @@
 	</div>
 	<div class="right_main">
 		<div class="search">
-			<form method="get">
-			<input type="hidden" name="mod" value="product">
-			<input type="hidden" name="filter" value="">
-			商品名称：<input type="text" name="name" value="" class="inputtext input200">
-			<select name="category_id" class="selectmini">
-    			<option value="0">全部分类</option>
-                <?php if(is_array($typeAllData)): foreach($typeAllData as $key=>$v): ?><option value="<?php echo ($v["brand_id"]); ?>"><?php echo ($v["name"]); ?></option><?php endforeach; endif; ?>
-			</select>
-			<select name="brand_id" class="selectmini">
-    			<option value="0">全部品牌</option>
-                <?php if(is_array($brandAllData)): foreach($brandAllData as $key=>$v): ?><option value="<?php echo ($v["brand_id"]); ?>"><?php echo ($v["name"]); ?></option><?php endforeach; endif; ?>
-			</select>
-			<select name="orderby" class="selectmini">
-			<option value="" href="?mod=product&amp;state=1">默认排序</option>
-						<option value="num|desc" href="?mod=product&amp;state=1&amp;orderby=num|desc">库存量(多到少)</option>
-						<option value="num|asc" href="?mod=product&amp;state=1&amp;orderby=num|asc">库存量(少到多)</option>
-						<option value="sellnum|desc" href="?mod=product&amp;state=1&amp;orderby=sellnum|desc">销售量(多到少)</option>
-						<option value="sellnum|asc" href="?mod=product&amp;state=1&amp;orderby=sellnum|asc">销售量(少到多)</option>
-						<option value="asknum|desc" href="?mod=product&amp;state=1&amp;orderby=asknum|desc">咨询数(多到少)</option>
-						<option value="asknum|asc" href="?mod=product&amp;state=1&amp;orderby=asknum|asc">咨询数(少到多)</option>
-						<option value="commentnum|desc" href="?mod=product&amp;state=1&amp;orderby=commentnum|desc">评价数(多到少)</option>
-						<option value="commentnum|asc" href="?mod=product&amp;state=1&amp;orderby=commentnum|asc">评价数(少到多)</option>
-						</select>
-			<input type="submit" value="搜索" class="input_btn">
+			<form method="get" action="/Admin/Goods/index">
+    			商品名称：<input type="text" name="name" value="" class="inputtext input200">
+    			<select name="classification" class="selectmini">
+        			<option value="0">全部分类</option>
+                    <?php if(is_array($typeAllData)): foreach($typeAllData as $key=>$v): ?><option value="<?php echo ($v["brand_id"]); ?>"><?php echo ($v["name"]); ?></option><?php endforeach; endif; ?>
+    			</select>
+    			<select name="brand" class="selectmini">
+        			<option value="0">全部品牌</option>
+                    <?php if(is_array($brandAllData)): foreach($brandAllData as $key=>$v): ?><option value="<?php echo ($v["brand_id"]); ?>"><?php echo ($v["name"]); ?></option><?php endforeach; endif; ?>
+    			</select>
+    			<select name="orderby" class="selectmini">
+                    <option value="" href="?mod=product&amp;state=1">默认排序</option>
+                    <option value="num|desc" href="?mod=product&amp;state=1&amp;orderby=num|desc">库存量(多到少)</option>
+                    <option value="num|asc" href="?mod=product&amp;state=1&amp;orderby=num|asc">库存量(少到多)</option>
+                    <option value="sellnum|desc" href="?mod=product&amp;state=1&amp;orderby=sellnum|desc">销售量(多到少)</option>
+                    <option value="sellnum|asc" href="?mod=product&amp;state=1&amp;orderby=sellnum|asc">销售量(少到多)</option>
+                    <option value="asknum|desc" href="?mod=product&amp;state=1&amp;orderby=asknum|desc">咨询数(多到少)</option>
+                    <option value="asknum|asc" href="?mod=product&amp;state=1&amp;orderby=asknum|asc">咨询数(少到多)</option>
+                    <option value="commentnum|desc" href="?mod=product&amp;state=1&amp;orderby=commentnum|desc">评价数(多到少)</option>
+                    <option value="commentnum|asc" href="?mod=product&amp;state=1&amp;orderby=commentnum|asc">评价数(少到多)</option>
+				</select>
+    			<input type="submit" value="搜索" class="input_btn">
 			</form>
 		</div>
 		<form method="post" id="form">
@@ -142,10 +140,10 @@
 		</tr>
         <?php if(is_array($goodData)): foreach($goodData as $key=>$vo): ?><tr>
 			<td style="background-color: rgb(255, 255, 255);"><input type="checkbox" name="product_id[]" value="<?php echo ($vo["goods_id"]); ?>"></td>
-			<td style="background-color: rgb(255, 255, 255);">38</td>
+			<td style="background-color: rgb(255, 255, 255);"><?php echo ($vo["goods_id"]); ?></td>
 			<td style="background-color: rgb(255, 255, 255);"><input type="text" name="sorting[<?php echo ($vo["brand_id"]); ?>]" value="<?php echo ($vo["sorting"]); ?>" class="inputtext input30 center"></td>
-			<td width="40" style="background-color: rgb(255, 255, 255);"><a href="http://phpshe.com/demo/phpshe/product/38" target="_blank"><img src="/Public/Admin/good/<?php echo ($vo["images"]); ?>" width="40" height="40" class="imgbg"></a></td>
-			<td class="aleft" style="padding-left: 0px; background-color: rgb(255, 255, 255);"><a href="http://phpshe.com/demo/phpshe/product/38" target="_blank" class="cblue"><?php echo ($vo["name"]); ?></a></td>
+			<td width="40" style="background-color: rgb(255, 255, 255);"><a href="" target="_blank"><img src="/Public/Admin/good/<?php echo ($vo["images"]); ?>" width="40" height="40" class="imgbg"></a></td>
+			<td class="aleft" style="padding-left: 0px; background-color: rgb(255, 255, 255);"><a href="" target="_blank" class="cblue"><?php echo ($vo["name"]); ?></a></td>
 			<td style="background-color: rgb(255, 255, 255);"><?php echo ($vo["class"]); ?></td>
 			<td style="background-color: rgb(255, 255, 255);"><?php echo ($vo["brand"]); ?></td>
 			<td style="background-color: rgb(255, 255, 255);"><span class="num corg"><?php echo ($vo["price"]); ?></span></td>
@@ -155,9 +153,9 @@
 				<a class="shelvesBtn" data-id="<?php echo ($vo["goods_id"]); ?>" data-status="<?php echo ($vo["is_shelves"]); ?>"><img src="/App/Admin/style/images/<?php if($vo["is_shelves"] == 1): ?>dui<?php else: ?>cuo<?php endif; ?>.png"></a>
 			</td>
 			<td style="background-color: rgb(255, 255, 255);">
-				<a href="http://phpshe.com/demo/phpshe/admin.php?mod=product&amp;act=sell&amp;id=38&amp;fromto=http%3A%2F%2Fphpshe.com%2Fdemo%2Fphpshe%2Fadmin.php%3Fmod%3Dproduct%26state%3D1" onclick="return pe_dialog(this, &#39;设置销量&#39;, 400, 210, &#39;product_sell&#39;)"><?php echo ($vo["sales_sum"]); ?></a>
+				<a href="" onclick="return pe_dialog(this, &#39;设置销量&#39;, 400, 210, &#39;product_sell&#39;)"><?php echo ($vo["sales_sum"]); ?></a>
 				<span class="c999">/</span>
-				<a href="http://phpshe.com/demo/phpshe/admin.php?mod=product&amp;act=comment&amp;id=38" onclick="return pe_dialog(this, &#39;添加评价&#39;, 600, 370, &#39;product_comment&#39;)">0</a>
+				<a href="" onclick="return pe_dialog(this, &#39;添加评价&#39;, 600, 370, &#39;product_comment&#39;)">0</a>
 			</td>
 			<td style="background-color: rgb(255, 255, 255);">
 				<a href="/Admin/Goods/editGood/goods_id/<?php echo ($vo["goods_id"]); ?>" class="admin_edit mar3">修改</a>
@@ -172,7 +170,7 @@
 	<div class="right_bottom">
 		<span class="fl mal10">
 			<input type="checkbox" name="checkall" onclick="pe_checkall(this, &#39;product_id&#39;)">
-			<button href="admin.php?mod=product&amp;act=del&amp;token=185dbf0e05b36cd40737acb79e73f95c" onclick="return pe_cfall(this, &#39;product_id&#39;, &#39;form&#39;, &#39;批量删除&#39;)">批量删除</button>
+			<button href="/Admin/Goods/delGood" onclick="return pe_cfall(this, &#39;product_id&#39;, &#39;form&#39;, &#39;批量删除&#39;)">批量删除</button>
 			<button href="admin.php?mod=product&amp;act=order&amp;token=185dbf0e05b36cd40737acb79e73f95c" onclick="pe_doall(this,&#39;form&#39;)">更新排序</button>
 			<button href="admin.php?mod=product&amp;act=state&amp;state=1&amp;token=185dbf0e05b36cd40737acb79e73f95c" onclick="return pe_cfall(this, &#39;product_id&#39;, &#39;form&#39;, &#39;批量上架&#39;)">批量上架</button>
 			<button href="admin.php?mod=product&amp;act=state&amp;state=2&amp;token=185dbf0e05b36cd40737acb79e73f95c" onclick="return pe_cfall(this, &#39;product_id&#39;, &#39;form&#39;, &#39;批量下架&#39;)">批量下架</button>
@@ -180,7 +178,7 @@
 			<button href="admin.php?mod=product&amp;act=tuijian&amp;tuijian=0&amp;token=185dbf0e05b36cd40737acb79e73f95c" onclick="return pe_cfall(this, &#39;product_id&#39;, &#39;form&#39;, &#39;取消推荐&#39;)">取消推荐</button>
 			<button type="button" onclick="product_move()">批量转移商品</button>
 		</span>
-		<span class="fr fenye"><a href="http://phpshe.com/demo/phpshe/admin.php?mod=product&amp;state=1&amp;page=1">首页</a><a href="http://phpshe.com/demo/phpshe/admin.php?mod=product&amp;state=1&amp;page=1" class="sel">1</a><a href="http://phpshe.com/demo/phpshe/admin.php?mod=product&amp;state=1&amp;page=2">2</a><a href="http://phpshe.com/demo/phpshe/admin.php?mod=product&amp;state=1&amp;page=2">末页</a><style type="text/css">
+		<span class="fr fenye"><a href="">首页</a><a href="" class="sel">1</a><a href="">2</a><a href="">末页</a><style type="text/css">
 .fenye{text-align:right;}
 .fenye a{border:1px #ccc solid; padding:0 10px; border-radius:2px; color:#666; background:#fff;display:inline-block;  height:24px; line-height:24px; font-weight:normal; margin-left:3px;}
 .fenye a:hover,.fenye .sel{background:#1DABDF; color:#fff; border:1px #0D95C7 solid;  padding:0 10px;}

@@ -4,9 +4,9 @@ namespace Admin\Model;
 class GoodsModel extends \Think\Model
 {
     // 查询商品数据
-    public function selectGoodData()
+    public function selectGoodData($where = '')
     {
-        $goodData = $this->select();
+        $goodData = $this->where($where)->select();
         if ($goodData) {
             return array(
                 'status' => 1,
@@ -108,6 +108,26 @@ class GoodsModel extends \Think\Model
             return array(
                 'status' => 0,
                 'msg' => '查无数据，请重试',
+                'data' => ''
+            );
+        }
+    }
+
+    // 修改商品
+    public function editGood($formData, $goods_id)
+    {
+        // $formData['updatetime'] = time();
+        $editRes = $this->where(array('goods_id' => $goods_id))->save($formData);
+        if ($editRes) {
+            return array(
+                'status' => 1,
+                'msg' => '修改成功',
+                'data' => ''
+            );
+        } else {
+            return array(
+                'status' => 0,
+                'msg' => '修改失败，请重试',
                 'data' => ''
             );
         }

@@ -89,11 +89,12 @@
 <script type='text/javascript' charset='utf-8' src='/Public/ueditor/ueditor.config.js'></script>
 <script type='text/javascript' charset='utf-8' src='/Public/ueditor/ueditor.all.min.js'> </script>
 <div class="right" style="height: 849px;">
-	<div class="now" style="width: 1066px;">
+	<div class="now">
 		<a href="javascript:;" class="sel">修改商品</a>
 		<div class="clear"></div>
 	</div>
-    <form method="post" enctype="multipart/form-data" action="/Admin/Goods/addGood">
+    <div class="right_main">
+    <form method="post" enctype="multipart/form-data" action="/Admin/Goods/editGood">
     <table width="100%" border="0" cellspacing="0" cellpadding="0" class="wenzhang mat20 mab20" style="display: table;">
     <tbody>
     <tr>
@@ -138,8 +139,12 @@
     </tr>
     <tr class="base_html">
         <td align="right">商品颜色多选:</td>
+
         <td colspan="3">
-            <?php if(is_array($color)): foreach($color as $k=>$v): ?><label><input name="info[color][]" type="checkbox" value="<?php echo ($k); ?>" /><?php echo ($v); ?></label><?php endforeach; endif; ?>
+            <?php if(is_array($color)): foreach($color as $k=>$v): ?><label>
+                    <input name="info[color][]" type="checkbox" value="<?php echo ($k); ?>"
+                        <?php if(is_array($goodData['color'])): foreach($goodData['color'] as $key=>$val): if($k == $val){echo 'checked';} endforeach; endif; ?>
+                    ><?php echo ($v); ?></label>&nbsp;<?php endforeach; endif; ?>
         </td>
     </tr>
     <tr class="base_html">
@@ -166,6 +171,7 @@
     <tr>
         <td align="right"></td>
         <td colspan="3">
+            <input type="hidden" name="goods_id" value="<?php echo ($goodData["goods_id"]); ?>">
             <input type="hidden" name="pesubmit">
             <input type="submit" value="提 交" class="tjbtn" style="margin-left:380px">
         </td>
@@ -181,7 +187,7 @@
         <td><textarea name="info[product_desc]" style="width:500px;height:100px;"></textarea> <span class="c888">（SEO选项）</span></td>
     </tr>
     <tr>
-        <td align="right"></td>
+        <td></td>
         <td>
             <input type="hidden" name="pesubmit">
             <input type="submit" value="提 交" class="tjbtn" style="margin-left:380px">
@@ -193,7 +199,7 @@
 <script type="text/javascript" charset="utf-8">
  var ue = UE.getEditor('editor');
  ue.ready(function() {
-    ue.setContent('<?php echo ($goodData["body"]); ?>');
+    ue.setContent('<?php echo (htmlspecialchars_decode($goodData["body"])); ?>');
 });
 </script>
 
