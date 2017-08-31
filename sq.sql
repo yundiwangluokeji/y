@@ -113,8 +113,19 @@ create table if not exists `yd_agent_goods`(
 `agent_click_count` int(10) unsigned not null default 0 COMMENT '点击数',
 `agent_sorting` int(11) unsigned not null default 0 COMMENT '排序',
 `goods_permissions` tinyint(1) unsigned not null default 0 COMMENT '商品浏览权限(0不公开,1对登录用户公开,2代理商可以在后台分享一个二维码普通用户扫描二维码查看此商品--30分钟内有效)',
-`agent_addtime` int unsigned COMMENT '商品添加时间' 
-`updateitme` timestamp,
+`state` tinyint(1) unsigned not null default 0 COMMENT '商品状态(1购买的商品,2预定的商品)',
+`agent_addtime` int unsigned COMMENT '商品添加时间',
+`updateitme` timestamp
+)engine=innodb default charset="utf8";
+
+/*
+--代理商 收藏表
+*/
+create table if not exists `yd_agent_collection`(
+`id` int(11) unsigned not null auto_increment primary key,
+`agent_id` int(11) unsigned not null default 0 COMMENT '代理商id',
+`goods_id` int(11) unsigned not null default 0 COMMENT '商品id',
+`addtime` int unsigned COMMENT '商品添加时间'
 )engine=innodb default charset="utf8";
 
 
@@ -125,6 +136,7 @@ create table if not exists `yd_agent_goods`(
 create table if not exists `yd_agent_config`(
 `id` int unsigned not null auto_increment primary key,
 `name` varchar(100) not null default '' COMMENT '代理商名称',
+`agent_id` int(11) unsigned not null default 0 COMMENT '代理商id',
 `logo` varchar(255) not null default '' COMMENT '代理商logo',
 `mobile` int(11) not null default 0 COMMENT '手机号',
 `tel` char(20) not null default '' COMMENT '电话',
@@ -176,8 +188,7 @@ create table if not exists `yd_money_log`(
 `res` tinyint(1) not null default 0 COMMENT '操作结果(1成功,0否)',
 `type` tinyint(1) not null default 0 COMMENT '操作内型(1收入,0支出)',
 `msg` char(50) not null default '' COMMENT '操作信息',
-`time` int(11) unsigned COMMENT '操作时间',
-`updateitme` timestamp
+`time` int(11) unsigned COMMENT '操作时间'
 )engine=innodb default charset="utf8";
 
 
@@ -185,7 +196,7 @@ create table if not exists `yd_money_log`(
 /*
 --代理商登录日志表
 */
-create table if not exists `yd_agent`(
+create table if not exists `yd_login_log`(
 `id` int(11) unsigned not null auto_increment primary key,
 `name` char(30) not null default '' COMMENT '登录名称',
 `pass` varchar(255) not null default '' COMMENT	'登录密码',
@@ -193,8 +204,7 @@ create table if not exists `yd_agent`(
 `address` varchar(255) not null default '' COMMENT '登录地址',
 `res` tinyint(1) not null default 0 COMMENT '登录结果(1成功,0否)',
 `msg` char(50) not null default '' COMMENT '登录信息',
-`time` int(11) unsigned COMMENT '登录时间',
-`updateitme` timestamp
+`time` int(11) unsigned COMMENT '登录时间'
 )engine=innodb default charset="utf8";
 
 
