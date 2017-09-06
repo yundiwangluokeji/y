@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>绑定手机</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" />
+	<link rel="stylesheet" type="text/css" href="__STYLE__/css/public.css">
+	<link rel="stylesheet" type="text/css" href="__STYLE__/css/bind_mobile.css">
+	<script type="text/javascript" src="__STYLE__/js/jquery-1.7.1.min.js"></script>
+	<script type="text/javascript" src="__STYLE__/layer/layer.js"></script>
+	<script>
+		document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';
+		$(window).resize(function () {  
+			document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';
+		 }) 
+	</script>
+</head>
+<body>
+	<div class="header">
+		<a class="back" href="javascript:history.go(-1)"><img src="__STYLE__/img/back_last.png"></a>
+		<i class="line"></i>
+		<h3>绑定手机</h3>
+	</div>
+
+	<div class="content">
+		<form id="imageUploadForm">
+			<label>
+				<span>手机号码</span>
+				<input class="tel" type="text" name="mobile" placeholder="请输入手机号码">
+			</label>
+			<div class="code_box">
+				<button type="button" class="on" disabled="disabled" >获取验证码</button>
+				<label>
+					<span>验证密码</span>
+					<input class="code" type="text" name="code" placeholder="请输入修改密码">
+				</label>
+			</div>
+
+			<button class="submit" id="ImageBrowse" type="button">保存</button>
+		</form>
+	</div>
+	<!-- 验证码弹窗 -->
+	<div class="success" style="display: none;">
+		<p></p>
+	</div>
+</body>
+</html>
+<script type="text/javascript">
+
+	$('.tel').change(function(){
+		var reg= <?php echo __MOBILE__;?>; //手机号正则
+		if(reg.test($(this).val())){
+			$('.code_box button').removeAttr('class');
+			$('.code_box button').removeAttr("disabled");
+		}else{
+			$('.code_box button').addClass('on');
+			$('.code_box button').attr('disabled','disabled');
+		}
+	})
+
+	$(function(){
+		$('.code_box button').click(function(){
+	    	var tel=$('.tel').val();
+	    	var reg= <?php echo __MOBILE__;?>; //手机号正则
+			if(reg.test(tel)){
+				$.post("{:U('sendcode')}",{'mobile':tel},function(res){
+					// alert(res)
+					if(res.res == 1){
+						mytime();
+					}
+					layer.msg(res.msg);
+				})
+
+				
+				
+			}else{
+				layer.msg('手机号码格式错误！');
+			}
+		})
+	})
+
+function mytime(){
+	$('.code_box button').addClass('on');
+	$('.code_box button').attr('disabled','disabled');
+	var i = 120;
+	var time = setInterval(function(){
+	$('.code_box button').html(i+'s');
+	if(i <= 0){
+		clearInterval(time);
+		$('.code_box button').removeAttr('class');
+		$('.code_box button').removeAttr("disabled");
+		$('.code_box button').html('获取验证码');
+	}
+	i--;
+	},1000);
+}
+
+
+$(document).ready(function (e) {
+    $('#imageUploadForm').on('submit',(function(e) {
+
+    	var code=$('.code').val();
+	    var tel=$('.tel').val();
+	    var reg= <?php echo __MOBILE__;?>; 
+	    if(tel==''){
+	        layer.msg('手机号码不能为空')
+	         return false; 
+	    }
+		if(!reg.test(tel)){ 
+		  	layer.msg('手机号码格式错误')
+		    return false; 
+		} 
+		if(code==''){
+	        layer.msg('验证码不能为空')
+	         return false; 
+	    }
+        var formData = new FormData(this);
+        e.preventDefault();
+        $.ajax({
+            type:'POST',
+            url: '',
+            data:formData,
+            // cache:false,
+            contentType: false,
+            processData: false,
+
+            success:function(data){
+            	console.log(data)
+               if(data.res == 1){
+					layer.msg(data.msg)
+               		window.location.href="{:U('Config/index')}";
+               }else{
+               
+					layer.msg(data.msg)
+               }
+            },
+            error: function(data){
+                layer.msg('网络错误！')
+            }
+        });
+    }));
+
+    $("#ImageBrowse").on("click", function() {
+        $("#imageUploadForm").submit();
+    });
+
+
+    $(document).keydown(function(event){ 
+        if(event.keyCode == 13){
+        	$("#imageUploadForm").submit();
+        } 
+     }); 
+});
+
+
+
+
+
+
+</script>

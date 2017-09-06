@@ -1,0 +1,41 @@
+﻿.header{width: 100%;height: 0.8rem;background: #13171a;position: fixed;left: 0;top: 0;z-index: 100;}
+.header a{display: block;height: 0.36rem;line-height: 0.36rem;font-size: 0;}
+.header img{width: 100%;height: 100%;}
+.header .mg{height: 0.36rem;padding-top: 0.22rem;}
+.header .goback{float: left;width: 0.36rem;}
+.header h1{float: left;color: #c3a07d;font-size: 0.28rem;height: 0.36rem;line-height: 0.36rem;border-left: 1px solid #2f3336;padding-left: 0.2rem;margin-left: 0.32rem;}
+
+body{background: #1d2124;}
+
+.contains{width: 100%;margin: 0.8rem auto 0.98rem;color: #545b61;}
+.purchaseNav{width: 100%;height: 0.8rem;line-height: 0.8rem;background: #2f3336;position: relative;}
+.purchaseNav a{display: block;box-sizing: border-box;width: 50%;height: 0.8rem;line-height: 0.8rem;float: left;text-align: center;}
+.purchaseNav span{display: block;color: #545b61;font-size: 0.28rem;height: 0.26rem;line-height: 0.26rem;margin-top: 0.27rem;}
+.purchaseNav a:first-child span{border-right: 1px solid #545b61;}
+.purchaseNav a.opt span{color: #c3a07d;}
+
+.purchase{width: 100%;font-size: 0.24rem;clear: both;}
+.purchase a,.purchase span{display: block;}
+
+.purchase li{border: 1px solid #545b61;background: #2f3336;margin-top: 0.24rem;}
+.purchase li h2{height: 0.64rem;line-height: 0.64rem;padding: 0 0.24rem;}
+.purchase li h2 a{width: 0.24rem;height: 0.64rem;line-height: 0.64rem;font-size: 0;float: right;}
+.purchase .details{border-top: 1px solid #545b61;border-bottom: 1px solid #545b61;padding: 0.24rem;}
+.purchase .details>a{width: 1.2rem;height: 1.2rem;line-height: 1.2rem;background: #ffffff;text-align: center;font-size: 0;overflow: hidden;float: left;}
+.purchase .title{float: left;width: 3.6rem;margin-left: 0.24rem;}
+.purchase .title h1{width: 3.6rem;height: 0.72rem;line-height: 0.36rem;word-break: break-all;overflow: hidden;padding-top: 0.06rem;}
+.purchase .title h1 a{color: #ffffff;}
+.purchase .title p span{display: inline-block;}
+.purchase .bottom{overflow: hidden;padding: 0.2rem;}
+.purchase .bottom a{float: right;color: #7bc2ea;border: 1px solid #7bc2ea;font-size: 0.24rem;line-height: 0.4rem;padding: 0 0.4rem;border-radius: 0.06rem;}
+
+.slide_down{width: 50%;position: absolute;left: 0;top: 0.8rem;display: none;}
+.slide_down a{width: 100%;background: #2f3336;border: 1px solid #1d2124;}
+.slide_down a:hover{background: #141719;}
+.slide_down a:nth-child(2){border-top:none;}
+.slide_down a span{color: #c3a07d;}
+.purchaseNav .slide_down a:first-child span{border:none;}
+.purchase ul ol{display: none;}
+
+.back_top{position: fixed;right: 0.2rem;bottom: 1.2rem;width: 0.82rem;height: 0.82rem;cursor: pointer;border-radius: 50%;overflow: hidden;z-index: 50;}
+.back_top img{width: 100%;}

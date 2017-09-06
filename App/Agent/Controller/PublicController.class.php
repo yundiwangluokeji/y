@@ -2,11 +2,13 @@
 namespace Agent\Controller;
 use Think\Controller;
 class PublicController extends Controller {
+    public $config = array();
     public function _initialize()
     {
     	//如果没有登录返回404
         if(!session('AgentUser')){$this->redirect('Login/index');}
     	$this->agentconfig();
+        // session('AgentUser',null);
     }
 
 
@@ -23,6 +25,7 @@ class PublicController extends Controller {
         __AGENT_CONFIG__.address
          from __AGENT__ inner join __AGENT_CONFIG__ ON __AGENT_CONFIG__.agent_id = __AGENT__.id where __AGENT__.id = ".session('AgentUser').' limit 1';
         $agent = M()->query($sql)[0];
+        $this->config = $agent;
         $this->assign('config',$agent);
     }
 

@@ -31,12 +31,16 @@ class UserController extends PublicController
     		$data = $agent->datas($input);
     		if(!is_array($data)){$this->error($data);}
     		M()->startTrans();
-    		$res = $agent->add($data);
+    		$res = $agent->add($data);//添加代理商
     		if($res){
     			$data_['agent_id'] = $res;
-    			$moneyres = M('money')->add($data_);
+    			$moneyres = M('money')->add($data_);//添加代理商钱包
     		}
-    		if($res && $moneyres){
+            $data2['name'] = $data['username'].'的店铺';
+            $data2['agent_id'] = $res;
+            $config = M('agent_config')->add($data2);
+
+    		if($res && $moneyres && $config){
     			M()->commit();
     			$this->success('添加成功！');
     		}else{

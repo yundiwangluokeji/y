@@ -26,18 +26,19 @@
 				<span class="left">店铺名称</span>
 				<span class="right">{$config.name}</span>
 			</a>
-			<a href="">
+			<a href="{:U('setpassword')}">
 				<span class="left">修改密码</span>
 				<span class="right">******</span>
 			</a>
-			<a href="">
+			<a href="{:U('setmobile')}">
 				<span class="left">绑定手机</span>
-				<span class="right">未绑定</span>
+				<span class="right">{$config.mobile||default='未绑定'}</span>
 			</a>
 			<a href="">
 				<span class="left">关于软件</span>
 				<span class="right"><img src="__STYLE__/img/user_0.png"></span>
 			</a>
+			
 		</div>
 		
 	</div>

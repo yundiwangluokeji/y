@@ -1,0 +1,34 @@
+.header{width: 100%;height: 0.8rem;background: #13171a;position: fixed;left: 0;top: 0;z-index: 100;}
+.header a{display: block;height: 0.36rem;line-height: 0.36rem;font-size: 0;}
+.header img{width: 100%;height: 100%;}
+.header .mg{height: 0.36rem;padding-top: 0.22rem;}
+.header .goback{float: left;width: 0.36rem;}
+.header h1{float: left;color: #c3a07d;font-size: 0.28rem;height: 0.36rem;line-height: 0.36rem;border-left: 1px solid #2f3336;padding-left: 0.2rem;margin-left: 0.32rem;}
+.header .search{float: right;width: 0.35rem;}
+
+body{background: #1d2124;}
+
+.contains{width: 100%;margin: 0.8rem auto 0.98rem;color: #545b61;}
+.tradeNav{width: 100%;height: 0.8rem;line-height: 0.8rem;background: #2f3336;}
+.tradeNav a{display: block;box-sizing: border-box;width: 50%;height: 0.8rem;line-height: 0.8rem;float: left;text-align: center;}
+.tradeNav span{display: block;color: #545b61;font-size: 0.28rem;height: 0.26rem;line-height: 0.26rem;margin-top: 0.27rem;}
+.tradeNav a:first-child span{border-right: 1px solid #545b61;}
+.tradeNav a.opt span{color: #c3a07d;}
+
+.tradeAgent{width: 100%;font-size: 0.24rem;}
+.tradeAgent a,.tradeAgent span{display: block;}
+.tradeAgent img{max-width: 100%;max-height: 100%;}
+.tradeAgent li{border: 1px solid #545b61;background: #2f3336;margin-top: 0.24rem;}
+.tradeAgent li h2{height: 0.64rem;line-height: 0.64rem;padding: 0 0.24rem;}
+.tradeAgent .details{border-top: 1px solid #545b61;border-bottom: 1px solid #545b61;padding: 0.24rem;}
+.tradeAgent .details>a{width: 1.2rem;height: 1.2rem;line-height: 1.2rem;background: #ffffff;text-align: center;font-size: 0;overflow: hidden;float: left;}
+.tradeAgent .title{float: left;width: 3.6rem;margin-left: 0.24rem;}
+.tradeAgent .title h1{width: 3.6rem;height: 0.72rem;line-height: 0.36rem;word-break: break-all;overflow: hidden;padding-top: 0.06rem;}
+.tradeAgent .title h1 a{color: #ffffff;}
+.tradeAgent .price{float: right;text-align: right;line-height: 0.45rem;padding-top: 0.3rem;}
+.tradeAgent .price em{display: block;color: #c3a07d;}
+.tradeAgent li>p{font-size: 0.26rem;height: 0.73rem;line-height: 0.73rem;text-align: right;padding-right: 0.24rem;}
+.tradeAgent li>p em{font-size: 0.4rem;color: #c3a07d;}
+
+.back_top{position: fixed;right: 0.2rem;bottom: 1.2rem;width: 0.82rem;height: 0.82rem;cursor: pointer;border-radius: 50%;overflow: hidden;z-index: 50;}
+.back_top img{width: 100%;}

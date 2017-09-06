@@ -15,6 +15,12 @@ class LoginController extends Controller
                 $pass = encryption($input['password'],$secret);
                 $res = $model->where(array('username'=>$input['user'],'password'=>$pass))->find();
                 if($res){
+                    if($res['status'] == 0){
+                            $data['res'] = 0;
+                            $data['msg'] = '此用户已被冻结！';
+                            $this->login_log($data);
+                            $this->ajaxReturn(array('res'=>4,'msg'=>'此用户已被冻结！'));
+                    }
                     session('AgentUser',$res['id']);
                     $data['res'] = 1;
                     $data['msg'] = '登录成功！';
@@ -37,6 +43,9 @@ class LoginController extends Controller
             
 
         }else{
+            if(session('AgentUser')){
+                $this->redirect('Index/index');
+            }
 
         	$this->display();
         }
@@ -53,6 +62,13 @@ class LoginController extends Controller
         M('login_log')->add($data);
 
 
+    }
+
+
+    public function exitlogin()
+    {
+        session('AgentUser',null);
+       $this->redirect('Login/index');
     }
 
     

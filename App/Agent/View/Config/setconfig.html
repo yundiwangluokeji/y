@@ -18,19 +18,66 @@
 <body>
 	<div class="header">
 		<a class="back" href="javascript:history.go(-1)"><img src="__STYLE__/img/back_last.png"></a>
-		<a class="save" href="javascript:;">保存</a>
+		<a class="save" id="ImageBrowse" href="javascript:;">保存</a>
 		<i class="line"></i>
 		<h3>修改店铺名</h3>
 	</div>
 
 	<div class="content">
-		<form >
+		<form id="imageUploadForm">
 			<label>
-				<input class="name" type="text" name="name" placeholder="店铺名称">
+				<input class="name" type="text" value="{$config.name}" name="name" placeholder="店铺名称">
 			</label>
 			<p>请修改正确的店铺名称</p>
 		</form>
 	</div>
 
 </body>
+<script type="text/javascript">
+$(document).ready(function (e) {
+    $('#imageUploadForm').on('submit',(function(e) {
+
+    	if ($(":input[name='name']").val() == '') {
+			layer.msg('店铺名称不能为空！')
+			return false;
+		}
+        var formData = new FormData(this);
+        e.preventDefault();
+        $.ajax({
+            type:'POST',
+            url: '',
+            data:formData,
+            // cache:false,
+            contentType: false,
+            processData: false,
+
+            success:function(data){
+            	console.log(data)
+               if(data.res == 1){
+					layer.msg(data.msg)
+               		window.location.href="{:U('Config/index')}";
+               }else{
+               
+					layer.msg(data.msg)
+               }
+            },
+            error: function(data){
+                layer.msg('网络错误！')
+            }
+        });
+    }));
+
+    $("#ImageBrowse").on("click", function() {
+        $("#imageUploadForm").submit();
+    });
+
+
+    $(document).keydown(function(event){ 
+        if(event.keyCode == 13){
+        	$("#imageUploadForm").submit();
+        } 
+     }); 
+});
+
+</script>
 </html>
