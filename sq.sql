@@ -203,9 +203,25 @@ create table if not exists `yd_topup`(
 `order_sn` char(50) not null default '' COMMENT '第三方交易单号(支付宝，微信)',
 `res` tinyint(1) not null default 0 COMMENT '操作结果(0未支付,1成功,2支付失败)',
 `name` varchar(255) not null default '' COMMENT '商品名称',
-`price` int(11) not null default 0 COMMENT '充值金额',
+`price` decimal(10,2) unsigned not null default 0 COMMENT '充值金额',
 `url` varchar(255) not null default '' COMMENT '收银台页面上，商品展示的超链接',
 `body` char(50) not null default '' COMMENT '操作信息(商品描述)',
+`time` int(11) unsigned COMMENT '操作时间'
+)engine=innodb default charset="utf8";
+
+
+/*
+--提现申请表 withdrawal
+*/
+create table if not exists `yd_withdrawal`(
+`id` int(11) unsigned not null auto_increment primary key,
+`agent_id` int(11) not null default 0 COMMENT '(代理商id)',
+`pay_type` tinyint(1) not null default 0 COMMENT '收款方式(1银行卡,2支付宝)',
+`res` tinyint(1) not null default 0 COMMENT '操作结果(0新申请,1已打款,2已收款)',
+`name` varchar(255) not null default '' COMMENT '收款方式名称(如：支付宝、工商银行...)',
+`amount` decimal(10,2) unsigned not null default 0 COMMENT '提现金额',
+`username` char(30)  not null default ''  COMMENT '收款人姓名',
+`account` varchar(255)  not null default ''  COMMENT '收款账号',
 `time` int(11) unsigned COMMENT '操作时间'
 )engine=innodb default charset="utf8";
 

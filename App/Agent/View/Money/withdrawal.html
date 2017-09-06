@@ -5,8 +5,9 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" />
 	<link rel="stylesheet" type="text/css" href="__STYLE__/css/public.css">
-	<link rel="stylesheet" type="text/css" href="__STYLE__/css/wallet_withdrawals.css">
+	<link rel="stylesheet" type="text/css" href="__STYLE__/css/wallet_withdrawals_next.css">
 	<script type="text/javascript" src="__STYLE__/js/jquery-1.7.1.min.js"></script>
+	<script type="text/javascript" src="__STYLE__/layer/layer.js"></script>
 	<script>
 		document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';
 		$(window).resize(function () {  
@@ -29,20 +30,52 @@
 			<div class="tabs_item">
 				<span>银行卡</span>
 			</div>
-
 		</div>
-		<form onsubmit="return checkForm();">
-			<p>提现金额</p>
-			<label>
-				<span>￥</span>
-				<input class="money" type="text" name="money">
-			</label>
-			<p class="tip">可用金额1000.00元</p>
-			<div class="btn">
-				<button class="submit pay" type="submit">下一步</button>
-				<button class="submit bank" type="submit">下一步</button>
-			</div>
-		</form>
+		<div class="tab">
+			<form class="pay" onsubmit="return pay();" method="post">
+			<input  type="hidden" name="name" value="支付宝" />
+			<input  type="hidden" name="pay_type" value="2" />
+				<label style="padding: 0.2rem;">
+					<input class="pay_name" type="text" name="username" placeholder="收款人姓名">
+				</label>
+				<label style="border-bottom: none;padding: 0.2rem;">
+					<input class="pay_num" type="text" name="account" placeholder="支付宝账号">
+				</label>
+
+				<p style="margin-top:0.2rem;">提现金额(<font style="color:#f00;">最小提现金额不能小于100</font>)</p>
+				<label>
+					<span>￥</span>
+					<input class="money" type="text" name="amount">
+				</label>
+				<p class="tip">可用金额{$balance}元</p>
+				<div class="btn">
+					<button class="submit" type="submit">24小时内到账，到账短信通知</button>
+				</div>
+			</form>
+			<form class="bank" onsubmit="return bank();" method="post">
+			<input  type="hidden" name="pay_type" value="1" />
+				<label style="padding: 0.2rem;">
+					<input class="bank_name" type="text" name="name" placeholder="银行名称">
+				</label>
+				<label style="padding: 0.2rem;">
+					<input class="bank_rev" type="text" name="username" placeholder="收款人姓名">
+				</label>
+				<label style="border-bottom: none;padding: 0.2rem;">
+					<input class="bank_num" type="text" name="account" placeholder="银行卡账号">
+				</label>
+
+				<p style="margin-top:0.2rem;">提现金额(<font style="color:#f00;">最小提现金额不能小于100</font>)</p>
+				<label>
+					<span>￥</span>
+					<input class="money" type="text" name="amount">
+				</label>
+				<p class="tip">可用金额{$balance}元</p>
+				<div class="btn">
+					<button class="submit" type="submit">24小时内到账，到账短信通知</button>	
+				</div>
+			</form>
+		</div>
+			
 	</div>
 	<!-- 验证码弹窗 -->
 	<div class="success" style="display: none;">
@@ -52,23 +85,81 @@
 </html>
 <script type="text/javascript">
 	$('.tabs .tabs_item').eq(0).addClass('on');
+	$('.tab form').eq(0).show();
 	$('.tabs .tabs_item').click(function(){
 		var index=$(this).index();
 		$(this).addClass('on').siblings('.tabs .tabs_item').removeClass('on');
-		$('.btn .submit').eq(index).show().siblings('.btn .submit').hide();
+		$('.tab form').eq(index).show().siblings('.tab form').hide();
+		$("form :input").not(":button, :submit, :reset, :hidden, :checkbox, :radio").val("");
 	})
 	
-	function checkForm(){  
-	    var money=$('.money').val();
+	function pay(){  
+		var pay_name=$('.pay_name').val();
+		var pay_num=$('.pay_num').val();
+	    var money=$('.pay .money').val();
 	    var isNum=/^(([1-9][0-9]*)|(([0]\.\d{1,2}|[1-9][0-9]*\.\d{1,2})))$/;
+	     if(pay_name==''){
+	        layer.msg('收款人姓名不能为空！')
+	         return false; 
+	    }
+	    if(pay_num==''){
+	        layer.msg('支付宝账号不能为空')
+	         return false; 
+	    }
 	    if(money==''){
-	        $('.success p').html('提现金额不能为空')
-	        $(".success").fadeIn(200).delay(1500).fadeOut(200);
+	        layer.msg('提现金额不能为空')
 	         return false; 
 	    }
 	    if(!isNum.test(money)){ 
-	        $('.success p').html('提现金额格式错误')
-	        $(".success").fadeIn(200).delay(1500).fadeOut(200);
+	        layer.msg('提现金额格式错误')
+	         return false; 
+	    }
+	    if(money < 100){
+	    	 layer.msg('最小提现金额不能小于100！');
+	         return false; 
+	    }
+	    if(money > {$balance}){
+			 layer.msg('最大提现金额为{$balance}！');
+	         return false; 
+	    }
+	}
+	function bank(){  
+		var bank_name=$('.bank_name').val();
+		var bank_rev=$('.bank_rev').val();
+		var bank_num=$('.bank_num').val();
+	    var money=$('.bank .money').val();
+	    var isNum=/^(([1-9][0-9]*)|(([0]\.\d{1,2}|[1-9][0-9]*\.\d{1,2})))$/;
+	    var isBank=/^(\d{16}|\d{19})$/;
+	    if(bank_name==''){
+	        layer.msg('银行名称不能为空')
+	         return false; 
+	    }
+	    if(bank_rev==''){
+	        layer.msg('收款名称不能为空')
+	         return false; 
+	    }
+	    if(bank_num==''){
+	        layer.msg('银行卡账号不能为空')
+	         return false; 
+	    }
+	    if(!isBank.test(bank_num)){ 
+	        layer.msg('银行卡账号格式错误')
+	         return false; 
+	    }
+	    if(money==''){
+	        layer.msg('提现金额不能为空')
+	         return false; 
+	    }
+	    if(!isNum.test(money)){ 
+	        layer.msg('提现金额格式错误')
+	         return false; 
+	    }
+	    if(money < 100){
+	    	 layer.msg('最小提现金额不能小于100！');
+	         return false; 
+	    }
+	    if(money > {$balance}){
+			 layer.msg('最大提现金额为{$balance}！');
 	         return false; 
 	    }
 	}

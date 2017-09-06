@@ -23,10 +23,10 @@ $alipay_config['seller_id']	= $alipay_config['partner'];
 // MD5密钥，安全检验码，由数字和字母组成的32位字符串，查看地址：https://b.alipay.com/order/pidAndKey.htm
 $alipay_config['key']			= '4rad6jnqp35pfhu5z0yobuwim057co3y';
 // 服务器异步通知页面路径  需http://格式的完整路径，不能加?id=123这类自定义参数，必须外网可以正常访问
-$alipay_config['notify_url'] = "http://商户网关网址/alipay.wap.create.direct.pay.by.user-PHPUTF-8/notify_url.php";
+$alipay_config['notify_url'] = "http://shoubiao.yundi88.com/Agent/Money/notifyurl.html";
 
 // 页面跳转同步通知页面路径 需http://格式的完整路径，不能加?id=123这类自定义参数，必须外网可以正常访问
-$alipay_config['return_url'] = "http://商户网址/alipay.wap.create.direct.pay.by.user-PHP-UTF-8/return_url.php";
+$alipay_config['return_url'] = "http://shoubiao.yundi88.com/Agent/Money/returnurl.html";
 
 //签名方式
 $alipay_config['sign_type']    = strtoupper('MD5');
@@ -51,3 +51,18 @@ $alipay_config['service'] = "alipay.wap.create.direct.pay.by.user";
 
 
 ?>
+
+<!-- body=账户充值+金额：0.10&is_success=T
+&notify_id=RqPnCoPT3K9%252Fvwbh3Ih21lWQx3KlDXj226AHvg%252FS8gvmHwWC1V1n8D2Lui2quHblvUZ6&
+notify_time=2017-09-06+13%3A04%3A48&
+notify_type=trade_status_sync&
+out_trade_no=201709061304193550&
+payment_type=1&
+seller_id=2088721936305297&
+service=alipay.wap.create.direct.pay.by.user&
+subject=账户充值&
+total_fee=0.10&
+trade_no=2017090621001004400248131850&
+trade_status=TRADE_SUCCESS&
+sign=fbaac37d5447687fa57b97dc5645482f&
+sign_type=MD5 -->

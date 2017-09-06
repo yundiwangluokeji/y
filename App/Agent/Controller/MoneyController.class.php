@@ -2,32 +2,74 @@
 namespace Agent\Controller;
 class MoneyController extends PublicController 
 {
-	//钱包
+    //钱包
     public function index()
     {
-    	$money = M('money')->where(array('agent_id'=>$this->config['agent_id']))->find();
-    	$data['total'] = sprintf("%.2f", $money['money'] / 10 / 10);//总金额
-    	$freeze = $money['money'] <= 100000?$money['money']:100000;//如果冻结金额小于一千元全部冻结否则冻结一千
-    	$data['freeze'] = sprintf("%.2f", $freeze / 10 / 10);//冻结金额
-    	$balance = ($money['money'] - 100000) <= 0?0:($money['money'] - 100000);//总金额进去冻结金额一千元等于余额
-    	$data['balance'] = sprintf("%.2f",$balance /10 / 10 );//余额 
-    	$this->assign('data',$data);
-    	$this->display();
+        $money = M('money')->where(array('agent_id'=>$this->config['agent_id']))->find();
+        $data['total'] = sprintf("%.2f", $money['money'] / 10 / 10);//总金额
+        $freeze = $money['money'] <= 100000?$money['money']:100000;//如果冻结金额小于一千元全部冻结否则冻结一千
+        $data['freeze'] = sprintf("%.2f", $freeze / 10 / 10);//冻结金额
+        $balance = ($money['money'] - 100000) <= 0?0:($money['money'] - 100000);//总金额进去冻结金额一千元等于余额
+        $data['balance'] = sprintf("%.2f",$balance /10 / 10 );//余额 
+        $this->assign('data',$data);
+        $this->display();
     }
 
 
     //提现
     public function withdrawal()
     {
-       
-    	$this->display();
+        if(IS_POST){
+            M()->startTrans();
+            $model = M('withdrawal');
+            $_POST['agent_id']  = session('AgentUser');
+            $data = $model->create($_POST,1);//根据表单提交的POST数据创建数据对象
+           if(!$data){$erroer = $model->getError(); $this->error($erroer);}
+           $data['time'] = time();
+            $res = $model->add($data);
+            //扣除货币
+            $amount = $data['amount'] * 10 * 10;//扣除金额
+            $res2 = M('money')->where(array('agent_id'=>session('AgentUser')))->setDec('money',$amount);
+            if($res2){
+                //日志
+                $money_id = M('money')->where(array('agent_id'=>session('AgentUser')))->getField('id');//查询钱包id
+                $data3['operation'] = session('AgentUser');
+                $data3['agent_id'] = session('AgentUser');
+                $data3['money_id'] = $money_id;
+                $data3['money'] = '-'.$amount;
+                $data3['ip'] = $_SERVER['REMOTE_ADDR'];
+                $data3['address'] = getip($_SERVER['REMOTE_ADDR']);
+                $data3['type'] = 0;
+                $data3['msg'] = $data['name'].'提现';
+                $data3['time'] = time();
+                $res3 = M('money_log')->add($data3);
+            } 
+
+            if($res && $res2 && $res3){
+                M()->commit();
+                $this->success('提现申请提交成功！等待打款',U('Index/index'));
+            }else{
+                 M()->rollback();
+                 $this->error('提现申请提交失败!');
+            }
+
+        }else{
+            $money = M('money')->where(array('agent_id'=>$this->config['agent_id']))->find();
+            //可用余额e
+            $balance = ($money['money'] - 100000) <= 0?0:($money['money'] - 100000);//总金额进去冻结金额一千元等于余额
+            $balance = sprintf("%.2f",$balance /10 / 10 );//余额 
+            $this->assign('balance',$balance);
+            $this->display();
+        }
     }
+
+   
 
 
     //充值
     public function topup()
     {
-    	$this->display();
+        $this->display();
     }
 
 
@@ -36,8 +78,8 @@ class MoneyController extends PublicController
     public function alipaywap()
     {
         if(IS_POST){
-            require_once("/ThinkPHP/Library/Org/alipaywap/alipay.config.php");
-            require_once("/ThinkPHP/Library/Org/alipaywap/lib/alipay_submit.class.php");
+            require_once("./ThinkPHP/Library/Org/alipaywap/alipay.config.php");
+            require_once("./ThinkPHP/Library/Org/alipaywap/lib/alipay_submit.class.php");
                 //商户订单号，商户网站订单系统中唯一订单号，必填
                 $out_trade_no = date('YmdHis',time()).mt_rand(1111,9999);
                 //订单名称，必填
@@ -46,7 +88,7 @@ class MoneyController extends PublicController
                 if(!(is_numeric($_POST['money']) && $_POST['money'] > 0)){$this->error('金额不合法!');}
                 $total_fee = $_POST['money'];
                 //收银台页面上，商品展示的超链接，必填
-                $show_url = $_POST['WIDshow_url'];
+                $show_url = "http://shoubiao.yundi88.com/Agent/Money/index.html";
                 //商品描述，可空
                 $body = '账户充值 金额：'.sprintf("%.2f",$_POST['money']);
 
@@ -102,18 +144,36 @@ class MoneyController extends PublicController
 
 
     //处理充值结果
-    public function updatetopup($order,$order_sn,$res)
+    public function updatetopup($order,$order_sn,$res,$price)
     {
-       return M('topup')->where(array('order'=>$order))->save(array('res'=>$res,'order_sn'=>$order_sn));
+        //日志记录
+        $money_id = M('money')->where(array('agent_id'=>session('AgentUser')))->getField('id');//查询钱包id
+        $data['operation'] = session('AgentUser');//操作者
+        $data['agent_id'] = session('AgentUser');//被操作者
+        $data['money_id'] = $money_id;//钱包id
+        $data['money'] = '+'.$price * 10 * 10;//充值金额
+        $data['ip'] = $_SERVER['REMOTE_ADDR'];
+        $data['address'] = getip($_SERVER['REMOTE_ADDR']);
+        $data['res'] = $res;
+        $data['type'] = 1;
+        $data['msg'] = '账户充值-支付宝';
+        $data['time']  = time();
+        $res2 = M('money_log')->add($data);
+        //订单状态修改
+       $res3 = M('topup')->where(array('order'=>$order))->save(array('res'=>$res,'order_sn'=>$order_sn));
+
+        //充值成功后给用户增加货币
+        if($res == 1){
+            $res1 = M('money')->where(array('agent_id'=>session('AgentUser')))->setInc('money',$price * 10 * 10);
+        }
     }
     
 
     //服务器异步通知页面
-    public function notify_url()
+    public function notifyurl()
     {
-
-                        require_once("/ThinkPHP/Library/Org/alipaywap/alipay.config.php");
-                        require_once("/ThinkPHP/Library/Org/alipaywap/lib/alipay_submit.class.php");
+                        require_once("./ThinkPHP/Library/Org/alipaywap/alipay.config.php");
+                        require_once("./ThinkPHP/Library/Org/alipaywap/lib/alipay_notify.class.php");
 
                         //计算得出通知验证结果
                         $alipayNotify = new \AlipayNotify($alipay_config);
@@ -140,7 +200,14 @@ class MoneyController extends PublicController
 
                                 //调试用，写文本函数记录程序运行情况是否正常
                                 //logResult("这里写入想要调试的代码变量值，或其他运行的结果记录");
-                                $this->updatetopup($out_trade_no,$trade_no,$trade_status);
+                                 //查询此订单是否处理过
+                                    $order_res = M('topup')->where(array('order'=>$out_trade_no,'res'=>0))->find();
+                                    if($order_res){
+                                        $this->updatetopup($out_trade_no,$trade_no,1,$_GET['total_fee']);//改变订单状态
+                                    }else{
+
+                                        $msg = '此订单已经处理过了!';
+                                    }
                             }
                             else if ($_POST['trade_status'] == 'TRADE_SUCCESS') {
                                 //判断该笔订单是否在商户网站中已经做过处理
@@ -153,16 +220,18 @@ class MoneyController extends PublicController
 
                                 //调试用，写文本函数记录程序运行情况是否正常
                                 //logResult("这里写入想要调试的代码变量值，或其他运行的结果记录");
-                                $this->updatetopup($out_trade_no,$trade_no,$trade_status);
+                                    $order_res = M('topup')->where(array('order'=>$out_trade_no,'res'=>0))->find();
+                                    if($order_res){
+                                        $this->updatetopup($out_trade_no,$trade_no,1,$_GET['total_fee']);//改变订单状态
+                                    }else{
+
+                                        $msg = '此订单已经处理过了!';
+                                    }
 
                             }
 
                             //——请根据您的业务逻辑来编写程序（以上代码仅作参考）——
-                                $str = '';
-                                foreach($_POST as $v){
-                                    $str .= $v;
-                                }
-                                file_put_contents('./pay.txt', $str);
+                               
                             echo "success";     //请不要修改或删除
                             
                             /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -178,8 +247,71 @@ class MoneyController extends PublicController
 
 
     //页面跳转同步通知页面路径
-    public function return_url()
+    public function returnurl()
     {
+                        require_once("./ThinkPHP/Library/Org/alipaywap/alipay.config.php");
+                        require_once("./ThinkPHP/Library/Org/alipaywap/lib/alipay_notify.class.php");
+        //计算得出通知验证结果
+            $alipayNotify = new \AlipayNotify($alipay_config);
+            $verify_result = $alipayNotify->verifyReturn();
+            if($verify_result) {//验证成功
+                /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                //请在这里加上商户的业务逻辑程序代码
+                
+                //——请根据您的业务逻辑来编写程序（以下代码仅作参考）——
+                //获取支付宝的通知返回参数，可参考技术文档中页面跳转同步通知参数列表
+
+                //商户订单号
+
+                $data['out_trade_no'] = $out_trade_no = $_GET['out_trade_no'];
+                //支付宝交易号
+                $data['trade_no'] = $trade_no = $_GET['trade_no'];
+                //交易状态
+                $data['trade_status'] = $trade_status = $_GET['trade_status'];
+                $data['trade_status'] = $_GET['total_fee'];
+                if($_GET['trade_status'] == 'TRADE_FINISHED' || $_GET['trade_status'] == 'TRADE_SUCCESS') {
+                    //判断该笔订单是否在商户网站中已经做过处理
+                        //如果没有做过处理，根据订单号（out_trade_no）在商户网站的订单系统中查到该笔订单的详细，并执行商户的业务程序
+                        //如果有做过处理，不执行商户的业务程序
+
+                        //查询此订单是否处理过
+                        $order_res = M('topup')->where(array('order'=>$out_trade_no,'res'=>0))->find();
+                        if($order_res){
+                            $this->updatetopup($out_trade_no,$trade_no,1,$_GET['total_fee']);//改变订单状态
+                            $msg = '支付成功!';
+                        }else{
+
+                            $msg = '支付成功!';
+                        }
+
+                }
+                else {
+                     //查询此订单是否处理过
+                        $order_res = M('topup')->where(array('order'=>$out_trade_no,'res'=>0))->find();
+                      if($order_res){
+                            $this->updatetopup($out_trade_no,$trade_no,2,$_GET['total_fee']);//改变订单状态
+                            $msg = '支付失败!';
+                        }else{
+
+                            $msg = '此订单已经处理过了!';
+                        }
+                }
+                    
+                // echo "验证成功<br />";
+
+                //——请根据您的业务逻辑来编写程序（以上代码仅作参考）——
+                
+                /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            }
+            else {
+                //验证失败
+                //如要调试，请看alipay_notify.php页面的verifyReturn函数
+                 $this->error('验证失败!');
+            }
+            $data['time'] = $_GET['notify_time'];
+            $this->assign('data',$data);
+            $this->assign('msg',$msg);
+            $this->display();
         
     }
 
