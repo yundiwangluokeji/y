@@ -6,10 +6,10 @@ use Think\Model;
 
 class UserModel extends Model
 {
-	 protected $_validate = array(     
-	 array('name','require','用户名不能为空！'), //默认情况下用正则进行验证 
-	 array('name','','帐号名称已经存在！',0,'unique',1), 
-	 array('pwd','require','密码名不能为空！',6), 
+	 protected $_validate = array(
+	 array('name','require','用户名不能为空！'), //默认情况下用正则进行验证
+	 array('name','','帐号名称已经存在！',0,'unique',1),
+	 array('pwd','require','密码名不能为空！',6),
 	);
 
 	public function datas($input)
@@ -33,8 +33,7 @@ class UserModel extends Model
         return $input;
 	}
 
-	
-		
+
+
 
 }
- 

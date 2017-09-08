@@ -1,0 +1,18 @@
+.header{width: 100%;height: 0.8rem;background: #13171a;position: fixed;left: 0;top: 0;z-index: 100;}
+.header a{display: block;height: 0.36rem;line-height: 0.36rem;font-size: 0;}
+.header img{width: 100%;height: 100%;}
+.header .mg{height: 0.36rem;padding-top: 0.22rem;}
+.header .goback{float: left;width: 0.36rem;}
+.header h1{float: left;color: #c3a07d;font-size: 0.28rem;height: 0.36rem;line-height: 0.36rem;border-left: 1px solid #2f3336;padding-left: 0.2rem;margin-left: 0.32rem;}
+.header .keepEdit{float: right;margin-right: 0.14rem;font-size: 0.28rem;color: #c3a07d;}
+
+.contains{width: 100%;margin: 0.8rem auto 0.98rem;}
+.editAddress{padding-top: 0.48rem;position: relative;}
+.editAddress form,.editAddress label,.editAddress input,.editAddress a,.editAddress span,.editAddress i{display: block;}
+.editAddress label{height: 0.94rem;line-height: 0.94rem;border-bottom: 1px solid #c3a07d;position: relative;}
+.editAddress label span{color: #070707;font-size: 0.32rem;width: 1.74rem;padding-left: 0.15rem;float: left;}
+.editAddress label input{color: #070707;font-size: 0.3rem;width: 5.12rem;height: 0.94rem;line-height: 0.94rem;overflow: hidden;float: left;background: none;outline: none;border: none;}
+.editAddress label img{width: 0.4rem;height: 0.4rem;position: absolute;right: 0.52rem;top: 50%;margin-top: -0.2rem;}
+.editAddress .keepEdit{width: 100%;height: 0.96rem;line-height: 0.96rem;text-align: center;font-size: 0.36rem;color: #ffffff;background: #c3a07d;border-radius: 6px;margin-top: 0.8rem;}
+
+.tipAddress{display: none;width: 4.29rem;height: 0.94rem;line-height: 0.94rem;text-align: center;font-size: 0.32rem;color: #ffffff;background: rgba(0,0,0,.5);border-radius: 6px;position: absolute;left: 50%;top: 50%;margin-left: -2.145rem;margin-top: -0.47rem;z-index: 100;}

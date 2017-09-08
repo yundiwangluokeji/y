@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>设置</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" />
+	<link rel="stylesheet" type="text/css" href="css/public.css">
+	<link rel="stylesheet" type="text/css" href="css/set_up.css">
+	<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+	<script>
+		document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';
+		$(window).resize(function () {  
+			document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';
+		 }) 
+	</script>
+</head>
+<body>
+	<div class="header">
+		<a class="back" href="javascript:history.go(-1)"><img src="img/back_last.png"></a>
+		<i class="line"></i>
+		<h3>设置</h3>
+	</div>
+	<div class="content">
+		<div class="message">
+			<a href="modify_name.html">
+				<span class="left">店铺名称</span>
+				<span class="right">云狄科技</span>
+			</a>
+			<a href="modify_password.html">
+				<span class="left">修改密码</span>
+				<span class="right">******</span>
+			</a>
+			<a href="bind_mobile.html">
+				<span class="left">绑定手机</span>
+				<span class="right">未绑定</span>
+			</a>
+			<a href="about.html">
+				<span class="left">关于软件</span>
+				<span class="right"><img src="img/user_0.png"></span>
+			</a>
+		</div>
+		
+	</div>
+	<!-- 保存成功弹窗 -->
+	<div class="success" style="display: none;">
+		<img src="img/set_success.png">
+		<p>保存成功</p>
+	</div>
+</body>
+</html>

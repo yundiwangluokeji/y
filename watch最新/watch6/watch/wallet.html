@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>钱包</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" />
+	<link rel="stylesheet" type="text/css" href="css/public.css">
+	<link rel="stylesheet" type="text/css" href="css/wallet.css">
+	<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+	<script>
+		document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';
+		$(window).resize(function () {  
+			document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';
+		 }) 
+	</script>
+</head>
+<body>
+	<div class="header">
+		<a class="back" href="javascript:history.go(-1)"><img src="img/back_last.png"></a>
+		<i class="line"></i>
+		<h3>钱包</h3>
+	</div>
+
+	<div class="content">
+		<div class="money_box">
+			<div class="all_money">
+				<h3>1523.00</h3>
+				<p>总金额</p>
+			</div>
+			<div class="money_kinds">
+				<div class="money_kinds_item" >
+					<h3>1000.00</h3>
+					<p>零钱</p>
+				</div>
+				<div class="line"></div>
+				<div class="money_kinds_item">
+					<h3>523.00</h3>
+					<p>冻结金额</p>
+				</div>
+			</div>
+		</div>
+		<div class="items">
+			<div class="item">
+				<a href="wallet_withdrawals.html" style="border-bottom:1px solid #545b62;">
+					<span>提现</span>
+					<img class="img" src="img/wallet_right_icon.png">
+				</a>
+			</div>
+			<div class="item">
+				<a href="wallet_recharge.html">
+					<span>充值</span>
+					<img class="img" src="img/wallet_right_icon.png">
+				</a>
+			</div>
+		</div>
+	</div>
+
+	<!-- 提交成功弹窗 -->
+	<div class="success" style="display: none;">
+		<img src="img/set_success.png">
+		<p>提交成功</p>
+	</div>
+</body>
+</html>

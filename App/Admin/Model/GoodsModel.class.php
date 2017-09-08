@@ -94,6 +94,26 @@ class GoodsModel extends \Think\Model
         }
     }
 
+    // 更新商品是否推荐状态
+    public function changeRecommend($goods_id, $status)
+    {
+        $status = $status == 1 ? 0 : 1;
+        $updateRes = $this->where(array('goods_id' => $goods_id))->save(array('is_recommend' => $status));
+        if ($updateRes) {
+            return array(
+                'status' => 1,
+                'msg' => '修改成功',
+                'data' => ''
+            );
+        } else {
+            return array(
+                'status' => 0,
+                'msg' => '修改失败，请重试',
+                'data' => ''
+            );
+        }
+    }
+
     // 查询单个商品数据
     public function findGood($goods_id)
     {

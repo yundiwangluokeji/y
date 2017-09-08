@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>首页</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" />
+	<link rel="stylesheet" type="text/css" href="css/public.css">
+	<link rel="stylesheet" type="text/css" href="css/home.css">
+	<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+	<script>
+		document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';
+		$(window).resize(function () {  
+			document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';
+		 }) 
+	</script>
+</head>
+<body>
+	<div class="header">
+		<a href="search.html"><img src="img/search_icon.png"></a>
+		<h3>南方钟表</h3>
+	</div>
+	<div class="content">
+		<ul>
+			<li><a href="index_brand.html"><img src="img/brand_img_1.jpg"></a></li>
+			<li><a href="index_brand.html"><img src="img/brand_img_2.jpg"></a></li>
+			<li><a href="index_brand.html"><img src="img/brand_img_3.jpg"></a></li>
+			<li><a href="index_brand.html"><img src="img/brand_img_4.jpg"></a></li>
+			<li><a href="index_brand.html"><img src="img/brand_img_5.jpg"></a></li>
+			<li><a href="index_brand.html"><img src="img/brand_img_6.jpg"></a></li>
+			<li><a href="index_brand.html"><img src="img/brand_img_7.jpg"></a></li>
+			<li><a href="index_brand.html"><img src="img/brand_img_8.jpg"></a></li>
+			<li><a href="index_brand.html"><img src="img/brand_img_9.jpg"></a></li>
+			<li><a href="index_brand.html"><img src="img/brand_img_10.jpg"></a></li>
+			<li><a href="index_brand.html"><img src="img/brand_img_11.jpg"></a></li>
+			<li><a href="index_brand.html"><img src="img/brand_img_12.jpg"></a></li>
+			<li><a href="index_brand.html"><img src="img/brand_img_13.jpg"></a></li>
+			<li><a href="index_brand.html"><img src="img/brand_img_14.jpg"></a></li>
+			<li><a href="index_brand.html"><img src="img/brand_img_15.jpg"></a></li>
+		</ul>
+	</div>
+	<div class="footer">
+		<a class="on" href="home.html">
+			<img class="shadow" src="img/index_icon.png">
+			<img class="light" src="img/index_icon_on.png">
+			<span>首页</span>
+		</a>
+		<a href="recommend.html">
+			<img class="shadow" src="img/tuijian_icon.png">
+			<img class="light" src="img/tuijian_icon_on.png">
+			<span>推荐</span>
+		</a>
+		<a href="user.html">
+			<img class="shadow" src="img/us_icon.png">
+			<img class="light" src="img/us_icon_on.png">
+			<span>我的</span>
+		</a>
+	</div>
+	<div class="back_top">
+		<img src="img/back_top.png">
+	</div>
+</body>
+</html>
+<script type="text/javascript">
+	$(function(){
+		// 返回顶部
+		$('.back_top').click(function(){
+			$('html,body').animate({scrollTop:0},300)
+		})
+	})
+</script>

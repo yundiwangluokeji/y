@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>我的</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" />
+	<link rel="stylesheet" type="text/css" href="css/public.css">
+	<link rel="stylesheet" type="text/css" href="css/user.css">
+	<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+	<script>
+		document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';
+		$(window).resize(function () {  
+			document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';
+		 }) 
+	</script>
+</head>
+<body>
+	<div class="header">
+		<a class="search" href="search.html"><img src="img/search_icon.png"></a>
+		<a class="back" href=""><img src="img/back_last.png"></a>
+		<i class="line"></i>
+		<h3>我的</h3>
+	</div>
+
+	<div class="content">
+		<div class="user">
+			<img src="img/user_erweima.png">
+			<h3>云狄科技</h3>
+			<p>账号：152656556</p>
+		</div>
+		<div class="items">
+			<div class="item">
+				<a href="">
+					<img class="icon" src="img/user_1.png">
+					<img class="right" src="img/user_0.png">
+					<p>我的店铺</p>
+				</a>
+			</div>
+			<div class="item">
+				<a href="wallet.html">
+					<img class="icon" src="img/user_2.png">
+					<img class="right" src="img/user_0.png">
+					<p>钱包</p>
+				</a>
+			</div>
+			<div class="item">
+				<a href="">
+					<img class="icon" src="img/user_3.png">
+					<img class="right" src="img/user_0.png">
+					<p>采购单</p>
+				</a>
+			</div>
+			<div class="item">
+				<a href="collect.html">
+					<img class="icon" src="img/user_4.png">
+					<img class="right" src="img/user_0.png">
+					<p>收藏夹</p>
+				</a>
+			</div>
+			<div class="item">
+				<a href="">
+					<img class="icon" src="img/user_5.png">
+					<img class="right" src="img/user_0.png">
+					<p>我的代理商</p>
+				</a>
+			</div>
+			<div class="item">
+				<a href="optAddress.html">
+					<img class="icon" src="img/user_6.png">
+					<img class="right" src="img/user_0.png">
+					<p>地址管理</p>
+				</a>
+			</div>
+			<div class="item">
+				<a href="set_up.html">
+					<img class="icon" src="img/user_7.png">
+					<img class="right" src="img/user_0.png">
+					<p>设置</p>
+				</a>
+			</div>
+			
+		</div>
+	</div>
+
+	<div class="footer">
+		<a href="home.html">
+			<img class="shadow" src="img/index_icon.png">
+			<img class="light" src="img/index_icon_on.png">
+			<span>首页</span>
+		</a>
+		<a href="recommend.html">
+			<img class="shadow" src="img/tuijian_icon.png">
+			<img class="light" src="img/tuijian_icon_on.png">
+			<span>推荐</span>
+		</a>
+		<a class="on" href="user.html">
+			<img class="shadow" src="img/us_icon.png">
+			<img class="light" src="img/us_icon_on.png">
+			<span>我的</span>
+		</a>
+	</div>
+	<div class="back_top">
+		<img src="img/back_top.png">
+	</div>
+</body>
+</html>
+<script type="text/javascript">
+	$(function(){
+		// 返回顶部
+		$('.back_top').click(function(){
+			$('html,body').animate({scrollTop:0},300)
+		})
+	})
+</script>

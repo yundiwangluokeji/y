@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" /> 
+		<title>南方钟表</title>
+		<link rel="stylesheet" href="css/public.css" />
+		<link rel="stylesheet" href="css/orderAddress.css" />
+		<link rel="stylesheet" href="css/LArea.css" />
+		<script type="text/javascript" src="js/jquery-1.7.1.min.js" ></script>
+		<script>document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';$(window).resize(function(){document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';})</script>
+	</head>
+	<body>
+		<div class="header">
+			<div class="mg">
+				<a class="goback" href="javascript:history.back();"><img src="img/back.png"/></a>
+				<h1>确认订单</h1>
+			</div>
+		</div>
+		
+		<div class="contains">					
+			<!--编辑地址-->
+			<div class="editAddress">
+				<form>
+					<label>
+						<span>收货人真实姓名</span>
+						<input type="text" />
+					</label>
+					<label>
+						<span>手机号</span>
+						<input type="tel"  maxlength="11" onblur="isTel(this.value);"/>
+					</label>
+					<label>
+						<span>省市区</span>
+						<input id="demo1" type="text" readonly="readonly" value=""/>
+						<input id="value1" type="hidden" value="20,234,504">
+						<img src="img/localize.png"/>
+					</label>
+					<label>
+						<span>详细地址</span>
+						<input type="text" />
+					</label>
+					
+					<a class="keepEdit mg" href="javascript:;" onclick="keepEdit();">保存收货信息</a>
+				</form>
+			</div>	
+			
+			<div class="informate">
+				<h2>商品编号:15462559</h2>
+				<span>
+					<div class="mg clear">
+						<b><img src="img/firm.jpg"/></b>
+						<div class="title">
+							<h1>瑞士劳力士男表 日志型116233-63603G自动机械男士手表2</h1>
+							<p>颜色：白壳黑面</p>
+						</div>
+						<div class="price"><em>￥1588.00</em>× 5</div>
+					</div>
+				</span>
+				<p>合计： <em>￥7940.00</em></p>
+			</div>					
+			
+		</div>			
+		<button class="referOrder">提交</button>		
+		
+		<!--提示添加收货地址-->
+		<div class="tipAddress"></div>	
+		
+		<script type="text/javascript" src="js/LArea.js" ></script>
+		<script type="text/javascript" src="js/LAreaData1.js" ></script>
+		<script type="text/javascript" src="js/LAreaData2.js" ></script>
+		
+		<script>
+			$(function(){
+				$('.referOrder').click(function(){	
+					$('.tipAddress').fadeIn();
+					$('.tipAddress').text('请添加收货地址');
+					setTimeout(function(){
+						$('.tipAddress').fadeOut();
+					},2000)
+				});
+				
+				//省市级
+				var area1 = new LArea();
+				area1.init({
+					'trigger': '#demo1', //触发选择控件的文本框，同时选择完毕后name属性输出到该位置
+					'valueTo': '#value1', //选择完毕后id属性输出到该位置
+					'keys': {
+						id: 'id',
+						name: 'name'
+					}, //绑定数据源相关字段 id对应valueTo的value属性输出 name对应trigger的value属性输出
+					'type': 1, //数据源类型
+					'data': LAreaData //数据源
+				});
+				area1.value=[1,13,3];//控制初始位置，注意：该方法并不会影响到input的value
+				var area2 = new LArea();
+				area2.init({
+					'trigger': '#demo2',
+					'valueTo': '#value2',
+					'keys': {
+						id: 'value',
+						name: 'text'
+					},
+					'type': 2,
+					'data': [provs_data, citys_data, dists_data]
+				});	
+			});
+			
+			//表单验证
+			var txtTip = $('.tipAddress');
+			var regtel = /0?(13|14|15|18)[0-9]{9}/;				
+			function isTel(obj){
+				if(!regtel.test(obj)){
+					txtTip.fadeIn();
+					txtTip.text('请填写11位有效手机号码');
+					setTimeout(function(){
+						txtTip.fadeOut();
+					},1500)
+				}else{
+					obj;					
+				};		
+			};
+			function keepEdit(){
+				if($('.editAddress label:nth-child(1) input').val() == ""){
+					txtTip.fadeIn();
+					txtTip.text('请输入收货人姓名');
+					setTimeout(function(){
+						txtTip.fadeOut();
+					},1500);
+				}else if($('.editAddress label:nth-child(2) input').val() == ""){
+					txtTip.fadeIn();
+					txtTip.text('请输入收件人手机号');
+					setTimeout(function(){
+						txtTip.fadeOut();
+					},1500);
+				}else if($('.editAddress label:nth-child(3) input').val() == ""){
+					txtTip.fadeIn();
+					txtTip.text('请选择省市区');
+					setTimeout(function(){
+						txtTip.fadeOut();
+					},1500);
+				}else if($('.editAddress label:nth-child(4) input').val() == ""){
+					txtTip.fadeIn();
+					txtTip.text('请输入详细地址');
+					setTimeout(function(){
+						txtTip.fadeOut();
+					},1500);
+				}else if(!regtel.test($('.editAddress label:nth-child(2) input').val())){
+					txtTip.fadeIn();
+					txtTip.text('请填写11位有效手机号码');
+					setTimeout(function(){
+						txtTip.fadeOut();
+					},1500);
+				}else{
+					return true;
+				};
+			};
+		</script>
+	</body>
+</html>

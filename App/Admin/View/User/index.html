@@ -3,9 +3,13 @@
 <include file="Public/left" /> <!-- 左边 -->
 <div class="right" style="height: 849px;">
 	<div class="now" style="width: 831px;">
-		<a href="Member list.html" class="sel">会员列表（54）</a>
-		<a href="Collection account.html">收款账户（9）</a>
-		<a href="Delivery address.html">收货地址（9）</a>
+		<a href="{:U('User/index')}" class="sel">会员列表</a>
+		<a href="Collection account.html">收款账户</a>
+		<a href="{:U('User/address')}">收货地址</a>
+		<a href="{:U('User/money')}">货币操作记录</a>
+		<a href="{:U('User/topUp')}">充值记录</a>
+        <a href="{:U('User/withdrawal')}">提现申请</a>
+        <a href="{:U('User/loginLog')}">代理商登录日志</a>
 		<a href="{:U('User/add')}" id="fabu">添加代理商</a>
 		<div class="clear"></div>
 	</div>
@@ -30,7 +34,7 @@
 		<tbody><tr>
 			<th class="bgtt" width="20"><input type="checkbox" name="checkall" onclick="pe_checkall(this, &#39;user_id&#39;)"></th>
 			<th class="bgtt" width="50">ID号</th>
-			<th class="bgtt">用户名</th>
+			<th class="bgtt" width="80">用户名</th>
 			<th class="bgtt" width="80">余额
 			</th><th class="bgtt" width="80">状态</th>
 			<th class="bgtt" width="60">订单数
@@ -55,15 +59,19 @@
 			<td class="num" style="background-color: rgb(255, 255, 255);">{$v['mobile']}</td>
 			<!-- <td class="num" style="background-color: rgb(255, 255, 255);">1161192196@qq.com</td> -->
 			<td class="num" style="background-color: rgb(255, 255, 255);"><span>{:date('Y-m-d H:i:s',$v['addtime'])}</span></td>
-			<td class="num" style="background-color: rgb(255, 255, 255);"><span>19小时前</span></td>
+			<td class="num" style="background-color: rgb(255, 255, 255);"><span>{$v.login_time}</span></td>
 			<td>
 
 				<a href="{:U('update',array('id'=>$v['id']))}" class="admin_edit mar3">修改</a>
-				<a href="admin.php?mod=user&act=del&id=27&token=0a1f23ba1dc927c624b740dd555c29e5" class="admin_del mar3" onclick="return pe_cfone(this, '删除')">删除</a>
+                <!-- <a href="{:U('dels',array('id'=>$v['id']))}" class="admin_del" onclick="return pe_cfone(this, &#39;删除&#39;)">删除</a> -->
+				<a href="{:U('dels',array('id'=>$v['id']))}" class="admin_del mar3" onclick="return pe_cfone(this, '删除')">删除</a>
 				<a href="Collection account.html" class="admin_btn mar3" target="_blank">账户</a>
-				<a href="Delivery address.html" class="admin_btn" target="_blank">地址</a>
+				<a href="{:U('User/address', array('id' => $v['id']))}" class="admin_btn" target="_blank">地址</a>
+				<a href="{:U('User/money', array('id' => $v['id']))}" class="admin_btn" target="_blank">货币</a>
+				<a href="{:U('User/topUp', array('id' => $v['id']))}" class="admin_btn" target="_blank">充值</a>
+				<a href="{:U('User/withdrawal', array('id' => $v['id']))}" class="admin_btn" target="_blank">提现</a>
+				<a href="{:U('User/loginLog', array('name' => $v['username']))}" class="admin_btn" target="_blank">登录</a>
 			</td>
-
 		</tr>
 		</foreach>
 		</tbody>
@@ -73,7 +81,7 @@
 	<div class="right_bottom">
 		<span class="fl mal10">
 			<input type="checkbox" name="checkall" onclick="pe_checkall(this, &#39;user_id&#39;)">
-			<button href="admin.php?mod=user&amp;act=del&amp;token=bc127a40363dfcec978226909f4e8f2e" onclick="return pe_cfall(this, &#39;user_id&#39;, &#39;form&#39;, &#39;批量删除&#39;)">批量删除</button>
+			<button href="__CONTROLLER__/dels" onclick="return pe_cfall(this, &#39;user_id&#39;, &#39;form&#39;, &#39;批量删除&#39;)">批量删除</button>
 			<!--<input type="button" value="批量发送邮件" id="sendemail" />-->
 		</span>
 		<span class="fr fenye">

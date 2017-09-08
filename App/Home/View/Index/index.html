@@ -9,9 +9,9 @@
 	<script type="text/javascript" src="__STYLE__/js/jquery-1.7.1.min.js"></script>
 	<script>
 		document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';
-		$(window).resize(function () {  
+		$(window).resize(function () {
 			document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';
-		 }) 
+		 })
 	</script>
 </head>
 <body>
@@ -22,27 +22,27 @@
 	<div class="content">
 		<ul>
 		<foreach name="data" item="v">
-			<li><a title="{$v['name']}" href=""><img src="__STYLE__/img/brand_img_15.jpg"></a></li>
+			<li><a title="{$v['name']}" href="{:U('Home/Goods/goodslist', array('agent'=>AGENT_ID, 'brand_id'=>$v['brand_id']))}" ><img src="{$v.logo}"></a></li>
 		</foreach>
 		</ul>
 	</div>
-	<div class="footer">
-		<a class="on" href="">
-			<img class="shadow" src="__STYLE__/img/index_icon.png">
-			<img class="light" src="__STYLE__/img/index_icon_on.png">
-			<span>首页</span>
-		</a>
-		<a href="">
-			<img class="shadow" src="__STYLE__/img/tuijian_icon.png">
-			<img class="light" src="__STYLE__/img/tuijian_icon_on.png">
-			<span>推荐</span>
-		</a>
-		<a href="">
-			<img class="shadow" src="__STYLE__/img/us_icon.png">
-			<img class="light" src="__STYLE__/img/us_icon_on.png">
-			<span>我的</span>
-		</a>
-	</div>
+    <div class="footer">
+        <a class="on" href="{:U('Home/Index/index',array('agent'=>AGENT_ID))}">
+            <img class="shadow" src="__STYLE__/img/index_icon.png">
+            <img class="light" src="__STYLE__/img/index_icon_on.png">
+            <span>首页</span>
+        </a>
+        <a href="{:U('Home/Recommended/index', array('agent'=>AGENT_ID))}">
+            <img class="shadow" src="__STYLE__/img/tuijian_icon.png">
+            <img class="light" src="__STYLE__/img/tuijian_icon_on.png">
+            <span>推荐</span>
+        </a>
+        <a href="{:U('Agent/Index/index', array('agent'=>AGENT_ID))}">
+            <img class="shadow" src="__STYLE__/img/us_icon.png">
+            <img class="light" src="__STYLE__/img/us_icon_on.png">
+            <span>我的</span>
+        </a>
+    </div>
 	<div class="back_top">
 		<img src="__STYLE__/img/back_top.png">
 	</div>

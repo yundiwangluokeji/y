@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" /> 
+		<title>南方钟表</title>
+		<link rel="stylesheet" href="css/public.css" />
+		<link rel="stylesheet" href="css/optAddress.css" />
+		<script type="text/javascript" src="js/jquery-1.7.1.min.js" ></script>
+		<script>document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';$(window).resize(function(){document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';})</script>
+	</head>
+	<body>
+		<div class="header">
+			<div class="mg">
+				<a class="goback" href="javascript:history.back();"><img src="img/back.png"/></a>
+				<h1>选择收货地址</h1>
+				<a class="addAddress" href="editAddress.html">+ 添加</a>	
+			</div>
+		</div>
+		
+		<div class="contains">	
+			<!--还没有收货地址-->
+			<div class="noAddress">
+				<img src="img/noAddress.png"/>
+			</div>
+			
+			<!--选择地址-->
+			<div class="optAddress" style="display: none;">
+				<ul class="mg">
+					<li>
+						<h1><em>某某某</em>12345678911</h1>
+						<p>广东省广州市天河区科韵路科韵大厦702</p>
+						<div class="handle">
+							<label class="boxCheck">
+								<label class="optCheck"><input type="radio" name="default" /></label>
+								<span>设置默认</span>
+							</label>
+							<div class="operate">
+								<span class="delete">
+									<b><img src="img/delete.png"/></b>
+									<h2>删除</h2>
+								</span>
+								<span class="edit">
+									<b><img src="img/edit.png"/></b>
+									<h2>编辑</h2>
+								</span>
+							</div>
+						</div>
+					</li>
+					<li>
+						<h1><em>某某某</em>12345678911</h1>
+						<p>广东省广州市天河区科韵路科韵大厦702</p>
+						<div class="handle">
+							<label class="boxCheck">
+								<label class="optCheck"><input type="radio" name="default" /></label>
+								<span>设置默认</span>
+							</label>
+							<div class="operate">
+								<span class="delete">
+									<b><img src="img/delete.png"/></b>
+									<h2>删除</h2>
+								</span>
+								<span class="edit">
+									<b><img src="img/edit.png"/></b>
+									<h2>编辑</h2>
+								</span>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+
+		</div>	
+		
+		<!--删除提示-->
+		<div class="deleteTip">
+			<div class="details">
+				<h1>确定删除该地址？</h1>
+				<span class="clear">
+					<a class="cancel" href="javascript:;">取消</a>
+					<a class="confirm" href="javascript:;">确认</a>
+				</span>
+			</div>
+		</div>
+		
+		<script>
+			$(function(){
+				//设为默认						
+				$('.optAddress li:first .optCheck').find('input').prop('checked');
+				$('.optAddress li:first').addClass('active');
+				$('.optAddress .optCheck').click(function(){
+					var checkT = $(this).find('input');
+					if(checkT.prop('checked')){
+						$(this).parent('.boxCheck').parent('.handle').parent('li').addClass('active').siblings('li').removeClass('active');
+					};
+				});
+				
+				//删除
+				$('.optAddress .delete').click(function(){
+					liNum = $(this).parent('.operate').parent('.handle').parent('li').index();
+					$('.deleteTip').fadeIn();						
+				});
+				$('.deleteTip .cancel').click(function(){
+					$('.deleteTip').fadeOut();
+				});
+				$('.deleteTip .confirm').click(function(){
+					$('.deleteTip').fadeOut();
+					$('.optAddress li').eq(liNum).remove();
+				});
+			});
+		</script>
+	</body>
+</html>

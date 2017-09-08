@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" /> 
+		<title>南方钟表</title>
+		<link rel="stylesheet" href="css/public.css" />
+		<link rel="stylesheet" href="css/conOrder.css" />
+		<script type="text/javascript" src="js/jquery-1.7.1.min.js" ></script>
+		<script>document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';$(window).resize(function(){document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';})</script>
+	</head>
+	<body>
+		<div class="header">
+			<div class="mg">
+				<a class="goback" href="javascript:history.back();"><img src="img/back.png"/></a>
+				<h1>确认订单</h1>
+			</div>
+		</div>
+		
+		<div class="contains">	
+			<!--添加地址-->
+			<div class="addAddress">
+				<div class="mg clear">
+					<span>
+						<img src="img/adress.png"/>
+						<h2>请填写收货地址</h2>
+					</span>					
+					<img src="img/arrow02.png"/>
+				</div>
+			</div>
+					
+			<!--已有地址-->
+			<div class="yetAddress" style="display: none;">
+				<div class="mg clear">
+					<span>
+						<h1><em>某某某</em>12345678911</h1>
+						<span class="clear">
+							<img src="img/adress.png"/>
+							<p>广东省广州市天河区科韵路科韵大厦702</p>
+						</span>
+					</span>
+					<img src="img/arrow02.png"/>
+				</div>
+			</div>
+			
+			<div class="informate">
+				<h2>商品编号:15462559</h2>
+				<span>
+					<div class="mg clear">
+						<b><img src="img/firm.jpg"/></b>
+						<div class="title">
+							<h1>瑞士劳力士男表 日志型116233-63603G自动机械男士手表2</h1>
+							<p>颜色：白壳黑面</p>
+						</div>
+						<div class="price"><em>￥1588.00</em>× 5</div>
+					</div>
+				</span>
+				<p>合计： <em>￥7940.00</em></p>
+			</div>					
+			
+		</div>			
+		<button class="referOrder">提交</button>		
+		
+		<!--提示添加收货地址-->
+		<div class="tipAddress">请添加收货地址</div>	
+		
+		<script>
+			$(function(){				
+				$('.referOrder').click(function(){					
+					$('.tipAddress').fadeIn();
+					setTimeout(function(){
+						$('.tipAddress').fadeOut();
+					},2000)
+				});
+			});
+						
+		</script>
+	</body>
+</html>

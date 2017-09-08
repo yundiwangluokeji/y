@@ -51,6 +51,17 @@ class GoodsController extends PublicController
         $this->ajaxReturn($changeRes);
     }
 
+    // 修改商品是否推荐状态
+    public function changeRecommend()
+    {
+        $goods_id = I('post.goods_id');
+        $status = I('post.status');
+        $changeRes = D('goods')->changeRecommend($goods_id, $status);
+        // $changeRes = json_encode($changeRes);
+        // dump($changeRes);exit;
+        $this->ajaxReturn($changeRes);
+    }
+
 
 
     // 添加商品
@@ -65,12 +76,12 @@ class GoodsController extends PublicController
                 $returnData = $this->uploadPic($_FILES['images']);
                 $formData['images'] = $returnData;
             }
-            $formData['goods_sn'] = date('YmdHis',time()).mt_rand(1111,9999);
+            // dump($formData['images']);exit;
+            $formData['goods_sn'] = date('YmdHis',time());
             for ($i=0; $i < count($formData['color']); $i++) {
                 $str .= $formData['color'][$i].',';
             }
             $formData['color'] = $str;
-            // dump($formData);exit;
             $addRes = D('goods')->addGood($formData);
             if ($addRes['status']) {
                 $this->success($addRes['msg'], 'index');

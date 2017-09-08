@@ -174,7 +174,7 @@ create table if not exists `yd_money`(
 `money` varchar(255) not null default '0' COMMENT '货币(分为单位)',
 `updateitme` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP
 )engine=innodb default charset="utf8";
-
+------------------------------------------------------------------------------------------------------------------
 /*
 --货币操作记录表
 */
@@ -242,6 +242,7 @@ create table if not exists `yd_login_log`(
 )engine=innodb default charset="utf8";
 
 
+-------------------------------------------------------------------------------------------
 
 /*
 --代理商地址表
@@ -257,11 +258,10 @@ create table if not exists `yd_address`(
 `district` int(11) not null default 0 COMMENT '地区',
 `twon` int(11) not null default 0 COMMENT '乡镇',
 `address` varchar(200) not null default '' COMMENT '详细地址',
-`is_default` tinyint(1) not null default 0 COMMENT '是否为默认地址(1是,0否)', 
+`is_default` tinyint(1) not null default 0 COMMENT '是否为默认地址(1是,0否)',
 `time` int(11) unsigned COMMENT '添加时间',
 `updateitme` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP
 )engine=innodb default charset="utf8";
-
 
 
 /*

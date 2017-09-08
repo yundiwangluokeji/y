@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" />
+		<title>南方钟表</title>
+		<link rel="stylesheet" href="__STYLE__/css/public.css" />
+		<link rel="stylesheet" href="__STYLE__/css/proDetails.css" />
+		<script type="text/javascript" src="__STYLE__/js/jquery-1.7.1.min.js" ></script>
+		<script>document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';</script>
+	</head>
+	<body>
+		<div class="header">
+			<div class="mg">
+				<a class="goback" href="javascript:history.back();"><img src="__STYLE__/img/back.png"/></a>
+				<h1>南方钟表</h1>
+			</div>
+		</div>
+		<div class="contains">
+			<div class="banner">
+				<img src="{$goodData.images}"/>
+			</div>
+
+			<div class="txtDetails">
+				<div class="mg">
+					<h1>{$goodData.name}</h1>
+					<p>商品编号:{$goodData.goods_sn}</p>
+					<span class="clear">
+						<h2>￥<em>{$goodData.price}</em></h2>
+						<a href="javascript:;"><img src="__STYLE__/img/share.png"/></a>
+						<div class="collect">
+                            <if condition="$goodData.isCollect eq 1">
+                                <img src="__STYLE__/img/collectA.png"/>
+                                <b style="color: #7bc2ea;">{$goodData.collectNum}</b>
+                            <elseif condition="$Think.session.AgentUser"/>
+                                <img id="collectIco" src="__STYLE__/img/collect.png"/>
+                                <b>{$goodData.collectNum}</b>
+                            <else />
+                                <a href="{:U('Agent/Index/index')}">
+                                    <img src="__STYLE__/img/collect.png"/>
+                                </a>
+                                <b>{$goodData.collectNum}</b>
+                            </if>
+						</div>
+					</span>
+				</div>
+			</div>
+
+			<div class="mySelect">
+				<div class="mg clear">
+					<h2>
+						请选择<span><em>颜色</em><em>数量</em></span>
+					</h2>
+					<img src="__STYLE__/img/arrow.png"/>
+				</div>
+			</div>
+
+			<div class="proDetails">
+				<h1>商品详情页</h1>
+				<div class="pic">
+					{$goodData.body|htmlspecialchars_decode}
+				</div>
+			</div>
+		</div>
+
+		<div class="defineFoot clear">
+			<span class="left">
+				<a href="{:U('Home/Index/index')}"><span><img src="__STYLE__/img/def01.png"/></span>首页</a>
+				<b></b>
+			</span>
+			<span class="left">
+				<a href="{:U('Home/Collect/collect')}"><span><img src="__STYLE__/img/def02.png"/></span>收藏夹</a>
+			</span>
+			<span class="right">
+				<a href="{:U('Home/Purchase/purchase')}">采购</a>
+			</span>
+		</div>
+
+		<!--选择弹窗-->
+		<div class="popSelect">
+			<div class="details">
+				<div class="message">
+					<span><img src="{$goodData.images}"/></span>
+					<h1><em>￥{$goodData.price}</em>商品编号:{$goodData.goods_sn}</h1>
+					<a href="javascript:;">×</a>
+				</div>
+
+				<div class="allStyle">
+					<div class="colour">
+						<h2>颜色</h2>
+						<ul class="clear">
+                            <foreach name="colors" item="v" key="key">
+    							<li data-color="{$key}">{$v}</li>
+                            </foreach>
+						</ul>
+					</div>
+
+					<div class="amount mg">
+						<h2>数量</h2>
+						<div class="num">
+							<b class="reduct">—</b>
+							<input type="text" value="1" disabled="disabled" />
+							<b class="add">+</b>
+						</div>
+					</div>
+				</div>
+
+				<button>确认</button>
+			</div>
+		</div>
+        <div id="goods_id" data-val="{$goodData.goods_id}"></div>
+        <div id="AgentUser" data-val="{$Think.session.AgentUser}"></div>
+
+		<script>
+			$(function(){
+				//收藏
+                $('#collectIco').one('click', function () {
+                    var goods_id = $('#goods_id').attr('data-val');
+                    var agentUser = $('#AgentUser').attr('data-val');
+                    var that = $(this);
+                    $.post(
+                        '__CONTROLLER__/collect',
+                        {"agent_id":agentUser, "goods_id":goods_id},
+                        function (data) {
+                            if (data.code == 1) {
+                                that.attr('src','__STYLE__/img/collectA.png');
+                                that.next().css('color', '#7bc2ea');
+                                that.next().text(parseInt(that.next().text())+1);
+                            } else {
+                                alert(data.msg);
+                            }
+                        },
+                        'json'
+                    );
+                });
+
+				//选择弹窗
+				$('.mySelect').click(function(){
+					$('.popSelect').fadeIn();
+					$('html,body').css({'height':'100%','overflow':'hidden'});
+				});
+				$('.popSelect .message a').click(function(){
+					$('.popSelect').hide();
+					$('html,body').css('overflow','auto');
+				});
+				$('.popSelect .colour li').eq(0).addClass('on');
+				$('.popSelect .colour li').click(function(){
+					$(this).addClass('on').siblings('li').removeClass('on');
+				});
+
+				var txtA = $('.popSelect .num input');
+				var count = parseInt(txtA.val());
+				$('.popSelect .reduct').click(function(){
+					if(count<=2){
+						count=2;
+						$(this).css('color','#545b61');
+					}else{
+						$('.popSelect .num b').css('color','#ffffff');
+					};
+					txtA.val(--count);
+				});
+				$('.popSelect .add').click(function(){
+					if(count>100){
+						count=99;
+						$(this).css('color','#545b61');
+					}else{
+						$('.popSelect .num b').css('color','#ffffff');
+					};
+					txtA.val(++count);
+				});
+
+				$('.popSelect button').click(function(){
+					$('.popSelect').hide();
+					$('html,body').css('overflow','auto');
+				});
+			});
+		</script>
+	</body>
+</html>

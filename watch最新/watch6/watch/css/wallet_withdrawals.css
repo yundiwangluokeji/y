@@ -1,0 +1,30 @@
+﻿body{background: #1d2124;}
+.header{position: fixed;top: 0;left:0;width: 100%;height: 0.88rem;line-height: 0.88rem;background: #13171a;z-index: 10;}
+.header h3{color: #c3a07d;font-size: 0.36rem;padding:0 1.1rem;}
+.header a{display: block;float: right;width: 0.88rem;height: 0.88rem;text-align: center;}
+.header a img{width: 0.35rem;}
+
+.header a.back{float: left;}
+.header .line{display: block;height: 0.4rem;width: 1px;background: #2f3336;position: absolute;left: 0.9rem;top: 0.26rem;}
+
+.content{margin: 0.87rem 0 1rem;}
+
+
+.tabs{overflow: hidden;background: #2f3336;margin-bottom: 0.2rem;}
+.tabs_item{float: left;width: 50%;color: #a9a9a9;font-size: 0.28rem;text-align: center;line-height: 0.78rem;}
+.tabs_item span{border-bottom: 2px solid #2f3336;line-height: 0.78rem;display: inline-block;padding: 0 0.3rem;}
+.tabs_item .line{height: 0.4rem;width: 1px;background: #a9a9a9;float: right;margin-top: 0.2rem;}
+.tabs_item.on span{border-bottom: 2px solid #c3a07d;color: #c3a07d;}
+
+label {display:block;padding:0 0.2rem 0 0.6rem ;background: #2f3336;border-bottom: 1px solid #545b61;}
+label span{margin-left: -0.4rem;float: left;display: block;color: #c3a07d;font-size: 0.4rem;line-height: 2.6;}
+label input{font-size: 0.5rem;width: 100%;border: none;outline: none;background: #2f3336;color: #c3a07d;line-height: 1.8;}
+form p{font-size: 0.32rem;background: #2f3336;padding: 0.2rem;line-height: 1.3;color: #52595f;}
+form p.tip{color: #FFFFFF;}
+
+.submit{color: #FFFFFF;background: #7bc2ea;outline: none;border: none;border-radius: 0.06rem;width: 96%;font-size: 0.3rem;line-height: 0.9rem;margin:0.8rem 2% 0; }
+.bank{display: none;}
+.pay{display: block;}
+/*验证码弹窗*/
+.success{position: fixed;top: 50%;left:50%;background: rgba(0,0,0,0.5);border-radius: 0.08rem;text-align: center;width:3rem;height:0.9rem;margin: -0.45rem 0 0 -1.5rem;}
+.success p{color: #FFFFFF;font-size: 0.32rem; line-height: 0.9rem;}

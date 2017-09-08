@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" /> 
+		<title>南方钟表</title>
+		<link rel="stylesheet" href="css/public.css" />
+		<link rel="stylesheet" href="css/editPurchase.css" />
+		<script type="text/javascript" src="js/jquery-1.7.1.min.js" ></script>
+		<script>document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';$(window).resize(function(){document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';})</script>
+	</head>
+	<body>
+		<div class="header">
+			<div class="mg">
+				<a class="goback" href="javascript:history.back();"><img src="img/back.png"/></a>
+				<h1>编辑采购单</h1>
+				<a class="keepEdit" href="purchase.html">保存</a>	
+			</div>
+		</div>
+		
+		<div class="contains">									
+			<div class="editPurchase">
+				<h2>商品编号:15462559</h2>
+				<div class="details clear">
+					<span><img src="img/firm.jpg"/></span>
+					<div class="title">
+						<h1>瑞士劳力士男表 日志型116233-63603G自动机械男士手表2</h1>
+						<p>颜色：白壳黑面</p>
+					</div>
+					<div class="price"><em>￥1588.00</em>× 5</div>
+				</div>
+				<p>合计： <em>￥7940.00</em></p>
+				<div class="permission">
+					<span>浏览权限</span>
+					<div class="setting">
+						<label>
+							<label class="optRadio"><input type="radio" name="permiss"/></label>
+							<span>所有人可见</span>
+						</label>
+						<label>
+							<label class="optRadio"><input type="radio" name="permiss"/></label>
+							<span>下级代理可见</span>
+						</label>
+						<label>
+							<label class="optRadio"><input type="radio" name="permiss"/></label>
+							<span>关闭</span>
+						</label>
+					</div>
+				</div>		
+			</div>			
+		</div>
+			
+		<script>
+			$(function(){
+				//设为默认						
+				$('.setting>label:first .optRadio').find('input').prop('checked');
+				$('.setting>label:first').addClass('opt');
+				$('.setting .optRadio').click(function(){
+					var checkT = $(this).find('input');
+					if(checkT.prop('checked')){
+						$(this).parent('label').addClass('opt').siblings('label').removeClass('opt');
+					};
+				});				
+			});
+		</script>
+	</body>
+</html>

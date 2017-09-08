@@ -2,14 +2,13 @@
 namespace Admin\Controller;
 use Think\Controller;
 
-class LoginController extends Controller 
+class LoginController extends Controller
 {
     public function index()
     {
     	if(IS_POST){
     		$input = I('post.');
-
-    		$verify = new \Think\Verify();    
+    		$verify = new \Think\Verify();
     		if(!$verify->check($input['authcode'])){
     				$this->ajaxReturn(array('res'=>4,'msg'=>'验证码错误！'));
     		}

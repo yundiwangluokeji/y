@@ -17,6 +17,7 @@ class PublicController extends Controller
         $upload->rootPath  =     $path;
 
         $info   =   $upload->uploadOne($file);
+        $url = ltrim($path.$info['savepath'].$info['savename'],'.');
         if (!$info) {
             return array(
                 'status' => 0,
@@ -27,7 +28,7 @@ class PublicController extends Controller
             return array(
                 'status' => 1,
                 'msg' => '上传成功',
-                'data' => $info['savepath'].$info['savename']
+                'data' => $url
             );
         }
     }

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" /> 
+		<title>南方钟表</title>
+		<link rel="stylesheet" href="css/public.css" />
+		<link rel="stylesheet" href="css/agents.css" />
+		<script type="text/javascript" src="js/jquery-1.7.1.min.js" ></script>
+		<script>document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';$(window).resize(function(){document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';})</script>
+	</head>
+	<body>
+		<div class="header">
+			<div class="mg">
+				<a class="goback" href="javascript:history.back();"><img src="img/back.png"/></a>
+				<h1>我的代理商</h1>
+				<a class="createAgent" href="createAgent.html">创建代理商</a>	
+			</div>
+		</div>
+		
+		<div class="contains">	
+			<div class="agentsList">
+				<ul class="mg">
+					<li>
+						<a class="clear" href="">
+							<span><img src="img/agent.png"/></span>
+							<div class="details">
+								<h1>豪雅手表</h1>
+								<h2>账号:1955622626</h2>
+								<h2>手机:12345678944</h2>
+								<p>冻结余额:<em>￥11211.00</em></p>
+							</div>
+							<b><img src="img/arrow02.png"/></b>
+						</a>
+					</li>
+					<li>
+						<a class="clear" href="">
+							<span><img src="img/agent.png"/></span>
+							<div class="details">
+								<h1>豪雅手表</h1>
+								<h2>账号:1955622626</h2>
+								<h2>手机:12345678944</h2>
+								<p>冻结余额:<em>￥11211.00</em></p>
+							</div>
+							<b><img src="img/arrow02.png"/></b>
+						</a>
+					</li>
+					<li>
+						<a class="clear" href="">
+							<span><img src="img/agent.png"/></span>
+							<div class="details">
+								<h1>豪雅手表</h1>
+								<h2>账号:1955622626</h2>
+								<h2>手机:12345678944</h2>
+								<p>冻结余额:<em>￥11211.00</em></p>
+							</div>
+							<b><img src="img/arrow02.png"/></b>
+						</a>
+					</li>
+					<li>
+						<a class="clear" href="">
+							<span><img src="img/agent.png"/></span>
+							<div class="details">
+								<h1>豪雅手表</h1>
+								<h2>账号:1955622626</h2>
+								<h2>手机:12345678944</h2>
+								<p>冻结余额:<em>￥11211.00</em></p>
+							</div>
+							<b><img src="img/arrow02.png"/></b>
+						</a>
+					</li>
+				</ul>
+			</div>	
+			
+			<a class="createAgent mg" href="createAgent.html">创建代理商</a>
+		</div>
+			
+		<!--返回顶部-->
+		<div class="back_top">
+			<img src="img/back_top.png">
+		</div>
+	</body>
+	
+	<script>
+		$(function(){
+			// 返回顶部
+			$('.back_top').click(function(){
+				$('html,body').animate({scrollTop:0},300)
+			});
+		});
+	</script>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>收藏夹</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" />
+	<link rel="stylesheet" type="text/css" href="css/public.css">
+	<link rel="stylesheet" type="text/css" href="css/collect.css">
+	<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+	<script>
+		document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';
+		$(window).resize(function () {  
+			document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';
+		 }) 
+	</script>
+</head>
+<body>
+	<div class="header">
+		<a class="back" href="javascript:history.back();"><img src="img/back_last.png"></a>
+		<i class="line"></i>
+		<h3>收藏夹</h3>
+	</div>
+
+	<div class="content">
+		<div class="items">
+			<div class="item">
+				<a href="collect_detail.html" class="img">
+					<img src="img/collect_pro.png">
+				</a>
+				<h3><a href="collect_detail.html">瑞士劳力士男表 日志型116233- 63603G自动机械男士手表2</a></h3>
+				<p class="price">批价：<span>￥1588.00</span></p>
+				<div class="btn">
+					<a href="javascript:;">
+						<img src="img/collect_1.png">
+						<span>预定</span>
+					</a>
+					<a href="javascript:;">
+						<img src="img/collect_2.png">
+						<span>采购</span>
+					</a>
+					<a href="javascript:;"  class="detele">
+						<img src="img/collect_3.png">
+						<span>删除</span>
+					</a>
+				</div>
+			</div>
+			<div class="item">
+				<a href="collect_detail.html" class="img">
+					<img src="img/collect_pro.png">
+				</a>
+				<h3><a href="collect_detail.html">瑞士劳力士男表 日志型116233- 63603G自动机械男士手表2</a></h3>
+				<p class="price">批价：<span>￥1588.00</span></p>
+				<div class="btn">
+					<a href="javascript:;">
+						<img src="img/collect_1.png">
+						<span>预定</span>
+					</a>
+					<a href="javascript:;">
+						<img src="img/collect_2.png">
+						<span>采购</span>
+					</a>
+					<a href="javascript:;"  class="detele">
+						<img src="img/collect_3.png">
+						<span>删除</span>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="mark"></div>
+	<div class="prompt">
+		<div class="txt"><p>确定删除1件商品？</p></div>
+		<div class="btn">
+			<a style="border-right: 1px solid #eeeeee;box-sizing: border-box;" href="">取消</a>
+			<a href="">确定</a>
+		</div>
+	</div>
+
+	<div class="back_top">
+		<img src="img/back_top.png">
+	</div>
+</body>
+</html>
+<script type="text/javascript">
+	$(function(){
+		$('.detele').click(function(){
+			$('.prompt').show();
+			$('.mark').show();
+		})
+		$('.mark').click(function(){
+			$('.mark').hide();
+			$('.prompt').hide();
+		})
+		$('.prompt .btn a').click(function(){
+			$('.prompt').hide();
+			$('.mark').hide();
+		})
+		// 返回顶部
+		$('.back_top').click(function(){
+			$('html,body').animate({scrollTop:0},300)
+		})
+	})
+</script>

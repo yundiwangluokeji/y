@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" />
+		<title>南方钟表</title>
+		<link rel="stylesheet" href="__STYLE__/css/public.css" />
+		<link rel="stylesheet" href="__STYLE__/css/recommend.css" />
+		<script type="text/javascript" src="__STYLE__/js/jquery-1.7.1.min.js" ></script>
+        <script type="text/javascript" src="__STYLE__/layer/layer.js"></script>
+		<script>document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';</script>
+	</head>
+	<body>
+		<div class="header">
+			<div class="mg">
+				<a class="goback" href="javascript:history.back();"><img src="__STYLE__/img/back.png"/></a>
+				<h1>商品列表</h1>
+				<a class="search" href=""><img src="__STYLE__/img/search.png"/></a>
+			</div>
+		</div>
+
+		<div class="contains">
+			<div class="headNav">
+				<div class="mg clear">
+					<ul>
+                        <div class="typeList" style="float:left;">
+                            <li data-id="0" <if condition="!$brandIcon"> class="on"</if>>全部</li>
+                            <foreach name="classData" item="v">
+                                <li data-id="{$v.brand_id}" <if condition="$brandIcon eq $v['brand_id']"> class="on"</if> >{$v.name}</li>
+                            </foreach>
+                        </div>
+						<!-- <li id="priceOrder" data-order="<?php echo $orderNum ? $orderNum : 2; ?>">价格<img src="__STYLE__/img/<?php echo $orderNum == 1 ? up : down; ?>.png"/></li> -->
+						<li id="priceOrder" data-order="<?php echo $orderNum ? $orderNum : 2; ?>">价格<img src="__STYLE__/img/down.png"/></li>
+					</ul>
+					<a href="javascript:;"><img src="__STYLE__/img/afresh.png"/></a>
+				</div>
+			</div>
+
+			<div class="goodsList">
+				<!--两列显示-->
+				<div class="twoCol mg">
+					<ul class="clear">
+                        <foreach name="goodslist" item="vo">
+    						<li>
+    							<a href="__CONTROLLER__/goodDetail/goods_id/{$vo.goods_id}"><img src="{$vo.images}"/></a>
+    							<div class="details">
+    								<h1><a href="__CONTROLLER__/goodDetail/goods_id/{$vo.goods_id}">{$vo.name}</a></h1>
+    								<p>编号:{$vo.goods_sn}</p>
+    								<h2>批价:<em>￥{$vo.price}</em></h2>
+    								<span class="clear">
+    									<div class="collect">
+    										<b>{$vo.click_count}</b>
+    										<img src="__STYLE__/img/collect.png"/>
+    									</div>
+    									<div imgurl="http://pan.baidu.com/share/qrcode?w=230&h=230&url=http://<?php echo $_SERVER['HTTP_HOST'];?>{:U('Home/Goods/goodslist')}" class="code"><img src="__STYLE__/img/code.png"/></div>
+    								</span>
+    							</div>
+    						</li>
+                        </foreach>
+					</ul>
+				</div>
+
+				<!--一列显示-->
+				<div class="oneCol">
+					<ul class="mg">
+                        <foreach name="goodslist" item="vo">
+    						<li>
+    							<a href="__CONTROLLER__/goodDetail/goods_id/{$vo.goods_id}"><img src="{$vo.images}"/></a>
+    							<div class="details">
+    								<h1><a href="__CONTROLLER__/goodDetail/goods_id/{$vo.goods_id}">{$vo.name}</a></h1>
+    								<p>编号:{$vo.goods_sn}</p>
+    								<h2>批价:<em>￥{$vo.price}</em></h2>
+    								<span class="clear">
+    									<div class="collect">
+    										<b>{$vo.count}</b>
+    										<img src="__STYLE__/img/collect.png"/>
+    									</div>
+    									<div imgurl="http://pan.baidu.com/share/qrcode?w=230&h=230&url=http://<?php echo $_SERVER['HTTP_HOST'];?>{:U('Home/Goods/goodslist')}" class="code"><img src="__STYLE__/img/code.png"/></div>
+    								</span>
+    							</div>
+    						</li>
+                        </foreach>
+					</ul>
+				</div>
+			</div>
+
+		</div>
+
+        <div class="footer">
+            <a href="{:U('Home/Index/index')}">
+                <img class="shadow" src="__STYLE__/img/index_icon.png">
+                <img class="light" src="__STYLE__/img/index_icon_on.png">
+                <span>首页</span>
+            </a>
+            <a href="{:U('Home/Recommended/index')}">
+                <img class="shadow" src="__STYLE__/img/tuijian_icon.png">
+                <img class="light" src="__STYLE__/img/tuijian_icon_on.png">
+                <span>推荐</span>
+            </a>
+            <a href="{:U('Agent/Index/index')}">
+                <img class="shadow" src="__STYLE__/img/us_icon.png">
+                <img class="light" src="__STYLE__/img/us_icon_on.png">
+                <span>我的</span>
+            </a>
+        </div>
+
+		<!--二维码-->
+		<div class="qrCode">
+			<span><img src="__STYLE__/img/QR.png"/></span>
+		</div>
+
+		<!--返回顶部-->
+		<div class="back_top">
+			<img src="__STYLE__/img/back_top.png">
+		</div>
+        <div id="agent" data-val="{$agent}"></div>
+        <div id="brandIcon" data-val="{$brandIcon}"></div>
+        <div id="brand" data-val="{$brand}"></div>
+
+
+		<script>
+            // 自定义js
+            $(document).on('click', '.typeList li', function () {
+                var agent = $('#agent').attr('data-val');
+                var classNum = $(this).attr('data-id');
+                if (agent) {
+                    var url = "__CONTROLLER__/goodslist/brand_id/" + $('#brand').attr('data-val') + "/class_id/" + classNum + "/agent/" + agent;
+                } else {
+                    var url = "__CONTROLLER__/goodslist/brand_id/" + $('#brand').attr('data-val') + "/class_id/" + classNum;
+                }
+                window.location.href = url;
+            });
+
+            // 排序
+            $('#priceOrder').click(function () {
+                if ($('#brandIcon').attr('data-val')) {
+                    var brand_id = '/class_id/' + $('#brandIcon').attr('data-val');
+                } else {
+                    var brand_id = '';
+                }
+                if ($(this).attr('data-order')) {
+                    var orderNum = '/orderNum/' + $(this).attr('data-order');
+                } else {
+                    orderNum = '';
+                }
+
+                url = "__CONTROLLER__/goodslist/brand_id/" + $('#brand').attr('data-val') + brand_id + orderNum;
+                window.location.href = url;
+            });
+
+
+			$(function(){
+				// $('.headNav li').eq(0).addClass('on');
+				// $('.headNav li').click(function(){
+				// 	$(this).addClass('on').siblings('li').removeClass('on');
+				// });
+
+				//收藏
+				$('.goodsList .collect').one('click',function(){
+					$(this).find('img').attr('src','__STYLE__/img/collectA.png');
+					$(this).find('b').css('color','#7bc2ea');
+					$(this).find('b').text(parseInt($(this).find('b').text())+1);
+				});
+
+				//排版列表
+				$('.goodsList .twoCol').show();
+				$('.goodsList .oneCol').hide();
+				$('.headNav a').toggle(function(){
+					$('.goodsList .twoCol').hide();
+					$('.goodsList .oneCol').show();
+				},function(){
+					$('.goodsList .twoCol').show();
+					$('.goodsList .oneCol').hide();
+				});
+
+				//二维码
+				$('.goodsList .code').click(function(){
+                    $('.qrCode').fadeIn();
+                    var url = $(this).attr('imgurl');
+                    $('.qrCode>span>img').attr('src',url);
+				});
+				$('.qrCode').click(function(){
+                    $(this).fadeOut();
+				});
+
+				// 返回顶部
+				$('.back_top').click(function(){
+					$('html,body').animate({scrollTop:0},300)
+				});
+
+			});
+		</script>
+
+
+	</body>
+</html>

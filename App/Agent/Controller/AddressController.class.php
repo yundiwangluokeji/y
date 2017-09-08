@@ -1,6 +1,6 @@
 <?php
 namespace Agent\Controller;
-class AddressController extends PublicController 
+class AddressController extends PublicController
 {
     public function index()
     {
@@ -37,7 +37,7 @@ class AddressController extends PublicController
                 $data['time'] = time();
                 $res = $address->add($data);
                 $msg = '添加';
-                
+
             }
 
             if($res){
@@ -74,7 +74,7 @@ class AddressController extends PublicController
     		$data = M('area')->field('id,name')->where($where)->select();
     		if($data){
     			$this->ajaxReturn($data);
-    			
+
     		}
     	}
 
@@ -113,5 +113,5 @@ class AddressController extends PublicController
     }
 
 
-    
+
 }

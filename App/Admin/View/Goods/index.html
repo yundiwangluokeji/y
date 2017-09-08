@@ -54,6 +54,7 @@
 			<th class="bgtt" width="50">库存</th>
 			<!--<th class="bgtt" width="50">浏览</td>-->
 			<th class="bgtt" width="50">上架</th>
+			<th class="bgtt" width="50">推荐</th>
 			<th class="bgtt" width="80">销量/评价</th>
 			<th class="bgtt" width="100">操作</th>
 		</tr>
@@ -62,7 +63,7 @@
 			<td style="background-color: rgb(255, 255, 255);"><input type="checkbox" name="product_id[]" value="{$vo.goods_id}"></td>
 			<td style="background-color: rgb(255, 255, 255);">{$vo.goods_id}</td>
 			<td style="background-color: rgb(255, 255, 255);"><input type="text" name="sorting[{$vo.brand_id}]" value="{$vo.sorting}" class="inputtext input30 center"></td>
-			<td width="40" style="background-color: rgb(255, 255, 255);"><a href="" target="_blank"><img src="__PUBLIC__/Admin/good/{$vo.images}" width="40" height="40" class="imgbg"></a></td>
+			<td width="40" style="background-color: rgb(255, 255, 255);"><a href="" target="_blank"><img src="{$vo.images}" width="40" height="40" class="imgbg"></a></td>
 			<td class="aleft" style="padding-left: 0px; background-color: rgb(255, 255, 255);"><a href="" target="_blank" class="cblue">{$vo.name}</a></td>
 			<td style="background-color: rgb(255, 255, 255);">{$vo.class}</td>
 			<td style="background-color: rgb(255, 255, 255);">{$vo.brand}</td>
@@ -71,6 +72,9 @@
 			<!--<td class="num">730</td>-->
 			<td style="background-color: rgb(255, 255, 255);">
 				<a class="shelvesBtn" data-id="{$vo.goods_id}" data-status="{$vo.is_shelves}"><img src="__STYLE__/images/<if condition='$vo.is_shelves eq 1'>dui<else />cuo</if>.png"></a>
+			</td>
+            <td style="background-color: rgb(255, 255, 255);">
+				<a class="recommendBtn" data-id="{$vo.goods_id}" data-status="{$vo.is_recommend}"><img src="__STYLE__/images/<if condition='$vo.is_recommend eq 1'>dui<else />cuo</if>.png"></a>
 			</td>
 			<td style="background-color: rgb(255, 255, 255);">
 				<a href="" onclick="return pe_dialog(this, &#39;设置销量&#39;, 400, 210, &#39;product_sell&#39;)">{$vo.sales_sum}</a>
@@ -114,6 +118,18 @@ $('.shelvesBtn').click(function () {
     var that = $(this);
     $.post(
         '__CONTROLLER__/changeShelves',
+        {"goods_id":that.attr('data-id'),"status":that.attr('data-status')},
+        function (data) {
+            location.reload();
+        },
+        'json'
+    );
+});
+
+$('.recommendBtn').click(function () {
+    var that = $(this);
+    $.post(
+        '__CONTROLLER__/changeRecommend',
         {"goods_id":that.attr('data-id'),"status":that.attr('data-status')},
         function (data) {
             location.reload();

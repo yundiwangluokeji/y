@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>收藏</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" />
+	<link rel="stylesheet" type="text/css" href="__STYLE__/css/public.css">
+	<link rel="stylesheet" type="text/css" href="__STYLE__/css/collect_detail.css">
+	<script type="text/javascript" src="__STYLE__/js/jquery-1.7.1.min.js"></script>
+	<script>
+		document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';
+		$(window).resize(function () {
+			document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';
+		 })
+	</script>
+</head>
+<body>
+	<div class="header">
+		<a class="back" href="javascript:history.go(-1)"><img src="__STYLE__/img/back_last.png"></a>
+		<i class="line"></i>
+		<h3>收藏</h3>
+	</div>
+	<div class="content">
+		<div class="banner">
+			<img src="{$goodData.images}">
+		</div>
+		<div class="txt">
+			<h3><a href="javascript:;">{$goodData.name}</a></h3>
+			<p>商品编号:{$goodData.goods_sn}</p>
+			<div class="bottom">
+				<p style="float: left;"><span style="color: #c3a07d;font-size: 0.44rem;">￥{$goodData.price}</span></p>
+				<div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a></div>
+				<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"32"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/__STYLE__/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+				<p style="float: right;margin-top: 0.16rem;" class="bottom_right on"><i class="start"></i><span>166</span></p>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
+<script type="text/javascript">
+	$(function(){
+		// 收藏
+		$('.txt .bottom_right').click(function(){
+			var goodnum=$(this).find('span').html();
+
+			if($(this).hasClass('on')==true){
+				goodnum=parseInt(goodnum)-1;
+				$(this).removeClass('on');
+				$(this).find('span').html(goodnum);
+			}
+			else{
+				goodnum=parseInt(goodnum)+1;
+				$(this).addClass('on');
+				$(this).find('span').html(goodnum);
+			}
+		})
+
+	})
+
+</script>

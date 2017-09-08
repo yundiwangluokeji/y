@@ -1,0 +1,113 @@
+<include file="Public/header" /> <!-- 头部 -->
+<div class="content">
+<include file="Public/left" /> <!-- 左边 -->
+            <div class="right" style="height: 849px;">
+	<div class="now" style="width: 831px;">
+	<a href="{:U('User/index')}">会员列表</a>
+		<a href="Collection account.html">收款账户</a>
+		<a href="{:U('User/address')}" >收货地址</a>
+        <a href="{:U('User/money')}">货币操作记录</a>
+        <a href="{:U('User/topUp')}">充值记录</a>
+        <a href="{:U('User/withdrawal')}" class="sel">提现申请</a>
+        <a href="{:U('User/loginLog')}">代理商登录日志</a>
+		<div class="clear"></div>
+	</div>
+	<div class="right_main">
+		<div class="search">
+			<form method="get">
+			<input type="hidden" name="mod" value="useraddr">
+			用户名：<input type="text" name="name" value="" class="inputtext input150">
+			收货人：<input type="text" name="tname" value="" class="inputtext input150">
+			手机号码：<input type="text" name="phone" value="" class="inputtext input150">
+			<input type="submit" value="搜索" class="input_btn">
+			</form>
+		</div>
+		<form method="post" id="form">
+		<table width="100%" border="0" cellspacing="0" cellpadding="0" class="list">
+		<tbody><tr>
+			<th class="bgtt" width="20"><input type="checkbox" name="checkall" onclick="pe_checkall(this, &#39;address_id&#39;)"></th>
+			<th class="bgtt" width="50">ID号</th>
+			<th class="bgtt" width="100">用户名</th>
+			<th class="bgtt" width="100">收款人姓名</th>
+			<th class="bgtt" width="120">收款方式</th>
+			<th class="bgtt" width="200">操作结果</th>
+			<th class="bgtt" width="200">收款方式名称</th>
+			<th class="bgtt" width="200">提现金额</th>
+			<th class="bgtt" width="200">收款账号</th>
+			<th class="bgtt" width="130">操作时间</th>
+		</tr>
+        <foreach item="vo" name="data">
+    		<tr>
+    			<td style="background-color: rgb(255, 255, 255);"><input type="checkbox" name="address_id[]" value="87"></td>
+    			<td class="num" style="background-color: rgb(255, 255, 255);">{$vo.id}</td>
+    			<td style="background-color: rgb(255, 255, 255);">{$vo.usernames}</td>
+    			<td style="background-color: rgb(255, 255, 255);">{$vo.username}</td>
+    			<td style="background-color: rgb(255, 255, 255);">{$vo.pay_type}</td>
+    			<td style="background-color: rgb(255, 255, 255);">
+                    <a class="shelvesBtn" data-id="{$vo.id}" data-status="{$vo.res}" style="cursor: pointer;">{$vo.res}</a>
+                </td>
+    			<td style="background-color: rgb(255, 255, 255);">{$vo.name}</td>
+                <td style="background-color: rgb(255, 255, 255);">{$vo.amount}</td>
+    			<td style="background-color: rgb(255, 255, 255);">{$vo.account}</td>
+    			<td class="num" style="background-color: rgb(255, 255, 255);"><span>{$vo.time}</span></td>
+    		</tr>
+        </foreach>
+
+				</tbody></table>
+		</form>
+	</div>
+
+</div>
+	<div class="clear"></div>
+	<!--<div class="foot">Copyright <span class="num">©</span> 2008-2014 <a target="_blank" href="http://www.phpshe.com">灵宝简好网络科技有限公司</a> 版权所有</div>-->
+</div>
+<script type="text/javascript">
+$('.shelvesBtn').click(function () {
+    var status = $(this).attr('data-status');
+    if (status == '新申请') {
+        if (confirm('确定已打款？')) {
+            var that = $(this);
+            $.post(
+                '__CONTROLLER__/changeStatus',
+                {"id":that.attr('data-id')},
+                function (data) {
+                    if (data.status) {
+                        that.attr('data-status', '已打款');
+                        that.html('已打款');
+                    } else {
+                        alert(data.msg);
+                    }
+                },
+                'json'
+            );
+        }
+    }
+});
+function win_init() {
+	$(".left").add(".right").css("height", $(window).height() - $(".pagetop").height());
+	$(".now").css("width", $(".right_main").outerWidth());
+	//$(".right_main").css("height", $(window).height() -  $(".pagetop").height() - $(".now:eq(0)").outerHeight() - $(".right_bottom").outerHeight() + 38);
+}
+$(function(){
+	if ($(".right_bottom").height() == 0) {
+		$(".right_bottom").remove();
+	}
+	win_init();
+	$(window).resize(function() {
+		win_init();
+	});
+	$(".list").find("td").hover(
+		function(){
+			if ($(this).hasClass("bgtt") || $(this).is("[nosel=1]")) return;
+			$(this).parent("tr").children("td[nosel!=1]").css("background-color", "#fbfbfb");
+		},
+		function(){
+			if ($(this).hasClass("bgtt") || $(this).is("[nosel=1]")) return;
+			$(this).parent("tr").children("td[nosel!=1]").css("background-color", "#fff");
+		}
+	)
+})
+pe_loadscript("http://phpshe.com/demo/phpshe/index.php?mod=notice");
+</script>
+
+</body></html>
