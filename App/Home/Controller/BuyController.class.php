@@ -32,7 +32,7 @@ class BuyController extends PublicController
 				$order['buy'] = 1;//购买
 				$order['pay_status'] = 0;//支付状态
 				$order['shipping_status'] = 0;//发货状态 
-				$address = $this->address($_POST['address_id'],true);
+				$address = $this->address($_POST['address'],true);
 				$order['username'] = $address['name'];//收货人姓名 
 				$order['mobile'] = $address['mobile'];//收货手机号
 				$order['address'] = $address['province'].$address['city'].$address['district'].$address['twon'].$address['address'];//地址
@@ -172,7 +172,7 @@ class BuyController extends PublicController
 				$order['buy'] = 0;//预定
 				$order['pay_status'] = 0;//支付状态
 				$order['shipping_status'] = 0;//发货状态 
-				$address = $this->address($_POST['address_id'],true);
+				$address = $this->address($_POST['address'],true);
 				$order['username'] = $address['name'];//收货人姓名 
 				$order['mobile'] = $address['mobile'];//收货手机号
 				$order['address'] = $address['province'].$address['city'].$address['district'].$address['twon'].$address['address'];//地址

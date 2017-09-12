@@ -1,0 +1,48 @@
+[ 2017-09-12T20:01:55+08:00 ] 127.0.0.1 /favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000740s ]
+ERR: 无法加载模块:Favicon
+
+[ 2017-09-12T20:02:08+08:00 ] 127.0.0.1 /favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000039s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000861s ]
+ERR: 无法加载模块:Favicon
+
+[ 2017-09-12T20:02:37+08:00 ] 127.0.0.1 /Uploads/image/20170904/1504493879112166.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000542s ]
+ERR: 无法加载模块:Uploads
+
+[ 2017-09-12T20:38:02+08:00 ] 127.0.0.1 /Uploads/image/20170904/1504493879112166.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000556s ]
+ERR: 无法加载模块:Uploads
+
+[ 2017-09-12T20:39:12+08:00 ] 127.0.0.1 /favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000429s ]
+ERR: 无法加载模块:Favicon
+
+[ 2017-09-12T20:39:13+08:00 ] 127.0.0.1 /favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000649s ]
+ERR: 无法加载模块:Favicon
+
+[ 2017-09-12T20:42:21+08:00 ] 127.0.0.1 /Uploads/image/20170904/1504493879112166.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000486s ]
+ERR: 无法加载模块:Uploads
+
+[ 2017-09-12T20:45:51+08:00 ] 127.0.0.1 /Uploads/image/20170904/1504493879112166.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000038s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000546s ]
+ERR: 无法加载模块:Uploads
+

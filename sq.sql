@@ -285,6 +285,8 @@ create table if not exists `yd_order`(
 `mobile` char(20) not null default '' COMMENT '收货人手机号',
 `address` varchar(255) not null default ''  COMMENT '收货地址(直接字符串)',
 `time` int unsigned not null default 0 COMMENT '订单生成时间',
+`courier` char(20) not null default ''  COMMENT '快递公司(直接快递名称)',
+`courier_sn` char(20) not null default ''  COMMENT '快递单号',
 `updateitme` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP
 )engine=innodb default charset="utf8";
 

@@ -1,20 +1,20 @@
-<!DOCTYPE html>
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" /> 
 		<title>南方钟表</title>
-		<link rel="stylesheet" href="__STYLE__/css/public.css" />
-		<link rel="stylesheet" href="__STYLE__/css/editAddress.css" />
-		<script type="text/javascript" src="__STYLE__/js/jquery-1.7.1.min.js" ></script>		
-	<script type="text/javascript" src="__STYLE__/layer/layer.js"></script>
+		<link rel="stylesheet" href="/App/style/css/public.css" />
+		<link rel="stylesheet" href="/App/style/css/editAddress.css" />
+		<script type="text/javascript" src="/App/style/js/jquery-1.7.1.min.js" ></script>		
+	<script type="text/javascript" src="/App/style/layer/layer.js"></script>
 		<script>document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';$(window).resize(function(){document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';})</script>
 		<style type="text/css">select{width:60%;height: 0.8rem;border:none;background: none;}</style>
 	</head>
 	<body>
 		<div class="header">
 			<div class="mg">
-				<a class="goback" href="javascript:history.back();"><img src="__STYLE__/img/back.png"/></a>
+				<a class="goback" href="javascript:history.back();"><img src="/App/style/img/back.png"/></a>
 				<h1>编辑地址</h1>
 				<!-- <a class="keepEdit" href="">保存</a>	 -->
 			</div>
@@ -23,56 +23,48 @@
 		<div class="contains">	
 			<div class="editAddress">
 				<form  id="imageUploadForm">
-				<input type="hidden" name="addressid" value="{$address.id}">
+				<input type="hidden" name="addressid" value="<?php echo ($address["id"]); ?>">
 					<label>
 						<span>姓名</span>
-						<input type="text" name="name" value="{$address.name}" placeholder="请输入收货人姓名" />
+						<input type="text" name="name" value="<?php echo ($address["name"]); ?>" placeholder="请输入收货人姓名" />
 					</label>
 					<label>
 						<span>手机</span>
-						<input type="tel" name="mobile" value="{$address.mobile}"  placeholder="请输入收件人手机号" maxlength="11" onblur="isTel(this.value);"/>
+						<input type="tel" name="mobile" value="<?php echo ($address["mobile"]); ?>"  placeholder="请输入收件人手机号" maxlength="11" onblur="isTel(this.value);"/>
 					</label>
 					<label style="width:100%;">
 						<span>选择省</span>
 						
 							<select name="province" class="province" level="1">
 									<option>请选择省份</option>
-								<foreach name="data" item="v">
-									<option value="{$v.id}" <?php if($address['province'] == $v['id']){echo 'selected';}?>>{$v.name}</option>
-								</foreach>
+								<?php if(is_array($data)): foreach($data as $key=>$v): ?><option value="<?php echo ($v["id"]); ?>" <?php if($address['province'] == $v['id']){echo 'selected';}?>><?php echo ($v["name"]); ?></option><?php endforeach; endif; ?>
 							</select>
-						<img src="__STYLE__/img/localize.png"/>
+						<img src="/App/style/img/localize.png"/>
 					</label>
 					<label style="width:100%;">
 						<span>选择市</span>
 							<select name="city" class="select2" level="2">
-							<foreach name="address[city_]" item="city_v">
-								<option  value="{$city_v['id']}" <?php if($address['city'] == $city_v['id']){echo 'selected';}?>>{$city_v['name']}</option>
-							</foreach>
+							<?php if(is_array($address[city_])): foreach($address[city_] as $key=>$city_v): ?><option  value="<?php echo ($city_v['id']); ?>" <?php if($address['city'] == $city_v['id']){echo 'selected';}?>><?php echo ($city_v['name']); ?></option><?php endforeach; endif; ?>
 							</select>
-						<img src="__STYLE__/img/localize.png"/>
+						<img src="/App/style/img/localize.png"/>
 					</label>
 					<label style="width:100%;">
 						<span>选择区</span>
 							<select  name="district" class="select3" level="3">
-							<foreach name="address[district_]" item="district_v">
-								<option  value="{$district_v['id']}" <?php if($address['city'] == $district_v['id']){echo 'selected';}?>>{$district_v['name']}</option>
-							</foreach>
+							<?php if(is_array($address[district_])): foreach($address[district_] as $key=>$district_v): ?><option  value="<?php echo ($district_v['id']); ?>" <?php if($address['city'] == $district_v['id']){echo 'selected';}?>><?php echo ($district_v['name']); ?></option><?php endforeach; endif; ?>
 							</select>
-						<img src="__STYLE__/img/localize.png"/>
+						<img src="/App/style/img/localize.png"/>
 					</label>
 					<label style="width:100%;">
 						<span>选择乡镇</span>
 							<select name="twon"  class="select4">
-							<foreach name="address[twon_]" item="twon_v">
-								<option  value="{$twon_v['id']}" <?php if($address['city'] == $twon_v['id']){echo 'selected';}?>>{$twon_v['name']}</option>
-							</foreach>
+							<?php if(is_array($address[twon_])): foreach($address[twon_] as $key=>$twon_v): ?><option  value="<?php echo ($twon_v['id']); ?>" <?php if($address['city'] == $twon_v['id']){echo 'selected';}?>><?php echo ($twon_v['name']); ?></option><?php endforeach; endif; ?>
 							</select>
-						<img src="__STYLE__/img/localize.png"/>
+						<img src="/App/style/img/localize.png"/>
 					</label>
 					<label>
 						<span>详细地址</span>
-						<input type="text" name="address" value="{$address.address}" placeholder="请输入详细地址" />
+						<input type="text" name="address" value="<?php echo ($address["address"]); ?>" placeholder="请输入详细地址" />
 					</label>
 				
 					<a class="keepEdit"  id="ImageBrowse">保存</a>
@@ -100,7 +92,7 @@
 	$('select').change(function(){
 		var mythis = $(this);
 		var level = $(this).attr('level');
-		var url = "/index.php{:U('lower')}";
+		var url = "/index.php<?php echo U('lower');?>";
 		$.get(url,{'id':$(mythis).val()},function(res){
 			if(res.length>0){
 
@@ -175,7 +167,7 @@
             processData: false,
             success:function(data){
                if(data.res == 1){
-               		window.location.href = "{$_SERVER[HTTP_REFERER]}";
+               		window.location.href = "<?php echo ($_SERVER[HTTP_REFERER]); ?>";
                }else{
                		layer.msg(data.msg)
                }

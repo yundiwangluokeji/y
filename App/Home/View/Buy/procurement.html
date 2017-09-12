@@ -61,25 +61,24 @@
 			</div>					
 			
 		</div>	
-		<form method="post">
+		<form method="post" onsubmit="return mysubmit()">
 		<input type="hidden" name="address" value="{$address['id']}"> <!-- 地址id -->	
 		<button class="referOrder">确认订单并支付</button>		
 		</form>	
 		<script>
 
-			$(function(){				
-				$('.referOrder').click(function(){					
-					if(!$('input[name=address]').val()){
-						layer.msg('请添加收货地址');
+		function mysubmit()
+		{
+			if(!$('input[name=address]').val()){
+						layer.msg('请添加收货地址');return false;
 					}else{
 						layer.msg('正在支付...', {
 						  icon: 16
 						  ,shade: 0.10
+						   ,time:0
 						});
-						// Loading5.gif
 					}
-				});
-			});
+		}
 						
 		</script>
 	</body>

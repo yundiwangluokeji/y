@@ -56,11 +56,12 @@ class AddressController extends PublicController
                 $address['city_'] = $area->field('id,name')->where(array('parent_id'=>$address['province']))->select();//市
                 $address['district_'] = $area->field('id,name')->where(array('parent_id'=>$address['city']))->select();//市
                 $address['twon_'] = $area->field('id,name')->where(array('parent_id'=>$address['district']))->select();//市
-                // echo '<pre>';
-                // print_r($address);exit;
+                
                 $this->assign('address',$address);
 
             }
+            // echo '<pre>';
+                // print_r($_SERVER);exit;
     		$this->assign('data',$data);
 	    	$this->display();
     	}

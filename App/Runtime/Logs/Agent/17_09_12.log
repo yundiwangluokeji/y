@@ -1,0 +1,1365 @@
+[ 2017-09-12T20:02:05+08:00 ] 127.0.0.1 /Agent/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000647s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000695s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000803s ]
+
+[ 2017-09-12T20:02:05+08:00 ] 127.0.0.1 /Agent/Login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000442s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000678s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000776s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000073s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000172s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009636s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009763s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000418s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000635s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001185s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000568s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000655s ]
+
+[ 2017-09-12T20:02:16+08:00 ] 127.0.0.1 /Agent/Login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000531s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000608s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000709s ]
+SQL: SHOW COLUMNS FROM `yd_agent` [ RunTime:0.0214s ]
+SQL: SELECT `secret` FROM `yd_agent` WHERE `username` = 'zhoufei' LIMIT 1   [ RunTime:0.0358s ]
+SQL: SELECT * FROM `yd_agent` WHERE `username` = 'zhoufei' AND `password` = '9yyweyhIFBdKvjE/vo+THszohveXlGsK8DqCDZgysO0=' LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `yd_login_log` [ RunTime:0.0011s ]
+SQL: INSERT INTO `yd_login_log` (`pass`,`name`,`res`,`msg`,`ip`,`address`,`time`) VALUES ('miIkI/RA2puwvqK6BODVN419aOFyJS0o3mWH68ZVjGA=','zhoufei','1','登录成功！','127.0.0.1','未分配或者内网IP...内网IP.内网IP.内网IP.127.0.0.1','1505217736') [ RunTime:0.1407s ]
+
+[ 2017-09-12T20:02:16+08:00 ] 127.0.0.1 /Agent/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000074s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001267s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001102s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001332s ]
+SQL: select 
+        yd_agent.username,
+        yd_agent.mobile,
+        yd_agent.status,
+        yd_agent_config.name,
+        yd_agent_config.agent_id,
+        yd_agent_config.address
+         from yd_agent inner join yd_agent_config ON yd_agent_config.agent_id = yd_agent.id where yd_agent.id = 25 limit 1 [ RunTime:0.0318s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000099s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000207s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010109s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010223s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000422s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000635s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001223s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000670s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000774s ]
+
+[ 2017-09-12T20:02:30+08:00 ] 127.0.0.1 /Agent/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000511s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000568s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000669s ]
+SQL: select 
+        yd_agent.username,
+        yd_agent.mobile,
+        yd_agent.status,
+        yd_agent_config.name,
+        yd_agent_config.agent_id,
+        yd_agent_config.address
+         from yd_agent inner join yd_agent_config ON yd_agent_config.agent_id = yd_agent.id where yd_agent.id = 25 limit 1 [ RunTime:0.0262s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000087s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000177s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008517s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008622s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000441s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000651s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001249s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000591s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000677s ]
+
+[ 2017-09-12T20:10:11+08:00 ] 127.0.0.1 /Agent/Address/address.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000494s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000569s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000679s ]
+SQL: select 
+        yd_agent.username,
+        yd_agent.mobile,
+        yd_agent.status,
+        yd_agent_config.name,
+        yd_agent_config.agent_id,
+        yd_agent_config.address
+         from yd_agent inner join yd_agent_config ON yd_agent_config.agent_id = yd_agent.id where yd_agent.id = 25 limit 1 [ RunTime:0.0325s ]
+SQL: SHOW COLUMNS FROM `yd_address` [ RunTime:0.0187s ]
+SQL: SHOW COLUMNS FROM `yd_area` [ RunTime:0.0004s ]
+SQL: SELECT `id`,`name` FROM `yd_area` WHERE `level` = 1  [ RunTime:0.0326s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000127s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000227s ]
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 26 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 29 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 33 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Use of undefined constant city_ - assumed 'city_' D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 47 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 47 行.
+NOTIC: [8] Use of undefined constant district_ - assumed 'district_' D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 54 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 54 行.
+NOTIC: [8] Use of undefined constant twon_ - assumed 'twon_' D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 61 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 61 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 67 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014684s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014781s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000472s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000659s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001286s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000519s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000607s ]
+
+[ 2017-09-12T20:10:22+08:00 ] 127.0.0.1 /index.php/Agent/Address/lower.html?id=130000
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000424s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000519s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000600s ]
+SQL: select 
+        yd_agent.username,
+        yd_agent.mobile,
+        yd_agent.status,
+        yd_agent_config.name,
+        yd_agent_config.agent_id,
+        yd_agent_config.address
+         from yd_agent inner join yd_agent_config ON yd_agent_config.agent_id = yd_agent.id where yd_agent.id = 25 limit 1 [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `yd_area` [ RunTime:0.0006s ]
+SQL: SELECT `id`,`name` FROM `yd_area` WHERE `parent_id` = 130000  [ RunTime:0.0117s ]
+
+[ 2017-09-12T20:10:24+08:00 ] 127.0.0.1 /index.php/Agent/Address/lower.html?id=130300
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000434s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000500s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000582s ]
+SQL: select 
+        yd_agent.username,
+        yd_agent.mobile,
+        yd_agent.status,
+        yd_agent_config.name,
+        yd_agent_config.agent_id,
+        yd_agent_config.address
+         from yd_agent inner join yd_agent_config ON yd_agent_config.agent_id = yd_agent.id where yd_agent.id = 25 limit 1 [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `yd_area` [ RunTime:0.0005s ]
+SQL: SELECT `id`,`name` FROM `yd_area` WHERE `parent_id` = 130300  [ RunTime:0.0122s ]
+
+[ 2017-09-12T20:10:25+08:00 ] 127.0.0.1 /index.php/Agent/Address/lower.html?id=130304
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000378s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000476s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000560s ]
+SQL: select 
+        yd_agent.username,
+        yd_agent.mobile,
+        yd_agent.status,
+        yd_agent_config.name,
+        yd_agent_config.agent_id,
+        yd_agent_config.address
+         from yd_agent inner join yd_agent_config ON yd_agent_config.agent_id = yd_agent.id where yd_agent.id = 25 limit 1 [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `yd_area` [ RunTime:0.0005s ]
+SQL: SELECT `id`,`name` FROM `yd_area` WHERE `parent_id` = 130304  [ RunTime:0.0127s ]
+
+[ 2017-09-12T20:10:26+08:00 ] 127.0.0.1 /index.php/Agent/Address/lower.html?id=130304002
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000038s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000647s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000489s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000580s ]
+SQL: select 
+        yd_agent.username,
+        yd_agent.mobile,
+        yd_agent.status,
+        yd_agent_config.name,
+        yd_agent_config.agent_id,
+        yd_agent_config.address
+         from yd_agent inner join yd_agent_config ON yd_agent_config.agent_id = yd_agent.id where yd_agent.id = 25 limit 1 [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `yd_area` [ RunTime:0.0006s ]
+SQL: SELECT `id`,`name` FROM `yd_area` WHERE `parent_id` = 130304002  [ RunTime:0.0116s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000659s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000740s ]
+
+[ 2017-09-12T20:10:27+08:00 ] 127.0.0.1 /Agent/Address/address.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000408s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000570s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000684s ]
+SQL: select 
+        yd_agent.username,
+        yd_agent.mobile,
+        yd_agent.status,
+        yd_agent_config.name,
+        yd_agent_config.agent_id,
+        yd_agent_config.address
+         from yd_agent inner join yd_agent_config ON yd_agent_config.agent_id = yd_agent.id where yd_agent.id = 25 limit 1 [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `yd_address` [ RunTime:0.0006s ]
+SQL: INSERT INTO `yd_address` (`name`,`agent_id`,`mobile`,`province`,`city`,`district`,`twon`,`address`,`time`) VALUES ('zhoufei','25','13539993040','130000','130300','130304','130304002','ssss','1505218227') [ RunTime:0.0832s ]
+
+[ 2017-09-12T20:12:07+08:00 ] 127.0.0.1 /Agent/Address/address.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000615s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000624s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000727s ]
+SQL: select 
+        yd_agent.username,
+        yd_agent.mobile,
+        yd_agent.status,
+        yd_agent_config.name,
+        yd_agent_config.agent_id,
+        yd_agent_config.address
+         from yd_agent inner join yd_agent_config ON yd_agent_config.agent_id = yd_agent.id where yd_agent.id = 25 limit 1 [ RunTime:0.0170s ]
+SQL: SHOW COLUMNS FROM `yd_address` [ RunTime:0.0183s ]
+SQL: SHOW COLUMNS FROM `yd_area` [ RunTime:0.0004s ]
+SQL: SELECT `id`,`name` FROM `yd_area` WHERE `level` = 1  [ RunTime:0.0550s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000169s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000340s ]
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 26 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 29 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 33 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Use of undefined constant city_ - assumed 'city_' D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 47 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 47 行.
+NOTIC: [8] Use of undefined constant district_ - assumed 'district_' D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 54 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 54 行.
+NOTIC: [8] Use of undefined constant twon_ - assumed 'twon_' D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 61 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 61 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 67 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.024901s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025138s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000885s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.001240s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002426s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000992s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001158s ]
+
+[ 2017-09-12T20:12:19+08:00 ] 127.0.0.1 /index.php/Agent/Address/lower.html?id=140000
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000493s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000600s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000684s ]
+SQL: select 
+        yd_agent.username,
+        yd_agent.mobile,
+        yd_agent.status,
+        yd_agent_config.name,
+        yd_agent_config.agent_id,
+        yd_agent_config.address
+         from yd_agent inner join yd_agent_config ON yd_agent_config.agent_id = yd_agent.id where yd_agent.id = 25 limit 1 [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `yd_area` [ RunTime:0.0005s ]
+SQL: SELECT `id`,`name` FROM `yd_area` WHERE `parent_id` = 140000  [ RunTime:0.0287s ]
+
+[ 2017-09-12T20:12:20+08:00 ] 127.0.0.1 /index.php/Agent/Address/lower.html?id=140200
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000458s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000572s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000655s ]
+SQL: select 
+        yd_agent.username,
+        yd_agent.mobile,
+        yd_agent.status,
+        yd_agent_config.name,
+        yd_agent_config.agent_id,
+        yd_agent_config.address
+         from yd_agent inner join yd_agent_config ON yd_agent_config.agent_id = yd_agent.id where yd_agent.id = 25 limit 1 [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `yd_area` [ RunTime:0.0007s ]
+SQL: SELECT `id`,`name` FROM `yd_area` WHERE `parent_id` = 140200  [ RunTime:0.0132s ]
+
+[ 2017-09-12T20:12:20+08:00 ] 127.0.0.1 /index.php/Agent/Address/lower.html?id=140211
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000479s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000534s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000616s ]
+SQL: select 
+        yd_agent.username,
+        yd_agent.mobile,
+        yd_agent.status,
+        yd_agent_config.name,
+        yd_agent_config.agent_id,
+        yd_agent_config.address
+         from yd_agent inner join yd_agent_config ON yd_agent_config.agent_id = yd_agent.id where yd_agent.id = 25 limit 1 [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `yd_area` [ RunTime:0.0005s ]
+SQL: SELECT `id`,`name` FROM `yd_area` WHERE `parent_id` = 140211  [ RunTime:0.0121s ]
+
+[ 2017-09-12T20:12:21+08:00 ] 127.0.0.1 /index.php/Agent/Address/lower.html?id=140211101
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000473s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000493s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000574s ]
+SQL: select 
+        yd_agent.username,
+        yd_agent.mobile,
+        yd_agent.status,
+        yd_agent_config.name,
+        yd_agent_config.agent_id,
+        yd_agent_config.address
+         from yd_agent inner join yd_agent_config ON yd_agent_config.agent_id = yd_agent.id where yd_agent.id = 25 limit 1 [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `yd_area` [ RunTime:0.0005s ]
+SQL: SELECT `id`,`name` FROM `yd_area` WHERE `parent_id` = 140211101  [ RunTime:0.0316s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000588s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000671s ]
+
+[ 2017-09-12T20:12:23+08:00 ] 127.0.0.1 /Agent/Address/address.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000481s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000569s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000646s ]
+SQL: select 
+        yd_agent.username,
+        yd_agent.mobile,
+        yd_agent.status,
+        yd_agent_config.name,
+        yd_agent_config.agent_id,
+        yd_agent_config.address
+         from yd_agent inner join yd_agent_config ON yd_agent_config.agent_id = yd_agent.id where yd_agent.id = 25 limit 1 [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `yd_address` [ RunTime:0.0005s ]
+SQL: INSERT INTO `yd_address` (`name`,`agent_id`,`mobile`,`province`,`city`,`district`,`twon`,`address`,`time`) VALUES ('zhoufei','25','13539993040','140000','140200','140211','140211101','sss','1505218343') [ RunTime:0.0529s ]
+
+[ 2017-09-12T20:13:01+08:00 ] 127.0.0.1 /Agent/Address/address.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000443s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000535s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000652s ]
+SQL: select 
+        yd_agent.username,
+        yd_agent.mobile,
+        yd_agent.status,
+        yd_agent_config.name,
+        yd_agent_config.agent_id,
+        yd_agent_config.address
+         from yd_agent inner join yd_agent_config ON yd_agent_config.agent_id = yd_agent.id where yd_agent.id = 25 limit 1 [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `yd_address` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `yd_area` [ RunTime:0.0004s ]
+SQL: SELECT `id`,`name` FROM `yd_area` WHERE `level` = 1  [ RunTime:0.0479s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000119s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000244s ]
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 26 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 29 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 33 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Use of undefined constant city_ - assumed 'city_' D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 47 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 47 行.
+NOTIC: [8] Use of undefined constant district_ - assumed 'district_' D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 54 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 54 行.
+NOTIC: [8] Use of undefined constant twon_ - assumed 'twon_' D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 61 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 61 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 67 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015939s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016098s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000649s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000901s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001734s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000698s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000817s ]
+
+[ 2017-09-12T20:38:12+08:00 ] 127.0.0.1 /Agent/Address/delete.html?addressid=12
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000495s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000498s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000584s ]
+SQL: select 
+        yd_agent.username,
+        yd_agent.mobile,
+        yd_agent.status,
+        yd_agent_config.name,
+        yd_agent_config.agent_id,
+        yd_agent_config.address
+         from yd_agent inner join yd_agent_config ON yd_agent_config.agent_id = yd_agent.id where yd_agent.id = 11 limit 1 [ RunTime:0.0301s ]
+SQL: SHOW COLUMNS FROM `yd_address` [ RunTime:0.0187s ]
+SQL: DELETE FROM `yd_address` WHERE `id` = 12 AND `agent_id` = 11 [ RunTime:0.0500s ]
+
+[ 2017-09-12T20:38:14+08:00 ] 127.0.0.1 /Agent/Address/delete.html?addressid=10
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000492s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000527s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000612s ]
+SQL: select 
+        yd_agent.username,
+        yd_agent.mobile,
+        yd_agent.status,
+        yd_agent_config.name,
+        yd_agent_config.agent_id,
+        yd_agent_config.address
+         from yd_agent inner join yd_agent_config ON yd_agent_config.agent_id = yd_agent.id where yd_agent.id = 11 limit 1 [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `yd_address` [ RunTime:0.0007s ]
+SQL: DELETE FROM `yd_address` WHERE `id` = 10 AND `agent_id` = 11 [ RunTime:0.0481s ]
+
+[ 2017-09-12T20:38:16+08:00 ] 127.0.0.1 /Agent/Address/delete.html?addressid=9
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000403s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000504s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000586s ]
+SQL: select 
+        yd_agent.username,
+        yd_agent.mobile,
+        yd_agent.status,
+        yd_agent_config.name,
+        yd_agent_config.agent_id,
+        yd_agent_config.address
+         from yd_agent inner join yd_agent_config ON yd_agent_config.agent_id = yd_agent.id where yd_agent.id = 11 limit 1 [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `yd_address` [ RunTime:0.0006s ]
+SQL: DELETE FROM `yd_address` WHERE `id` = 9 AND `agent_id` = 11 [ RunTime:0.0370s ]
+
+[ 2017-09-12T20:38:18+08:00 ] 127.0.0.1 /Agent/Address/delete.html?addressid=8
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000517s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000482s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000565s ]
+SQL: select 
+        yd_agent.username,
+        yd_agent.mobile,
+        yd_agent.status,
+        yd_agent_config.name,
+        yd_agent_config.agent_id,
+        yd_agent_config.address
+         from yd_agent inner join yd_agent_config ON yd_agent_config.agent_id = yd_agent.id where yd_agent.id = 11 limit 1 [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `yd_address` [ RunTime:0.0005s ]
+SQL: DELETE FROM `yd_address` WHERE `id` = 8 AND `agent_id` = 11 [ RunTime:0.0363s ]
+
+[ 2017-09-12T20:38:20+08:00 ] 127.0.0.1 /Agent/Address/delete.html?addressid=7
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000521s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000640s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000740s ]
+SQL: select 
+        yd_agent.username,
+        yd_agent.mobile,
+        yd_agent.status,
+        yd_agent_config.name,
+        yd_agent_config.agent_id,
+        yd_agent_config.address
+         from yd_agent inner join yd_agent_config ON yd_agent_config.agent_id = yd_agent.id where yd_agent.id = 11 limit 1 [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `yd_address` [ RunTime:0.0010s ]
+SQL: DELETE FROM `yd_address` WHERE `id` = 7 AND `agent_id` = 11 [ RunTime:0.0361s ]
+
+[ 2017-09-12T20:38:23+08:00 ] 127.0.0.1 /Agent/Address/delete.html?addressid=6
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000495s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000492s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000580s ]
+SQL: select 
+        yd_agent.username,
+        yd_agent.mobile,
+        yd_agent.status,
+        yd_agent_config.name,
+        yd_agent_config.agent_id,
+        yd_agent_config.address
+         from yd_agent inner join yd_agent_config ON yd_agent_config.agent_id = yd_agent.id where yd_agent.id = 11 limit 1 [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `yd_address` [ RunTime:0.0005s ]
+SQL: DELETE FROM `yd_address` WHERE `id` = 6 AND `agent_id` = 11 [ RunTime:0.0327s ]
+
+[ 2017-09-12T20:38:24+08:00 ] 127.0.0.1 /Agent/Address/delete.html?addressid=11
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000375s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000465s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000553s ]
+SQL: select 
+        yd_agent.username,
+        yd_agent.mobile,
+        yd_agent.status,
+        yd_agent_config.name,
+        yd_agent_config.agent_id,
+        yd_agent_config.address
+         from yd_agent inner join yd_agent_config ON yd_agent_config.agent_id = yd_agent.id where yd_agent.id = 11 limit 1 [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `yd_address` [ RunTime:0.0006s ]
+SQL: DELETE FROM `yd_address` WHERE `id` = 11 AND `agent_id` = 11 [ RunTime:0.0701s ]
+
+[ 2017-09-12T20:38:37+08:00 ] 127.0.0.1 /Agent/Address/address.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000089s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000732s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000857s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001066s ]
+SQL: select 
+        yd_agent.username,
+        yd_agent.mobile,
+        yd_agent.status,
+        yd_agent_config.name,
+        yd_agent_config.agent_id,
+        yd_agent_config.address
+         from yd_agent inner join yd_agent_config ON yd_agent_config.agent_id = yd_agent.id where yd_agent.id = 11 limit 1 [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `yd_address` [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `yd_area` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`name` FROM `yd_area` WHERE `level` = 1  [ RunTime:0.1000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000091s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000180s ]
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 26 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 29 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 33 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Use of undefined constant city_ - assumed 'city_' D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 47 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 47 行.
+NOTIC: [8] Use of undefined constant district_ - assumed 'district_' D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 54 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 54 行.
+NOTIC: [8] Use of undefined constant twon_ - assumed 'twon_' D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 61 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 61 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 67 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013147s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013250s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000479s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000690s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001302s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000679s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000773s ]
+
+[ 2017-09-12T20:39:10+08:00 ] 127.0.0.1 /Agent/Address/address.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000553s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000483s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000582s ]
+SQL: select 
+        yd_agent.username,
+        yd_agent.mobile,
+        yd_agent.status,
+        yd_agent_config.name,
+        yd_agent_config.agent_id,
+        yd_agent_config.address
+         from yd_agent inner join yd_agent_config ON yd_agent_config.agent_id = yd_agent.id where yd_agent.id = 11 limit 1 [ RunTime:0.0673s ]
+SQL: SHOW COLUMNS FROM `yd_address` [ RunTime:0.0192s ]
+SQL: SHOW COLUMNS FROM `yd_area` [ RunTime:0.0011s ]
+SQL: SELECT `id`,`name` FROM `yd_area` WHERE `level` = 1  [ RunTime:0.0294s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000154s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000313s ]
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 26 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 29 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 33 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Use of undefined constant city_ - assumed 'city_' D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 47 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 47 行.
+NOTIC: [8] Use of undefined constant district_ - assumed 'district_' D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 54 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 54 行.
+NOTIC: [8] Use of undefined constant twon_ - assumed 'twon_' D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 61 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 61 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 67 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020728s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020894s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000621s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000990s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001852s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000765s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000926s ]
+
+[ 2017-09-12T20:39:12+08:00 ] 127.0.0.1 /Agent/Address/address.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000044s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000919s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001068s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001277s ]
+SQL: select 
+        yd_agent.username,
+        yd_agent.mobile,
+        yd_agent.status,
+        yd_agent_config.name,
+        yd_agent_config.agent_id,
+        yd_agent_config.address
+         from yd_agent inner join yd_agent_config ON yd_agent_config.agent_id = yd_agent.id where yd_agent.id = 11 limit 1 [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `yd_address` [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `yd_area` [ RunTime:0.0009s ]
+SQL: SELECT `id`,`name` FROM `yd_area` WHERE `level` = 1  [ RunTime:0.0245s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000194s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000395s ]
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 26 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 29 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 33 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Use of undefined constant city_ - assumed 'city_' D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 47 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 47 行.
+NOTIC: [8] Use of undefined constant district_ - assumed 'district_' D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 54 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 54 行.
+NOTIC: [8] Use of undefined constant twon_ - assumed 'twon_' D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 61 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 61 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 67 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.024960s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025164s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000796s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.001195s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002339s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001024s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001227s ]
+
+[ 2017-09-12T20:39:13+08:00 ] 127.0.0.1 /Agent/Address/address.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000530s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000761s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000921s ]
+SQL: select 
+        yd_agent.username,
+        yd_agent.mobile,
+        yd_agent.status,
+        yd_agent_config.name,
+        yd_agent_config.agent_id,
+        yd_agent_config.address
+         from yd_agent inner join yd_agent_config ON yd_agent_config.agent_id = yd_agent.id where yd_agent.id = 11 limit 1 [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `yd_address` [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `yd_area` [ RunTime:0.0008s ]
+SQL: SELECT `id`,`name` FROM `yd_area` WHERE `level` = 1  [ RunTime:0.0126s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000108s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000204s ]
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 26 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 29 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 33 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Use of undefined constant city_ - assumed 'city_' D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 47 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 47 行.
+NOTIC: [8] Use of undefined constant district_ - assumed 'district_' D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 54 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 54 行.
+NOTIC: [8] Use of undefined constant twon_ - assumed 'twon_' D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 61 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 61 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 67 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014100s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014262s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000956s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000794s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001945s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000816s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000944s ]
+
+[ 2017-09-12T20:39:13+08:00 ] 127.0.0.1 /Agent/Address/address.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000524s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000899s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001123s ]
+SQL: select 
+        yd_agent.username,
+        yd_agent.mobile,
+        yd_agent.status,
+        yd_agent_config.name,
+        yd_agent_config.agent_id,
+        yd_agent_config.address
+         from yd_agent inner join yd_agent_config ON yd_agent_config.agent_id = yd_agent.id where yd_agent.id = 11 limit 1 [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `yd_address` [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `yd_area` [ RunTime:0.0006s ]
+SQL: SELECT `id`,`name` FROM `yd_area` WHERE `level` = 1  [ RunTime:0.0131s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000097s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000208s ]
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 26 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 29 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 33 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Use of undefined constant city_ - assumed 'city_' D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 47 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 47 行.
+NOTIC: [8] Use of undefined constant district_ - assumed 'district_' D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 54 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 54 行.
+NOTIC: [8] Use of undefined constant twon_ - assumed 'twon_' D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 61 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 61 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 67 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014714s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014820s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000390s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000583s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001110s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000442s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000554s ]
+
+[ 2017-09-12T20:39:49+08:00 ] 127.0.0.1 /Agent/Address/address.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000542s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000751s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000924s ]
+SQL: select 
+        yd_agent.username,
+        yd_agent.mobile,
+        yd_agent.status,
+        yd_agent_config.name,
+        yd_agent_config.agent_id,
+        yd_agent_config.address
+         from yd_agent inner join yd_agent_config ON yd_agent_config.agent_id = yd_agent.id where yd_agent.id = 11 limit 1 [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `yd_address` [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `yd_area` [ RunTime:0.0005s ]
+SQL: SELECT `id`,`name` FROM `yd_area` WHERE `level` = 1  [ RunTime:0.0127s ]
+
+[ 2017-09-12T20:41:22+08:00 ] 127.0.0.1 /Agent/Address/address.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000843s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001155s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001397s ]
+SQL: select 
+        yd_agent.username,
+        yd_agent.mobile,
+        yd_agent.status,
+        yd_agent_config.name,
+        yd_agent_config.agent_id,
+        yd_agent_config.address
+         from yd_agent inner join yd_agent_config ON yd_agent_config.agent_id = yd_agent.id where yd_agent.id = 11 limit 1 [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `yd_address` [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `yd_area` [ RunTime:0.0007s ]
+SQL: SELECT `id`,`name` FROM `yd_area` WHERE `level` = 1  [ RunTime:0.0133s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000108s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000200s ]
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 26 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 29 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 33 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Use of undefined constant city_ - assumed 'city_' D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 47 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 47 行.
+NOTIC: [8] Use of undefined constant district_ - assumed 'district_' D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 54 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 54 行.
+NOTIC: [8] Use of undefined constant twon_ - assumed 'twon_' D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 61 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 61 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 67 行.
+NOTIC: [8] Use of undefined constant server - assumed 'server' D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 170 行.
+NOTIC: [8] Undefined variable: Think D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 170 行.
+NOTIC: [8] Use of undefined constant HTTP_REFERER - assumed 'HTTP_REFERER' D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 170 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013192s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013321s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000377s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000636s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001145s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000687s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000776s ]
+
+[ 2017-09-12T20:42:01+08:00 ] 127.0.0.1 /Agent/Address/address.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000455s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000518s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000619s ]
+SQL: select 
+        yd_agent.username,
+        yd_agent.mobile,
+        yd_agent.status,
+        yd_agent_config.name,
+        yd_agent_config.agent_id,
+        yd_agent_config.address
+         from yd_agent inner join yd_agent_config ON yd_agent_config.agent_id = yd_agent.id where yd_agent.id = 11 limit 1 [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `yd_address` [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `yd_area` [ RunTime:0.0005s ]
+SQL: SELECT `id`,`name` FROM `yd_area` WHERE `level` = 1  [ RunTime:0.0128s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000119s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000228s ]
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 26 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 29 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 33 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Use of undefined constant city_ - assumed 'city_' D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 47 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 47 行.
+NOTIC: [8] Use of undefined constant district_ - assumed 'district_' D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 54 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 54 行.
+NOTIC: [8] Use of undefined constant twon_ - assumed 'twon_' D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 61 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 61 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 67 行.
+NOTIC: [8] Use of undefined constant HTTP_REFERER - assumed 'HTTP_REFERER' D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 170 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013502s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013603s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000609s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000721s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001471s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000634s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000722s ]
+
+[ 2017-09-12T20:42:29+08:00 ] 127.0.0.1 /Agent/Address/address.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000704s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000502s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000606s ]
+SQL: select 
+        yd_agent.username,
+        yd_agent.mobile,
+        yd_agent.status,
+        yd_agent_config.name,
+        yd_agent_config.agent_id,
+        yd_agent_config.address
+         from yd_agent inner join yd_agent_config ON yd_agent_config.agent_id = yd_agent.id where yd_agent.id = 25 limit 1 [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `yd_address` [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `yd_area` [ RunTime:0.0005s ]
+SQL: SELECT `id`,`name` FROM `yd_area` WHERE `level` = 1  [ RunTime:0.0136s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000092s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000186s ]
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 26 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 29 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 33 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Use of undefined constant city_ - assumed 'city_' D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 47 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 47 行.
+NOTIC: [8] Use of undefined constant district_ - assumed 'district_' D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 54 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 54 行.
+NOTIC: [8] Use of undefined constant twon_ - assumed 'twon_' D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 61 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 61 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 67 行.
+NOTIC: [8] Use of undefined constant HTTP_REFERER - assumed 'HTTP_REFERER' D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 170 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015372s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015539s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000462s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.001107s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001755s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000638s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000725s ]
+
+[ 2017-09-12T20:42:38+08:00 ] 127.0.0.1 /index.php/Agent/Address/lower.html?id=130000
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000506s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000574s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000655s ]
+SQL: select 
+        yd_agent.username,
+        yd_agent.mobile,
+        yd_agent.status,
+        yd_agent_config.name,
+        yd_agent_config.agent_id,
+        yd_agent_config.address
+         from yd_agent inner join yd_agent_config ON yd_agent_config.agent_id = yd_agent.id where yd_agent.id = 25 limit 1 [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `yd_area` [ RunTime:0.0005s ]
+SQL: SELECT `id`,`name` FROM `yd_area` WHERE `parent_id` = 130000  [ RunTime:0.0379s ]
+
+[ 2017-09-12T20:42:39+08:00 ] 127.0.0.1 /index.php/Agent/Address/lower.html?id=130200
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000039s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000662s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000526s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000615s ]
+SQL: select 
+        yd_agent.username,
+        yd_agent.mobile,
+        yd_agent.status,
+        yd_agent_config.name,
+        yd_agent_config.agent_id,
+        yd_agent_config.address
+         from yd_agent inner join yd_agent_config ON yd_agent_config.agent_id = yd_agent.id where yd_agent.id = 25 limit 1 [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `yd_area` [ RunTime:0.0004s ]
+SQL: SELECT `id`,`name` FROM `yd_area` WHERE `parent_id` = 130200  [ RunTime:0.0229s ]
+
+[ 2017-09-12T20:42:39+08:00 ] 127.0.0.1 /index.php/Agent/Address/lower.html?id=130203
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000512s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000570s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000650s ]
+SQL: select 
+        yd_agent.username,
+        yd_agent.mobile,
+        yd_agent.status,
+        yd_agent_config.name,
+        yd_agent_config.agent_id,
+        yd_agent_config.address
+         from yd_agent inner join yd_agent_config ON yd_agent_config.agent_id = yd_agent.id where yd_agent.id = 25 limit 1 [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `yd_area` [ RunTime:0.0006s ]
+SQL: SELECT `id`,`name` FROM `yd_area` WHERE `parent_id` = 130203  [ RunTime:0.0120s ]
+
+[ 2017-09-12T20:42:40+08:00 ] 127.0.0.1 /index.php/Agent/Address/lower.html?id=130203002
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000395s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000578s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000661s ]
+SQL: select 
+        yd_agent.username,
+        yd_agent.mobile,
+        yd_agent.status,
+        yd_agent_config.name,
+        yd_agent_config.agent_id,
+        yd_agent_config.address
+         from yd_agent inner join yd_agent_config ON yd_agent_config.agent_id = yd_agent.id where yd_agent.id = 25 limit 1 [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `yd_area` [ RunTime:0.0005s ]
+SQL: SELECT `id`,`name` FROM `yd_area` WHERE `parent_id` = 130203002  [ RunTime:0.0129s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000686s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000763s ]
+
+[ 2017-09-12T20:42:43+08:00 ] 127.0.0.1 /Agent/Address/address.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000468s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000567s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000650s ]
+SQL: select 
+        yd_agent.username,
+        yd_agent.mobile,
+        yd_agent.status,
+        yd_agent_config.name,
+        yd_agent_config.agent_id,
+        yd_agent_config.address
+         from yd_agent inner join yd_agent_config ON yd_agent_config.agent_id = yd_agent.id where yd_agent.id = 25 limit 1 [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `yd_address` [ RunTime:0.0005s ]
+SQL: INSERT INTO `yd_address` (`name`,`agent_id`,`mobile`,`province`,`city`,`district`,`twon`,`address`,`time`) VALUES ('VZHOUFEI','25','13539993054','130000','130200','130203','130203002','SSSSS','1505220162') [ RunTime:0.0351s ]
+

@@ -1,55 +1,53 @@
-<!DOCTYPE html>
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" /> 
 		<title>南方钟表</title>
-		<link rel="stylesheet" href="__STYLE__/css/public.css" />
-		<link rel="stylesheet" href="__STYLE__/css/optAddress.css" />
-		<script type="text/javascript" src="__STYLE__/js/jquery-1.7.1.min.js" ></script>
-		<script type="text/javascript" src="__STYLE__/layer/layer.js"></script>
+		<link rel="stylesheet" href="/App/style/css/public.css" />
+		<link rel="stylesheet" href="/App/style/css/optAddress.css" />
+		<script type="text/javascript" src="/App/style/js/jquery-1.7.1.min.js" ></script>
+		<script type="text/javascript" src="/App/style/layer/layer.js"></script>
 		<script>document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';</script>
 	</head>
 	<body>
 		<div class="header">
 			<div class="mg">
-				<a class="goback" href="javascript:history.back();"><img src="__STYLE__/img/back.png"/></a>
+				<a class="goback" href="javascript:history.back();"><img src="/App/style/img/back.png"/></a>
 				<h1>选择收货地址</h1>
-				<a class="addAddress" href="{:U('Agent/Address/address')}">+ 添加</a>	
+				<a class="addAddress" href="<?php echo U('Agent/Address/address');?>">+ 添加</a>	
 			</div>
 		</div>
 		
 		<div class="contains">	
 			<!--还没有收货地址-->
 			<div class="noAddress" style="display: none;">
-				<img src="__STYLE__/img/noAddress.png"/>
+				<img src="/App/style/img/noAddress.png"/>
 			</div>
 			
 			<!--选择地址-->
 			<div class="optAddress" >
 				<ul class="mg">
-				<foreach name="data" item="v">
-					<li>
-						<h1><em>{:getsubstr($v[name],0,20)}</em>{$v.mobile}</h1>
-						<p>{$area[ $v['province'] ]},{$area[ $v['city'] ]},{$area[ $v['district'] ]},{$v['address']}</p>
+				<?php if(is_array($data)): foreach($data as $key=>$v): ?><li>
+						<h1><em><?php echo getsubstr($v[name],0,20);?></em><?php echo ($v["mobile"]); ?></h1>
+						<p><?php echo ($area[ $v['province'] ]); ?>,<?php echo ($area[ $v['city'] ]); ?>,<?php echo ($area[ $v['district'] ]); ?>,<?php echo ($v['address']); ?></p>
 						<div class="handle">
-							<label class="boxCheck" onclick="window.location.href='{:U(session('buy_type'),array('address_id'=>$v['id']))}'">
-								<label  class="optCheck"><input class="default" type="radio" value="{$v.id}" name="default" /></label>
+							<label class="boxCheck" onclick="window.location.href='<?php echo U(session('buy_type'),array('address_id'=>$v['id']));?>'">
+								<label  class="optCheck"><input class="default" type="radio" value="<?php echo ($v["id"]); ?>" name="default" /></label>
 								<span>选择此地址</span>
 							</label>
 							<div class="operate">
-								<span class="delete" val="{$v.id}">
-									<b><img src="__STYLE__/img/delete.png"/></b>
+								<span class="delete" val="<?php echo ($v["id"]); ?>">
+									<b><img src="/App/style/img/delete.png"/></b>
 									<h2>删除</h2>
 								</span>
 								<span class="edit">
-									<b><img src="__STYLE__/img/edit.png"/></b>
-									<h2 onclick="window.location.href='{:U("Agent/Address/address",array(addressid=>$v[id]))}'">编辑</h2>
+									<b><img src="/App/style/img/edit.png"/></b>
+									<h2 onclick="window.location.href='<?php echo U("Agent/Address/address",array(addressid=>$v[id]));?>'">编辑</h2>
 								</span>
 							</div>
 						</div>
-					</li>
-				</foreach>
+					</li><?php endforeach; endif; ?>
 				</ul>
 			</div>
 
@@ -82,7 +80,7 @@
 				});
 
 				$('.deleteTip .confirm').click(function(){
-					$.get('{:U("Agent/Address/delete")}',{addressid:addressid},function(res){
+					$.get('<?php echo U("Agent/Address/delete");?>',{addressid:addressid},function(res){
 						if(res.res == 1){
 							$('.deleteTip').fadeOut();
 							$('.optAddress li').eq(liNum).remove();
