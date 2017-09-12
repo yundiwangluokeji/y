@@ -99,5 +99,11 @@ class ConfigController extends PublicController
         }
     }
 
+    //关于软件
+    public function about()
+    {
+        $this->display();
+    }
+
 
 }

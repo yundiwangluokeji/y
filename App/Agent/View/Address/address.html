@@ -175,7 +175,7 @@
             processData: false,
             success:function(data){
                if(data.res == 1){
-               		window.location.href = "{:U('Address/index')}";
+               		window.location.href = history.back();;
                }else{
                		layer.msg(data.msg)
                }

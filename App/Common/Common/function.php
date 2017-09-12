@@ -11,7 +11,7 @@ define('KEY', '95664752368511453358971294651651'); //256 bit
 
 
 //加密
-function encryption($str,$vi)
+function encryption($str,$vi='56474061254058937921467785493582')
 {
     import("Org.Xcrypt.Xcrypt");
     $Xcrypt = new Xcrypt(KEY, 'cbc', $vi);  
@@ -21,7 +21,7 @@ function encryption($str,$vi)
 
 
 //解密
-function decryption($str,$vi)
+function decryption($str,$vi='56474061254058937921467785493582')
 {
     import("Org.Xcrypt.Xcrypt");
     $Xcrypt = new Xcrypt(KEY, 'cbc', $vi);  

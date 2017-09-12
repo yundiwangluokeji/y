@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" /> 
+		<title>{$config['name']}</title>
+		<link rel="stylesheet" href="__STYLE__/css/public.css" />
+		<link rel="stylesheet" href="__STYLE__/css/conOrder.css" />
+		<script type="text/javascript" src="__STYLE__/js/jquery-1.7.1.min.js" ></script>
+		<script type="text/javascript" src="__STYLE__/layer/layer.js" ></script>
+		<script>document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';$(window).resize(function(){document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';})</script>
+	</head>
+	<body>
+		<div class="header">
+			<div class="mg">
+				<a class="goback" href="javascript:history.back();"><img src="__STYLE__/img/back.png"/></a>
+				<h1>确认订单</h1>
+			</div>
+		</div>
+		
+		<div class="contains">	
+			<!--添加地址-->
+			<php>if(!$address){</php>
+			<div class="addAddress" onclick="window.location.href='{:U('Home/Buy/choose_address')}?type={:ACTION_NAME}'">
+				<div class="mg clear">
+					<span>
+						<img src="__STYLE__/img/adress.png"/>
+						<h2>请选择收货地址</h2>
+					</span>					
+					<img src="__STYLE__/img/arrow02.png"/>
+				</div>
+			</div>
+			<php>}else{</php>
+			<!--已有地址-->
+			<div class="yetAddress" onclick="window.location.href='{:U('Home/Buy/choose_address')}?type={:ACTION_NAME}'">
+				<div class="mg clear">
+					<span>
+						<h1><em>{$address['name']}</em>{$address['mobile']}</h1>
+						<span class="clear">
+							<img src="__STYLE__/img/adress.png"/>
+							<p>{$address['province']}{$address['city']}{$address['district']}{$address['twon']}{$address['address']}</p>
+						</span>
+					</span>
+					<img src="__STYLE__/img/arrow02.png"/>
+				</div>
+			</div>
+			<php>}</php>
+			<div class="informate">
+				<h2>商品编号:{$goods['goods_sn']}</h2>
+				<span>
+					<div class="mg clear">
+						<b><img src="{$goods['images']}"/></b>
+						<div class="title">
+							<h1>{$goods['name']}</h1>
+							<p>颜色：{:session('cart')['color']}</p>
+						</div>
+						<div class="price"><em>￥{$goods['price']}</em>× {:session('cart')['num']}</div>
+					</div>
+				</span>
+				<p>合计: <em>￥<?php echo sprintf("%.2f",$goods['price'] * session('cart')['num']);?></em></p>
+			</div>					
+			
+		</div>	
+		<form method="post">
+		<input type="hidden" name="address" value="{$address['id']}"> <!-- 地址id -->	
+		<button class="referOrder">确认订单并支付</button>		
+		</form>	
+		<script>
+			$(function(){				
+				$('.referOrder').click(function(){					
+					if(!$('input[name=address]').val()){
+						layer.msg('请添加收货地址');
+					}else{
+						layer.msg('正在支付...', {
+						  icon: 16
+						  ,shade: 0.10
+						});
+					}
+				});
+			});
+						
+		</script>
+	</body>
+</html>

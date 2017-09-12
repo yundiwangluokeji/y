@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" /> 
+		<title>支付结果通知</title>
+		<link rel="stylesheet" href="__STYLE__/css/public.css" />
+		<link rel="stylesheet" href="__STYLE__/css/wallet_lack.css" />
+		<script type="text/javascript" src="__STYLE__/js/jquery-1.7.1.min.js" ></script>
+		<script>document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';$(window).resize(function(){document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';})</script>
+	</head>
+	<body>
+		<div class="header">
+			<div class="mg">
+				<a class="goback" href="javascript:history.back();"><img src="__STYLE__/img/back.png"/></a>
+				<h1>支付结果通知</h1>
+			</div>
+		</div>
+		
+		<div class="contains">	
+			<div class="walletLack">
+				<!-- <img src="__STYLE__/img/moneyTip.png"/> -->
+				<php>if($res['code'] == 0){</php>
+					<img src="__STYLE__/img/feifa.png"/>
+				<php>}elseif($res['code'] == 1){</php>
+					<img src="__STYLE__/img/zhifuchenggong.png"/>
+				<php>}elseif($res['code'] == 2){</php>
+					<img src="__STYLE__/img/yizhifu.png"/>
+				<php>}elseif($res['code'] == 3){</php>
+					<img src="__STYLE__/img/yuebuzu.png"/>
+				<php>}elseif($res['code'] == 4){</php>
+					<img src="__STYLE__/img/zhifushibai.png"/>
+				<php>}</php>
+				<p>{$res['msg']}</p>
+			</div>
+		</div>
+		
+
+		<div class="defineFoot">
+			<a href="{:U('Agent/Procurement/index')}">返回订单</a>
+		<php>if($res['code'] == 0){</php>
+			<a href="{:U('Home/Index/index',array('agent'=>AGENT_ID))}">返回首页</a>
+		<php>}elseif($res['code'] == 1){</php>
+			<a href="{:U('Home/Index/index',array('agent'=>AGENT_ID))}">继续购物</a>
+		<php>}elseif($res['code'] == 2){</php>
+			<a href="{:U('Home/Index/index',array('agent'=>AGENT_ID))}">继续购物</a>
+		<php>}elseif($res['code'] == 2){</php>
+			<a href="{:U('Home/Index/index',array('agent'=>AGENT_ID))}">去充值</a>
+		<php>}elseif($res['code'] == 4){</php>
+			<a href="">重新支付</a>
+		<php>}</php>
+		</div>
+
+	</body>
+
+</html>

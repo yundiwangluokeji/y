@@ -89,88 +89,7 @@ class GoodsController extends PublicController
         $classData = M('classification')->field('brand_id, name')->order('sorting')->select();
         $this->assign('classData', $classData);
         $this->assign('brandIcon', $class);
-
         $this->display();
-exit;
-        if (AGENT_ID) {
-            $where1 = array('agent_id' => AGENT_ID, 'agent_is_shelves' => 1, 'g.brand_id' => $class);
-            $where2 = "`agent_id`!=".AGENT_ID." and `goods_permissions`=1 and agent_is_shelves=1 and g.brand_id=".$class;
-            if ($brand_id) {
-                $where1['class_id'] = $brand_id;
-                $where2 .= ' and class_id = '.$brand_id;
-            }
-
-            $goodsData1 = M('agent_goods as ag')
-                ->join('__GOODS__ as g on ag.agent_goods_id=g.goods_id')
-                ->field('name, goods_sn, images, agent_price as price, agent_click_count as click_count')
-                ->where($where1)
-                ->select();
-            $goodsData2 = M('agent_goods as ag')
-                ->join('__GOODS__ as g on ag.agent_goods_id=g.goods_id')
-                ->field('name, goods_sn, images, agent_price as price, agent_click_count as click_count')
-                ->where($where2)
-                ->select();
-
-            $goodsData = array_merge($goodsData1, $goodsData2);
-            if ($orderNum) {
-                $len = count($goodsData);
-                if ($orderNum == 1) {
-                    for ($k = 1; $k < $len; $k++) {
-                        for ($j = 0; $j < $len - $k; $j++) {
-                            if ($goodsData[$j]['price'] > $goodsData[$j + 1]['price']) {
-                                $temp = $goodsData[$j + 1];
-                                $goodsData[$j + 1] =$goodsData[$j] ;
-                                $goodsData[$j] = $temp;
-                            }
-                        }
-                    }
-                } else {
-                    for ($k = 1; $k < $len; $k++) {
-                        for ($j = 0; $j < $len - $k; $j++) {
-                            if ($goodsData[$j]['price'] < $goodsData[$j + 1]['price']) {
-                                $temp = $goodsData[$j + 1];
-                                $goodsData[$j + 1] =$goodsData[$j] ;
-                                $goodsData[$j] = $temp;
-                            }
-                        }
-                    }
-                }
-            }
-            // dump($where1);
-            // dump($goodsData1);exit;
-            $this->assign('agent', AGENT_ID);
-        } else {
-            $where['is_shelves'] = 1;
-            $where['brand_id'] = $class;
-            if ($brand_id) {
-                $where['class_id'] = $brand_id;
-            }
-            if ($orderNum) {
-                if ($orderNum == 1) {
-                    $order = 'price';
-                } else {
-                    $order = 'price desc';
-                }
-            } else {
-                $order = '';
-            }
-            $goodsData = M('goods')->where($where)->order($order)->select();
-        }
-
-        if ($orderNum) {
-            $orderNum = $orderNum == 1 ? 2 : 1;
-            $this->assign('orderNum', $orderNum);
-        }
-        $this->assign('brandIcon', $brand_id);
-        $this->assign('goodsData', $goodsData);
-
-        // 查询分类
-        $classData = M('classification')->field('brand_id, name')->order('sorting')->select();
-        $this->assign('classData', $classData);
-
-        $this->display();
-
-
 
     }
     // 收藏
@@ -178,6 +97,10 @@ exit;
     {
         $data = I('post.');
         $data['addtime'] = time();
+        $res_ = M('agent_collection')->where(array('goods_id'=>$data['goods_id'],'agent_id'=>$data['agent_id']))->find();
+        if($res_){
+            $this->ajaxReturn(array('code'=>2,'msg'=>'你已经收藏过了！'));
+        }
         $res = M('agent_collection')->add($data);
         if ($res) {
             $this->ajaxReturn(array(
@@ -198,6 +121,10 @@ exit;
     public function goodDetail()
     {
         $goods_id = I('get.goods_id');
+        //商品库存
+        $inventory = M('goods')->where(array('goods_id'=>$goods_id))->getField('inventory');
+        $this->assign('inventory',$inventory);
+        
         $goodData = M('goods')->where(array('goods_id' => $goods_id))->find();
         if ($goodData) {
             $collectNum = M('agent_collection')->where(array('goods_id' => $goods_id))->count();

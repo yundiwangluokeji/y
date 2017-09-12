@@ -12,10 +12,26 @@ class PublicController extends Controller {
         //如果不是自己的店铺 也是不可以看的
         // if(AGENT_ID !=)
     	// session('HomeUser',null);
+        $this->config();//配置
     }
 
 
 
+    //查询店铺信息
+    public function config()
+    {
+        //如果传了代理商id查询代理商的配置 否则查询总平台
+       if(AGENT_ID){
+            $config = M('agent_config')->where(array('agent_id'=>AGENT_ID))->find();
+
+       }else{
+            $config = array();
+            $config['name'] = M('config')->where(array('configkey'=>'title'))->getField('configval');
+            $config['logo'] = M('config')->where(array('configkey'=>'logo'))->getField('configval');
+
+       }
+       $this->assign('config',$config);
+    }
 
     public function _empty(){
 
@@ -24,3 +40,15 @@ class PublicController extends Controller {
     	echo 'PublicController';
     }
 }
+
+
+ // 'id' => string '2' (length=1)
+ //  'name' => string '云狄科技11' (length=14)
+ //  'agent_id' => string '11' (length=2)
+ //  'logo' => string '' (length=0)
+ //  'mobile' => string '' (length=0)
+ //  'tel' => string '' (length=0)
+ //  'address' => string '' (length=0)
+ //  'weixin' => string '' (length=0)
+ //  'addtime' => null
+ //  'updateitme' => string '2017-09-09 13:51:35' (length=19)

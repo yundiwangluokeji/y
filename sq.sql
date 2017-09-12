@@ -192,6 +192,10 @@ create table if not exists `yd_money_log`(
 `time` int(11) unsigned COMMENT '操作时间'
 )engine=innodb default charset="utf8";
 
+
+
+
+
 /*
 -- 充值记录表
 */
@@ -265,17 +269,23 @@ create table if not exists `yd_address`(
 
 
 /*
---订单表 几级代理商下购买的商品
+--订单表 
 */
 create table if not exists `yd_order`(
 `order_id` int(11) unsigned not null auto_increment primary key,
 `order_sn` char(25) not null default '' COMMENT '订单号 当前时间拼接上六位随机数(20位) 20170902110938666666',
 `consignee_id` int(11) not null default 0 COMMENT '收货人id(代理商id)如果为0是普通用户购买',
-`price` decimal(10,2) unsigned not null default 0 COMMENT '订单总价',
-`order_status` tinyint(1) unsigned not null default 0 COMMENT '点单状态(0新订单,1) 需要多级确认',
-`pay_status` tinyint(1) unsigned not null default 0 COMMENT '支付状态(0线下支付,1微信支付,2支付宝支付)',
+`count_price` decimal(10,2) unsigned not null default 0 COMMENT '订单总价',
+`order_status` tinyint(1) unsigned not null default 0 COMMENT '定单状态(0新订单,*级也确认) 需要多级确认',
+`pay_way` tinyint(1) unsigned not null default 0 COMMENT '支付方式(1微信支付,2支付宝支付,3账户余额支付,4线下支付)',
+`pay_status` tinyint(1) unsigned not null default 0 COMMENT '支付状态(0未支付,1已支付,2线下支付)',
 `shipping_status` tinyint(1) unsigned not null default 0 COMMENT '发货状态(0为发货,1已发货)',
-
+`buy` tinyint(1) unsigned not null default 0 COMMENT '订单类型(0预定，1购买)',
+`username` char(20) not null default '' COMMENT '收货人姓名',
+`mobile` char(20) not null default '' COMMENT '收货人手机号',
+`address` varchar(255) not null default ''  COMMENT '收货地址(直接字符串)',
+`time` int unsigned not null default 0 COMMENT '订单生成时间',
+`updateitme` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP
 )engine=innodb default charset="utf8";
 
 /*
@@ -285,12 +295,23 @@ create table if not exists `yd_order_goods`(
 `order_goods_id` int(11) unsigned not null auto_increment primary key,
 `order_id` int(11) unsigned not null default 0 COMMENT '点单id',
 `goods_id` int(11) unsigned not null default 0 COMMENT '商品id',
-`agent_id` int(11) not null default 0 COMMENT '代理商id(属于此代理商的商品)',
+`agent_id` int(11) not null default 0 COMMENT '代理商id(属于此代理商的商品)0为总平台的商品',
 `goods_price` decimal(10,2) unsigned not null default 0 COMMENT '商品单价(对应代理商的价格)',
 `goods_num` int(5) unsigned not null default 0 COMMENT '商品数量',
 `goods_name` varchar(255) not null default '' COMMENT '商品名称',
 `goods_color` char(20) not null default '' COMMENT '商品颜色',
 `time` int(11) unsigned COMMENT '添加时间'
+)engine=innodb default charset="utf8";
+
+/*
+--订单操作日志
+*/
+create table if not exists `yd_order_log`(
+`order_goods_id` int(11) unsigned not null auto_increment primary key,
+`order_id` int(11) unsigned not null default 0 COMMENT '订单id',
+`operation` int(11) unsigned not null default 0 COMMENT '操作者id',
+`msg` varchar(255) not null default '' COMMENT '操作信息',
+`time` int not null default 0 COMMENT '操作时间'
 )engine=innodb default charset="utf8";
 
 

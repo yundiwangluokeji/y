@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>收藏夹</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" />
+	<link rel="stylesheet" type="text/css" href="__STYLE__/css/public.css">
+	<link rel="stylesheet" type="text/css" href="__STYLE__/css/collect.css">
+	<script type="text/javascript" src="__STYLE__/js/jquery-1.7.1.min.js"></script>
+	<script type="text/javascript" src="__STYLE__/layer/layer.js"></script>
+	<script>
+		document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';
+		$(window).resize(function () {  
+			document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';
+		 }) 
+	</script>
+</head>
+<body>
+	<div class="header">
+		<a class="back" href="javascript:history.back();"><img src="__STYLE__/img/back_last.png"></a>
+		<i class="line"></i>
+		<h3>收藏夹</h3>
+	</div>
+
+	<div class="content">
+		<div class="items">
+			<!-- 数据放置区 -->
+			<img id="load" style="display:none;position:fixed;width:50px;height: 50px;top:45%;left:45%;" src="__STYLE__/img/load3.gif">
+		</div>
+	</div>
+	<div class="mark"></div>
+	<div class="prompt">
+		<div class="txt"><p>确定删除1件商品？</p></div>
+		<div class="btn">
+			<a style="border-right: 1px solid #eeeeee;box-sizing: border-box;" href="javascript:;">取消</a>
+			<a id="queren" data-id="0" href="javascript:queren();">确定</a>
+		</div>
+	</div>
+	<div class="back_top">
+		<img src="__STYLE__/img/back_top.png">
+	</div>
+</body>
+</html>
+<script type="text/javascript">
+function detele(goods_id)
+{
+	$('.prompt').show();
+	$('.mark').show();
+	$('#queren').attr('data-id',goods_id);
+	// alert($(obj).attr('class'))
+}
+		//确认删除
+		function queren()
+		{
+			var goods_id = $('#queren').attr('data-id');//获取当前要删除的商品id
+			var len = $('.items .item').length;//判断当前商品的个数 如果没有了就刷新一下页面
+			if(goods_id != 0 && len > 1){
+				$.get("{:U('delete')}",{goods_id:goods_id},function(res){
+					if(res.res == 1){
+						$('.list'+goods_id).remove();
+					}
+					layer.msg(res.msg);
+				})
+			}else{
+				window.location.reload();
+			}
+		}
+
+
+
+	$(function(){
+		
+		$('.mark').click(function(){
+			$('.mark').hide();
+			$('.prompt').hide();
+		})
+		$('.prompt .btn a').click(function(){
+			
+			$('.prompt').hide();
+			$('.mark').hide();
+		})
+
+		
+
+
+		// 返回顶部
+		$('.back_top').click(function(){
+			$('html,body').animate({scrollTop:0},300)
+		})
+	})
+</script>
+<script type="text/javascript">
+var page = 0;//滚动分页
+var re = 1;//ajax加载开关
+function getdata()
+{	
+		if(re != 1){return;}//上一次ajax没有回来就不执行请求
+		re = 2;//关闭
+		$('#load').show();//现在正在加载的图片
+		page = page + 1;
+		var url = "{:U('Agent/Collection/collectiondata')}";
+		$.get(url,{p:page},function(data){
+               		if(data){
+               			$('.items').append(data);
+               			re = 1;//打开加载开关
+               		}else{
+               			layer.msg('没有了');
+               			re = 2;//关闭加载开关
+               		}
+               		$('#load').hide();//隐藏正在加载的图片
+
+               	})
+				
+}
+$(function(){
+	getdata();//默认调用一次
+})
+
+//滚动时加载数据
+window.onscroll=function(){
+	var maxScroll = $(document).height()-$(window).height();//整个文档的高减去可视高=
+    if ($(window).scrollTop() >= maxScroll || page == 1) {getdata();}
+}
+</script>

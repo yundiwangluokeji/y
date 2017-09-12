@@ -34,6 +34,6 @@ class PublicController extends Controller {
 
     	header('HTTP/1.1 404 Not Found'); 
 		header("status: 404 Not Found"); 
-    	echo 'PublicController';
+    	echo '页面不存在~~~';
     }
 }

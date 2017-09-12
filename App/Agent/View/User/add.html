@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" /> 
+		<title>南方钟表</title>
+		<link rel="stylesheet" href="__STYLE__/css/public.css" />
+		<link rel="stylesheet" href="__STYLE__/css/createAgent.css" />
+		<script type="text/javascript" src="__STYLE__/js/jquery-1.7.1.min.js" ></script>
+		<script type="text/javascript" src="__STYLE__/layer/layer.js"></script>
+		<script>document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';$(window).resize(function(){document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';})</script>
+	</head>
+	<body>
+		<div class="header">
+			<div class="mg">
+				<a class="goback" href="javascript:history.back();"><img src="__STYLE__/img/back.png"/></a>
+				<h1>创建代理商</h1>
+				<a class="addCreate" id="ImageBrowse" href="javascript:vid(0);">添加</a>	
+			</div>
+		</div>
+		
+		<div class="contains">	
+			<div class="createAgent">
+				<form id="imageUploadForm">
+					<label>
+						<span>账号</span>
+						<input name="username" type="text" />
+					</label>
+					<label>
+						<span>密码</span>
+						<input name="password" type="password" maxlength="20"/>
+					</label>
+				</form>
+			</div>			
+		</div>
+	</body>
+	<script type="text/javascript">
+$(document).ready(function (e) {
+    $('#imageUploadForm').on('submit',(function(e) {
+
+    	var user=$('input[name=username]').val();
+	    var password=$('input[name=password]').val();
+	    var r = /^[a-zA-Z][a-zA-Z0-9_]{5,30}$/;
+	    if(user==''){
+	        layer.msg('账号不能为空！')
+	         return false; 
+	    }
+	    if(!r.test(user)){
+	    	layer.msg('账号：字母开头，6至30位，字母数字下划线！');
+	    	return false;
+	    }
+	    if(password==''){
+	        layer.msg('密码不能为空！')
+	         return false; 
+	    }
+	    if(password.length < 6){
+	    	layer.msg('密码最小长度为6位！')
+	         return false;
+	    }
+
+
+        e.preventDefault();
+        var formData = new FormData(this);
+
+        $.ajax({
+            type:'POST',
+            url: $(this).attr('action'),
+            data:formData,
+            cache:false,
+            contentType: false,
+            processData: false,
+            success:function(data){
+               if(data.res == 1){
+               		window.location.href = "{:U('User/index')}";
+               }
+               		layer.msg(data.msg);
+            },
+            error: function(data){
+               		$('.success p').html('网络错误！');
+	        		$(".success").fadeIn(200).delay(1500).fadeOut(200);
+            }
+        });
+    }));
+
+    $("#ImageBrowse").on("click", function() {
+        $("#imageUploadForm").submit();return false;
+    });
+
+});
+
+
+
+
+	</script>
+</html>

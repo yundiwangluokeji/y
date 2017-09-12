@@ -9,9 +9,9 @@
 	<script type="text/javascript" src="__STYLE__/js/jquery-1.7.1.min.js"></script>
 	<script>
 		document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';
-		$(window).resize(function () {
+		$(window).resize(function () {  
 			document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';
-		 })
+		 }) 
 	</script>
 </head>
 <body>
@@ -44,21 +44,21 @@
 				</a>
 			</div>
 			<div class="item">
-				<a href="">
+				<a href="{:U('Procurement/index')}">
 					<img class="icon" src="__STYLE__/img/user_3.png">
 					<img class="right" src="__STYLE__/img/user_0.png">
 					<p>采购单</p>
 				</a>
 			</div>
 			<div class="item">
-				<a href="">
+				<a href="{:U('Collection/index')}">
 					<img class="icon" src="__STYLE__/img/user_4.png">
 					<img class="right" src="__STYLE__/img/user_0.png">
 					<p>收藏夹</p>
 				</a>
 			</div>
 			<div class="item">
-				<a href="">
+				<a href="{:U('User/index')}">
 					<img class="icon" src="__STYLE__/img/user_5.png">
 					<img class="right" src="__STYLE__/img/user_0.png">
 					<p>我的代理商</p>
@@ -86,7 +86,7 @@
 					<p>退出登录</p>
 				</a>
 			</div>
-
+			
 		</div>
 	</div>
 

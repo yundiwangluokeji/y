@@ -37,12 +37,12 @@ body{background: #1d2124;}
 .defineFoot{width: 100%;height: 0.98rem;background: #ffffff;position: fixed;left: 0;bottom: 0;z-index: 100;}
 .defineFoot span,.defineFoot a{display: block;}
 .defineFoot>span{float: left;text-align: center;position: relative;}
-.defineFoot .left{width: 30%;}
+.defineFoot .left{width: 25%;}
 .defineFoot .left a{font-size: 0.2rem;color: #c3a07d;width: 100%;height: 0.98rem;}
 .defineFoot .left span{width: 0.46rem;height: 0.44rem;line-height: 0.44rem;overflow: hidden;padding: 0.13rem 0 0;margin: 0 auto;}
 .defineFoot .left img{width: 100%;height: 100%;}
 .defineFoot .left b{display: block;width: 1px;height: 0.29rem;background: #c3a07d;position: absolute;right: 0;top: 0.35rem;z-index: 200;}
-.defineFoot .right{width: 40%;line-height: 0.98rem;background: #c3a07d;}
+.defineFoot .right{width: 50%;line-height: 0.98rem;background: #c3a07d;}
 .defineFoot .right a{color: #ffffff;font-size: 0.3rem;}
 
 

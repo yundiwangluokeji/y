@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" /> 
+		<title>南方钟表</title>
+		<link rel="stylesheet" href="__STYLE__/css/public.css" />
+		<link rel="stylesheet" href="__STYLE__/css/agents.css" />
+		<script type="text/javascript" src="__STYLE__/js/jquery-1.7.1.min.js" ></script>
+		<script>document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';$(window).resize(function(){document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';})</script>
+	</head>
+	<body>
+		<div class="header">
+			<div class="mg">
+				<a class="goback" href="javascript:history.back();"><img src="__STYLE__/img/back.png"/></a>
+				<h1>我的代理商</h1>
+				<a class="createAgent" href="{:U('add')}">创建代理商</a>	
+			</div>
+		</div>
+		
+		<div class="contains">	
+			<div class="agentsList">
+				<ul class="mg">
+				<foreach name="data" item="v">
+					<li>
+						<a class="clear" href="{:U('Home/Index/index',array('agent'=>$v['id']))}">
+							<span><img src="{$v['logo']||default='__STYLE__/img/agent.png'}"/></span>
+							<div class="details">
+								<h1>{$v['name']}</h1>
+								<h2>账号:{$v['username']}</h2>
+								<h2>手机:{$v['mobile']||default='未绑定手机'}</h2>
+								<p>余额:<em>￥{$v['money']}</em></p>
+							</div>
+							<b><img src="__STYLE__/img/arrow02.png"/></b>
+						</a>
+					</li>
+				</foreach>	
+				</ul>
+			</div>	
+			
+			<a class="createAgent mg" href="{:U('add')}">创建代理商</a>
+		</div>
+			
+		<!--返回顶部-->
+		<div class="back_top">
+			<img src="__STYLE__/img/back_top.png">
+		</div>
+	</body>
+	
+	<script>
+		$(function(){
+			// 返回顶部
+			$('.back_top').click(function(){
+				$('html,body').animate({scrollTop:0},300)
+			});
+		});
+	</script>
+</html>

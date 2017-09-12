@@ -1,0 +1,24 @@
+<foreach name="data" item="v">
+			<div class="item list{$v['goods_id']}">
+				<a href="{:U('Home/Goods/goodDetail',array('goods_id'=>$v['goods_id']))}" class="img">
+					<img src="{$v['images']}">
+				</a>
+				<h3><a href="{:U('Home/Goods/goodDetail',array('goods_id'=>$v['goods_id']))}">{$v['name']}</a></h3>
+				<p class="price">批价：<span>￥{$v['price']}</span></p>
+				<div class="btn">
+					<a href="{:U('Home/Goods/goodDetail',array('goods_id'=>$v['goods_id']))}">
+						<img src="__STYLE__/img/collect_1.png">
+						<span>预定</span>
+					</a>
+					<a href="{:U('Home/Goods/goodDetail',array('goods_id'=>$v['goods_id']))}">
+						<img src="__STYLE__/img/collect_2.png">
+						<span>采购</span>
+					</a>
+					<a href="javascript:detele({$v['goods_id']});"  class="detele">
+						<img src="__STYLE__/img/collect_3.png">
+						<span>删除</span>
+					</a>
+				</div>
+			</div>
+</foreach>
+	
