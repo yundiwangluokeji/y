@@ -46,7 +46,9 @@
 				<div class="fenlei">
 			<h3 class="fl_tb3"><s></s>交易中心</h3>
 			<ul>
-								<li class=""><a href="A-Order list.html"><span>├</span>订单列表</a></li>
+								<li class="Order"><a href="<?php echo U('Order/orderList1');?>"><span>├</span>采购订单</a></li>
+								<li class=""><a href="<?php echo U('Order/orderList2');?>"><span>├</span>预定订单</a></li>
+								<li class=""><a href="<?php echo U('Order/orderList3');?>"><span>├</span>零售订单</a></li>
 								<li class=""><a href="Fund details.html"><span>├</span>资金明细</a></li>
 								<li class=""><a href="Integration details.html"><span>├</span>积分明细</a></li>
 								<li class=""><a href="Recharge record.html"><span>├</span>充值记录</a></li>
@@ -85,7 +87,8 @@
 							</ul>
 			<div class="clear"></div>
 					</div>
-</div> <!-- 左边 -->
+</div>
+ <!-- 左边 -->
 <div class="right" style="height: 594px;">
 	<div class="now" style="width: 1066px;">
 		<a href="javascript:;" class="sel">修改会员</a>

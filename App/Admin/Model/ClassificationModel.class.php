@@ -43,20 +43,20 @@ class ClassificationModel extends \Think\Model
     }
 
     // 删除分类
-    public function delType($brand_id)
+    public function delType($class_id)
     {
-        if (is_array($brand_id)) {
+        if (is_array($class_id)) {
             $ids = '';
-            for ($i=0; $i < count($brand_id); $i++) {
+            for ($i=0; $i < count($class_id); $i++) {
                 if ($i != 0) {
-                    $ids = $ids.','.$brand_id[$i];
+                    $ids = $ids.','.$class_id[$i];
                 } else {
-                    $ids = $brand_id[$i];
+                    $ids = $class_id[$i];
                 }
             }
-            $where = 'brand_id in ('.$ids.')';
+            $where = 'class_id in ('.$ids.')';
         } else {
-            $where = array('brand_id' => $brand_id);
+            $where = array('class_id' => $class_id);
         }
         $delRes = $this->where($where)->delete();
         if ($delRes) {
@@ -75,9 +75,9 @@ class ClassificationModel extends \Think\Model
     }
 
     // 查询单个分类的数据
-    public function findType($brand_id)
+    public function findType($class_id)
     {
-        $typeContent = $this->where(array('brand_id' => $brand_id))->find();
+        $typeContent = $this->where(array('class_id' => $class_id))->find();
         if ($typeContent) {
             return array(
                 'status' => 1,
@@ -94,10 +94,10 @@ class ClassificationModel extends \Think\Model
     }
 
     // 修改分类
-    public function editType($formData, $brand_id)
+    public function editType($formData, $class_id)
     {
         $formData['updatetime'] = time();
-        $editRes = $this->where(array('brand_id' => $brand_id))->save($formData);
+        $editRes = $this->where(array('class_id' => $class_id))->save($formData);
         if ($editRes) {
             return array(
                 'status' => 1,

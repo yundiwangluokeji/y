@@ -30,7 +30,7 @@
 						<a href="javascript:;"><img src="__STYLE__/img/share.png"/></a>
                         <div class="collect">
                             <if condition="$goodData.isCollect eq 1">
-                                <img src="__STYLE__/img/collectA.png"/>
+                                <img id="uncollectIco" src="__STYLE__/img/collectA.png"/>
                                 <b style="color: #7bc2ea;">{$goodData.collectNum}</b>
                             <elseif condition="$Think.session.AgentUser"/>
                                 <img id="collectIco" src="__STYLE__/img/collect.png"/>
@@ -114,7 +114,7 @@
 		<script>
             $(function(){
                 //收藏
-                $('#collectIco').one('click', function () {
+                $('#collectIco').click(function () {
                     var goods_id = $('#goods_id').attr('data-val');
                     var agentUser = $('#AgentUser').attr('data-val');
                     var that = $(this);
@@ -123,9 +123,25 @@
                         {"agent_id":agentUser, "goods_id":goods_id},
                         function (data) {
                             if (data.code == 1) {
-                                that.attr('src','__STYLE__/img/collectA.png');
-                                that.next().css('color', '#7bc2ea');
-                                that.next().text(parseInt(that.next().text())+1);
+                                window.location.reload();
+                            } else {
+                                alert(data.msg);
+                            }
+                        },
+                        'json'
+                    );
+                });
+
+                $('#uncollectIco').click(function () {
+                    var goods_id = $('#goods_id').attr('data-val');
+                    var agentUser = $('#AgentUser').attr('data-val');
+                    var that = $(this);
+                    $.post(
+                        '__CONTROLLER__/unCollect',
+                        {"agent_id":agentUser, "goods_id":goods_id},
+                        function (data) {
+                            if (data.code == 1) {
+                                window.location.reload();
                             } else {
                                 alert(data.msg);
                             }

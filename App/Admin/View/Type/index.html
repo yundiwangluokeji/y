@@ -19,14 +19,14 @@
 		</tr>
         <foreach name="typeData" item="vo">
 			<tr>
-    			<td style="background-color: rgb(255, 255, 255);"><input type="checkbox" name="category_id[]" value="{$vo.brand_id}"></td>
-    			<td style="background-color: rgb(255, 255, 255);">{$vo.brand_id}</td>
-    			<td style="background-color: rgb(255, 255, 255);"><input type="text" name="sorting[{$vo.brand_id}]" value="{$vo.sorting}" class="inputtext input30 center"></td>
+    			<td style="background-color: rgb(255, 255, 255);"><input type="checkbox" name="category_id[]" value="{$vo.class_id}"></td>
+    			<td style="background-color: rgb(255, 255, 255);">{$vo.class_id}</td>
+    			<td style="background-color: rgb(255, 255, 255);"><input type="text" name="sorting[{$vo.class_id}]" value="{$vo.sorting}" class="inputtext input30 center"></td>
     			<td class="aleft" style="background-color: rgb(255, 255, 255); text-align:center"><a href="" target="_blank">{$vo.name}</a></td>
     			<td style="background-color: rgb(255, 255, 255);">
-    				<a href="__CONTROLLER__/editType/brand_id/{$vo.brand_id}" class="admin_edit mar3">修改</a>
-    				<a href="__CONTROLLER__/delType/brand_id/{$vo.brand_id}" class="admin_del mar3" onclick="return pe_cfone(this, &#39;删除&#39;)">删除</a>
-    				<a href="__CONTROLLER__/transferGood/brand_id/{$vo.brand_id}" class="admin_btn" onclick="return pe_dialog(this, &#39;批量转移商品&#39;, 400, 220)">转移商品</a>
+    				<a href="__CONTROLLER__/editType/class_id/{$vo.class_id}" class="admin_edit mar3">修改</a>
+    				<a href="__CONTROLLER__/delType/class_id/{$vo.class_id}" class="admin_del mar3" onclick="return pe_cfone(this, &#39;删除&#39;)">删除</a>
+    				<a href="__CONTROLLER__/transferGood/class_id/{$vo.class_id}" class="admin_btn" onclick="return pe_dialog(this, &#39;批量转移商品&#39;, 400, 220)">转移商品</a>
     			</td>
     		</tr>
         </foreach>

@@ -24,8 +24,8 @@
 				<div class="mg clear">
 					<ul>
                         <div class="typeList" style="float:left;">
-                            <li data-id="0" <?php if(!$brandIcon): ?>class="on"<?php endif; ?>>全部</li>
-                            <?php if(is_array($classData)): foreach($classData as $key=>$v): ?><li data-id="<?php echo ($v["brand_id"]); ?>" <?php if($brandIcon == $v['brand_id']): ?>class="on"<?php endif; ?> ><?php echo ($v["name"]); ?></li><?php endforeach; endif; ?>
+                            <li <?php if(!$brandIcon): ?>class="on"<?php endif; ?>>全部</li>
+                            <?php if(is_array($classData)): foreach($classData as $key=>$v): ?><li data-id="<?php echo ($v["class_id"]); ?>" <?php if($brandIcon == $v['class_id']): ?>class="on"<?php endif; ?> ><?php echo ($v["name"]); ?></li><?php endforeach; endif; ?>
                         </div>
 						<!-- <li id="priceOrder" data-order="<?php echo $orderNum ? $orderNum : 2; ?>">价格<img src="/App/style/img/<?php echo $orderNum == 1 ? up : down; ?>.png"/></li> -->
 						<li id="priceOrder" data-order="<?php echo $orderNum ? $orderNum : 2; ?>">价格<img src="/App/style/img/down.png"/></li>
@@ -39,15 +39,23 @@
 				<div class="twoCol mg">
 					<ul class="clear">
                         <?php if(is_array($goodslist)): foreach($goodslist as $key=>$vo): ?><li>
-    							<a href="/Home/Goods/goodDetail/goods_id/<?php echo ($vo["goods_id"]); ?>"><img src="<?php echo ($vo["images"]); ?>"/></a>
+    							<a href="<?php echo U('Home/Goods/goodDetail', array('goods_id' => $vo['goods_id']));?>"><img src="<?php echo ($vo["images"]); ?>"/></a>
     							<div class="details">
-    								<h1><a href="/Home/Goods/goodDetail/goods_id/<?php echo ($vo["goods_id"]); ?>"><?php echo ($vo["name"]); ?></a></h1>
+    								<h1><a href="<?php echo U('Home/Goods/goodDetail', array('goods_id' => $vo['goods_id']));?>"><?php echo ($vo["name"]); ?></a></h1>
     								<p>编号:<?php echo ($vo["goods_sn"]); ?></p>
     								<h2>批价:<em>￥<?php echo ($vo["price"]); ?></em></h2>
     								<span class="clear">
     									<div class="collect">
-    										<b><?php echo ($vo["click_count"]); ?></b>
-    										<img src="/App/style/img/collect.png"/>
+                                            <?php if($vo["isCollect"] == 1): ?><img data-id="<?php echo ($vo["goods_id"]); ?>" data-val="<?php echo (session('AgentUser')); ?>" class="uncollectIco" src="/App/style/img/collectA.png"/>
+                                                <b style="color: #7bc2ea;"><?php echo ($vo["collectNum"]); ?></b>
+                                            <?php elseif($Think.session.AgentUser): ?>
+                                                <img data-id="<?php echo ($vo["goods_id"]); ?>" data-val="<?php echo (session('AgentUser')); ?>" class="collectIco" src="/App/style/img/collect.png"/>
+                                                <b><?php echo ($vo["collectNum"]); ?></b>
+                                            <?php else: ?>
+                                                <a href="<?php echo U('Agent/Index/index');?>">
+                                                    <img src="/App/style/img/collect.png"/>
+                                                </a>
+                                                <b><?php echo ($vo["collectNum"]); ?></b><?php endif; ?>
     									</div>
     									<div imgurl="http://pan.baidu.com/share/qrcode?w=230&h=230&url=http://<?php echo $_SERVER['HTTP_HOST']; echo U('Home/Goods/goodslist');?>" class="code"><img src="/App/style/img/code.png"/></div>
     								</span>
@@ -60,15 +68,23 @@
 				<div class="oneCol">
 					<ul class="mg">
                         <?php if(is_array($goodslist)): foreach($goodslist as $key=>$vo): ?><li>
-    							<a href="/Home/Goods/goodDetail/goods_id/<?php echo ($vo["goods_id"]); ?>"><img src="<?php echo ($vo["images"]); ?>"/></a>
+    							<a href="<?php echo U('Home/Goods/goodDetail', array('goods_id' => $vo['goods_id']));?>"><img src="<?php echo ($vo["images"]); ?>"/></a>
     							<div class="details">
-    								<h1><a href="/Home/Goods/goodDetail/goods_id/<?php echo ($vo["goods_id"]); ?>"><?php echo ($vo["name"]); ?></a></h1>
+    								<h1><a href="<?php echo U('Home/Goods/goodDetail', array('goods_id' => $vo['goods_id']));?>"><?php echo ($vo["name"]); ?></a></h1>
     								<p>编号:<?php echo ($vo["goods_sn"]); ?></p>
     								<h2>批价:<em>￥<?php echo ($vo["price"]); ?></em></h2>
     								<span class="clear">
     									<div class="collect">
-    										<b><?php echo ($vo["count"]); ?></b>
-    										<img src="/App/style/img/collect.png"/>
+                                            <?php if($vo["isCollect"] == 1): ?><img data-id="<?php echo ($vo["goods_id"]); ?>" data-val="<?php echo (session('AgentUser')); ?>" class="uncollectIco" src="/App/style/img/collectA.png"/>
+                                                <b style="color: #7bc2ea;"><?php echo ($vo["collectNum"]); ?></b>
+                                            <?php elseif($Think.session.AgentUser): ?>
+                                                <img data-id="<?php echo ($vo["goods_id"]); ?>" data-val="<?php echo (session('AgentUser')); ?>" class="collectIco" src="/App/style/img/collect.png"/>
+                                                <b><?php echo ($vo["collectNum"]); ?></b>
+                                            <?php else: ?>
+                                                <a href="<?php echo U('Agent/Index/index');?>">
+                                                    <img src="/App/style/img/collect.png"/>
+                                                </a>
+                                                <b><?php echo ($vo["collectNum"]); ?></b><?php endif; ?>
     									</div>
     									<div imgurl="http://pan.baidu.com/share/qrcode?w=230&h=230&url=http://<?php echo $_SERVER['HTTP_HOST']; echo U('Home/Goods/goodslist');?>" class="code"><img src="/App/style/img/code.png"/></div>
     								</span>
@@ -113,14 +129,19 @@
 
 
 		<script>
+
             // 自定义js
             $(document).on('click', '.typeList li', function () {
                 var agent = $('#agent').attr('data-val');
                 var classNum = $(this).attr('data-id');
-                if (agent) {
-                    var url = "/Home/Goods/goodslist/brand_id/" + $('#brand').attr('data-val') + "/class_id/" + classNum + "/agent/" + agent;
+                if (classNum) {
+                    if (agent) {
+                        var url = "/Home/Goods/goodslist/brand_id/" + $('#brand').attr('data-val') + "/class_id/" + classNum + "/agent/" + agent;
+                    } else {
+                        var url = "/Home/Goods/goodslist/brand_id/" + $('#brand').attr('data-val') + "/class_id/" + classNum;
+                    }
                 } else {
-                    var url = "/Home/Goods/goodslist/brand_id/" + $('#brand').attr('data-val') + "/class_id/" + classNum;
+                    var url = "/Home/Goods/goodslist/brand_id/" + $('#brand').attr('data-val');
                 }
                 window.location.href = url;
             });
@@ -150,11 +171,42 @@
 				// });
 
 				//收藏
-				$('.goodsList .collect').one('click',function(){
-					$(this).find('img').attr('src','/App/style/img/collectA.png');
-					$(this).find('b').css('color','#7bc2ea');
-					$(this).find('b').text(parseInt($(this).find('b').text())+1);
+				$('.collectIco').click(function(){
+                    var goods_id = $(this).attr('data-id');
+                    var agentUser = $(this).attr('data-val');
+                    var that = $(this);
+                    $.post(
+                        '/Home/Goods/collect',
+                        {"agent_id":agentUser, "goods_id":goods_id},
+                        function (data) {
+                            if (data.code == 1) {
+                                window.location.reload();
+                            } else {
+                                alert(data.msg);
+                            }
+                        },
+                        'json'
+                    );
 				});
+
+                // 取消收藏
+                $('.uncollectIco').click(function(){
+                    var goods_id = $(this).attr('data-id');
+                    var agentUser = $(this).attr('data-val');
+                    var that = $(this);
+                    $.post(
+                        '/Home/Goods/unCollect',
+                        {"agent_id":agentUser, "goods_id":goods_id},
+                        function (data) {
+                            if (data.code == 1) {
+                                window.location.reload();
+                            } else {
+                                alert(data.msg);
+                            }
+                        },
+                        'json'
+                    );
+                });
 
 				//排版列表
 				$('.goodsList .twoCol').show();

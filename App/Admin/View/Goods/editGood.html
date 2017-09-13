@@ -38,7 +38,7 @@
             <select name="info[class_id]" class="inputselect" style="width:100%">
                 <option value="0">= 请选择分类 =</option>
                 <foreach name="typeData" item="v">
-                  <option value="{$v.brand_id}" <if condition="$goodData.class_id eq $v['brand_id']"> selected </if> >{$v.name}</option>
+                  <option value="{$v.class_id}" <if condition="$goodData.class_id eq $v['class_id']"> selected </if> >{$v.name}</option>
                 </foreach>
             </select>
         </td>

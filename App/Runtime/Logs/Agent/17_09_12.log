@@ -1363,3 +1363,1002 @@ SQL: select
 SQL: SHOW COLUMNS FROM `yd_address` [ RunTime:0.0005s ]
 SQL: INSERT INTO `yd_address` (`name`,`agent_id`,`mobile`,`province`,`city`,`district`,`twon`,`address`,`time`) VALUES ('VZHOUFEI','25','13539993054','130000','130200','130203','130203002','SSSSS','1505220162') [ RunTime:0.0351s ]
 
+[ 2017-09-12T20:55:26+08:00 ] 127.0.0.1 /Agent/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000359s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000408s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000502s ]
+SQL: select 
+        yd_agent.username,
+        yd_agent.mobile,
+        yd_agent.status,
+        yd_agent_config.name,
+        yd_agent_config.agent_id,
+        yd_agent_config.address
+         from yd_agent inner join yd_agent_config ON yd_agent_config.agent_id = yd_agent.id where yd_agent.id = 11 limit 1 [ RunTime:0.0354s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000080s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000167s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006521s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006615s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000311s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000426s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000861s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000594s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000685s ]
+
+[ 2017-09-12T20:55:47+08:00 ] 127.0.0.1 /Agent/Login/exitlogin.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000349s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000541s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000735s ]
+
+[ 2017-09-12T20:55:47+08:00 ] 127.0.0.1 /Agent/Login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000313s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000379s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000468s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000077s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000188s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005373s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005518s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000330s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000519s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001038s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000496s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000624s ]
+
+[ 2017-09-12T20:55:55+08:00 ] 127.0.0.1 /Agent/Login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000297s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000354s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000431s ]
+SQL: SHOW COLUMNS FROM `yd_agent` [ RunTime:0.0024s ]
+SQL: SELECT `secret` FROM `yd_agent` WHERE `username` = 'joiar' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `yd_agent` WHERE `username` = 'joiar' AND `password` = 'ce5pcGBCxBK9tO9UDDu9qch1C1zguaxGYdF5rV+37Ew=' LIMIT 1   [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `yd_login_log` [ RunTime:0.0019s ]
+SQL: INSERT INTO `yd_login_log` (`pass`,`name`,`res`,`msg`,`ip`,`address`,`time`) VALUES ('9YbBNc5c3BFKGTC8/nSX5BAQ4PSBMRlczaCVg3XgnGo=','joiar','0','此用户已被冻结！','127.0.0.1','未分配或者内网IP...内网IP.内网IP.内网IP.127.0.0.1','1505220955') [ RunTime:0.0285s ]
+
+[ 2017-09-12T20:56:26+08:00 ] 127.0.0.1 /Agent/Login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000319s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000353s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000434s ]
+SQL: SHOW COLUMNS FROM `yd_agent` [ RunTime:0.0024s ]
+SQL: SELECT `secret` FROM `yd_agent` WHERE `username` = 'joiar' LIMIT 1   [ RunTime:0.0018s ]
+SQL: SELECT * FROM `yd_agent` WHERE `username` = 'joiar' AND `password` = 'ce5pcGBCxBK9tO9UDDu9qch1C1zguaxGYdF5rV+37Ew=' LIMIT 1   [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `yd_login_log` [ RunTime:0.0022s ]
+SQL: INSERT INTO `yd_login_log` (`pass`,`name`,`res`,`msg`,`ip`,`address`,`time`) VALUES ('9YbBNc5c3BFKGTC8/nSX5BAQ4PSBMRlczaCVg3XgnGo=','joiar','1','登录成功！','127.0.0.1','未分配或者内网IP...内网IP.内网IP.内网IP.127.0.0.1','1505220986') [ RunTime:0.0362s ]
+
+[ 2017-09-12T20:56:26+08:00 ] 127.0.0.1 /Agent/Login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000475s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000501s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000583s ]
+SQL: SHOW COLUMNS FROM `yd_agent` [ RunTime:0.0020s ]
+SQL: SELECT `secret` FROM `yd_agent` WHERE `username` = 'joiar' LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT * FROM `yd_agent` WHERE `username` = 'joiar' AND `password` = 'ce5pcGBCxBK9tO9UDDu9qch1C1zguaxGYdF5rV+37Ew=' LIMIT 1   [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `yd_login_log` [ RunTime:0.0022s ]
+SQL: INSERT INTO `yd_login_log` (`pass`,`name`,`res`,`msg`,`ip`,`address`,`time`) VALUES ('9YbBNc5c3BFKGTC8/nSX5BAQ4PSBMRlczaCVg3XgnGo=','joiar','1','登录成功！','127.0.0.1','未分配或者内网IP...内网IP.内网IP.内网IP.127.0.0.1','1505220986') [ RunTime:0.0351s ]
+
+[ 2017-09-12T20:56:27+08:00 ] 127.0.0.1 /Agent/Login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000355s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000403s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000480s ]
+SQL: SHOW COLUMNS FROM `yd_agent` [ RunTime:0.0019s ]
+SQL: SELECT `secret` FROM `yd_agent` WHERE `username` = 'joiar' LIMIT 1   [ RunTime:0.0041s ]
+SQL: SELECT * FROM `yd_agent` WHERE `username` = 'joiar' AND `password` = 'ce5pcGBCxBK9tO9UDDu9qch1C1zguaxGYdF5rV+37Ew=' LIMIT 1   [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `yd_login_log` [ RunTime:0.0023s ]
+SQL: INSERT INTO `yd_login_log` (`pass`,`name`,`res`,`msg`,`ip`,`address`,`time`) VALUES ('9YbBNc5c3BFKGTC8/nSX5BAQ4PSBMRlczaCVg3XgnGo=','joiar','1','登录成功！','127.0.0.1','未分配或者内网IP...内网IP.内网IP.内网IP.127.0.0.1','1505220986') [ RunTime:0.0265s ]
+
+[ 2017-09-12T20:56:27+08:00 ] 127.0.0.1 /Agent/Login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000373s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000408s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000489s ]
+SQL: SHOW COLUMNS FROM `yd_agent` [ RunTime:0.0020s ]
+SQL: SELECT `secret` FROM `yd_agent` WHERE `username` = 'joiar' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `yd_agent` WHERE `username` = 'joiar' AND `password` = 'ce5pcGBCxBK9tO9UDDu9qch1C1zguaxGYdF5rV+37Ew=' LIMIT 1   [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `yd_login_log` [ RunTime:0.0020s ]
+SQL: INSERT INTO `yd_login_log` (`pass`,`name`,`res`,`msg`,`ip`,`address`,`time`) VALUES ('9YbBNc5c3BFKGTC8/nSX5BAQ4PSBMRlczaCVg3XgnGo=','joiar','1','登录成功！','127.0.0.1','未分配或者内网IP...内网IP.内网IP.内网IP.127.0.0.1','1505220987') [ RunTime:0.0232s ]
+
+[ 2017-09-12T20:56:27+08:00 ] 127.0.0.1 /Agent/Login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000647s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000623s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000763s ]
+
+[ 2017-09-12T20:56:27+08:00 ] 127.0.0.1 /Agent/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000335s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001012s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001235s ]
+SQL: select 
+        yd_agent.username,
+        yd_agent.mobile,
+        yd_agent.status,
+        yd_agent_config.name,
+        yd_agent_config.agent_id,
+        yd_agent_config.address
+         from yd_agent inner join yd_agent_config ON yd_agent_config.agent_id = yd_agent.id where yd_agent.id = 26 limit 1 [ RunTime:0.0013s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000130s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000270s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009046s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009202s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000297s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000410s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000857s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000610s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000744s ]
+
+[ 2017-09-12T20:56:27+08:00 ] 127.0.0.1 /Agent/Login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000339s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000443s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000534s ]
+
+[ 2017-09-12T20:56:27+08:00 ] 127.0.0.1 /Agent/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000426s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000630s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000776s ]
+SQL: select 
+        yd_agent.username,
+        yd_agent.mobile,
+        yd_agent.status,
+        yd_agent_config.name,
+        yd_agent_config.agent_id,
+        yd_agent_config.address
+         from yd_agent inner join yd_agent_config ON yd_agent_config.agent_id = yd_agent.id where yd_agent.id = 26 limit 1 [ RunTime:0.0018s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000132s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000298s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008146s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008253s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000441s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000490s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001082s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000718s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000809s ]
+
+[ 2017-09-12T20:56:27+08:00 ] 127.0.0.1 /Agent/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000308s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000392s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000535s ]
+SQL: select 
+        yd_agent.username,
+        yd_agent.mobile,
+        yd_agent.status,
+        yd_agent_config.name,
+        yd_agent_config.agent_id,
+        yd_agent_config.address
+         from yd_agent inner join yd_agent_config ON yd_agent_config.agent_id = yd_agent.id where yd_agent.id = 26 limit 1 [ RunTime:0.0020s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000133s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000278s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007364s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007463s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000450s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000481s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001057s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000762s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000910s ]
+
+[ 2017-09-12T20:56:27+08:00 ] 127.0.0.1 /Agent/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000436s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000638s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000785s ]
+SQL: select 
+        yd_agent.username,
+        yd_agent.mobile,
+        yd_agent.status,
+        yd_agent_config.name,
+        yd_agent_config.agent_id,
+        yd_agent_config.address
+         from yd_agent inner join yd_agent_config ON yd_agent_config.agent_id = yd_agent.id where yd_agent.id = 26 limit 1 [ RunTime:0.0021s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000141s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000242s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007878s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007976s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000352s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000464s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000949s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000523s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000610s ]
+
+[ 2017-09-12T20:57:07+08:00 ] 127.0.0.1 /Agent/Address/address.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000472s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000495s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000637s ]
+SQL: select 
+        yd_agent.username,
+        yd_agent.mobile,
+        yd_agent.status,
+        yd_agent_config.name,
+        yd_agent_config.agent_id,
+        yd_agent_config.address
+         from yd_agent inner join yd_agent_config ON yd_agent_config.agent_id = yd_agent.id where yd_agent.id = 26 limit 1 [ RunTime:0.0358s ]
+SQL: SHOW COLUMNS FROM `yd_address` [ RunTime:0.0025s ]
+SQL: SHOW COLUMNS FROM `yd_area` [ RunTime:0.0049s ]
+SQL: SELECT `id`,`name` FROM `yd_area` WHERE `level` = 1  [ RunTime:0.0437s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000138s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000285s ]
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 26 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 29 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 33 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Use of undefined constant city_ - assumed 'city_' D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 47 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 47 行.
+NOTIC: [8] Use of undefined constant district_ - assumed 'district_' D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 54 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 54 行.
+NOTIC: [8] Use of undefined constant twon_ - assumed 'twon_' D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 61 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 61 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 67 行.
+NOTIC: [8] Use of undefined constant HTTP_REFERER - assumed 'HTTP_REFERER' D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 170 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017282s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017449s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000706s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000763s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001672s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000754s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000879s ]
+
+[ 2017-09-12T20:57:20+08:00 ] 127.0.0.1 /index.php/Agent/Address/lower.html?id=220000
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000308s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000350s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000433s ]
+SQL: select 
+        yd_agent.username,
+        yd_agent.mobile,
+        yd_agent.status,
+        yd_agent_config.name,
+        yd_agent_config.agent_id,
+        yd_agent_config.address
+         from yd_agent inner join yd_agent_config ON yd_agent_config.agent_id = yd_agent.id where yd_agent.id = 26 limit 1 [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `yd_area` [ RunTime:0.0018s ]
+SQL: SELECT `id`,`name` FROM `yd_area` WHERE `parent_id` = 220000  [ RunTime:0.0340s ]
+
+[ 2017-09-12T20:57:21+08:00 ] 127.0.0.1 /index.php/Agent/Address/lower.html?id=220100
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000318s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000383s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000487s ]
+SQL: select 
+        yd_agent.username,
+        yd_agent.mobile,
+        yd_agent.status,
+        yd_agent_config.name,
+        yd_agent_config.agent_id,
+        yd_agent_config.address
+         from yd_agent inner join yd_agent_config ON yd_agent_config.agent_id = yd_agent.id where yd_agent.id = 26 limit 1 [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `yd_area` [ RunTime:0.0017s ]
+SQL: SELECT `id`,`name` FROM `yd_area` WHERE `parent_id` = 220100  [ RunTime:0.0383s ]
+
+[ 2017-09-12T20:57:22+08:00 ] 127.0.0.1 /index.php/Agent/Address/lower.html?id=220103
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000042s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000614s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000400s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000511s ]
+SQL: select 
+        yd_agent.username,
+        yd_agent.mobile,
+        yd_agent.status,
+        yd_agent_config.name,
+        yd_agent_config.agent_id,
+        yd_agent_config.address
+         from yd_agent inner join yd_agent_config ON yd_agent_config.agent_id = yd_agent.id where yd_agent.id = 26 limit 1 [ RunTime:0.0024s ]
+SQL: SHOW COLUMNS FROM `yd_area` [ RunTime:0.0021s ]
+SQL: SELECT `id`,`name` FROM `yd_area` WHERE `parent_id` = 220103  [ RunTime:0.0440s ]
+
+[ 2017-09-12T20:57:23+08:00 ] 127.0.0.1 /index.php/Agent/Address/lower.html?id=220103001
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000290s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000351s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000427s ]
+SQL: select 
+        yd_agent.username,
+        yd_agent.mobile,
+        yd_agent.status,
+        yd_agent_config.name,
+        yd_agent_config.agent_id,
+        yd_agent_config.address
+         from yd_agent inner join yd_agent_config ON yd_agent_config.agent_id = yd_agent.id where yd_agent.id = 26 limit 1 [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `yd_area` [ RunTime:0.0019s ]
+SQL: SELECT `id`,`name` FROM `yd_area` WHERE `parent_id` = 220103001  [ RunTime:0.0443s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000577s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000655s ]
+
+[ 2017-09-12T20:57:25+08:00 ] 127.0.0.1 /Agent/Address/address.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000298s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000355s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000429s ]
+SQL: select 
+        yd_agent.username,
+        yd_agent.mobile,
+        yd_agent.status,
+        yd_agent_config.name,
+        yd_agent_config.agent_id,
+        yd_agent_config.address
+         from yd_agent inner join yd_agent_config ON yd_agent_config.agent_id = yd_agent.id where yd_agent.id = 26 limit 1 [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `yd_address` [ RunTime:0.0018s ]
+SQL: INSERT INTO `yd_address` (`name`,`agent_id`,`mobile`,`province`,`city`,`district`,`twon`,`address`,`time`) VALUES ('ll','26','18026208292','220000','220100','220103','220103001','wqwe','1505221045') [ RunTime:0.0495s ]
+
+[ 2017-09-12T20:57:34+08:00 ] 127.0.0.1 /Agent/Procurement/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000512s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000402s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000491s ]
+SQL: select 
+        yd_agent.username,
+        yd_agent.mobile,
+        yd_agent.status,
+        yd_agent_config.name,
+        yd_agent_config.agent_id,
+        yd_agent_config.address
+         from yd_agent inner join yd_agent_config ON yd_agent_config.agent_id = yd_agent.id where yd_agent.id = 26 limit 1 [ RunTime:0.0021s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000102s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000192s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005991s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006138s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000502s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000686s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001340s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000777s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000913s ]
+
+[ 2017-09-12T20:57:38+08:00 ] 127.0.0.1 /Agent/Address/address.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000470s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000613s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000776s ]
+SQL: select 
+        yd_agent.username,
+        yd_agent.mobile,
+        yd_agent.status,
+        yd_agent_config.name,
+        yd_agent_config.agent_id,
+        yd_agent_config.address
+         from yd_agent inner join yd_agent_config ON yd_agent_config.agent_id = yd_agent.id where yd_agent.id = 26 limit 1 [ RunTime:0.0023s ]
+SQL: SHOW COLUMNS FROM `yd_address` [ RunTime:0.0021s ]
+SQL: SHOW COLUMNS FROM `yd_area` [ RunTime:0.0014s ]
+SQL: SELECT `id`,`name` FROM `yd_area` WHERE `level` = 1  [ RunTime:0.0305s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000099s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000187s ]
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 26 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 29 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 33 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 40 行.
+NOTIC: [8] Use of undefined constant city_ - assumed 'city_' D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 47 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 47 行.
+NOTIC: [8] Use of undefined constant district_ - assumed 'district_' D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 54 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 54 行.
+NOTIC: [8] Use of undefined constant twon_ - assumed 'twon_' D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 61 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 61 行.
+NOTIC: [8] Undefined variable: address D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 67 行.
+NOTIC: [8] Use of undefined constant HTTP_REFERER - assumed 'HTTP_REFERER' D:\wamp64\www\y\App\Runtime\Cache\Agent\33500463fb8f0be0ef80292639f97f4e.php 第 170 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010544s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010634s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000503s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000580s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001251s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000542s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000639s ]
+
+[ 2017-09-12T20:57:43+08:00 ] 127.0.0.1 /Agent/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000293s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000380s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000467s ]
+SQL: select 
+        yd_agent.username,
+        yd_agent.mobile,
+        yd_agent.status,
+        yd_agent_config.name,
+        yd_agent_config.agent_id,
+        yd_agent_config.address
+         from yd_agent inner join yd_agent_config ON yd_agent_config.agent_id = yd_agent.id where yd_agent.id = 26 limit 1 [ RunTime:0.0015s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000080s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000184s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006617s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006763s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000488s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000544s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001203s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000499s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000606s ]
+
+[ 2017-09-12T20:57:45+08:00 ] 127.0.0.1 /Agent/Money/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000363s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000414s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000502s ]
+SQL: select 
+        yd_agent.username,
+        yd_agent.mobile,
+        yd_agent.status,
+        yd_agent_config.name,
+        yd_agent_config.agent_id,
+        yd_agent_config.address
+         from yd_agent inner join yd_agent_config ON yd_agent_config.agent_id = yd_agent.id where yd_agent.id = 26 limit 1 [ RunTime:0.0021s ]
+SQL: SHOW COLUMNS FROM `yd_money` [ RunTime:0.0016s ]
+SQL: SELECT * FROM `yd_money` WHERE `agent_id` = 26 LIMIT 1   [ RunTime:0.0009s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000115s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000256s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006817s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006970s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000389s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000498s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001046s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000515s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000599s ]
+
+[ 2017-09-12T20:57:46+08:00 ] 127.0.0.1 /Agent/Money/topup.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000352s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000474s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000597s ]
+SQL: select 
+        yd_agent.username,
+        yd_agent.mobile,
+        yd_agent.status,
+        yd_agent_config.name,
+        yd_agent_config.agent_id,
+        yd_agent_config.address
+         from yd_agent inner join yd_agent_config ON yd_agent_config.agent_id = yd_agent.id where yd_agent.id = 26 limit 1 [ RunTime:0.0015s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000072s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000178s ]
+NOTIC: [8] Use of undefined constant alipaywap - assumed 'alipaywap' D:\wamp64\www\y\App\Runtime\Cache\Agent\4d62c095ca0c43cf889accc2318c0ae2.php 第 35 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005830s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006078s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000463s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000411s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001039s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000372s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000453s ]
+
+[ 2017-09-12T20:57:53+08:00 ] 127.0.0.1 /Agent/Money/alipaywap.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000311s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000346s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000437s ]
+SQL: select 
+        yd_agent.username,
+        yd_agent.mobile,
+        yd_agent.status,
+        yd_agent_config.name,
+        yd_agent_config.agent_id,
+        yd_agent_config.address
+         from yd_agent inner join yd_agent_config ON yd_agent_config.agent_id = yd_agent.id where yd_agent.id = 26 limit 1 [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `yd_topup` [ RunTime:0.0031s ]
+SQL: INSERT INTO `yd_topup` (`order`,`name`,`price`,`url`,`body`,`time`,`pay_type`,`agent_id`) VALUES ('201709122057535673','账户充值','231321','http://shoubiao.yundi88.com/Agent/Money/index.html','账户充值 金额：231321.00','1505221073','2','26') [ RunTime:0.0636s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000440s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000563s ]
+
+[ 2017-09-12T20:58:13+08:00 ] 127.0.0.1 /Agent/Money/topup.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000507s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000769s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000948s ]
+SQL: select 
+        yd_agent.username,
+        yd_agent.mobile,
+        yd_agent.status,
+        yd_agent_config.name,
+        yd_agent_config.agent_id,
+        yd_agent_config.address
+         from yd_agent inner join yd_agent_config ON yd_agent_config.agent_id = yd_agent.id where yd_agent.id = 26 limit 1 [ RunTime:0.0017s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000066s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000154s ]
+NOTIC: [8] Use of undefined constant alipaywap - assumed 'alipaywap' D:\wamp64\www\y\App\Runtime\Cache\Agent\4d62c095ca0c43cf889accc2318c0ae2.php 第 35 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004398s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004506s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000221s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000306s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000659s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000313s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000393s ]
+
+[ 2017-09-12T20:59:08+08:00 ] 127.0.0.1 /Agent/Procurement/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000325s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000379s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000492s ]
+SQL: select 
+        yd_agent.username,
+        yd_agent.mobile,
+        yd_agent.status,
+        yd_agent_config.name,
+        yd_agent_config.agent_id,
+        yd_agent_config.address
+         from yd_agent inner join yd_agent_config ON yd_agent_config.agent_id = yd_agent.id where yd_agent.id = 26 limit 1 [ RunTime:0.0012s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000097s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000184s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005693s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005792s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000236s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000453s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000810s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000607s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000764s ]
+
+[ 2017-09-12T22:50:01+08:00 ] 127.0.0.1 /y/index.php/Agent
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000208s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000264s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000316s ]
+
+[ 2017-09-12T22:50:01+08:00 ] 127.0.0.1 /y/Agent/Login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000199s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000232s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000280s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001138s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001216s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005018s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005071s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000179s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000438s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000686s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000290s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000336s ]
+
+[ 2017-09-12T22:50:13+08:00 ] 127.0.0.1 /index.php/Agent/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000217s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000267s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000315s ]
+
+[ 2017-09-12T22:50:13+08:00 ] 127.0.0.1 /Agent/Login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000235s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000258s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000306s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000039s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000088s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002641s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002688s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000121s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000327s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000517s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000282s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000357s ]
+
+[ 2017-09-12T22:50:31+08:00 ] 127.0.0.1 /Agent/Login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000244s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000280s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000323s ]
+ERR: SQLSTATE[HY000] [2002] ��һ���޷����ӵ����糢����һ���׽��ֲ�����
+
+
+[ 2017-09-12T22:50:56+08:00 ] 127.0.0.1 /Agent/Login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000415s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000256s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000321s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000043s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000092s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004233s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004294s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000172s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000423s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000665s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000288s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000334s ]
+
+[ 2017-09-12T22:51:01+08:00 ] 127.0.0.1 /Agent/Login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000195s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000217s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000258s ]
+SQL: SHOW COLUMNS FROM `yd_agent` [ RunTime:0.0060s ]
+SQL: SELECT `secret` FROM `yd_agent` WHERE `username` = 'admin' LIMIT 1   [ RunTime:0.0012s ]
+NOTIC: [2] file_get_contents(): php_network_getaddresses: getaddrinfo failed: ��֪������������  D:\wamp\www\y\App\Common\Common\function.php 第 51 行.
+NOTIC: [2] file_get_contents(http://ip.taobao.com//service/getIpInfo.php?ip=127.0.0.1): failed to open stream: php_network_getaddresses: getaddrinfo failed: ��֪������������  D:\wamp\www\y\App\Common\Common\function.php 第 51 行.
+NOTIC: [8] Trying to get property of non-object D:\wamp\www\y\App\Common\Common\function.php 第 52 行.
+NOTIC: [8] Trying to get property of non-object D:\wamp\www\y\App\Common\Common\function.php 第 53 行.
+NOTIC: [8] Trying to get property of non-object D:\wamp\www\y\App\Common\Common\function.php 第 53 行.
+NOTIC: [8] Trying to get property of non-object D:\wamp\www\y\App\Common\Common\function.php 第 53 行.
+NOTIC: [8] Trying to get property of non-object D:\wamp\www\y\App\Common\Common\function.php 第 53 行.
+NOTIC: [8] Trying to get property of non-object D:\wamp\www\y\App\Common\Common\function.php 第 53 行.
+NOTIC: [8] Trying to get property of non-object D:\wamp\www\y\App\Common\Common\function.php 第 53 行.
+NOTIC: [8] Trying to get property of non-object D:\wamp\www\y\App\Common\Common\function.php 第 53 行.
+SQL: SHOW COLUMNS FROM `yd_login_log` [ RunTime:0.0027s ]
+SQL: INSERT INTO `yd_login_log` (`pass`,`name`,`res`,`msg`,`ip`,`address`,`time`) VALUES ('wUgi3pmVhDeAbqIjRZj2yjAcrXFpJimdtqHQYsnSyUM=','admin','0','用户名不存在！','127.0.0.1','......','1505227861') [ RunTime:0.0021s ]
+
+[ 2017-09-12T22:51:07+08:00 ] 127.0.0.1 /Agent/Login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000200s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000226s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000268s ]
+SQL: SHOW COLUMNS FROM `yd_agent` [ RunTime:0.0010s ]
+SQL: SELECT `secret` FROM `yd_agent` WHERE `username` = 'test' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `yd_agent` WHERE `username` = 'test' AND `password` = '0BAbi2hu/fM5v/JFvHORrocouLzoroKQ3feGcaUOgO0=' LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [2] file_get_contents(): php_network_getaddresses: getaddrinfo failed: ��֪������������  D:\wamp\www\y\App\Common\Common\function.php 第 51 行.
+NOTIC: [2] file_get_contents(http://ip.taobao.com//service/getIpInfo.php?ip=127.0.0.1): failed to open stream: php_network_getaddresses: getaddrinfo failed: ��֪������������  D:\wamp\www\y\App\Common\Common\function.php 第 51 行.
+NOTIC: [8] Trying to get property of non-object D:\wamp\www\y\App\Common\Common\function.php 第 52 行.
+NOTIC: [8] Trying to get property of non-object D:\wamp\www\y\App\Common\Common\function.php 第 53 行.
+NOTIC: [8] Trying to get property of non-object D:\wamp\www\y\App\Common\Common\function.php 第 53 行.
+NOTIC: [8] Trying to get property of non-object D:\wamp\www\y\App\Common\Common\function.php 第 53 行.
+NOTIC: [8] Trying to get property of non-object D:\wamp\www\y\App\Common\Common\function.php 第 53 行.
+NOTIC: [8] Trying to get property of non-object D:\wamp\www\y\App\Common\Common\function.php 第 53 行.
+NOTIC: [8] Trying to get property of non-object D:\wamp\www\y\App\Common\Common\function.php 第 53 行.
+NOTIC: [8] Trying to get property of non-object D:\wamp\www\y\App\Common\Common\function.php 第 53 行.
+SQL: SHOW COLUMNS FROM `yd_login_log` [ RunTime:0.0009s ]
+SQL: INSERT INTO `yd_login_log` (`pass`,`name`,`res`,`msg`,`ip`,`address`,`time`) VALUES ('wUgi3pmVhDeAbqIjRZj2yjAcrXFpJimdtqHQYsnSyUM=','test','0','密码错误！','127.0.0.1','......','1505227867') [ RunTime:0.0017s ]
+
+[ 2017-09-12T22:51:08+08:00 ] 127.0.0.1 /Agent/Login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000204s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000231s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000280s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000041s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000092s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003369s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003420s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000136s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000332s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000539s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000250s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000296s ]
+
+[ 2017-09-12T22:51:12+08:00 ] 127.0.0.1 /Agent/Login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000197s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000218s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000259s ]
+SQL: SHOW COLUMNS FROM `yd_agent` [ RunTime:0.0011s ]
+SQL: SELECT `secret` FROM `yd_agent` WHERE `username` = 'test' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `yd_agent` WHERE `username` = 'test' AND `password` = 'KdfCUZiLT3bvKkjw3Km7NUvmkgHeFOFsXlUt3UjCiOI=' LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [2] file_get_contents(): php_network_getaddresses: getaddrinfo failed: ��֪������������  D:\wamp\www\y\App\Common\Common\function.php 第 51 行.
+NOTIC: [2] file_get_contents(http://ip.taobao.com//service/getIpInfo.php?ip=127.0.0.1): failed to open stream: php_network_getaddresses: getaddrinfo failed: ��֪������������  D:\wamp\www\y\App\Common\Common\function.php 第 51 行.
+NOTIC: [8] Trying to get property of non-object D:\wamp\www\y\App\Common\Common\function.php 第 52 行.
+NOTIC: [8] Trying to get property of non-object D:\wamp\www\y\App\Common\Common\function.php 第 53 行.
+NOTIC: [8] Trying to get property of non-object D:\wamp\www\y\App\Common\Common\function.php 第 53 行.
+NOTIC: [8] Trying to get property of non-object D:\wamp\www\y\App\Common\Common\function.php 第 53 行.
+NOTIC: [8] Trying to get property of non-object D:\wamp\www\y\App\Common\Common\function.php 第 53 行.
+NOTIC: [8] Trying to get property of non-object D:\wamp\www\y\App\Common\Common\function.php 第 53 行.
+NOTIC: [8] Trying to get property of non-object D:\wamp\www\y\App\Common\Common\function.php 第 53 行.
+NOTIC: [8] Trying to get property of non-object D:\wamp\www\y\App\Common\Common\function.php 第 53 行.
+SQL: SHOW COLUMNS FROM `yd_login_log` [ RunTime:0.0008s ]
+SQL: INSERT INTO `yd_login_log` (`pass`,`name`,`res`,`msg`,`ip`,`address`,`time`) VALUES ('9YbBNc5c3BFKGTC8/nSX5BAQ4PSBMRlczaCVg3XgnGo=','test','1','登录成功！','127.0.0.1','......','1505227872') [ RunTime:0.0017s ]
+
+[ 2017-09-12T22:51:12+08:00 ] 127.0.0.1 /Agent/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000203s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000228s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000276s ]
+SQL: select 
+        yd_agent.username,
+        yd_agent.mobile,
+        yd_agent.status,
+        yd_agent_config.name,
+        yd_agent_config.agent_id,
+        yd_agent_config.address
+         from yd_agent inner join yd_agent_config ON yd_agent_config.agent_id = yd_agent.id where yd_agent.id = 1 limit 1 [ RunTime:0.0037s ]
+NOTIC: [8] Undefined offset: 0 D:\wamp\www\y\App\Agent\Controller\PublicController.class.php 第 27 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000068s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000131s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005105s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005169s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000153s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000527s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000768s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000363s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000441s ]
+
+[ 2017-09-12T23:35:39+08:00 ] 127.0.0.1 /Agent/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000203s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000228s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000277s ]
+SQL: select 
+        yd_agent.username,
+        yd_agent.mobile,
+        yd_agent.status,
+        yd_agent_config.name,
+        yd_agent_config.agent_id,
+        yd_agent_config.address
+         from yd_agent inner join yd_agent_config ON yd_agent_config.agent_id = yd_agent.id where yd_agent.id = 1 limit 1 [ RunTime:0.0008s ]
+NOTIC: [8] Undefined offset: 0 D:\wamp\www\y\App\Agent\Controller\PublicController.class.php 第 27 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000051s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000099s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004383s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004434s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000137s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000335s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000542s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000241s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000285s ]
+
+[ 2017-09-12T23:42:06+08:00 ] 127.0.0.1 /Agent/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000203s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000256s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000303s ]
+SQL: select 
+        yd_agent.username,
+        yd_agent.mobile,
+        yd_agent.status,
+        yd_agent_config.name,
+        yd_agent_config.agent_id,
+        yd_agent_config.address
+         from yd_agent inner join yd_agent_config ON yd_agent_config.agent_id = yd_agent.id where yd_agent.id = 1 limit 1 [ RunTime:0.0003s ]
+NOTIC: [8] Undefined offset: 0 D:\wamp\www\y\App\Agent\Controller\PublicController.class.php 第 27 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000051s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000099s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004246s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004296s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000127s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000342s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000540s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000249s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000294s ]
+
+[ 2017-09-12T23:42:08+08:00 ] 127.0.0.1 /Agent/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000204s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000224s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000272s ]
+SQL: select 
+        yd_agent.username,
+        yd_agent.mobile,
+        yd_agent.status,
+        yd_agent_config.name,
+        yd_agent_config.agent_id,
+        yd_agent_config.address
+         from yd_agent inner join yd_agent_config ON yd_agent_config.agent_id = yd_agent.id where yd_agent.id = 1 limit 1 [ RunTime:0.0003s ]
+NOTIC: [8] Undefined offset: 0 D:\wamp\www\y\App\Agent\Controller\PublicController.class.php 第 27 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000051s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000097s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004260s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004308s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000124s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000335s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000529s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000239s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000284s ]
+

@@ -24,9 +24,9 @@
 				<div class="mg clear">
 					<ul>
                         <div class="typeList" style="float:left;">
-                            <li data-id="0" <if condition="!$brandIcon"> class="on"</if>>全部</li>
+                            <li <if condition="!$brandIcon"> class="on"</if>>全部</li>
                             <foreach name="classData" item="v">
-                                <li data-id="{$v.brand_id}" <if condition="$brandIcon eq $v['brand_id']"> class="on"</if> >{$v.name}</li>
+                                <li data-id="{$v.class_id}" <if condition="$brandIcon eq $v['class_id']"> class="on"</if> >{$v.name}</li>
                             </foreach>
                         </div>
 						<!-- <li id="priceOrder" data-order="<?php echo $orderNum ? $orderNum : 2; ?>">价格<img src="__STYLE__/img/<?php echo $orderNum == 1 ? up : down; ?>.png"/></li> -->
@@ -42,15 +42,25 @@
 					<ul class="clear">
                         <foreach name="goodslist" item="vo">
     						<li>
-    							<a href="__CONTROLLER__/goodDetail/goods_id/{$vo.goods_id}"><img src="{$vo.images}"/></a>
+    							<a href="{:U('Home/Goods/goodDetail', array('goods_id' => $vo['goods_id']))}"><img src="{$vo.images}"/></a>
     							<div class="details">
-    								<h1><a href="__CONTROLLER__/goodDetail/goods_id/{$vo.goods_id}">{$vo.name}</a></h1>
+    								<h1><a href="{:U('Home/Goods/goodDetail', array('goods_id' => $vo['goods_id']))}">{$vo.name}</a></h1>
     								<p>编号:{$vo.goods_sn}</p>
     								<h2>批价:<em>￥{$vo.price}</em></h2>
     								<span class="clear">
     									<div class="collect">
-    										<b>{$vo.click_count}</b>
-    										<img src="__STYLE__/img/collect.png"/>
+                                            <if condition="$vo.isCollect eq 1">
+                                                <img data-id="{$vo.goods_id}" data-val="{$Think.session.AgentUser}" class="uncollectIco" src="__STYLE__/img/collectA.png"/>
+                                                <b style="color: #7bc2ea;">{$vo.collectNum}</b>
+                                            <elseif condition="$Think.session.AgentUser"/>
+                                                <img data-id="{$vo.goods_id}" data-val="{$Think.session.AgentUser}" class="collectIco" src="__STYLE__/img/collect.png"/>
+                                                <b>{$vo.collectNum}</b>
+                                            <else />
+                                                <a href="{:U('Agent/Index/index')}">
+                                                    <img src="__STYLE__/img/collect.png"/>
+                                                </a>
+                                                <b>{$vo.collectNum}</b>
+                                            </if>
     									</div>
     									<div imgurl="http://pan.baidu.com/share/qrcode?w=230&h=230&url=http://<?php echo $_SERVER['HTTP_HOST'];?>{:U('Home/Goods/goodslist')}" class="code"><img src="__STYLE__/img/code.png"/></div>
     								</span>
@@ -65,15 +75,25 @@
 					<ul class="mg">
                         <foreach name="goodslist" item="vo">
     						<li>
-    							<a href="__CONTROLLER__/goodDetail/goods_id/{$vo.goods_id}"><img src="{$vo.images}"/></a>
+    							<a href="{:U('Home/Goods/goodDetail', array('goods_id' => $vo['goods_id']))}"><img src="{$vo.images}"/></a>
     							<div class="details">
-    								<h1><a href="__CONTROLLER__/goodDetail/goods_id/{$vo.goods_id}">{$vo.name}</a></h1>
+    								<h1><a href="{:U('Home/Goods/goodDetail', array('goods_id' => $vo['goods_id']))}">{$vo.name}</a></h1>
     								<p>编号:{$vo.goods_sn}</p>
     								<h2>批价:<em>￥{$vo.price}</em></h2>
     								<span class="clear">
     									<div class="collect">
-    										<b>{$vo.count}</b>
-    										<img src="__STYLE__/img/collect.png"/>
+                                            <if condition="$vo.isCollect eq 1">
+                                                <img data-id="{$vo.goods_id}" data-val="{$Think.session.AgentUser}" class="uncollectIco" src="__STYLE__/img/collectA.png"/>
+                                                <b style="color: #7bc2ea;">{$vo.collectNum}</b>
+                                            <elseif condition="$Think.session.AgentUser"/>
+                                                <img data-id="{$vo.goods_id}" data-val="{$Think.session.AgentUser}" class="collectIco" src="__STYLE__/img/collect.png"/>
+                                                <b>{$vo.collectNum}</b>
+                                            <else />
+                                                <a href="{:U('Agent/Index/index')}">
+                                                    <img src="__STYLE__/img/collect.png"/>
+                                                </a>
+                                                <b>{$vo.collectNum}</b>
+                                            </if>
     									</div>
     									<div imgurl="http://pan.baidu.com/share/qrcode?w=230&h=230&url=http://<?php echo $_SERVER['HTTP_HOST'];?>{:U('Home/Goods/goodslist')}" class="code"><img src="__STYLE__/img/code.png"/></div>
     								</span>
@@ -119,14 +139,19 @@
 
 
 		<script>
+
             // 自定义js
             $(document).on('click', '.typeList li', function () {
                 var agent = $('#agent').attr('data-val');
                 var classNum = $(this).attr('data-id');
-                if (agent) {
-                    var url = "__CONTROLLER__/goodslist/brand_id/" + $('#brand').attr('data-val') + "/class_id/" + classNum + "/agent/" + agent;
+                if (classNum) {
+                    if (agent) {
+                        var url = "__CONTROLLER__/goodslist/brand_id/" + $('#brand').attr('data-val') + "/class_id/" + classNum + "/agent/" + agent;
+                    } else {
+                        var url = "__CONTROLLER__/goodslist/brand_id/" + $('#brand').attr('data-val') + "/class_id/" + classNum;
+                    }
                 } else {
-                    var url = "__CONTROLLER__/goodslist/brand_id/" + $('#brand').attr('data-val') + "/class_id/" + classNum;
+                    var url = "__CONTROLLER__/goodslist/brand_id/" + $('#brand').attr('data-val');
                 }
                 window.location.href = url;
             });
@@ -156,11 +181,42 @@
 				// });
 
 				//收藏
-				$('.goodsList .collect').one('click',function(){
-					$(this).find('img').attr('src','__STYLE__/img/collectA.png');
-					$(this).find('b').css('color','#7bc2ea');
-					$(this).find('b').text(parseInt($(this).find('b').text())+1);
+				$('.collectIco').click(function(){
+                    var goods_id = $(this).attr('data-id');
+                    var agentUser = $(this).attr('data-val');
+                    var that = $(this);
+                    $.post(
+                        '__CONTROLLER__/collect',
+                        {"agent_id":agentUser, "goods_id":goods_id},
+                        function (data) {
+                            if (data.code == 1) {
+                                window.location.reload();
+                            } else {
+                                alert(data.msg);
+                            }
+                        },
+                        'json'
+                    );
 				});
+
+                // 取消收藏
+                $('.uncollectIco').click(function(){
+                    var goods_id = $(this).attr('data-id');
+                    var agentUser = $(this).attr('data-val');
+                    var that = $(this);
+                    $.post(
+                        '__CONTROLLER__/unCollect',
+                        {"agent_id":agentUser, "goods_id":goods_id},
+                        function (data) {
+                            if (data.code == 1) {
+                                window.location.reload();
+                            } else {
+                                alert(data.msg);
+                            }
+                        },
+                        'json'
+                    );
+                });
 
 				//排版列表
 				$('.goodsList .twoCol').show();

@@ -36,11 +36,11 @@ class TypeController extends PublicController
     public function delType()
     {
         if (IS_GET) {
-            $brand_id = I('get.brand_id');
+            $class_id = I('get.class_id');
         } else {
-            $brand_id = I('post.category_id');
+            $class_id = I('post.category_id');
         }
-        $delRes = D('classification')->delType($brand_id);
+        $delRes = D('classification')->delType($class_id);
         if ($delRes['status']) {
             $this->success($delRes['msg']);
         } else {
@@ -52,8 +52,8 @@ class TypeController extends PublicController
     public function editType()
     {
         if (IS_GET) {
-            $brand_id = I('get.brand_id');
-            $typeContent = D('classification')->findType($brand_id);
+            $class_id = I('get.class_id');
+            $typeContent = D('classification')->findType($class_id);
             if ($typeContent['status']) {
                 $this->assign('typeContent', $typeContent['data']);
                 $this->display();
@@ -61,9 +61,9 @@ class TypeController extends PublicController
                 $this->error($typeContent['msg']);
             }
         } else {
-            $brand_id = I('post.brand_id');
+            $class_id = I('post.class_id');
             $formData = I('post.info');
-            $editRes = D('classification')->editType($formData, $brand_id);
+            $editRes = D('classification')->editType($formData, $class_id);
             if ($editRes['status']) {
                 $this->success($editRes['msg'], 'index');
             } else {
@@ -75,8 +75,8 @@ class TypeController extends PublicController
     // 转移商品
     public function transferGood()
     {
-        $brand_id = I('get.brand_id');
-        $typeContent = D('classification')->findType($brand_id);
+        $class_id = I('get.class_id');
+        $typeContent = D('classification')->findType($class_id);
         if ($typeContent['status']) {
             $this->assign('typeContent', $typeContent['data']);
         } else {

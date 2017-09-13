@@ -73,6 +73,16 @@ class RecommendedController extends PublicController
             }
             $goods = M('goods')->where($where)->Page($_GET['P'], 20)->order($order)->select();
         }
+        for ($k=0; $k < count($goods); $k++) {
+            $isCollect = M('agent_collection')->where(array('goods_id' => $goods[$k]['goods_id'], 'agent_id' => session('AgentUser')))->count();
+            if ($isCollect) {
+                $goods[$k]['isCollect'] = 1;
+                $goods[$k]['collectNum'] = $isCollect;
+            } else {
+                $goods[$k]['isCollect'] = 0;
+                $goods[$k]['collectNum'] = 0;
+            }
+        }
         $this->assign('goodslist',$goods);
         if ($orderNum) {
             $orderNum = $orderNum == 1 ? 2 : 1;
@@ -80,7 +90,7 @@ class RecommendedController extends PublicController
         }
 
         // 查询分类
-        $classData = M('classification')->field('brand_id, name')->order('sorting')->select();
+        $classData = M('classification')->field('class_id, name')->order('sorting')->select();
         $this->assign('classData', $classData);
         $this->assign('brandIcon', $class);
 
@@ -103,6 +113,27 @@ class RecommendedController extends PublicController
             $this->ajaxReturn(array(
                 'code' => 0,
                 'msg' => '收藏失败',
+                'data' => '',
+            ));
+        }
+    }
+
+    //  取消收藏
+    public function unCollect()
+    {
+        $goods_id = I('post.goods_id');
+        $agentUser = I('post.agent_id');
+        $res = M('agent_collection')->where(array('agent_id' => $agentUser, 'goods_id' => $goods_id))->delete();
+        if ($res) {
+            $this->ajaxReturn(array(
+                'code' => 1,
+                'msg' => '取消收藏成功',
+                'data' => '',
+            ));
+        } else {
+            $this->ajaxReturn(array(
+                'code' => 0,
+                'msg' => '取消收藏失败',
                 'data' => '',
             ));
         }

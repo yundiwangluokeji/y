@@ -86,7 +86,7 @@ class GoodsController extends PublicController
             $this->assign('orderNum', $orderNum);
         }
         // 查询分类
-        $classData = M('classification')->field('brand_id, name')->order('sorting')->select();
+        $classData = M('classification')->field('class_id, name')->order('sorting')->select();
         $this->assign('classData', $classData);
         $this->assign('brandIcon', $class);
         $this->display();
@@ -124,7 +124,7 @@ class GoodsController extends PublicController
         //商品库存
         $inventory = M('goods')->where(array('goods_id'=>$goods_id))->getField('inventory');
         $this->assign('inventory',$inventory);
-        
+
         $goodData = M('goods')->where(array('goods_id' => $goods_id))->find();
         if ($goodData) {
             $collectNum = M('agent_collection')->where(array('goods_id' => $goods_id))->count();

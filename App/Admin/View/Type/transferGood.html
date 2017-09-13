@@ -6,7 +6,7 @@
 	<td align="right" class="bgtt" width="100">商品从</td>
 	<td>
 		<select name="category_id" class="inputselect">
-            <option value="{$typeContent.brand_id}">{$typeContent.name}</option>
+            <option value="{$typeContent.class_id}">{$typeContent.name}</option>
 		</select>
 	</td>
 </tr>
@@ -16,7 +16,7 @@
 		<select name="category_newid" class="inputselect">
             <option value="0">请选择分类</option>
             <foreach name="typeData" item="v">
-    			<option value="{$v.brand_id}">{$v.name}</option>
+    			<option value="{$v.class_id}">{$v.name}</option>
             </foreach>
 		</select>
 	</td>

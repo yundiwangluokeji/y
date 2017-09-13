@@ -75,6 +75,7 @@
 						layer.msg('正在支付...', {
 						  icon: 16
 						  ,shade: 0.10
+						   ,time:0
 						});
 					}
 		}
