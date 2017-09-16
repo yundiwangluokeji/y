@@ -11,7 +11,6 @@ class BuyController extends PublicController
 	//采购
 	public function procurement()
 	{
-
 		if(session('cart')['type'] == 'procurement'){
 			if(IS_POST){
 				M()->startTrans();//开启事务
@@ -22,10 +21,10 @@ class BuyController extends PublicController
 				//订单总价 如果是在代理商下买的 查询代理商的价格
 				if(session('cart')['agent_id']){
 					$count_price = M('agent_goods')->where(array('goods_id'=>session('cart')['goods_id']))->getField('agent_price');
-					$order['count_price'] = $count_price * session('cart')['num'];
+					$order['count_price'] = $count_price * array_sum(session('cart')['color']);
 				}else{
 					$count_price = M('goods')->where(array('goods_id'=>session('cart')['goods_id']))->getField('price');
-					$order['count_price'] = $count_price * session('cart')['num'];
+					$order['count_price'] = $count_price * array_sum(session('cart')['color']);
 
 				}
 				$order['order_status'] = 0;//新订单
@@ -36,6 +35,7 @@ class BuyController extends PublicController
 				$order['username'] = $address['name'];//收货人姓名 
 				$order['mobile'] = $address['mobile'];//收货手机号
 				$order['address'] = $address['province'].$address['city'].$address['district'].$address['twon'].$address['address'];//地址
+				$order['msg'] = session('cart')['msg'];
 				$order['time'] = time();
 				$order_res = M('order')->add($order);
 
@@ -46,14 +46,21 @@ class BuyController extends PublicController
 				$order_goods['goods_id'] = session('cart')['goods_id'];//商品id
 				$order_goods['agent_id'] = session('cart')['agent_id'];//属于谁的商品
 				$order_goods['goods_price'] = $count_price;//商品单价
-				$order_goods['goods_num'] = session('cart')['num'];
+				$order_goods['goods_num'] = array_sum(session('cart')['color']);//数量
 				$order_goods['goods_name'] = M('goods')->where(array('goods_id'=>session('cart')['goods_id']))->getField('name');;
-				$order_goods['goods_color'] = session('cart')['color'];
+				$order_goods['goods_color'] = implode(',',array_keys(session('cart')['color']));//颜色
+				//每个颜色对应的数量 格式:颜色键_数量
+				$color_num = '';
+				foreach(session('cart')['color'] as $kk=>$vv){
+					$color_num .= $kk.'_'.$vv.',';
+				}
+				$order_goods['color_num'] = substr($color_num,0,-1);
 				$order_goods['time'] = time();
 				$order_goods_res = M('order_goods')->add($order_goods);
 				if($order_res && $order_goods_res){
 
 					M()->commit();//提交事务
+					session('cart',null);
 					//跳转倒支付页面
 					//加密
 					$orderid = encryption($order_res);//订单id
@@ -76,6 +83,15 @@ class BuyController extends PublicController
 								if(session('cart')['agent_id']){
 									$goods['price'] = M('agent_goods')->where(array('goods_id'=>session('cart')['goods_id']))->getField('agent_price');
 								}
+								$color_key = array_keys(session('cart')['color']);//取出颜色key
+								$color = '';
+								$colors = C('color');
+								foreach($color_key as $vv){
+									$color .= $colors[ $vv ].',';
+								}
+								$this->assign('color',substr($color,0,-1));
+								$this->assign('num',array_sum(session('cart')['color']));
+								$this->assign('count_price',sprintf("%.2f",$goods['price'] * array_sum(session('cart')['color'])));
 								$this->assign('goods',$goods);
 								$this->display();
 								exit;
@@ -162,10 +178,10 @@ class BuyController extends PublicController
 				//订单总价 如果是在代理商下买的 查询代理商的价格
 				if(session('cart')['agent_id']){
 					$count_price = M('agent_goods')->where(array('goods_id'=>session('cart')['goods_id']))->getField('agent_price');
-					$order['count_price'] = $count_price * session('cart')['num'];
+					$order['count_price'] = $count_price * array_sum(session('cart')['color']);
 				}else{
 					$count_price = M('goods')->where(array('goods_id'=>session('cart')['goods_id']))->getField('price');
-					$order['count_price'] = $count_price * session('cart')['num'];
+					$order['count_price'] = $count_price * array_sum(session('cart')['color']);
 
 				}
 				$order['order_status'] = 0;//新订单
@@ -176,6 +192,7 @@ class BuyController extends PublicController
 				$order['username'] = $address['name'];//收货人姓名 
 				$order['mobile'] = $address['mobile'];//收货手机号
 				$order['address'] = $address['province'].$address['city'].$address['district'].$address['twon'].$address['address'];//地址
+				$order['msg'] = session('cart')['msg'];
 				$order['time'] = time();
 				$order_res = M('order')->add($order);
 
@@ -186,9 +203,15 @@ class BuyController extends PublicController
 				$order_goods['goods_id'] = session('cart')['goods_id'];//商品id
 				$order_goods['agent_id'] = session('cart')['agent_id'];//属于谁的商品
 				$order_goods['goods_price'] = $count_price;//商品单价
-				$order_goods['goods_num'] = session('cart')['num'];
+				$order_goods['goods_num'] = array_sum(session('cart')['color']);
 				$order_goods['goods_name'] = M('goods')->where(array('goods_id'=>session('cart')['goods_id']))->getField('name');;
-				$order_goods['goods_color'] = session('cart')['color'];
+				$order_goods['goods_color'] = implode(',',array_keys(session('cart')['color']));
+				//每个颜色对应的数量 格式:颜色键_数量
+				$color_num = '';
+				foreach(session('cart')['color'] as $kk=>$vv){
+					$color_num .= $kk.'_'.$vv.',';
+				}
+				$order_goods['color_num'] = substr($color_num,0,-1);
 				$order_goods['time'] = time();
 				$order_goods_res = M('order_goods')->add($order_goods);
 				if($order_res && $order_goods_res){
@@ -198,6 +221,7 @@ class BuyController extends PublicController
 					//加密
 					$orderid = encryption($order_res);//订单id
 					$buy = encryption(0);//订单类型 预定
+					session('cart',null);
 					header('location:'.U('pay').'?order='.urlencode($orderid).'&buy='.urlencode($buy));//加密后在编码(编码解决get特殊符号无法接收)
 
 
@@ -216,6 +240,15 @@ class BuyController extends PublicController
 								if(session('cart')['agent_id']){
 									$goods['price'] = M('agent_goods')->where(array('goods_id'=>session('cart')['goods_id']))->getField('agent_price');
 								}
+								$color_key = array_keys(session('cart')['color']);//取出颜色key
+								$color = '';
+								$colors = C('color');
+								foreach($color_key as $vv){
+									$color .= $colors[ $vv ].',';
+								}
+								$this->assign('color',substr($color,0,-1));
+								$this->assign('num',array_sum(session('cart')['color']));
+								$this->assign('count_price',sprintf("%.2f",$goods['price'] * array_sum(session('cart')['color'])));
 								$this->assign('goods',$goods);
 								$this->display();
 								exit;
@@ -297,6 +330,7 @@ class BuyController extends PublicController
 
 			}else{
 				$this->money_log($count_price,0,$order_id);
+				M()->rollback();
 				$this->payres('支付失败！点击重新支付!',4);
 			}
 

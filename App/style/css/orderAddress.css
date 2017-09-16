@@ -11,11 +11,12 @@ body{background: #1d2124;}
 .editAddress{width: 100%;background: #2f3336;padding-bottom: 0.3rem;}
 .editAddress form,.editAddress label,.editAddress input,.editAddress a,.editAddress span,.editAddress i{display: block;}
 .editAddress label{height: 0.94rem;line-height: 0.94rem;border-bottom: 1px solid #545b61;position: relative;padding: 0 0.24rem;}
-.editAddress label span{color: #52595f;font-size: 0.28rem;width: 2.2rem;float: left;}
-.editAddress label input{color: #52595f;font-size: 0.28rem;width: 4.8rem;height: 0.94rem;line-height: 0.94rem;overflow: hidden;float: right;background: none;outline: none;border: none;}
-.editAddress label img{width: 0.4rem;height: 0.4rem;position: absolute;right: 0.52rem;top: 50%;margin-top: -0.2rem;}
+.editAddress label span{color: #52595f;font-size: 0.28rem;width: 1.5rem;float: left;}
+.editAddress label input{color: #fff;font-size: 0.28rem;width: 4.8rem;height: 0.94rem;line-height: 0.94rem;overflow: hidden;/*float: right;*/background: none;outline: none;border: none;}
+.editAddress label img{width: 0.4rem;height: 0.4rem;position: absolute;right: 0.55rem;top: 50%;margin-top: -0.2rem;}
 .editAddress .keepEdit{height: 0.86rem;line-height: 0.86rem;text-align: center;font-size: 0.3rem;color: #ffffff;background: #7bc2ea;border-radius: 6px;margin-top: 0.3rem;}
-
+.editAddress label select{color: #fff;}
+.editAddress label select option{color: #000;}
 .informate{width: 100%;background: #2f3336;margin-top: 0.16rem;font-size: 0.24rem;}
 .informate span,.informate b{display: block;}
 .informate h2{height: 0.64rem;line-height: 0.64rem;padding: 0 3.2%;}

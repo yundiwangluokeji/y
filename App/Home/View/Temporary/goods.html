@@ -14,7 +14,7 @@
 		<div class="header">
 			<div class="mg">
 				<a class="goback" href="javascript:history.back();"><img src="__STYLE__/img/back.png"/></a>
-				<h1>{$config['name']}</h1>
+				<h1>{$configname}</h1>
 			</div>
 		</div>
 		<div class="contains">
@@ -27,14 +27,14 @@
 					<h1>{$goodData.name}</h1>
 					<p>商品编号:{$goodData.goods_sn}</p>
 					<span class="clear">
-						<h2>￥<em>{$goodData.price}</em></h2>
+						<h2>￥<em>{$goodData.agent_price}</em></h2>
 						<a href="javascript:;"><img src="__STYLE__/img/share.png"/></a>
 						<div class="collect">
                             <if condition="$goodData.isCollect eq 1">
-                                <img onclick="layer.msg('你已经收藏过了！')" src="__STYLE__/img/collectA.png"/>
+                                <img  src="__STYLE__/img/collectA.png"/>
                                 <b style="color: #7bc2ea;">{$goodData.collectNum}</b>
                             <elseif condition="$Think.session.AgentUser"/>
-                                <img id="collectIco" src="__STYLE__/img/collect.png"/>
+                                <img onclick="layer.msg('你没有登录不能收藏哦~~~')" id="collectIco" src="__STYLE__/img/collect.png"/>
                                 <b>{$goodData.collectNum}</b>
                             <else />
                                 <a href="{:U('Agent/Index/index')}">
@@ -70,29 +70,20 @@
 				<b></b>
 			</span>
 			<span class="left">
-				<a href="{:U('Agent/Collection/index')}"><span><img src="__STYLE__/img/def02.png"/></span>收藏夹</a>
+				<a href="{:U('Home/Recommended/index',array('agent'=>$goodData['agent_id']))}"><span><img src="__STYLE__/img/tuijian_icon_on.png"/></span>推荐</a>
 			</span>
-			<!-- 如果是代理商两个按钮 普通用户一个按钮 -->
-			<php>if(session('AgentUser')){</php>
-			<span class="right" style="width:25%;background: #C1B3A5;">
-				<a type="procurement" class="mysubmit_">采购</a>
-			</span>
-			<span class="right" style="width:25%;">
-				<a type="reservation" class="mysubmit_">预定</a>
-			</span>
-			<php>}else{</php>
+			
 			<span class="right">
 				<a type="confirm" class="mysubmit_">确认购买</a>
 			</span>
-			<php>}</php>
 
 		</div>
 
 		
-		<form id="detail_form" action="{:U('Home/Buy/cart')}">
+		<form id="detail_form" action="{:U('Home/temporary/cart')}">
 		<!--选择弹窗-->
-		<input type="hidden" name="goods_id" value="{$goodData.goods_id}"> <!-- 商品id -->
-		<input type="hidden" name="agent_id" value="{$Think.get.agent||default=0}"> <!-- 如果当前商品属于代理商 传代理商id -->
+		<input type="hidden" name="goods_id" value="{$goodData.agent_goods_id}"> <!-- 商品id -->
+		<input type="hidden" name="agent_id" value="{$goodData.agent_id||default=0}"> <!-- 如果当前商品属于代理商 传代理商id -->
 		<input type="hidden" name="type" value=""> <!-- 提交类型 -->
 		<!--选择弹窗-->
 			<div class="popSelect">
@@ -159,31 +150,11 @@
 				</div>
 			</div>
 		</form>
-        <div id="goods_id" data-val="{$goodData.goods_id}"></div>
-        <div id="AgentUser" data-val="{$Think.session.AgentUser}"></div>
 
 		<script>
 
 			$(function(){
-				//收藏
-                $('#collectIco').one('click', function () {
-                    var goods_id = $('#goods_id').attr('data-val');
-                    var agentUser = $('#AgentUser').attr('data-val');
-                    var that = $(this);
-                    $.post(
-                        '{:U(collect)}',
-                        {"agent_id":agentUser, "goods_id":goods_id},
-                        function (data) {
-                            if (data.code == 1) {
-                                that.attr('src','__STYLE__/img/collectA.png');
-                                that.next().css('color', '#7bc2ea');
-                                that.next().text(parseInt(that.next().text())+1);
-                            }
-                               layer.msg(data.msg);
-                        },
-                        'json'
-                    );
-                });
+				
 
 				//选择弹窗
 				$('.mySelect').click(function(){
@@ -232,9 +203,10 @@
 				$('.popSelect .add').click(function(){	
 					var txtA = $(this).parent().find('input');
 					var count = parseInt(txtA.val());
-					if(count>100){
-						count=99;
+					if(count >= {$goodData['agent_inventory']}){
+						count = {$goodData['agent_inventory']} - 1;
 						$(this).css('color','#545b61');
+						layer.msg('库存不足~~~');
 					}else{
 						$(this).parent().find('b').css('color','#ffffff');
 					};

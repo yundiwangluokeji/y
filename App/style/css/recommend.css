@@ -11,7 +11,7 @@ body{background: #1d2124;}
 .contains{width: 100%;margin: 0.8rem auto 0.98rem;color: #545b61;}
 .headNav{height: 0.81rem;background: #2f3336;}
 .headNav ul,.headNav ul li,.headNav .price{float: left;}
-.headNav ul li{width: 1rem;font-size: 0.28rem;text-align: center;height: 0.79rem;line-height: 0.79rem;border-bottom: 0.02rem solid #2f3336;}
+.headNav ul li{width: 1.08rem;font-size: 0.28rem;text-align: center;height: 0.79rem;line-height: 0.79rem;border-bottom: 0.02rem solid #2f3336;}
 .headNav ul li.on{color: #c3a07d;border-color: #c3a07d;}
 .headNav ul li img{width: 0.26rem;height: 0.15rem;padding-left: 0.06rem;}
 .headNav a{display: block;width: 0.32rem;height: 0.81rem;line-height: 0.81rem;font-size: 0;float: right;}
@@ -47,7 +47,7 @@ body{background: #1d2124;}
 .footer a img{display: block;width: 0.5rem;margin: 0.1rem auto 0.04rem;}
 .footer a span{font-size:0.2rem;color: #3b332b;display: block;line-height: 0.2rem;}
 .footer a .shadow{display: block;}
-.footer a.on .shadow{display: none;}
+.footer a.on .shadow{display: none;}	
 .footer a .light{display: none;}
 .footer a.on .light{display: block;}
 .footer a.on span{color: #c3a07d;}

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" /> 
+		<title>订单确认</title>
+		<link rel="stylesheet" href="__STYLE__/css/public.css" />
+		<link rel="stylesheet" href="__STYLE__/css/orderAddress.css" />
+		<script type="text/javascript" src="__STYLE__/js/jquery-1.7.1.min.js" ></script>
+		<script type="text/javascript" src="__STYLE__/layer/layer.js"></script>
+		<script>document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';$(window).resize(function(){document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';})</script>
+		<style type="text/css">
+		select{
+			width:60%;
+			height: 0.8rem;
+			border:none;background: none;
+			appearance:none;
+           -moz-appearance:none; /* Firefox */
+           -webkit-appearance:none; /* Safari 和 Chrome */
+           background: url(__STYLE__/img/localize.png) no-repeat right center;background-size: 8% auto;width: 76%;
+           outline: none;
+           }</style>
+	</head>
+	<body>
+		<div class="header">
+			<div class="mg">
+				<a class="goback" href="javascript:history.back();"><img src="__STYLE__/img/back.png"/></a>
+				<h1>确认订单</h1>
+			</div>
+		</div>
+		
+		<div class="contains">					
+			<!--编辑地址-->
+			<div class="editAddress">
+				<form method="post" action="" onsubmit="return mysubmit();">
+					<label>
+						<span>姓名</span>
+						<input name="name" type="text" />
+					</label>
+					<label>
+						<span>手机号</span>
+						<input type="tel" name="mobile"  maxlength="11" />
+					</label>
+					<label>
+						<span>选择省</span>
+							<select name="area[province]" class="province" level="1" >
+									<option value="0">请选择省份</option>
+								<foreach name="data" item="v">
+									<option value="{$v.id}">{$v.name}</option>
+								</foreach>
+							</select>
+					</label>
+					<label>
+						<span>选择市</span>
+							<select name="area[city]" class="select2" level="2">
+							<foreach name="address[city_]" item="city_v">
+								<option  value="{$city_v['id']}" >{$city_v['name']}</option>
+							</foreach>
+							</select>
+					</label>
+					<label>
+						<span>选择区</span>
+							<select  name="area[district]" class="select3" level="3">
+							<foreach name="address[district_]" item="district_v">
+								<option  value="{$district_v['id']}" >{$district_v['name']}</option>
+							</foreach>
+							</select>
+					</label>
+					<label>
+						<span>选择乡镇</span>
+							<select name="area[twon]"  class="select4">
+							<foreach name="address[twon_]" item="twon_v">
+								<option  value="{$twon_v['id']}" >{$twon_v['name']}</option>
+							</foreach>
+							</select>
+					</label>
+					<label>
+						<span>详细地址</span>
+						<input type="text" name="address" value="{$address.address}" placeholder="请输入详细地址" />
+					</label>
+					
+					<!-- <a class="keepEdit mg" href="javascript:;" onclick="keepEdit();">保存收货信息</a> -->
+			</div>	
+			
+			<div class="informate">
+				<h2>商品编号:{$goodsdata['goods_sn']}</h2>
+				<span>
+					<div class="mg clear">
+						<b><img src="__STYLE__/img/firm.jpg"/></b>
+						<div class="title">
+							<h1>{$goodsdata['name']}</h1>
+							<p>颜色：{$color}</p>
+						</div>
+						<div class="price"><em>￥{$goodsdata['agent_price']}</em>× {$num}</div>
+					</div>
+				</span>
+				<p>合计： <em>￥{$count_price}</em></p>
+			</div>					
+			
+		</div>			
+		<button class="referOrder">确认下单并支付</button>		
+		</form>
+		
+		<!--提示添加收货地址-->
+		<div class="tipAddress"></div>	
+		<script>
+function mysubmit()
+{
+				regtel = {:__MOBILE__};
+				if($('input[name=name]').val() == ""){
+					layer.msg('请输入收货人姓名');return false;
+				}else if(!regtel.test($('input[name=mobile]').val())){
+					layer.msg('请输正确填写收件人手机号');return false;
+				}else if($('.province').val() == 0 || !$('.province').val()){
+					layer.msg('请选择省份');
+					return false;
+				}else if(!$('.select2').val() || $('.select2').val() == 0){
+					layer.msg('请选择市');
+					return false;
+				}else if(!$('.select3').val() || $('.select3').val() == 0){
+					layer.msg('请选择区');
+					return false;
+				}else if($('input[name=address]').val() == ""){
+					layer.msg('请输入详细地址');return false;
+				}else{
+					return true;
+				};
+}
+		</script>
+	</body>
+<script type="text/javascript">
+$('select').change(function(){
+		var mythis = $(this);
+		var level = $(this).attr('level');
+		var url = "/index.php{:U('lower')}";
+		$.get(url,{'id':$(mythis).val()},function(res){
+			if(res.length>0){
+				var str = '<option value="0">请选择</option>';
+				$.each(res,function(i , v){
+					str += "<option value='"+v.id+"'>"+v.name+"</option>";
+				})
+				var select = $('select');
+				if(level == 1){
+					select.eq(1).html('');
+					select.eq(2).html('');
+					select.eq(3).html('');
+				}else if(level == 2){
+					select.eq(2).html('');
+					select.eq(3).html('');
+				}
+				$('.select'+(parseInt(level)+1)).parent().css('display','');
+
+				$('.select'+(parseInt(level)+1)).html(str);
+			}else{
+				$('.select'+(parseInt(level)+1)).parent().css('display','none');
+			}
+
+		})
+	})
+	</script>
+</html>

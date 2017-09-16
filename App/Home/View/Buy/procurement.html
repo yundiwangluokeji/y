@@ -13,7 +13,7 @@
 	<body>
 		<div class="header">
 			<div class="mg">
-				<a class="goback" href="javascript:history.back();"><img src="__STYLE__/img/back.png"/></a>
+				<a class="goback" href="javascript:history.back(2);"><img src="__STYLE__/img/back.png"/></a>
 				<h1>确认订单</h1>
 			</div>
 		</div>
@@ -52,12 +52,12 @@
 						<b><img src="{$goods['images']}"/></b>
 						<div class="title">
 							<h1>{$goods['name']}</h1>
-							<p>颜色：{:session('cart')['color']}</p>
+							<p>颜色：{$color}</p>
 						</div>
-						<div class="price"><em>￥{$goods['price']}</em>× {:session('cart')['num']}</div>
+						<div class="price"><em>￥{$goods['price']}</em>× {$num}</div>
 					</div>
 				</span>
-				<p>合计: <em>￥<?php echo sprintf("%.2f",$goods['price'] * session('cart')['num']);?></em></p>
+				<p>合计: <em>￥{$count_price}</em></p>
 			</div>					
 			
 		</div>	

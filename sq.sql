@@ -60,7 +60,7 @@ create table if not exists `yd_brand`(
 --商品分类表
 */
 create table if not exists `yd_classification`(
-`brand_id` int(11) unsigned not null auto_increment primary key,
+`class_id` int(11) unsigned not null auto_increment primary key,
 `name` char(30) not null default ''  COMMENT '分类名称',
 `sorting` int(11) unsigned not null default 0 COMMENT '排序',
 `addtime` int unsigned COMMENT '添加时间',
@@ -269,14 +269,14 @@ create table if not exists `yd_address`(
 
 
 /*
---订单表
+--订单表 
 */
 create table if not exists `yd_order`(
 `order_id` int(11) unsigned not null auto_increment primary key,
 `order_sn` char(25) not null default '' COMMENT '订单号 当前时间拼接上六位随机数(20位) 20170902110938666666',
 `consignee_id` int(11) not null default 0 COMMENT '收货人id(代理商id)如果为0是普通用户购买',
 `count_price` decimal(10,2) unsigned not null default 0 COMMENT '订单总价',
-`order_status` tinyint(1) unsigned not null default 0 COMMENT '订单状态(0新订单,*级也确认) 需要多级确认',
+`order_status` tinyint(1) unsigned not null default 0 COMMENT '定单状态(0新订单,*级也确认) 需要多级确认',
 `pay_way` tinyint(1) unsigned not null default 0 COMMENT '支付方式(1微信支付,2支付宝支付,3账户余额支付,4线下支付)',
 `pay_status` tinyint(1) unsigned not null default 0 COMMENT '支付状态(0未支付,1已支付,2线下支付)',
 `shipping_status` tinyint(1) unsigned not null default 0 COMMENT '发货状态(0为发货,1已发货)',
@@ -287,6 +287,7 @@ create table if not exists `yd_order`(
 `time` int unsigned not null default 0 COMMENT '订单生成时间',
 `courier` char(20) not null default ''  COMMENT '快递公司(直接快递名称)',
 `courier_sn` char(20) not null default ''  COMMENT '快递单号',
+'msg' varchar(255) COMMENT '买家留言',
 `updateitme` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP
 )engine=innodb default charset="utf8";
 
@@ -301,7 +302,7 @@ create table if not exists `yd_order_goods`(
 `goods_price` decimal(10,2) unsigned not null default 0 COMMENT '商品单价(对应代理商的价格)',
 `goods_num` int(5) unsigned not null default 0 COMMENT '商品数量',
 `goods_name` varchar(255) not null default '' COMMENT '商品名称',
-`goods_color` char(20) not null default '' COMMENT '商品颜色(颜色键：格式1，2，3...)',
+`goods_color` char(20) not null default '' COMMENT '商品颜色(颜色键:格式1,2,3...)',
 `color_num` char(50) not null default '' COMMENT '每个颜色对应的数量(1_5,2_10)格式:颜色键_数量',
 `time` int(11) unsigned COMMENT '添加时间'
 )engine=innodb default charset="utf8";

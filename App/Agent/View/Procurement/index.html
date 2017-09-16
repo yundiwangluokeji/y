@@ -26,18 +26,20 @@
 			<div class="purchase">
 				<!--预订-->
 				<ul class="mg">
+
+<foreach name="data" item="v">
 					<li>
 						<h2>
-							<span>商品编号:15462559</span>
+							<span>商品编号:{$v['order_goods']['goods_sn']}</span>
 							<a href="editPurchase.html"><img src="__STYLE__/img/edit.png"/></a>
 						</h2>
 						<div class="details clear">
-							<a href=""><img src="__STYLE__/img/firm.jpg"/></a>
+							<a href=""><img src="{$v['order_goods']['images']}"/></a>
 							<div class="title">
-								<h1><a href="">瑞士劳力士男表 日志型116233-63603G自动机械男士手表2</a></h1>
-								<p>颜色：白壳黑面</p>
+								<h1><a href="">{$v['order_goods']['goods_name']}</a></h1>
+								<p>颜色：{$v['order_goods']['goods_color']}</p>
 							</div>
-							<div class="price"><em>￥1588.00</em>× 5</div>
+							<div class="price"><em>￥{$v['order_goods']['goods_price']}</em>× {$v['order_goods']['goods_num']}</div>
 						</div>
 						<div class="handle">
 							<a class="unwound" href="javascript:;">
@@ -48,84 +50,12 @@
 								<span><img src="__STYLE__/img/purchase.png"/></span>
 								<em>采购</em>
 							</a>
-							<p>合计： <em>￥7940.00</em></p>
+							<p>合计： <em>￥{$v['count_price']}</em></p>
 						</div>					
 					</li>
-					<li>
-						<h2>
-							<span>商品编号:15462559</span>
-							<a href=""><img src="__STYLE__/img/edit.png"/></a>
-						</h2>
-						<div class="details clear">
-							<a href=""><img src="__STYLE__/img/firm.jpg"/></a>
-							<div class="title">
-								<h1><a href="">瑞士劳力士男表 日志型116233-63603G自动机械男士手表2</a></h1>
-								<p>颜色：白壳黑面</p>
-							</div>
-							<div class="price"><em>￥1588.00</em>× 5</div>
-						</div>
-						<div class="handle">
-							<a class="unwound" href="javascript:;">
-								<span><img src="__STYLE__/img/unwound.png"/></span>
-								<em>解除</em>
-							</a>
-							<a href="javascript:;">
-								<span><img src="__STYLE__/img/purchase.png"/></span>
-								<em>采购</em>
-							</a>
-							<p>合计： <em>￥7940.00</em></p>
-						</div>					
-					</li>
-					<li>
-						<h2>
-							<span>商品编号:15462559</span>
-							<a href=""><img src="__STYLE__/img/edit.png"/></a>
-						</h2>
-						<div class="details clear">
-							<a href=""><img src="__STYLE__/img/firm.jpg"/></a>
-							<div class="title">
-								<h1><a href="">瑞士劳力士男表 日志型116233-63603G自动机械男士手表2</a></h1>
-								<p>颜色：白壳黑面</p>
-							</div>
-							<div class="price"><em>￥1588.00</em>× 5</div>
-						</div>
-						<div class="handle">
-							<a class="unwound" href="javascript:;">
-								<span><img src="__STYLE__/img/unwound.png"/></span>
-								<em>解除</em>
-							</a>
-							<a href="javascript:;">
-								<span><img src="__STYLE__/img/purchase.png"/></span>
-								<em>采购</em>
-							</a>
-							<p>合计： <em>￥7940.00</em></p>
-						</div>					
-					</li>
-					<li>
-						<h2>
-							<span>商品编号:15462559</span>
-							<a href=""><img src="__STYLE__/img/edit.png"/></a>
-						</h2>
-						<div class="details clear">
-							<a href=""><img src="__STYLE__/img/firm.jpg"/></a>
-							<div class="title">
-								<h1><a href="">瑞士劳力士男表 日志型116233-63603G自动机械男士手表2</a></h1>
-								<p>颜色：白壳黑面</p>
-							</div>
-							<div class="price"><em>￥1588.00</em>× 5</div>
-						</div>
-						<div class="handle">
-							<a class="unwound" href="javascript:;">
-								<span><img src="__STYLE__/img/unwound.png"/></span>
-								<em>解除</em>
-							</a>
-							<a href="javascript:;">
-								<span><img src="__STYLE__/img/purchase.png"/></span>
-								<em>采购</em>
-							</a>
-							<p>合计： <em>￥7940.00</em></p>
-						</div>					
-					</li>
+</foreach>
+
+					
 				</ul>
 				
 				<!--购买-->
@@ -151,69 +81,7 @@
 							<p>合计： <em>￥7940.00</em></p>
 						</div>					
 					</li>
-					<li>
-						<h2>
-							<span>商品编号:15462559</span>
-							<a href=""><img src="__STYLE__/img/edit.png"/></a>
-						</h2>
-						<div class="details clear">
-							<a href=""><img src="__STYLE__/img/firm.jpg"/></a>
-							<div class="title">
-								<h1><a href="">瑞士劳力士男表 日志型116233-63603G自动机械男士手表2</a></h1>
-								<p>颜色：白壳黑面</p>
-							</div>
-							<div class="price"><em>￥1588.00</em>× 5</div>
-						</div>
-						<div class="handle">
-							<a class="delete" href="javascript:;">
-								<span><img src="__STYLE__/img/unwound.png"/></span>
-								<em>删除</em>
-							</a>
-							<p>合计： <em>￥7940.00</em></p>
-						</div>					
-					</li>
-					<li>
-						<h2>
-							<span>商品编号:15462559</span>
-							<a href=""><img src="__STYLE__/img/edit.png"/></a>
-						</h2>
-						<div class="details clear">
-							<a href=""><img src="__STYLE__/img/firm.jpg"/></a>
-							<div class="title">
-								<h1><a href="">瑞士劳力士男表 日志型116233-63603G自动机械男士手表2</a></h1>
-								<p>颜色：白壳黑面</p>
-							</div>
-							<div class="price"><em>￥1588.00</em>× 5</div>
-						</div>
-						<div class="handle">
-							<a class="delete" href="javascript:;">
-								<span><img src="__STYLE__/img/unwound.png"/></span>
-								<em>删除</em>
-							</a>
-							<p>合计： <em>￥7940.00</em></p>
-						</div>					
-					</li>
-					<li>
-						<h2>
-							<span>商品编号:15462559</span>
-							<a href=""><img src="__STYLE__/img/edit.png"/></a>
-						</h2>
-						<div class="details clear">
-							<a href=""><img src="__STYLE__/img/firm.jpg"/></a>
-							<div class="title">
-								<h1><a href="">瑞士劳力士男表 日志型116233-63603G自动机械男士手表2</a></h1>
-								<p>颜色：白壳黑面</p>
-							</div>
-							<div class="price"><em>￥1588.00</em>× 5</div>
-						</div>
-						<div class="handle">
-							<a class="delete" href="javascript:;">
-								<span><img src="__STYLE__/img/unwound.png"/></span>
-								<em>删除</em>
-							</a>
-							<p>合计： <em>￥7940.00</em></p>
-						</div>					
-					</li>
+					
 				</ul>
 			</div>
 		</div>

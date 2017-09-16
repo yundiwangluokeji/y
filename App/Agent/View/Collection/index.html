@@ -25,7 +25,7 @@
 	<div class="content">
 		<div class="items">
 			<!-- 数据放置区 -->
-			<img id="load" style="display:none;position:fixed;width:50px;height: 50px;top:45%;left:45%;" src="__STYLE__/img/load3.gif">
+			
 		</div>
 	</div>
 	<div class="mark"></div>
@@ -96,7 +96,7 @@ function getdata()
 {	
 		if(re != 1){return;}//上一次ajax没有回来就不执行请求
 		re = 2;//关闭
-		$('#load').show();//现在正在加载的图片
+		var index = layer.msg('正在加载...', {icon: 16,shade: [0.1,'#CECECE'],time:0});//现在正在加载的图片
 		page = page + 1;
 		var url = "{:U('Agent/Collection/collectiondata')}";
 		$.get(url,{p:page},function(data){
@@ -107,7 +107,7 @@ function getdata()
                			layer.msg('没有了');
                			re = 2;//关闭加载开关
                		}
-               		$('#load').hide();//隐藏正在加载的图片
+               		layer.close(index);//隐藏正在加载的图片
 
                	})
 				

@@ -1,0 +1,17 @@
+<foreach name="data" item="v">
+	<li>
+		<a href="{:U('Home/goods/goodDetail',array('goods_id'=>$v['agent_goods_id'],'agent'=>session('AgentUser')))}"><img src="__STYLE__/img/firm.jpg"/></a>
+		<div class="details">
+			<h1><a href="">{$v['goods_name']}</a></h1>
+			<p>商品编号:{$v['goods_sn']}</p>
+			<h2>批价:<em>￥{$v['agent_price']}</em></h2>
+			<span class="clear">									
+				<div class="collect">
+					<b>165</b><!-- {:$_SERVER[HTTP_HOST]} -->
+					<img src="__STYLE__/img/collect.png"/>								
+				</div>	
+				<div class="code" onclick="code({$v[agent_goods_id]},{:session('AgentUser')})"><img src="__STYLE__/img/code.png"/></div>
+			</span>
+		</div>
+	</li>
+</foreach>
