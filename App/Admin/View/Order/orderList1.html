@@ -50,7 +50,7 @@
 							<a href="http://phpshe.com/demo/phpshe/product/42" class="fl mar5" target="_blank"><img src="{$vo.images}" width="40" height="40" class="imgbg"></a>
 							<div class="fl">
 								<a href="http://phpshe.com/demo/phpshe/product/42" title="{$vo.goods_name}" target="_blank" class="cblue dd_name">{$vo.goods_name}</a>
-								<p class="c999 mat5">[主要颜色：{$vo.goods_color}]&nbsp;&nbsp;</p>
+								<p class="c999 mat5">[&nbsp;&nbsp;&nbsp;主要颜色：<foreach name="vo['goods_color']" item="v" key="k">{$v}({$vo.color_num.$k}只)&nbsp;&nbsp;&nbsp;</foreach>]&nbsp;&nbsp;</p>
 							</div>
 							<span class="fr"><span class="num">{$vo.goods_price}</span>(×{$vo.goods_num})</span>
 							<div class="clear"></div>
@@ -64,7 +64,7 @@
 					<td width="250" class="aleft" valign="top" style="color:#555">
 						<p>【姓名】{$vo.username} <span class="c888">({$vo.mobile})</span></p>
 						<p>【地址】{$vo.address}</p>
-						<!--<p>【留言】<span class="c888">管他的</span></p>-->
+						<p>【留言】<span class="c888">{$vo.msg}</span></p>
 					</td>
 					<td width="80">
 						<img src="__STYLE__/images/fu_<if condition='$vo.pay_status eq 0'>0<else />1</if>.png" title="">
