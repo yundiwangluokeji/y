@@ -1,24 +1,92 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>选择支付方式</title>
-</head>
-<body>
-<label>
-<span>线下支付</span>
-<input name="name" type="radio" />
-</label>
-<label>
-<span>支付宝支付</span>
-<input name="name" type="radio" />
-</label>
-<label>
-<span>微信支付</span>
-<input name="name" type="radio" />
-</label>
-<!-- 选择支付方式:线下支付、支付宝支付、微信支付
-选择快递方式：中通快递、圆通快递、申通快递、韵达快递、顺丰快递、天天快递...
-展示：订单号、订单总价、
-商品展示：商品名称 、购买数量、商品单价、购买总数量、所选颜色分别对应的数量  -->
-</body>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" /> 
+		<title>支付方式</title>
+		<link rel="stylesheet" href="__STYLE__/css/public.css" />
+		<link rel="stylesheet" href="__STYLE__/css/pay_way.css" />
+		<script type="text/javascript" src="__STYLE__/js/jquery-1.7.1.min.js" ></script>
+		<script type="text/javascript" src="__STYLE__/layer/layer.js"></script>
+		<script>document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';$(window).resize(function(){document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';})</script>
+				<style type="text/css">		
+		select{
+			width:100%;
+			height: 0.66rem;
+			border:none;background: none;
+			appearance:none;
+           -moz-appearance:none; /* Firefox */
+           -webkit-appearance:none; /* Safari 和 Chrome */
+           background:#2F3336 url(__STYLE__/img/arrow.png) no-repeat right center;background-size: 3% auto;
+           outline: none;
+           color: #fff;
+           }</style>
+
+	</head>
+	<body>
+		<div class="header">
+			<div class="mg">
+				<a class="goback" href="javascript:history.back();"><img src="__STYLE__/img/back.png"/></a>
+				<h1>支付方式</h1>
+			</div>
+		</div>
+		
+		<div class="contains">						
+			<div class="purchase">
+				<!--预订-->
+				<ul class="mg">
+					<li>
+						<h2>
+							<span>订单号:{$data['order_sn']}</span>
+						</h2>
+						<div class="details clear">
+							<a href="javascript:;"><img src="{$goods['images']}"/></a>
+							<div class="title">
+								<h1><a href="">{$goods['goods_name']}</a></h1>	
+							</div>
+							<div class="price"><em>￥{$ goods['goods_price']}</em></div>
+							<foreach name="goods['goods_color2']" item="vv" key="kk">
+							<div class='kind'><p>{$vv}</p><span >× {$kk}</span></div>
+							</foreach>
+						</div>
+						<div class="handle">
+						<p style="float:left;">共 <font> {$goods['count_num']} </font> 件商品</p>	
+						<p>合计: <font>￥{$data['count_price']}</font></p>
+						</div>					
+					</li>
+				</ul>
+
+				<form method="post">
+				<div class="express">
+				<select name="courier">
+				<foreach name="courier" item="courier_v">
+					<option value="{$courier_v}">{$courier_v}</option>
+				</foreach>
+				</select>
+				</div >
+					<div class="pay_way">
+						<div class="p_head">
+							支付方式
+						</div>
+						<div class="p_body">
+							<label class="on"><input name="paytype" type="radio" value="Alipay" checked/><i></i>支付宝支付 </label> 
+							<label><input name="paytype" type="radio" value="Weixin" disabled="true" /><i style="margin-left: 0.3rem"></i>微信支付 </label> 
+							<label><input name="paytype" type="radio" value="Offlinepay" /><i style="margin-left: 0.4rem"></i>线下支付 </label> 
+						</div>						
+					</div>
+					<button class="button" type="submit">确认支付</button>
+				</form>
+			</div>
+		</div>
+		
+		<script>
+			$(function(){
+				$('.p_body label').click(function(){
+					if($(this).find('input').val() == 'weixin'){layer.msg('暂不支持微信支付~~~');return;}
+					$(this).addClass('on').siblings('.p_body label').removeClass('on');
+				})
+				
+			});
+		</script>
+	</body>
 </html>

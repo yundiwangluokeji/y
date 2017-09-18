@@ -1,6 +1,7 @@
 <?php
 namespace Home\Controller;
 use Think\Controller;
+use Pay\Controller\AlipayController;
 
 class TemporaryController extends Controller
 {
@@ -9,6 +10,7 @@ class TemporaryController extends Controller
     // 临时商品
     public function goods()
     {
+
         $data = I('get.data');
         if(!$data){$this->_empty('非法访问！');exit;}
         //替换特殊符号

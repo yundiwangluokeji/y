@@ -28,7 +28,7 @@ create table if not exists `yd_config`(
 `configval` varchar(255) not null default '' COMMENT '配置值',
 `configsorting` int(11) unsigned not null default 0 COMMENT '配置排序',
 `configaddtime` int unsigned COMMENT '添加配置时间',
-`configupdatetime` timestamp
+`configupdatetime` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 )engine=innodb default charset="utf8";
 INSERT INTO `yd_config` VALUES ('1', '网站标题', 'title', '某某钟表有限公司', '0', '1503900186', '1503969557');
 INSERT INTO `yd_config` VALUES ('2', 'logo', 'logo', '2017-08-28/59a43bd9961ec.jpg', '0', '1503905263', '1503935449');
@@ -51,7 +51,7 @@ create table if not exists `yd_brand`(
 `logo` varchar(255) not null default '' COMMENT '品牌logo',
 `sorting` int(11) unsigned not null default 0 COMMENT '排序',
 `addtime` int unsigned COMMENT '添加时间',
-`updateitme` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP
+`updatetime`TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 )engine=innodb default charset="utf8";
 
 
@@ -64,7 +64,7 @@ create table if not exists `yd_classification`(
 `name` char(30) not null default ''  COMMENT '分类名称',
 `sorting` int(11) unsigned not null default 0 COMMENT '排序',
 `addtime` int unsigned COMMENT '添加时间',
-`updateitme` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP
+`updatetime`TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 )engine=innodb default charset="utf8";
 
 
@@ -90,7 +90,7 @@ create table if not exists `yd_goods`(
 `body` text COMMENT '商品主体内容',
 `sorting` int(11) unsigned not null default 0 COMMENT '排序',
 `addtime` int unsigned COMMENT '商品添加时间',
-`updateitme` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP
+`updatetime`TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 )engine=innodb default charset="utf8";
 /*
 --商品颜色：钢壳白面,白壳黑面,介金白面,介金黑面,介金金面,金壳白面,金壳金面,金壳黑面,玫瑰金壳白面玫瑰金壳黑面,玫瑰金壳玫瑰金面,介玫瑰金壳白面,介玫瑰金壳黑面,介玫瑰金壳玫瑰金面
@@ -115,7 +115,7 @@ create table if not exists `yd_agent_goods`(
 `goods_permissions` tinyint(1) unsigned not null default 0 COMMENT '商品浏览权限(0不公开,1对登录用户公开,2完全公开,代理商可以在后台分享一个二维码普通用户扫描二维码查看此商品--30分钟内有效)',
 `state` tinyint(1) unsigned not null default 0 COMMENT '商品状态(1购买的商品,2预定的商品)',
 `agent_addtime` int unsigned COMMENT '商品添加时间',
-`updateitme` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP
+`updatetime`TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 )engine=innodb default charset="utf8";
 
 /*
@@ -143,7 +143,7 @@ create table if not exists `yd_agent_config`(
 `address` varchar(255)  not null default ''  COMMENT '地址',
 `weixin` varchar(255)  not null default ''  COMMENT '代理商微信二维码',
 `addtime` int COMMENT '创建时间',
-`updateitme` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP
+`updatetime`TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 )engine=innodb default charset="utf8";
 
 
@@ -161,7 +161,7 @@ create table if not exists `yd_agent`(
 `path` varchar(255) not null default '' COMMENT '代理商关系路径(0_1_5_66)',
 `status` tinyint(1) unsigned not null default 0 COMMENT '用户状态(0禁用,1正常)',
 `addtime` int COMMENT '创建时间',
-`updateitme` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP
+`updatetime`TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 )engine=innodb default charset="utf8";
 
 
@@ -172,7 +172,7 @@ create table if not exists `yd_money`(
 `id` int(11) unsigned not null auto_increment primary key,
 `agent_id` int(11) not null default 0 COMMENT '代理商id',
 `money` varchar(255) not null default '0' COMMENT '货币(分为单位)',
-`updateitme` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP
+`updatetime`TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 )engine=innodb default charset="utf8";
 ------------------------------------------------------------------------------------------------------------------
 /*
@@ -197,17 +197,17 @@ create table if not exists `yd_money_log`(
 
 
 /*
--- 充值记录表
+-- 支付记录表
 */
 create table if not exists `yd_topup`(
 `id` int(11) unsigned not null auto_increment primary key,
 `agent_id` int(11) not null default 0 COMMENT '(代理商id)',
 `pay_type` tinyint(1) not null default 0 COMMENT '支付方式(1微信,2支付宝)',
-`order` char(25) not null default '' COMMENT '充值时使用的订单号(当前时间拼接上四位随机数共20位 2017082830286666)',
+`order` char(25) not null default '' COMMENT '支付时使用的订单号(充值22位，商品购买20位)',
 `order_sn` char(50) not null default '' COMMENT '第三方交易单号(支付宝，微信)',
 `res` tinyint(1) not null default 0 COMMENT '操作结果(0未支付,1成功,2支付失败)',
 `name` varchar(255) not null default '' COMMENT '商品名称',
-`price` decimal(10,2) unsigned not null default 0 COMMENT '充值金额',
+`price` decimal(10,2) unsigned not null default 0 COMMENT '支付金额',
 `url` varchar(255) not null default '' COMMENT '收银台页面上，商品展示的超链接',
 `body` char(50) not null default '' COMMENT '操作信息(商品描述)',
 `time` int(11) unsigned COMMENT '操作时间'
@@ -264,7 +264,7 @@ create table if not exists `yd_address`(
 `address` varchar(200) not null default '' COMMENT '详细地址',
 `is_default` tinyint(1) not null default 0 COMMENT '是否为默认地址(1是,0否)',
 `time` int(11) unsigned COMMENT '添加时间',
-`updateitme` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP
+`updatetime` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 )engine=innodb default charset="utf8";
 
 
@@ -287,8 +287,8 @@ create table if not exists `yd_order`(
 `time` int unsigned not null default 0 COMMENT '订单生成时间',
 `courier` char(20) not null default ''  COMMENT '快递公司(直接快递名称)',
 `courier_sn` char(20) not null default ''  COMMENT '快递单号',
-'msg' varchar(255) COMMENT '买家留言',
-`updateitme` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP
+`msg` varchar(255) COMMENT '买家留言',
+`updatetime` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 )engine=innodb default charset="utf8";
 
 /*
