@@ -18,7 +18,7 @@
 		</tr>
 		<tr>
 			<td align="right">当前状态：</td>
-			<td></td>
+			<td>{$vo.orderStatus}</td>
 		</tr>
         </foreach>
 		</tbody>
@@ -30,7 +30,7 @@
         <foreach item="vo" name="orderData">
         <tr>
 			<td align="right" width="80">用户帐号：</td>
-			<td><span class="c999">未登录用户</span></td>
+			<td><span class="c999"></span></td>
 		</tr>
 		<tr>
 			<td align="right">姓　　名：</td>
@@ -46,11 +46,11 @@
 		</tr>
 		<tr>
 			<td align="right">订单备注：</td>
-			<td></td>
+			<td>{$vo.msg}</td>
 		</tr>
 		<tr>
 			<td align="right">快递信息：</td>
-			<td>无</td>
+			<td>{$vo.courier}</td>
 		</tr>
         </foreach>
 		</tbody></table>
@@ -82,14 +82,16 @@
 		<table width="100%" border="0" cellspacing="0" cellpadding="0" class="order_view_list mat20">
     		<tbody>
             <tr>
-    			<td class="bgtt1" width="" align="center" colspan="2">商品名称</td>
+    			<td class="bgtt1" width="" align="center">商品名称</td>
+    			<td class="bgtt1" width="" align="center">商品颜色</td>
     			<td class="bgtt1" width="90" align="center">单价(元)</td>
     			<td class="bgtt1" width="90" align="center">数量</td>
     			<td class="bgtt1" width="110" align="center">小计(元)</td>
     		</tr>
             <foreach item="vo" name="orderData">
                 <tr>
-        			<td class="bgtt1" width="" align="center" colspan="2">{$vo.goods_name}</td>
+        			<td class="bgtt1" width="100" align="center">{$vo.goods_name}</td>
+        			<td class="bgtt1" width="250" align="center"><foreach name="vo['goods_color']" item="v" key="k">{$v}({$vo.color_num.$k}只)&nbsp;&nbsp;&nbsp;</foreach></td>
         			<td class="bgtt1" width="90" align="center">{$vo.goods_price}</td>
         			<td class="bgtt1" width="90" align="center">{$vo.goods_num}</td>
         			<td class="bgtt1" width="110" align="center">{$vo.count_price}</td>

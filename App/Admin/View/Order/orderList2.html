@@ -1,4 +1,28 @@
 <include file="Public/header" /> <!-- 头部 -->
+<style>
+    .gopay{
+        background: #FF5722;
+        height: 24px;
+        line-height: 24px;
+        padding: 0 8px;
+        border-radius: 2px;
+        color: #fff;
+        display: inline-block;
+        font-size: 12px;
+        border:none;
+    }
+    .btn{
+        background: #5CB85C;
+        height: 24px;
+        line-height: 24px;
+        padding: 0 8px;
+        border-radius: 2px;
+        color: #fff;
+        display: inline-block;
+        font-size: 12px;
+        border:none;
+    }
+</style>
 <div class="content">
 <include file="Public/left" /> <!-- 左边 -->
 <div class="right" style="height: 894px;">
@@ -47,9 +71,9 @@
 				<tbody><tr>
 					<td class="aleft" style="border-left:0;padding-left:10px;padding-right:15px">
 						<div class="dingdan_list" style="padding-top:0">
-							<a href="http://phpshe.com/demo/phpshe/product/42" class="fl mar5" target="_blank"><img src="{$vo.images}" width="40" height="40" class="imgbg"></a>
+							<a href="" class="fl mar5" target="_blank"><img src="{$vo.images}" width="40" height="40" class="imgbg"></a>
 							<div class="fl">
-								<a href="http://phpshe.com/demo/phpshe/product/42" title="{$vo.goods_name}" target="_blank" class="cblue dd_name">{$vo.goods_name}</a>
+								<a href="" title="{$vo.goods_name}" target="_blank" class="cblue dd_name">{$vo.goods_name}</a>
 								<p class="c999 mat5">[&nbsp;&nbsp;&nbsp;主要颜色：<foreach name="vo['goods_color']" item="v" key="k">{$v}({$vo.color_num.$k}只)&nbsp;&nbsp;&nbsp;</foreach>]&nbsp;&nbsp;</p>
 							</div>
 							<span class="fr"><span class="num">{$vo.goods_price}</span>(×{$vo.goods_num})</span>
@@ -71,10 +95,19 @@
 						<img src="__STYLE__/images/huo_<if condition='$vo.shipping_status eq 0'>0<else />1</if>.png" title="">
 						<!--<p><a href="Express order.html" class="cblue" onclick="return pe_dialog(this, &#39;打印快递单&#39;, 1000, 600)">[快递单]</a></p>-->
 					</td>
-					<td width="85"><span class="corg">未定</span><p class="mat5"><a href="__CONTROLLER__/orderDetail/order_id/{$vo.order_id}" class="c999">订单详情</a></p></td>
+					<td width="85"><span class="corg">{$vo.orderStatus}</span><p class="mat5"><a href="__CONTROLLER__/orderDetail/order_id/{$vo.order_id}" class="c999">订单详情</a></p></td>
 					<td width="85" style="border-right:0;">
-						<a class="tag_org" href="" onclick="return pe_dialog(this, &#39;订单付款&#39;, 600, 340, &#39;order_pay&#39;)">未定</a>
-						<p class="mat5"><a href="Cancellation of order.html" onclick="return pe_dialog(this, &#39;取消订单&#39;, 600, 430, &#39;order_close&#39;)" class="c999">取消订单</a></p>
+						<if condition="$vo.btnStatus eq 0">
+							<button class="gopay" order_sn="{$vo.order_sn}">付款</button>
+							<elseif condition="$vo.btnStatus eq 1"/>
+								<a class="tag_blue" href="__CONTROLLER__/delivery/order_sn/{$vo.order_sn}" onclick="return pe_dialog(this, &#39;填写发货信息&#39;, 600, 430, &#39;order_send&#39;)">发 货</a>
+								<!-- <p class="mat5"><a href="Cancellation of order.html" onclick="return pe_dialog(this, &#39;取消订单&#39;, 600, 430, &#39;order_close&#39;)" class="c999">取消订单</a></p> -->
+							<elseif condition="$vo.btnStatus eq 2"/>
+                                <button class="btn">已发货</button>
+							<else />
+								<a class="tag_org" href="" onclick="return pe_dialog(this, &#39;订单付款&#39;, 600, 340, &#39;order_pay&#39;)">未定义状态</a>
+								<!-- <p class="mat5"><a href="Cancellation of order.html" onclick="return pe_dialog(this, &#39;取消订单&#39;, 600, 430, &#39;order_close&#39;)" class="c999">取消订单</a></p> -->
+						</if>
 					</td>
 				</tr>
 				</tbody>
@@ -82,60 +115,19 @@
 		</foreach>
 <!-- 1 -->
 
-
-
-			<!-- 3 -->
-						<div class="hy_ordertw c666 mat10">
-			订单编号：<span class="num" style="margin-right:60px">170812150457105</span>
-			下单时间：<span class="num">2017-08-12 15:04</span>
-		</div>
-
-		<table width="100%" border="0" cellspacing="0" cellpadding="0" class="hy_orderlist">
-		<tbody><tr>
-			<td class="aleft" style="border-left:0;padding-left:10px;padding-right:15px">
-								<div class="dingdan_list" style="padding-top:0">
-					<a href="http://phpshe.com/demo/phpshe/product/43" class="fl mar5" target="_blank"><img src="__STYLE__/images/thumb_100x100_20170503142610z.jpg" width="40" height="40" class="imgbg"></a>
-					<div class="fl">
-						<a href="http://phpshe.com/demo/phpshe/product/43" title="phpshe测试商品韩版女装夏装新款V领显瘦系带条纹衬衫" target="_blank" class="cblue dd_name">phpshe测试商品韩版女装夏装新款V领显瘦系带条...</a>
-												<p class="c999 mat5">[尺码：S]&nbsp;&nbsp;[主要颜色：萱草蓝]&nbsp;&nbsp;</p>
-											</div>
-					<span class="fr"><span class="num">108.0</span>(×1)</span>
-					<div class="clear"></div>
-				</div>
-							</td>
-			<td width="110">
-				<p class="corg num strong">108.0</p>
-				<p class="c999">（含运费：0.0）</p>
-				<p class="c999">微信支付</p>
-			</td>
-			<td width="250" class="aleft" valign="top" style="color:#555">
-				<p>【姓名】体育界 <span class="c888">(13545678901)</span></p>
-				<p>【地址】河北石家庄桥西区横膈膜内的</p>
-				<p>【留言】<span class="c888"></span></p>
-			</td>
-			<td width="80">
-				<img src="__STYLE__/images/fu_1.png" title="2017-08-15 15:08">
-				<img src="__STYLE__/images/huo_0.png" title="">
-				<p><a href="Express order.html" class="cblue" onclick="return pe_dialog(this, &#39;打印快递单&#39;, 1000, 600)">[快递单]</a></p>
-			</td>
-			<td width="85"><span class="corg">等待发货</span><p class="mat5"><a href="Order details.html" target="_blank" class="c999">订单详情</a></p></td>
-			<td width="85" style="border-right:0;">
-								<a class="tag_blue" href="Consignment page.html" onclick="return pe_dialog(this, &#39;填写发货信息&#39;, 600, 430, &#39;order_send&#39;)">发 货</a>
-				<p class="mat5"><a href="Cancellation of order.html" onclick="return pe_dialog(this, &#39;取消订单&#39;, 600, 430, &#39;order_close&#39;)" class="c999">取消订单</a></p>
-							</td>
-		</tr>
-		</tbody></table>
-		<!--3  -->
-
-			</div>
+	</div>
 			<!-- end -->
+
 	<div class="right_bottom">
-		<span class="fr fenye"><a href="http://phpshe.com/demo/phpshe/admin.php?mod=order&amp;page=1">首页</a><a href="http://phpshe.com/demo/phpshe/admin.php?mod=order&amp;page=1" class="sel">1</a><a href="http://phpshe.com/demo/phpshe/admin.php?mod=order&amp;page=2">2</a><a href="http://phpshe.com/demo/phpshe/admin.php?mod=order&amp;page=3">3</a><a href="http://phpshe.com/demo/phpshe/admin.php?mod=order&amp;page=4">4</a><a href="http://phpshe.com/demo/phpshe/admin.php?mod=order&amp;page=5">5</a><a href="http://phpshe.com/demo/phpshe/admin.php?mod=order&amp;page=6">6</a><a href="http://phpshe.com/demo/phpshe/admin.php?mod=order&amp;page=7">7</a><a href="http://phpshe.com/demo/phpshe/admin.php?mod=order&amp;page=7">末页</a><style type="text/css">
-.fenye{text-align:right;}
-.fenye a{border:1px #ccc solid; padding:0 10px; border-radius:2px; color:#666; background:#fff;display:inline-block;  height:24px; line-height:24px; font-weight:normal; margin-left:3px;}
-.fenye a:hover,.fenye .sel{background:#1DABDF; color:#fff; border:1px #0D95C7 solid;  padding:0 10px;}
-.fenye .sel{ font-weight:bold;}
-</style></span>
+		<div class="pagecut">
+			{$page}
+		</div>
+		<style>
+			.pagecut{text-align:right;}
+			.pagecut a, .current{border:1px #ccc solid; padding:0 10px; border-radius:2px; color:#666; background:#fff;display:inline-block;  height:24px; line-height:24px; font-weight:normal; margin-left:3px;}
+			.pagecut a:hover, .current{background:#1DABDF; color:#fff; border:1px #0D95C7 solid;  padding:0 10px;}
+			.current{ font-weight:bold;}
+		</style>
 		<div class="clear"></div>
 	</div>
 </div>
@@ -150,6 +142,22 @@ function win_init() {
 	//$(".right_main").css("height", $(window).height() -  $(".pagetop").height() - $(".now:eq(0)").outerHeight() - $(".right_bottom").outerHeight() + 38);
 }
 $(function(){
+	$('.gopay').click(function () {
+	    var that = $(this);
+	    $.post(
+	        '__CONTROLLER__/gopay',
+			{'order_sn':that.attr('order_sn')},
+			function (data) {
+                if (data.status != 1) {
+                    alert(data.msg);
+                }
+//				刷新页面
+                parent.location.reload();
+            },
+			'json'
+		);
+    });
+
 	if ($(".right_bottom").height() == 0) {
 		$(".right_bottom").remove();
 	}

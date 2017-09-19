@@ -93,22 +93,15 @@
 		</form>
 	</div>
 	<div class="right_bottom">
-		<span class="fl mal10">
-			<input type="checkbox" name="checkall" onclick="pe_checkall(this, &#39;product_id&#39;)">
-			<button href="__CONTROLLER__/delGood" onclick="return pe_cfall(this, &#39;product_id&#39;, &#39;form&#39;, &#39;批量删除&#39;)">批量删除</button>
-			<button href="admin.php?mod=product&amp;act=order&amp;token=185dbf0e05b36cd40737acb79e73f95c" onclick="pe_doall(this,&#39;form&#39;)">更新排序</button>
-			<button href="admin.php?mod=product&amp;act=state&amp;state=1&amp;token=185dbf0e05b36cd40737acb79e73f95c" onclick="return pe_cfall(this, &#39;product_id&#39;, &#39;form&#39;, &#39;批量上架&#39;)">批量上架</button>
-			<button href="admin.php?mod=product&amp;act=state&amp;state=2&amp;token=185dbf0e05b36cd40737acb79e73f95c" onclick="return pe_cfall(this, &#39;product_id&#39;, &#39;form&#39;, &#39;批量下架&#39;)">批量下架</button>
-			<button href="admin.php?mod=product&amp;act=tuijian&amp;tuijian=1&amp;token=185dbf0e05b36cd40737acb79e73f95c" onclick="return pe_cfall(this, &#39;product_id&#39;, &#39;form&#39;, &#39;批量推荐&#39;)">批量推荐</button>
-			<button href="admin.php?mod=product&amp;act=tuijian&amp;tuijian=0&amp;token=185dbf0e05b36cd40737acb79e73f95c" onclick="return pe_cfall(this, &#39;product_id&#39;, &#39;form&#39;, &#39;取消推荐&#39;)">取消推荐</button>
-			<button type="button" onclick="product_move()">批量转移商品</button>
-		</span>
-		<span class="fr fenye"><a href="">首页</a><a href="" class="sel">1</a><a href="">2</a><a href="">末页</a><style type="text/css">
-.fenye{text-align:right;}
-.fenye a{border:1px #ccc solid; padding:0 10px; border-radius:2px; color:#666; background:#fff;display:inline-block;  height:24px; line-height:24px; font-weight:normal; margin-left:3px;}
-.fenye a:hover,.fenye .sel{background:#1DABDF; color:#fff; border:1px #0D95C7 solid;  padding:0 10px;}
-.fenye .sel{ font-weight:bold;}
-</style></span>
+        <div class="pagecut">
+			{$page}
+		</div>
+		<style>
+			.pagecut{text-align:right;}
+			.pagecut a, .current{border:1px #ccc solid; padding:0 10px; border-radius:2px; color:#666; background:#fff;display:inline-block;  height:24px; line-height:24px; font-weight:normal; margin-left:3px;}
+			.pagecut a:hover, .current{background:#1DABDF; color:#fff; border:1px #0D95C7 solid;  padding:0 10px;}
+			.current{ font-weight:bold;}
+		</style>
 		<div class="clear"></div>
 	</div>
 </div>

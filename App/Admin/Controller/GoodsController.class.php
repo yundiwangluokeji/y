@@ -18,6 +18,11 @@ class GoodsController extends PublicController
             $where.=" and brand_id = '".I('get.brand')."'";
         }
 
+        $count = D('goods')->count();
+        $Page       = new \Think\Page($count,5);// 实例化分页类 传入总记录数和每页显示的记录数(10)
+        $show       = $Page->show();// 分页显示输出
+        $this->assign('page',$show);// 赋值分页输出
+
         $goodData = D('goods')->selectGoodData($where);
         if ($goodData['status']) {
             for ($i=0; $i < count($goodData['data']); $i++) {
