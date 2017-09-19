@@ -1,7 +1,8 @@
 <?php
 namespace Home\Controller;
+use Think\Controller;
 
-class BuyController extends PublicController
+class BuyController extends Controller
 {
 	public function index()
 	{
@@ -267,7 +268,9 @@ class BuyController extends PublicController
 	//个人购买确定
 	public function confirm()
 	{
-		$this->display();
+		header('location:'.U('Temporary/confirm'));
+
+		// $this->display();
 	}
 
 	//支付结果显示
@@ -320,6 +323,8 @@ class BuyController extends PublicController
 						M()->commit();
 						//消除session中的商品
 						session('cart',null);
+						
+						$this->addgoods($order_id,$buy);//给用户添加商品
 						$this->payres('支付成功',1);exit;
 					}else{
 						M()->rollback();
@@ -358,6 +363,23 @@ class BuyController extends PublicController
 				$log['msg'] = '购买商品:'.M('order_goods')->where(array('order_id'=>$order_id))->getField('goods_name');
 				$log['time'] = time();
 				return $log_res = M('money_log')->add($log);
+	}
+
+
+	//给代理商添加商品
+	protected function addgoods($order_id,$status)
+	{
+		$order_goods = M('order_goods')->where(array('order_id'=>$order_id))->find();
+		$datas['agent_id'] = session('AgentUser');//购买者id
+		$datas['goods_permissions'] = 2;
+		$datas['agent_goods_id'] = $order_goods['goods_id'];//商品id
+		$datas['agent_price'] = $order_goods['goods_price'];// 商品价格
+		$datas['agent_color'] = $order_goods['goods_color'];//商品颜色
+		$datas['agent_is_shelves'] = 1;//是否上架
+		$datas['agent_inventory'] = $order_goods['goods_num'];//是否上架
+		$datas['state'] = $status;//商品状态(1购买的商品,2预定的商品)
+		$datas['time'] = time();//商品状态(1购买的商品,2预定的商品)
+		M('agent_goods')->add($datas);
 	}
 
 }

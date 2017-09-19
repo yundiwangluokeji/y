@@ -3,12 +3,23 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" /> 
-		<title>南方钟表</title>
+		<title>订单确认</title>
 		<link rel="stylesheet" href="__STYLE__/css/public.css" />
 		<link rel="stylesheet" href="__STYLE__/css/orderAddress.css" />
-		<link rel="stylesheet" href="__STYLE__/css/LArea.css" />
 		<script type="text/javascript" src="__STYLE__/js/jquery-1.7.1.min.js" ></script>
+		<script type="text/javascript" src="__STYLE__/layer/layer.js"></script>
 		<script>document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';$(window).resize(function(){document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';})</script>
+		<style type="text/css">
+		select{
+			width:60%;
+			height: 0.8rem;
+			border:none;background: none;
+			appearance:none;
+           -moz-appearance:none; /* Firefox */
+           -webkit-appearance:none; /* Safari 和 Chrome */
+           background: url(__STYLE__/img/localize.png) no-repeat right center;background-size: 8% auto;width: 76%;
+           outline: none;
+           }</style>
 	</head>
 	<body>
 		<div class="header">
@@ -21,140 +32,130 @@
 		<div class="contains">					
 			<!--编辑地址-->
 			<div class="editAddress">
-				<form>
+				<form method="post" action="" onsubmit="return mysubmit();">
 					<label>
-						<span>收货人真实姓名</span>
-						<input type="text" />
+						<span>姓名</span>
+						<input name="name" type="text" />
 					</label>
 					<label>
 						<span>手机号</span>
-						<input type="tel"  maxlength="11" onblur="isTel(this.value);"/>
+						<input type="tel" name="mobile"  maxlength="11" />
 					</label>
 					<label>
-						<span>省市区</span>
-						<input id="demo1" type="text" readonly="readonly" value=""/>
-						<input id="value1" type="hidden" value="20,234,504">
-						<img src="__STYLE__/img/localize.png"/>
+						<span>选择省</span>
+							<select name="area[province]" class="province" level="1" >
+									<option value="0">请选择省份</option>
+								<foreach name="data" item="v">
+									<option value="{$v.id}">{$v.name}</option>
+								</foreach>
+							</select>
+					</label>
+					<label>
+						<span>选择市</span>
+							<select name="area[city]" class="select2" level="2">
+							<foreach name="address[city_]" item="city_v">
+								<option  value="{$city_v['id']}" >{$city_v['name']}</option>
+							</foreach>
+							</select>
+					</label>
+					<label>
+						<span>选择区</span>
+							<select  name="area[district]" class="select3" level="3">
+							<foreach name="address[district_]" item="district_v">
+								<option  value="{$district_v['id']}" >{$district_v['name']}</option>
+							</foreach>
+							</select>
+					</label>
+					<label>
+						<span>选择乡镇</span>
+							<select name="area[twon]"  class="select4">
+							<foreach name="address[twon_]" item="twon_v">
+								<option  value="{$twon_v['id']}" >{$twon_v['name']}</option>
+							</foreach>
+							</select>
 					</label>
 					<label>
 						<span>详细地址</span>
-						<input type="text" />
+						<input type="text" name="address" value="{$address.address}" placeholder="请输入详细地址" />
 					</label>
 					
-					<a class="keepEdit mg" href="javascript:;" onclick="keepEdit();">保存收货信息</a>
-				</form>
+					<!-- <a class="keepEdit mg" href="javascript:;" onclick="keepEdit();">保存收货信息</a> -->
 			</div>	
 			
 			<div class="informate">
-				<h2>商品编号:15462559</h2>
+				<h2>商品编号:{$goodsdata['goods_sn']}</h2>
 				<span>
 					<div class="mg clear">
 						<b><img src="__STYLE__/img/firm.jpg"/></b>
 						<div class="title">
-							<h1>瑞士劳力士男表 日志型116233-63603G自动机械男士手表2</h1>
-							<p>颜色：白壳黑面</p>
+							<h1>{$goodsdata['name']}</h1>
+							<p>颜色：{$color}</p>
 						</div>
-						<div class="price"><em>￥1588.00</em>× 5</div>
+						<div class="price"><em>￥{$goodsdata['agent_price']}</em>× {$num}</div>
 					</div>
 				</span>
-				<p>合计： <em>￥7940.00</em></p>
+				<p>合计： <em>￥{$count_price}</em></p>
 			</div>					
 			
 		</div>			
-		<button class="referOrder">提交</button>		
+		<button class="referOrder">确认下单并支付</button>		
+		</form>
 		
 		<!--提示添加收货地址-->
 		<div class="tipAddress"></div>	
-		
-		<script type="text/javascript" src="__STYLE__/js/LArea.js" ></script>
-		<script type="text/javascript" src="__STYLE__/js/LAreaData1.js" ></script>
-		<script type="text/javascript" src="__STYLE__/js/LAreaData2.js" ></script>
-		
 		<script>
-			$(function(){
-				$('.referOrder').click(function(){	
-					$('.tipAddress').fadeIn();
-					$('.tipAddress').text('请添加收货地址');
-					setTimeout(function(){
-						$('.tipAddress').fadeOut();
-					},2000)
-				});
-				
-				//省市级
-				var area1 = new LArea();
-				area1.init({
-					'trigger': '#demo1', //触发选择控件的文本框，同时选择完毕后name属性输出到该位置
-					'valueTo': '#value1', //选择完毕后id属性输出到该位置
-					'keys': {
-						id: 'id',
-						name: 'name'
-					}, //绑定数据源相关字段 id对应valueTo的value属性输出 name对应trigger的value属性输出
-					'type': 1, //数据源类型
-					'data': LAreaData //数据源
-				});
-				area1.value=[1,13,3];//控制初始位置，注意：该方法并不会影响到input的value
-				var area2 = new LArea();
-				area2.init({
-					'trigger': '#demo2',
-					'valueTo': '#value2',
-					'keys': {
-						id: 'value',
-						name: 'text'
-					},
-					'type': 2,
-					'data': [provs_data, citys_data, dists_data]
-				});	
-			});
-			
-			//表单验证
-			var txtTip = $('.tipAddress');
-			var regtel = /0?(13|14|15|18)[0-9]{9}/;				
-			function isTel(obj){
-				if(!regtel.test(obj)){
-					txtTip.fadeIn();
-					txtTip.text('请填写11位有效手机号码');
-					setTimeout(function(){
-						txtTip.fadeOut();
-					},1500)
-				}else{
-					obj;					
-				};		
-			};
-			function keepEdit(){
-				if($('.editAddress label:nth-child(1) input').val() == ""){
-					txtTip.fadeIn();
-					txtTip.text('请输入收货人姓名');
-					setTimeout(function(){
-						txtTip.fadeOut();
-					},1500);
-				}else if($('.editAddress label:nth-child(2) input').val() == ""){
-					txtTip.fadeIn();
-					txtTip.text('请输入收件人手机号');
-					setTimeout(function(){
-						txtTip.fadeOut();
-					},1500);
-				}else if($('.editAddress label:nth-child(3) input').val() == ""){
-					txtTip.fadeIn();
-					txtTip.text('请选择省市区');
-					setTimeout(function(){
-						txtTip.fadeOut();
-					},1500);
-				}else if($('.editAddress label:nth-child(4) input').val() == ""){
-					txtTip.fadeIn();
-					txtTip.text('请输入详细地址');
-					setTimeout(function(){
-						txtTip.fadeOut();
-					},1500);
-				}else if(!regtel.test($('.editAddress label:nth-child(2) input').val())){
-					txtTip.fadeIn();
-					txtTip.text('请填写11位有效手机号码');
-					setTimeout(function(){
-						txtTip.fadeOut();
-					},1500);
+function mysubmit()
+{
+				regtel = {:__MOBILE__};
+				if($('input[name=name]').val() == ""){
+					layer.msg('请输入收货人姓名');return false;
+				}else if(!regtel.test($('input[name=mobile]').val())){
+					layer.msg('请输正确填写收件人手机号');return false;
+				}else if($('.province').val() == 0 || !$('.province').val()){
+					layer.msg('请选择省份');
+					return false;
+				}else if(!$('.select2').val() || $('.select2').val() == 0){
+					layer.msg('请选择市');
+					return false;
+				}else if(!$('.select3').val() || $('.select3').val() == 0){
+					layer.msg('请选择区');
+					return false;
+				}else if($('input[name=address]').val() == ""){
+					layer.msg('请输入详细地址');return false;
 				}else{
 					return true;
 				};
-			};
+}
 		</script>
 	</body>
+<script type="text/javascript">
+$('select').change(function(){
+		var mythis = $(this);
+		var level = $(this).attr('level');
+		var url = "/index.php{:U('lower')}";
+		$.get(url,{'id':$(mythis).val()},function(res){
+			if(res.length>0){
+				var str = '<option value="0">请选择</option>';
+				$.each(res,function(i , v){
+					str += "<option value='"+v.id+"'>"+v.name+"</option>";
+				})
+				var select = $('select');
+				if(level == 1){
+					select.eq(1).html('');
+					select.eq(2).html('');
+					select.eq(3).html('');
+				}else if(level == 2){
+					select.eq(2).html('');
+					select.eq(3).html('');
+				}
+				$('.select'+(parseInt(level)+1)).parent().css('display','');
+
+				$('.select'+(parseInt(level)+1)).html(str);
+			}else{
+				$('.select'+(parseInt(level)+1)).parent().css('display','none');
+			}
+
+		})
+	})
+	</script>
 </html>

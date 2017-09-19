@@ -58,7 +58,7 @@
 				</a>
 			</div>
 			<div class="item">
-				<a href="{:U('Procurement/index')}">
+				<a href="{:U('Order/index')}">
 					<img class="icon" src="__STYLE__/img/user_3.png">
 					<img class="right" src="__STYLE__/img/user_0.png">
 					<p>客户订单</p>
@@ -112,12 +112,12 @@
 	</div>
 
 	<div class="footer">
-		<a href="{:U('Home/Index/index')}">
+		<a href="{:U('Home/Index/index',array('agent'=>$config['father']))}">
 			<img class="shadow" src="__STYLE__/img/index_icon.png">
 			<img class="light" src="__STYLE__/img/index_icon_on.png">
 			<span>首页</span>
 		</a>
-		<a href="{:U('Home/Recommended/index')}">
+		<a href="{:U('Home/Recommended/index',array('agent'=>$config['father']))}">
 			<img class="shadow" src="__STYLE__/img/tuijian_icon.png">
 			<img class="light" src="__STYLE__/img/tuijian_icon_on.png">
 			<span>推荐</span>

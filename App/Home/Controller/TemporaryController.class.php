@@ -34,15 +34,15 @@ class TemporaryController extends Controller
 
         $goods_id = $goodsdata['goods_id'];
         //商品库存
-        $inventory = M('agent_goods')->where(array('agent_goods_id'=>$goods_id))->getField('agent_inventory');
+        $inventory = M('agent_goods')->where(array('agent_goods_id'=>$goods_id,'agent_id'=>$goodsdata['agent_id']))->getField('agent_inventory');
         $this->assign('inventory',$inventory);
         //查询商品
-        $goodData = M('agent_goods')->where(array('agent_goods_id' => $goods_id))->find();
+        $goodData = M('agent_goods')->where(array('agent_goods_id' => $goods_id,'agent_id'=>$goodsdata['agent_id']))->find();
         // dump($goodData);exit;
 
         if ($goodData) {
             //增加点击量
-            M('agent_goods')->where(array('agent_goods_id'=>$goods_id))->setInc('agent_click_count',1);
+            M('agent_goods')->where(array('agent_goods_id'=>$goods_id,'agent_id'=>$goodsdata['agent_id']))->setInc('agent_click_count',1);
             M('goods')->where(array('goods_id'=>$goods_id))->setInc('click_count',1);
             //查询店铺名称
             $configname = M('agent_config')->where(array('agent_id'=>$goodsdata['agent_id']))->getField('name');
@@ -92,6 +92,7 @@ class TemporaryController extends Controller
     //订单确认
     public function confirm()
     {
+        // dump(session('cart'));exit;
         if(!session('cart')){$this->_empty('非法访问！');}
         if(session('cart')['type'] != 'confirm' || !session('cart')['goods_id'] || !session('cart')['agent_id']){$this->_empty('非法访问！');}
                 //查询当前商品
@@ -103,7 +104,7 @@ class TemporaryController extends Controller
                 $order['order_sn'] = date('YmdHis',time()).mt_rand(111111,999999);//订单号
                 //订单总价 如果是在代理商下买的 查询代理商的价格
                 if(session('cart')['agent_id']){
-                    $count_price = M('agent_goods')->where(array('goods_id'=>session('cart')['goods_id']))->getField('agent_price');
+                    $count_price = M('agent_goods')->where(array('agent_goods_id'=>session('cart')['goods_id'],'agent_id'=>session('cart')['agent_id']))->getField('agent_price');
                     $order['count_price'] = $count_price * array_sum(session('cart')['color']);
                 }else{
                     $count_price = M('goods')->where(array('goods_id'=>session('cart')['goods_id']))->getField('price');
@@ -117,6 +118,7 @@ class TemporaryController extends Controller
                 $order['username'] = $_POST['name'];//收货人姓名 
                 $order['mobile'] = $_POST['mobile'];//收货手机号
                 $order['address'] = M('area')->field('group_concat(name) as name')->where('id in('.implode(',',array_values($_POST['area'])).')')->select()[0]['name'].','.$_POST['address'];//地址
+                $order['agent_id'] = session('cart')['agent_id'];//属于谁的商品
                 $order['msg'] = session('cart')['msg'];
                 $order['time'] = time();
                 $order_res = M('order')->add($order);
@@ -167,7 +169,7 @@ class TemporaryController extends Controller
 
                 
                 $goods = M('goods')->field('name,goods_sn,images')->where(array('goods_id'=>session('cart')['goods_id']))->find();
-                $goods2 = M('agent_goods')->field('')->where(array('agent_goods_id'=>session('cart')['goods_id']))->find();
+                $goods2 = M('agent_goods')->field('')->where(array('agent_goods_id'=>session('cart')['goods_id'],'agent_id'=>session('cart')['agent_id']))->find();
                 if($goods && $goods2){
 
                     //处理颜色

@@ -42,9 +42,9 @@
 					<ul class="clear">
                         <foreach name="goodslist" item="vo">
     						<li>
-    							<a href="{:U('Home/Goods/goodDetail', array('goods_id' => $vo['goods_id']))}"><img src="{$vo.images}"/></a>
+    							<a href="{:U('Home/Goods/goodDetail', array('goods_id' => $vo['goods_id'],'agent'=>AGENT_ID))}"><img src="{$vo.images}"/></a>
     							<div class="details">
-    								<h1><a href="{:U('Home/Goods/goodDetail', array('goods_id' => $vo['goods_id']))}">{$vo.name}</a></h1>
+    								<h1><a href="{:U('Home/Goods/goodDetail', array('goods_id' => $vo['goods_id'],'agent'=>AGENT_ID))}">{$vo.name}</a></h1>
     								<p>编号:{$vo.goods_sn}</p>
     								<h2>批价:<em>￥{$vo.price}</em></h2>
     								<span class="clear">
@@ -75,9 +75,9 @@
 					<ul class="mg">
                         <foreach name="goodslist" item="vo">
     						<li>
-    							<a href="{:U('Home/Goods/goodDetail', array('goods_id' => $vo['goods_id']))}"><img src="{$vo.images}"/></a>
+    							<a href="{:U('Home/Goods/goodDetail', array('goods_id' => $vo['goods_id'],'agent'=>AGENT_ID))}"><img src="{$vo.images}"/></a>
     							<div class="details">
-    								<h1><a href="{:U('Home/Goods/goodDetail', array('goods_id' => $vo['goods_id']))}">{$vo.name}</a></h1>
+    								<h1><a href="{:U('Home/Goods/goodDetail', array('goods_id' => $vo['goods_id'],'agent'=>AGENT_ID))}">{$vo.name}</a></h1>
     								<p>编号:{$vo.goods_sn}</p>
     								<h2>批价:<em>￥{$vo.price}</em></h2>
     								<span class="clear">

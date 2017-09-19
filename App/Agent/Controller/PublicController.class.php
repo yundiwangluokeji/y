@@ -18,6 +18,7 @@ class PublicController extends Controller {
     	// dump(session());exit;
         $sql = "select 
         __AGENT__.username,
+        __AGENT__.father,
         __AGENT__.mobile,
         __AGENT__.status,
         __AGENT_CONFIG__.name,
@@ -25,6 +26,7 @@ class PublicController extends Controller {
         __AGENT_CONFIG__.address
          from __AGENT__ inner join __AGENT_CONFIG__ ON __AGENT_CONFIG__.agent_id = __AGENT__.id where __AGENT__.id = ".session('AgentUser').' limit 1';
         $agent = M()->query($sql)[0];
+        // dump($agent);exit;
         $this->config = $agent;
         $this->assign('config',$agent);
     }

@@ -1,0 +1,42 @@
+<foreach name="data" item="vv" key="key">
+<li>
+<h2>
+	<span style="float: left;color: #c3a07d;">
+	<php>if($vv['confirm'] == $mypath || (($vv['agent_id'] == session('AgentUser')) and !$vv['confirm'])){</php>
+		请确认订单
+	<php>}elseif(($vv['order_status'] < $mylevel) and ($vv['confirm'] != '0_0')){</php>
+		待下级确认
+	<php>}elseif(($vv['order_status'] >= $mylevel) and ($vv['confirm'] != '0_0')){</php>
+		待上级确认
+	<php>}elseif($vv['confirm'] == '0_0'){</php>
+		确认完成
+	<php>}</php>
+	</span>
+	<span style="float: right;">订单编号:{$vv['order_sn']}</span>
+</h2>
+<div class="details clear">
+	<a href=""><img style="width:70px;" src="{$vv['images']}"/></a>
+	<div class="title">
+		<h1><a href="">{$vv['goods_name']}</a></h1>
+		<div style="width:60%;float: left;">
+			<foreach name="vv[num_color]" item="vvv" key="key">
+				<p><span>颜色：{$vvv}</span><span style="margin-left: 0.3rem;">数量：{$key}</span></p>
+			</foreach>
+		</div>
+		<div style="text-align: right;width:40%;float: right;margin-top: <?php echo (count($vv['num_color']) - 1) * 5; ?>%;">
+		{$vv['goods_price']} x {$vv['goods_num']}
+		</div>
+	</div>
+</div>
+	<php>if($vv['confirm'] == $mypath || (($vv['agent_id'] == session('AgentUser')) and !$vv['confirm']) ){</php>
+		<div class="bottom bottom{$key}">
+			<a href="javascript:delivery('{$vv['ordersn']}',{$key});">已收款自己发货</a>
+		</div>	
+	<php>}</php>
+		<php>if($vv['confirm'] == $mypath || (($vv['agent_id'] == session('AgentUser')) and !$vv['confirm']) ){</php>
+		<div class="bottom bottom{$key}" style="float:right;">
+			<a  href="javascript:notice('{$vv['ordersn']}',{$key});">已收款通知上家发货</a>
+		</div>	
+	<php>}</php>
+</li>
+</foreach>

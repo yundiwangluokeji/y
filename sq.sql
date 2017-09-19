@@ -274,9 +274,11 @@ create table if not exists `yd_address`(
 create table if not exists `yd_order`(
 `order_id` int(11) unsigned not null auto_increment primary key,
 `order_sn` char(25) not null default '' COMMENT '订单号 当前时间拼接上六位随机数(20位) 20170902110938666666',
+`agent_id` int(11) unsigned not null default 0 COMMENT '属于谁的订单(买家agent_id)',
 `consignee_id` int(11) not null default 0 COMMENT '收货人id(代理商id)如果为0是普通用户购买',
 `count_price` decimal(10,2) unsigned not null default 0 COMMENT '订单总价',
-`order_status` tinyint(1) unsigned not null default 0 COMMENT '定单状态(0新订单,*级也确认) 需要多级确认',
+`order_status` tinyint(1) unsigned not null default 0 COMMENT '定单状态(0新订单,*级也确认) 需要多级确认(几级确认就写几)',
+`confirm` varchar(100) not null default '' COMMENT '订单确认(谁确认 写入谁上级的path路径) 每次操作要写订单日志',
 `pay_way` tinyint(1) unsigned not null default 0 COMMENT '支付方式(1微信支付,2支付宝支付,3账户余额支付,4线下支付)',
 `pay_status` tinyint(1) unsigned not null default 0 COMMENT '支付状态(0未支付,1已支付,2线下支付)',
 `shipping_status` tinyint(1) unsigned not null default 0 COMMENT '发货状态(0为发货,1已发货)',
@@ -290,7 +292,8 @@ create table if not exists `yd_order`(
 `msg` varchar(255) COMMENT '买家留言',
 `updatetime` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 )engine=innodb default charset="utf8";
-
+0_11_23_56
+0_11_24_67
 /*
 --订单详情表 订单商品表
 */
@@ -311,7 +314,7 @@ create table if not exists `yd_order_goods`(
 --订单操作日志
 */
 create table if not exists `yd_order_log`(
-`order_goods_id` int(11) unsigned not null auto_increment primary key,
+`order_log_id` int(11) unsigned not null auto_increment primary key,
 `order_id` int(11) unsigned not null default 0 COMMENT '订单id',
 `operation` int(11) unsigned not null default 0 COMMENT '操作者id',
 `msg` varchar(255) not null default '' COMMENT '操作信息',

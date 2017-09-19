@@ -31,11 +31,12 @@ class GoodsController extends PublicController
             }elseif(session('AgentUser')){
                 $where .= ' and goods_permissions in(1,2)';//如果登录情况可以查看对应代理商的权限为1，2的商品
             }else{
-                $where .= 'and goods_permissions = 2';//没有登录只能查看权限为2的商品
+                $where .= ' and goods_permissions = 2';//没有登录只能查看权限为2的商品
             }
 
             M()->execute('SET GLOBAL group_concat_max_len=10240000'); #sql语句修改 作用域全局
             $agent_goods_id = $agent_goodsmode->field('group_concat(agent_goods_id) as agent_goods_id')->where($where)->order('agent_sorting')->Page($_GET['P'],20)->select()[0]['agent_goods_id'];//代理商的商品id
+
             if ($agent_goods_id) {
                 if (is_array($agent_goods_id)) {
                     $agent_goods = $agent_goodsmode->where('agent_goods_id in('.$agent_goods_id.')')->getField('agent_goods_id,agent_price');//查询代理商的商品价格
@@ -48,6 +49,7 @@ class GoodsController extends PublicController
                     $where2 .= " and class_id = ".$class;
                 }
                 $goods = M('goods')->where($where2)->order('sorting')->select();
+                // dump(M());exit;
                 //将总评平台价格转换成代理商自己的价格
                 foreach($goods as &$v){
                     foreach($agent_goods as $key=>$val){
@@ -147,5 +149,10 @@ class GoodsController extends PublicController
             $this->error('暂无该商品信息', U('goodslist'));
         }
     }
+
+    // public function __destruct()
+    // {
+    //     dump(M());
+    // }
 
 }

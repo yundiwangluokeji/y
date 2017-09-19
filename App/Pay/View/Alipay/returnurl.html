@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>支付结果通知</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" />
+	<link rel="stylesheet" type="text/css" href="__STYLE__/css/public.css">
+	<link rel="stylesheet" type="text/css" href="__STYLE__/css/wallet.css">
+	<script type="text/javascript" src="__STYLE__/js/jquery-1.7.1.min.js"></script>
+	<script>
+		document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';
+		$(window).resize(function () {  
+			document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';
+		 }) 
+	</script>
+	<style type="text/css">li{font-size: 0.30rem;}</style>
+</head>
+<body>
+	<div class="header">
+		<a class="back" href="{:U('Money/index')}"><img src="__STYLE__/img/back_last.png"></a>
+		<i class="line"></i>
+		<h3>支付结果通知</h3>
+	</div>
+	<div style="width:99%;height: 150px;background: #fff;margin:0 auto;">
+	<div style="width:50%;float:left;height: 150px;line-height: 195px;text-align: center;font-size: 0.50rem;">支付金额</div>
+	<div style="width:50%;float:left;height: 150px;line-height: 195px;text-align: center;font-size: 0.50rem;color:#f00">￥{$data['total_fee']}</div>
+	</div>
+	<div style="width:99%;height: 250px;background: #fff;margin:0 auto;">
+	<ul style="width:99%;margin:0 auto;">
+	<li>订单号:{$data['out_trade_no']}</li>
+	<li>交易单号:{$data['trade_no']}</li>
+	<li>交易时间:{$data['time']}</li>
+	<li>交易结果:{$msg}</li>
+	</ul>
+	<div style="width:100%;line-height: 207px;text-align: center;"><a style="font-size: 0.40rem;" href="{:U('Home/Index/index',array('agent'=>$data['agent_id']))}">继续购买</a></div>
+	</div>
+	
+</body>
+</html>
