@@ -1,0 +1,43 @@
+<foreach name="data" item="v" key="keys">
+<style type="text/css">.num_color span{display: inline-block !important;}</style>
+					<li class="list{$keys}">
+						<h2>
+							<span>商品编号:{$v['order_goods']['goods_sn']}</span>
+							<a href="{:U('editor',array('goods'=>$v['order_goods']['goods_id']))}"><img src="__STYLE__/img/edit.png"/></a>
+						</h2>
+						<div class="details clear">
+							<a href=""><img src="{$v['order_goods']['images']}"/></a>
+							<div class="title" style="width:75%;">
+								<h1><a href="">{$v['order_goods']['goods_name']}</a></h1>
+								<div class="num_color" style="width:60%;float: left;">
+									<foreach name="v[num_color]" item="vvv" key="key">
+										<foreach name="vvv" item="vvvv" key="kkkk">
+										<p><span>颜色：{$vvvv}</span><span style="margin-left: 0.3rem;">数量：{$kkkk}</span></p>
+										</foreach>
+									</foreach>
+								</div>
+								<div style="text-align: right;width:40%;float: right;margin-top: <?php echo (count($v['num_color']) - 1) * 5; ?>%;">
+								{$v['order_goods']['goods_price']} x {$v['order_goods']['goods_num']}
+								</div>
+							</div>
+						</div>
+						<div class="handle">
+							<php>if($v['buy']){</php>
+							<a class="delete" href="javascript:deletes('{$v['ordersn']}',{$keys});">
+								<span><img src="__STYLE__/img/unwound.png"></span>
+								<em>删除</em>
+							</a>
+							<php>}else{</php>
+							<a class="unwound" href="javascript:remove('{$v['ordersn']}',{$keys});">
+								<span><img src="__STYLE__/img/unwound.png"/></span>
+								<em>解除</em>
+							</a>
+							<a href="{:U('Home/Goods/goodDetail',array('agent'=>$father,'goods_id'=>$v['order_goods']['goods_id']))}">
+								<span><img src="__STYLE__/img/purchase.png"/></span>
+								<em>采购</em>
+							</a>
+							<php>}</php>
+							<p>合计： <em>￥{$v['count_price']}</em></p>
+						</div>					
+					</li>
+</foreach>

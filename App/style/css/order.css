@@ -35,7 +35,7 @@ body{background: #1d2124;}
 .slide_down a:nth-child(2){border-top:none;}
 .slide_down a span{color: #c3a07d;}
 .purchaseNav .slide_down a:first-child span{border:none;}
-.purchase ul ol{display: none;}
+/*.purchase ul ol{display: none;}*/
 
 .back_top{position: fixed;right: 0.2rem;bottom: 1.2rem;width: 0.82rem;height: 0.82rem;cursor: pointer;border-radius: 50%;overflow: hidden;z-index: 50;}
 .back_top img{width: 100%;}

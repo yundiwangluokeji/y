@@ -7,8 +7,8 @@
 			<h2>批价:<em>￥{$v['agent_price']}</em></h2>
 			<span class="clear">									
 				<div class="collect">
-					<b>165</b><!-- {:$_SERVER[HTTP_HOST]} -->
-					<img src="__STYLE__/img/collect.png"/>								
+					<!-- <b>165</b>{:$_SERVER[HTTP_HOST]} -->
+					<img onclick="window.location.href='{:U('Procurement/editor',array('goods'=>$v['agent_goods_id']))}'" src="__STYLE__/img/edit.png"/>								
 				</div>	
 				<div class="code" onclick="code({$v[agent_goods_id]},{:session('AgentUser')})"><img src="__STYLE__/img/code.png"/></div>
 			</span>

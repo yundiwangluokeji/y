@@ -7,12 +7,14 @@
 		<link rel="stylesheet" href="__STYLE__/css/public.css" />
 		<link rel="stylesheet" href="__STYLE__/css/order.css" />
 		<script type="text/javascript" src="__STYLE__/js/jquery-1.7.1.min.js" ></script>
+		<script type="text/javascript" src="__STYLE__/js/jquery.cookie.js"></script>
+		<script type="text/javascript" src="__STYLE__/layer/layer.js"></script>
 		<script>document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';</script>
 	</head>
 	<body>
 		<div class="header">
 			<div class="mg">
-				<a class="goback" href="javascript:history.back();"><img src="__STYLE__/img/back.png"/></a>
+				<a class="goback" href="{:U('Index/index')}"><img src="__STYLE__/img/back.png"/></a>
 				<h1>客户订单</h1>
 			</div>
 		</div>
@@ -32,130 +34,13 @@
 			<div class="purchase">
 				<!--采购-->
 				<ul class="mg">
-					<ol>
-						<li>
-							<h2>
-								<span style="float: left;color: #c3a07d;">下级已确认</span>
-								<span style="float: right;">商品编号:15462559</span>
-							</h2>
-							<div class="details clear">
-								<a href=""><img src="__STYLE__/img/order_img.png"/></a>
-								<div class="title">
-									<h1><a href="">瑞士劳力士男表 日志型116233-63603G自动机械男士手表2</a></h1>
-									<p><span>颜色：白壳黑面</span><span style="margin-left: 0.3rem;">数量：5</span></p>
-								</div>
-							</div>
-							<div class="bottom">
-								<a href="">已收款请发货</a>
-							</div>					
-						</li>
-						<li>
-							<h2>
-								<span style="float: left;color: #c3a07d;">下级已确认</span>
-								<span style="float: right;">商品编号:15462559</span>
-							</h2>
-							<div class="details clear">
-								<a href=""><img src="__STYLE__/img/order_img.png"/></a>
-								<div class="title">
-									<h1><a href="">瑞士劳力士男表 日志型116233-63603G自动机械男士手表2</a></h1>
-									<p><span>颜色：白壳黑面</span><span style="margin-left: 0.3rem;">数量：5</span></p>
-								</div>
-							</div>
-							<div class="bottom">
-								<a href="">已收款请发货</a>
-							</div>					
-						</li>
-						<li>
-							<h2>
-								<span style="float: left;color: #c3a07d;">下级已确认</span>
-								<span style="float: right;">商品编号:15462559</span>
-							</h2>
-							<div class="details clear">
-								<a href=""><img src="__STYLE__/img/order_img.png"/></a>
-								<div class="title">
-									<h1><a href="">瑞士劳力士男表 日志型116233-63603G自动机械男士手表2</a></h1>
-									<p><span>颜色：白壳黑面</span><span style="margin-left: 0.3rem;">数量：5</span></p>
-								</div>
-							</div>
-							<div class="bottom">
-								<a href="">已收款请发货</a>
-							</div>					
-						</li>
-					</ol>
-					<ol>
-						<li>
-							<h2>
-								<span style="float: left;color: #c3a07d;">下级已确认</span>
-								<span style="float: right;">商品编号:15462559</span>
-							</h2>
-							<div class="details clear">
-								<a href=""><img src="__STYLE__/img/order_img.png"/></a>
-								<div class="title">
-									<h1><a href="">瑞士劳力士男表 日志型116233-63603G自动机械男士手表2</a></h1>
-									<p><span>颜色：白壳黑面</span><span style="margin-left: 0.3rem;">数量：5</span></p>
-								</div>
-							</div>
-							<div class="bottom">
-								<a href="">已收款请发货</a>
-							</div>					
-						</li>
-						<li>
-							<h2>
-								<span style="float: left;color: #c3a07d;">下级已确认</span>
-								<span style="float: right;">商品编号:15462559</span>
-							</h2>
-							<div class="details clear">
-								<a href=""><img src="__STYLE__/img/order_img.png"/></a>
-								<div class="title">
-									<h1><a href="">瑞士劳力士男表 日志型116233-63603G自动机械男士手表2</a></h1>
-									<p><span>颜色：白壳黑面</span><span style="margin-left: 0.3rem;">数量：5</span></p>
-								</div>
-							</div>
-							<div class="bottom">
-								<a href="">已收款请发货</a>
-							</div>					
-						</li>
-						<li>
-							<h2>
-								<span style="float: left;color: #c3a07d;">下级已确认</span>
-								<span style="float: right;">商品编号:15462559</span>
-							</h2>
-							<div class="details clear">
-								<a href=""><img src="__STYLE__/img/order_img.png"/></a>
-								<div class="title">
-									<h1><a href="">瑞士劳力士男表 日志型116233-63603G自动机械男士手表2</a></h1>
-									<p><span>颜色：白壳黑面</span><span style="margin-left: 0.3rem;">数量：5</span></p>
-								</div>
-							</div>
-							<div class="bottom">
-								<a href="">已收款请发货</a>
-							</div>					
-						</li>
+					<ol id="data">
+						<!-- 数据放置区 -->
 					</ol>	
 				</ul>
 				<!--零售-->
 				<ul class="mg">
 					
-
-					
-					<li>
-						<h2>
-							<span style="float: left;color: #c3a07d;">下级已确认</span>
-							<span style="float: right;">商品编号:15462559</span>
-						</h2>
-						<div class="details clear">
-							<a href=""><img src="__STYLE__/img/order_img.png"/></a>
-							<div class="title">
-								<h1><a href="">瑞士劳力士男表 日志型116233-63603G自动机械男士手表2</a></h1>
-								<p><span>颜色：白壳黑面</span><span style="margin-left: 0.3rem;">数量：5</span></p>
-							</div>
-						</div>
-						<div class="bottom">
-							<a href="">已收款通知上家发货</a>
-						</div>					
-					</li>
-					
-
 
 				</ul>
 			</div>
@@ -169,13 +54,17 @@
 		
 		<script>
 			$(function(){
+
+				var arr = ['预定','采购'];
+				$('.purchaseNav a').eq(0).find('span').find('i').html(arr[$.cookie('buy')])
+
 				$('.purchaseNav a').eq(0).addClass('opt');
-				$('.purchase ul').eq(1).css('display','none');
-				$('.purchase ul ol').eq(1).show();
+				// $('.purchase ul').eq(1).css('display','none');
+				// $('.purchase ul ol').eq(1).show();
 				// 选项卡切换
 				$('.purchaseNav a').eq(1).click(function(){
 					$(this).addClass('opt').siblings('a').removeClass('opt');
-					$('.slide_down').hide();
+					// $('.slide_down').hide();
 					$('.purchase ul').hide().eq($(this).index()).fadeIn();
 				});
 				$('.purchaseNav a').eq(0).click(function(){
@@ -193,8 +82,13 @@
 					var txt=$(this).find('span').html();
 					$('.opt span i').html(txt);
 					$('.slide_down').hide();
-					$('.purchase ul ol').hide().eq($(this).index()).fadeIn();;
+					// $('.purchase ul ol').hide().eq($(this).index()).fadeIn();;
 					// $('.purchase ul ol').eq(index).show();
+					$.cookie('buy',index);
+					page = 0;//滚动分页
+					re = 1;//ajax加载开关
+					$('#data').html('');
+					getdata();
 				})
 				// 返回顶部
 				$('.back_top').click(function(){
@@ -203,13 +97,90 @@
 			});
 		</script>
 	</body>
+<script type="text/javascript">
+var page = 0;//滚动分页
+var re = 1;//ajax加载开关
+var url = "{:U('Agent/Order/procurementdata')}";//默认url 点击分类后改变
+function getdata()
+{	
+		var buy = $.cookie('buy');
+		if(re != 1){return;}//上一次ajax没有回来就不执行请求
+		re = 2;//关闭
+		var index = layer.msg('正在加载...', {icon: 16,shade: [0.1,'#CECECE'],time:0});
+		page = page + 1;
+		$.get(url,{p:page, buy:buy},function(data){
+               		if(data){
+               			$('#data').append(data);
+               			re = 1;//打开加载开关
+               		}else{
+               			layer.msg('没有了');
+               			re = 2;//关闭加载开关
+               		}
+               		layer.close(index);//隐藏正在加载的图片
 
-	<script type="text/javascript">
-function retail()
+               	})
+				
+}
+$(function(){
+	getdata();//默认调用一次
+})
+
+
+//滚动时加载数据
+window.onscroll=function(){
+	var maxScroll = $(document).height()-$(window).height();//整个文档的高减去可视高=
+    if ($(window).scrollTop() >= maxScroll || page == 1) {getdata();}
+}
+</script>
+<script type="text/javascript">
+function notice(order_sn,key,father_price)
 {
-	alert(2)
+	layer.confirm('请确认收到款后，在通知上家发货！确认后将从钱包扣除 '+father_price+' 元。',{
+		 btn: ['确认','取消'] //按钮
+	},function(){
+
+			var index = layer.msg('正在处理请稍后...', {icon: 16,shade: [0.1,'#CECECE'],time:0});
+			$.get("{:U('notice')}",{order_sn:order_sn},function(res){
+
+				if(res.res == 1){
+					$('.bottom'+key).remove();
+					layer.msg(res.msg);
+				}else{
+
+					layer.msg(res);
+				}
+					layer.close(index);//隐藏正在加载的图片
+			})
+
+	},function(){
+		// layer.msg('取消')
+	})
 }
 
+</script>
+<script type="text/javascript">
+function delivery(order_sn,key){
+		layer.confirm('请确认收到款后，在发货！',{
+		 btn: ['确认','取消'] //按钮
+	},function(){
 
-	</script>
+			var index = layer.msg('正在处理请稍后...', {icon: 16,shade: [0.1,'#CECECE'],time:0});
+			$.get("{:U('delivery')}",{order_sn:order_sn},function(res){
+
+				if(res.res == 1){
+					$('.bottom'+key).remove();
+					layer.msg(res.msg);
+				}else{
+
+					layer.msg(res);
+				}
+					layer.close(index);//隐藏正在加载的图片
+			})
+
+	},function(){
+		// layer.msg('取消')
+	})
+}
+
+</script>
 </html>

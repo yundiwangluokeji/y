@@ -13,7 +13,7 @@
 	<body>
 		<div class="header">
 			<div class="mg">
-				<a class="goback" href="javascript:history.back();"><img src="__STYLE__/img/back.png"/></a>
+				<a class="goback" href="{:U('Index/index')}"><img src="__STYLE__/img/back.png"/></a>
 				<h1>客户订单</h1>
 			</div>
 		</div>
@@ -22,12 +22,12 @@
 		</style>
 		<div class="contains">						
 			<div class="purchaseNav">
-				<a href="javascript:;"><span><i>采购</i> ▼</span></a>
+				<a href="{:U('index')}"><span><i>采购</i> ▼</span></a>
 				<a href="{:U('Order/retail')}"><span>零售</span></a>
-				<div class="slide_down">
+				<!-- <div class="slide_down">
 					<a href="javascript:;"><span>预定</span></a>
 					<a href="javascript:;"><span>采购</span></a>
-				</div>
+				</div> -->
 			</div>
 			
 			<div class="purchase">

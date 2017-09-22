@@ -30,14 +30,14 @@
 		</div>
 	</div>
 </div>
-	<php>if($vv['confirm'] == $mypath || (($vv['agent_id'] == session('AgentUser')) and !$vv['confirm']) ){</php>
+	<php>if($vv['confirm'] == $mypath || (($vv['agent_id'] == session('AgentUser')) and !$vv['confirm']) and $vv['buy'] == 1 ){</php>
 		<div class="bottom bottom{$key}">
 			<a href="javascript:delivery('{$vv['ordersn']}',{$key});">已收款自己发货</a>
 		</div>	
 	<php>}</php>
 		<php>if($vv['confirm'] == $mypath || (($vv['agent_id'] == session('AgentUser')) and !$vv['confirm']) ){</php>
-		<div class="bottom bottom{$key}" style="float:right;">
-			<a  href="javascript:notice('{$vv['ordersn']}',{$key});">已收款通知上家发货</a>
+		<div class="bottom bottom{$key}" style="<?php echo ($vv['buy'] == 0)?'display:block;':'float:right;';?>">
+			<a  href="javascript:notice('{$vv['ordersn']}',{$key},'{$vv['father_price']}');">已收款通知上家发货</a>
 		</div>	
 	<php>}</php>
 </li>

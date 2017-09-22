@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" /> 
+		<title>南方钟表</title>
+		<link rel="stylesheet" href="__STYLE__/css/public.css" />
+		<link rel="stylesheet" href="__STYLE__/css/editPurchase.css" />
+		<script type="text/javascript" src="__STYLE__/js/jquery-1.7.1.min.js" ></script>
+		<script type="text/javascript" src="__STYLE__/layer/layer.js" ></script>
+		<script>document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';$(window).resize(function(){document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';})</script>
+		<style type="text/css">
+		.ppp span{display: inline-block;float:left;padding-left: 0.24rem;font-size: 0.3rem;color:#feffff;line-height: 0.72rem;}
+		.ppp i{width:0.9rem;height:0.6rem;display: inline-block;background: url(__STYLE__/img/onoff.png) no-repeat;background-size: auto 37px;margin-top: 0.04rem;}
+		</style>
+	</head>
+	<body>
+		<div class="header">
+			<div class="mg">
+				<a class="goback" href="javascript:history.back();"><img src="__STYLE__/img/back.png"/></a>
+				<h1>编辑商品</h1>
+				<a class="keepEdit" id="ImageBrowse" href="javascript:;">保存</a>	
+			</div>
+		</div>
+		<form id="imageUploadForm">
+		<div class="contains">									
+			<div class="editPurchase">
+				<h2>商品编号:{$data['goods_sn']}</h2>
+				<div class="details clear">
+					<span><img src="{$data['images']}"/></span>
+					<div class="title">
+						<h1>{$data['goods_name']}</h1>
+						<p>颜色:{$data['color']}</p>
+					</div>
+					<div class="price"><em>￥{$data['agent_price']}</em>× {$data['agent_inventory']}</div>
+				</div>
+				<!-- <p>合计： <em>￥7940.00</em></p> -->
+				<input type="hidden" name="goodsid" value="{$data['agent_goods_id']}">
+				<p style="color:#fff;" class="ppp">
+				<span>推荐：</span>
+				<label style="float: left;">
+				<i style="background-position: <?php echo ($data['agent_is_recommend'])?'-0.9':'0';?>rem  0rem;" pos="<?php echo ($data['agent_is_recommend'])?'-0.9':'0';?>"></i>
+					<input type="checkbox" value="1" name="is_recommend" style="display: none;" <?php if($data['agent_is_recommend']){echo 'checked="checked"';}?> />
+				</label>
+				<span style="float:none;">价格:</span>  <input type="text" name="price" style="background: #2F3336;border-color:#8A651B;color: #fff;" value="{$data['agent_price']}" name=""></p>
+				<div class="permission" style="clear:both;">
+					<span>浏览权限</span>
+					<div class="setting">
+						<label>
+							<label class="optRadio"><input type="radio" name="goods_permissions" value="2" <?php if($data['goods_permissions'] == 2){echo 'checked';}?> /></label>
+							<span>所有人可见</span>
+						</label>
+						<label>
+							<label class="optRadio"><input type="radio" name="goods_permissions" value="1" <?php if($data['goods_permissions'] == 1){echo 'checked';}?> /></label>
+							<span>下级代理可见</span>
+						</label>
+						<label>
+							<label class="optRadio"><input type="radio" name="goods_permissions" value="0" <?php if($data['goods_permissions'] == 0){echo 'checked';}?> /></label>
+							<span>关闭</span>
+						</label>
+					</div>
+				</div>		
+			</div>			
+		</div>
+		</form>
+		<script>
+			$(function(){
+				//设为默认						
+				// $('.setting>label:first .optRadio').find('input').prop('checked');
+				// $('.setting>label:first').addClass('opt');
+				var check = $('input[name=goods_permissions]');
+				for(var i = 0;i < check.length;i++){
+					if(check.eq(i).attr('checked')){
+						$('.optRadio').eq(i).parent().addClass('opt');
+					}
+				}
+
+
+				$('.setting .optRadio').click(function(){
+					var checkT = $(this).find('input');
+					if(checkT.prop('checked')){
+						$(this).parent('label').addClass('opt').siblings('label').removeClass('opt');
+					};
+				});				
+			});
+		</script>
+	</body>
+<script type="text/javascript">
+$(document).ready(function (e) {
+    $('#imageUploadForm').on('submit',(function(e) {
+    	
+        var formData = new FormData(this);
+        e.preventDefault();
+        $.ajax({
+            type:'POST',
+            url: '',
+            data:formData,
+            // cache:false,
+            contentType: false,
+            processData: false,
+
+            success:function(data){
+               if(data.res == 1){
+					layer.msg(data.msg)
+               		history.back();
+               }else{
+               
+					layer.msg(data.msg)
+               }
+            },
+            error: function(data){
+                layer.msg('网络错误！')
+            }
+        });
+    }));
+
+    $("#ImageBrowse").on("click", function() {
+        $("#imageUploadForm").submit();
+    });
+
+
+    $(document).keydown(function(event){ 
+        if(event.keyCode == 13){
+        	$("#imageUploadForm").submit();
+        } 
+     }); 
+});
+
+</script>
+<script type="text/javascript">
+$('.ppp i').click(function(){
+  	var mythis = $(this);
+  	var i = parseFloat($(this).attr('pos'));
+  	// alert(i)
+  	if(i == 0){
+	  		var time = setInterval(function(){
+
+	  		if(i >= 0.9){clearInterval(time);mythis.attr('pos','-0.9')}
+
+	  		mythis.attr('style','background-position:-'+i+'rem  0rem');
+
+	  			i = i+0.01;
+	  		
+	  		},0.1);
+  	}else{
+
+	  	var time = setInterval(function(){
+
+	  		if(i >= 0){clearInterval(time);mythis.attr('pos','0');}
+
+	  		mythis.attr('style','background-position:'+i+'rem  0rem');
+
+	  		i = i+0.01;
+	  		
+	  	},0.1);
+  	}
+})
+
+</script>
+</html>

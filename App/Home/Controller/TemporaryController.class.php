@@ -159,12 +159,6 @@ class TemporaryController extends Controller
                 exit;
 
 
-
-
-
-
-
-
         }else{
 
                 

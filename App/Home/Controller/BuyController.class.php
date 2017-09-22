@@ -19,9 +19,10 @@ class BuyController extends Controller
 				//创建订单
 				$order['order_sn'] = date('YmdHis',time()).mt_rand(111111,999999);//订单号
 				$order['consignee_id'] = session('AgentUser');//收货人id
+				$order['agent_id'] = session('cart')['agent_id'];//属于谁的商品
 				//订单总价 如果是在代理商下买的 查询代理商的价格
 				if(session('cart')['agent_id']){
-					$count_price = M('agent_goods')->where(array('goods_id'=>session('cart')['goods_id']))->getField('agent_price');
+					$count_price = M('agent_goods')->where(array('agent_goods_id'=>session('cart')['goods_id'],'agent_id'=>session('cart')['agent_id']))->getField('agent_price');
 					$order['count_price'] = $count_price * array_sum(session('cart')['color']);
 				}else{
 					$count_price = M('goods')->where(array('goods_id'=>session('cart')['goods_id']))->getField('price');
@@ -82,7 +83,7 @@ class BuyController extends Controller
 							if($goods){
 								//如果是在代理商下买的商品  查询代理商的商品价格
 								if(session('cart')['agent_id']){
-									$goods['price'] = M('agent_goods')->where(array('goods_id'=>session('cart')['goods_id']))->getField('agent_price');
+									$goods['price'] = M('agent_goods')->where(array('agent_goods_id'=>session('cart')['goods_id'],'agent_id'=>session('cart')['agent_id']))->getField('agent_price');
 								}
 								$color_key = array_keys(session('cart')['color']);//取出颜色key
 								$color = '';
@@ -176,9 +177,10 @@ class BuyController extends Controller
 				//创建订单
 				$order['order_sn'] = date('YmdHis',time()).mt_rand(111111,999999);//订单号
 				$order['consignee_id'] = session('AgentUser');//收货人id
+				$order['agent_id'] = session('cart')['agent_id'];//属于谁的商品
 				//订单总价 如果是在代理商下买的 查询代理商的价格
 				if(session('cart')['agent_id']){
-					$count_price = M('agent_goods')->where(array('goods_id'=>session('cart')['goods_id']))->getField('agent_price');
+					$count_price = M('agent_goods')->where(array('agent_goods_id'=>session('cart')['goods_id'],'agent_id'=>session('cart')['agent_id']))->getField('agent_price');
 					$order['count_price'] = $count_price * array_sum(session('cart')['color']);
 				}else{
 					$count_price = M('goods')->where(array('goods_id'=>session('cart')['goods_id']))->getField('price');
@@ -239,7 +241,7 @@ class BuyController extends Controller
 							if($goods){
 								//如果是在代理商下买的商品  查询代理商的商品价格
 								if(session('cart')['agent_id']){
-									$goods['price'] = M('agent_goods')->where(array('goods_id'=>session('cart')['goods_id']))->getField('agent_price');
+									$goods['price'] = M('agent_goods')->where(array('agent_goods_id'=>session('cart')['goods_id'],'agent_id'=>session('cart')['agent_id']))->getField('agent_price');
 								}
 								$color_key = array_keys(session('cart')['color']);//取出颜色key
 								$color = '';
@@ -313,13 +315,36 @@ class BuyController extends Controller
 				//写入钱包日志
 				$log_res = $this->money_log($count_price,1,$order_id);
 
+				//给购买的上级增加货币
+				if($data['agent_id']){
+
+					$seller_res = M('money')->where(array('agent_id'=>$data['agent_id']))->setInc('money',$count_price);
+					if($seller_res){
+						//货币操作日志
+						$logdata['money'] = $count_price;
+						$logdata['operation'] = session('AgentUser');//操作者id
+						$logdata['agent_id'] = $data['agent_id'];//被操作者id
+						$logdata['money_id'] = M('money')->where(array('agent_id'=>$data['agent_id']))->getField('id');//钱包id
+						$logdata['ip'] = $_SERVER['REMOTE_ADDR'];
+				        $logdata['address'] = getip($_SERVER['REMOTE_ADDR']);
+				        $logdata['res'] = $seller_res;
+				        $logdata['type'] = 1;
+				        $logdata['msg'] = ''.M('agent_config')->where(array('agent_id'=>session('AgentUser')))->getField('name').'购买商品！';
+				        $logdata['time']  = time();
+				        M('money_log')->add($logdata);
+					}
+				}else{
+					$seller_res = 1;
+				}
+
+
 				if($log_res){
 					//改变支付状态
 					$order['pay_way'] = 3;//支付方式
 					$order['pay_status'] = 1;//支付方式
 					$save_status = M('order')->where(array('order_id'=>$order_id,'buy'=>$buy))->save($order);
 
-					if($res && $log_res && $save_status){
+					if($res && $log_res && $save_status && $seller_res){
 						M()->commit();
 						//消除session中的商品
 						session('cart',null);
@@ -355,7 +380,7 @@ class BuyController extends Controller
 				$log['operation'] = session('AgentUser');
 				$log['agent_id'] = session('AgentUser');
 				$log['money_id'] = $money;
-				$log['money'] = '-'.$count_price;
+				$log['money'] = $count_price;
 				$log['ip'] = getip($_SERVER['REMOTE_ADDR']);
 				$log['address'] = getip($_SERVER['REMOTE_ADDR']);
 				$log['res'] = $res;
@@ -369,6 +394,7 @@ class BuyController extends Controller
 	//给代理商添加商品
 	protected function addgoods($order_id,$status)
 	{
+
 		$order_goods = M('order_goods')->where(array('order_id'=>$order_id))->find();
 		$datas['agent_id'] = session('AgentUser');//购买者id
 		$datas['goods_permissions'] = 2;
@@ -380,6 +406,13 @@ class BuyController extends Controller
 		$datas['state'] = $status;//商品状态(1购买的商品,2预定的商品)
 		$datas['time'] = time();//商品状态(1购买的商品,2预定的商品)
 		M('agent_goods')->add($datas);
+
+		//改变订单状态
+		M('order')->where(array('order_id'=>$order_id))->save(array('shipping_status'=>1));
 	}
 
 }
+
+
+// 20108.20
+//19015.20

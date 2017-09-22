@@ -7,80 +7,38 @@
 		<link rel="stylesheet" href="__STYLE__/css/public.css" />
 		<link rel="stylesheet" href="__STYLE__/css/purchase.css" />
 		<script type="text/javascript" src="__STYLE__/js/jquery-1.7.1.min.js" ></script>
+		<script type="text/javascript" src="__STYLE__/layer/layer.js" ></script>
+		<script type="text/javascript" src="__STYLE__/js/jquery.cookie.js" ></script>
 		<script>document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';$(window).resize(function(){document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';})</script>
 	</head>
 	<body>
 		<div class="header">
 			<div class="mg">
-				<a class="goback" href="javascript:history.back();"><img src="__STYLE__/img/back.png"/></a>
+				<a class="goback" href="{:U('Agent/Index/index')}"><img src="__STYLE__/img/back.png"/></a>
 				<h1>采购单</h1>
 			</div>
 		</div>
 		
 		<div class="contains">						
 			<div class="purchaseNav clear">
-				<a href="javascript:;"><span>预订</span></a>
-				<a href="javascript:;"><span>购买</span></a>
+				<a href="javascript:;" data-buy="0" ><span>预订</span></a>
+				<a href="javascript:;" data-buy="1" ><span>购买</span></a>
 			</div>
 			
 			<div class="purchase">
 				<!--预订-->
-				<ul class="mg">
+				<ul class="mg" id="data0">
 
-<foreach name="data" item="v">
-					<li>
-						<h2>
-							<span>商品编号:{$v['order_goods']['goods_sn']}</span>
-							<a href="editPurchase.html"><img src="__STYLE__/img/edit.png"/></a>
-						</h2>
-						<div class="details clear">
-							<a href=""><img src="{$v['order_goods']['images']}"/></a>
-							<div class="title">
-								<h1><a href="">{$v['order_goods']['goods_name']}</a></h1>
-								<p>颜色：{$v['order_goods']['goods_color']}</p>
-							</div>
-							<div class="price"><em>￥{$v['order_goods']['goods_price']}</em>× {$v['order_goods']['goods_num']}</div>
-						</div>
-						<div class="handle">
-							<a class="unwound" href="javascript:;">
-								<span><img src="__STYLE__/img/unwound.png"/></span>
-								<em>解除</em>
-							</a>
-							<a href="javascript:;">
-								<span><img src="__STYLE__/img/purchase.png"/></span>
-								<em>采购</em>
-							</a>
-							<p>合计： <em>￥{$v['count_price']}</em></p>
-						</div>					
-					</li>
-</foreach>
+
+				<!-- 数据放置区 -->
 
 					
 				</ul>
 				
 				<!--购买-->
-				<ul class="mg">
-					<li>
-						<h2>
-							<span>商品编号:15462559</span>
-							<a href="editPurchase.html"><img src="__STYLE__/img/edit.png"/></a>
-						</h2>
-						<div class="details clear">
-							<a href=""><img src="__STYLE__/img/firm.jpg"/></a>
-							<div class="title">
-								<h1><a href="">瑞士劳力士男表 日志型116233-63603G自动机械男士手表2</a></h1>
-								<p>颜色：白壳黑面</p>
-							</div>
-							<div class="price"><em>￥1588.00</em>× 5</div>
-						</div>
-						<div class="handle">
-							<a class="delete" href="javascript:;">
-								<span><img src="__STYLE__/img/unwound.png"/></span>
-								<em>删除</em>
-							</a>
-							<p>合计： <em>￥7940.00</em></p>
-						</div>					
-					</li>
+				<ul class="mg" id="data1">
+					
+					<!-- 放置数据区 -->
 					
 				</ul>
 			</div>
@@ -120,6 +78,15 @@
 				$('.purchaseNav a').click(function(){
 					$(this).addClass('opt').siblings('a').removeClass('opt');
 					$('.purchase ul').hide().eq($(this).index()).fadeIn();
+					$('#data0').html('');
+					$('#data1').html('');
+					arr = ['data0','data1'];
+					page = 0;//滚动分页
+					re = 1;//ajax加载开关
+					dataid = arr[$(this).attr('data-buy')];
+					buy = $(this).attr('data-buy');
+					getdata();
+
 				});
 				
 				//解除删除
@@ -150,4 +117,95 @@
 			});
 		</script>
 	</body>
+	<script type="text/javascript">
+var page = 0;//滚动分页
+var re = 1;//ajax加载开关
+var url = "{:U('Agent/Procurement/ajaxlist')}";//默认url 点击分类后改变
+var dataid = 'data0';
+var buy = 0;
+function getdata()
+{	
+		if(re != 1){return;}//上一次ajax没有回来就不执行请求
+		re = 2;//关闭
+		var index = layer.msg('正在加载...', {icon: 16,shade: [0.1,'#CECECE'],time:0});
+		page = page + 1;
+		$.get(url,{p:page, buy:buy},function(data){
+               		if(data){
+               			$('#'+dataid).append(data);
+               			re = 1;//打开加载开关
+               		}else{
+               			layer.msg('没有了');
+               			re = 2;//关闭加载开关
+               		}
+               		layer.close(index);//隐藏正在加载的图片
+
+               	})
+				
+}
+$(function(){
+	getdata();//默认调用一次
+})
+
+
+//滚动时加载数据
+window.onscroll=function(){
+	var maxScroll = $(document).height()-$(window).height();//整个文档的高减去可视高=
+    if ($(window).scrollTop() >= maxScroll || page == 1) {getdata();}
+}
+</script>
+<script type="text/javascript">
+
+
+function remove(order_sn,key)
+{
+	layer.confirm('解除将会删除对应的商品，商品货款将会退回您的钱包！您确定要解除吗？',{
+		 btn: ['确认','取消'] //按钮
+	},function(){
+
+			var index = layer.msg('正在处理请稍后...', {icon: 16,shade: [0.1,'#CECECE'],time:0});
+			$.get("{:U('remove')}",{order_sn:order_sn},function(res){
+
+				if(res.res == 1){
+					$('.list'+key).remove();
+					layer.msg(res.msg);
+				}else{
+
+					layer.msg(res);
+				}
+					layer.close(index);//隐藏正在加载的图片
+			})
+
+	},function(){
+		// layer.msg('取消')
+	})
+}
+
+
+</script>
+<script type="text/javascript">
+function deletes(order_sn,key)
+{
+	layer.confirm('删除此订单会同时删除对应的商品，你确认要删除吗？',{
+		 btn: ['确认','取消'] //按钮
+	},function(){
+
+			var index = layer.msg('正在处理请稍后...', {icon: 16,shade: [0.1,'#CECECE'],time:0});
+			$.get("{:U('deletes')}",{order_sn:order_sn},function(res){
+
+				if(res.res == 1){
+					$('.list'+key).remove();
+					layer.msg(res.msg);
+				}else{
+
+					layer.msg(res);
+				}
+					layer.close(index);//隐藏正在加载的图片
+			})
+
+	},function(){
+		// layer.msg('取消')
+	})
+}
+
+</script>
 </html>

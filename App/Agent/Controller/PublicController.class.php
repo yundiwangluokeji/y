@@ -38,4 +38,10 @@ class PublicController extends Controller {
 		header("status: 404 Not Found"); 
     	echo '页面不存在~~~';
     }
+
+
+    //  public function __destruct()
+    // {
+    //     dump(M());
+    // }
 }

@@ -55,7 +55,7 @@ class GoodsController extends PublicController
 		$data = str_replace('=', '__eq__', $data);
 		$erweima = 'http://pan.baidu.com/share/qrcode?w=375&h=375&url=';
 		$host = $_SERVER['REQUEST_SCHEME'].'://'.$_SERVER['HTTP_HOST'];
-		$host = 'http://192.168.0.88';
+		// $host = 'http://192.168.0.88';
 		$url = $erweima.$host.U('Home/Temporary/goods').'?data='.$data;
 		// echo $url;
 		$this->ajaxReturn($url);

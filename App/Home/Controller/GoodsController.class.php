@@ -150,9 +150,6 @@ class GoodsController extends PublicController
         }
     }
 
-    // public function __destruct()
-    // {
-    //     dump(M());
-    // }
+   
 
 }

@@ -36,7 +36,7 @@ class MoneyController extends PublicController
                 $data3['operation'] = session('AgentUser');
                 $data3['agent_id'] = session('AgentUser');
                 $data3['money_id'] = $money_id;
-                $data3['money'] = '-'.$amount;
+                $data3['money'] = $amount;
                 $data3['ip'] = $_SERVER['REMOTE_ADDR'];
                 $data3['address'] = getip($_SERVER['REMOTE_ADDR']);
                 $data3['type'] = 0;
@@ -151,7 +151,7 @@ class MoneyController extends PublicController
         $data['operation'] = session('AgentUser');//操作者
         $data['agent_id'] = session('AgentUser');//被操作者
         $data['money_id'] = $money_id;//钱包id
-        $data['money'] = '+'.$price * 10 * 10;//充值金额
+        $data['money'] = $price * 10 * 10;//充值金额
         $data['ip'] = $_SERVER['REMOTE_ADDR'];
         $data['address'] = getip($_SERVER['REMOTE_ADDR']);
         $data['res'] = $res;
