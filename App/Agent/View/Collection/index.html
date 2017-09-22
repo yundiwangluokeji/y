@@ -8,6 +8,7 @@
 	<link rel="stylesheet" type="text/css" href="__STYLE__/css/collect.css">
 	<script type="text/javascript" src="__STYLE__/js/jquery-1.7.1.min.js"></script>
 	<script type="text/javascript" src="__STYLE__/layer/layer.js"></script>
+        <meta content="telephone=no" name="format-detection"> 
 	<script>
 		document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';
 		$(window).resize(function () {  
@@ -53,17 +54,18 @@ function detele(goods_id)
 		function queren()
 		{
 			var goods_id = $('#queren').attr('data-id');//获取当前要删除的商品id
-			var len = $('.items .item').length;//判断当前商品的个数 如果没有了就刷新一下页面
-			if(goods_id != 0 && len > 1){
+			
 				$.get("{:U('delete')}",{goods_id:goods_id},function(res){
 					if(res.res == 1){
 						$('.list'+goods_id).remove();
+						var len = $('.items .item').length;//判断当前商品的个数 如果没有了就刷新一下页面
+						if(len <= 0){
+							window.location.reload();
+						}
 					}
 					layer.msg(res.msg);
 				})
-			}else{
-				window.location.reload();
-			}
+			
 		}
 
 

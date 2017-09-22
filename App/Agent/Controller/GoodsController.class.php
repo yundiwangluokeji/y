@@ -34,7 +34,7 @@ class GoodsController extends PublicController
 				$goods = $modelgoods->field('goods_sn,images,name')->where(array('goods_id'=>$v['agent_goods_id']))->find();//从商品表中获取图片和商品编号
 				$v['goods_sn'] = $goods['goods_sn'];
 				$v['images'] = $goods['images'];
-				$v['goods_name'] = $goods['name'];
+				$v['name'] = $goods['name'];
 			}
 		}
 		// dump(M());exit;

@@ -139,27 +139,6 @@ class RecommendedController extends PublicController
         }
     }
 
-    // 商品详情
-    public function goodDetail()
-    {
-        $goods_id = I('get.goods_id');
-        $goodData = M('goods')->where(array('goods_id' => $goods_id))->find();
-        $collectNum = M('agent_collection')->where(array('goods_id' => $goods_id))->count();
-        $isCollect = M('agent_collection')->where(array('goods_id' => $goods_id, 'agent_id' => session('AgentUser')))->find();
-        if ($isCollect) {
-            $goodData['isCollect'] = 1;
-        }
-        $goodData['collectNum'] = $collectNum;
-        $this->assign('goodData', $goodData);
-        // $mainColor = C('color');
-        $mainColor = rtrim($goodData['color'], ',');
-        $mainColor = explode(',', $mainColor);
-        $originColor = C('color');
-        foreach ($mainColor as $key => $value) {
-            $colors[$value] = $originColor[$value];
-        }
-        $this->assign('colors', $colors);
-        $this->display();
-    }
+    
 
 }

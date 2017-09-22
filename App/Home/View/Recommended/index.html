@@ -3,10 +3,11 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" />
-		<title>南方钟表</title>
+		<title>{$config['name']}</title>
 		<link rel="stylesheet" href="__STYLE__/css/public.css" />
 		<link rel="stylesheet" href="__STYLE__/css/recommend.css" />
 		<script type="text/javascript" src="__STYLE__/js/jquery-1.7.1.min.js" ></script>
+        <meta content="telephone=no" name="format-detection"> 
 		<script>document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';</script>
 	</head>
 	<body>
@@ -40,9 +41,9 @@
 					<ul class="clear">
                         <foreach name="goodslist" item="vo">
     						<li>
-    							<a href="{:U('Home/Recommended/goodDetail', array('goods_id' => $vo['goods_id']))}"><img src="{$vo.images}"/></a>
+    							<a href="{:U('Home/Goods/goodDetail', array('goods_id' => $vo['goods_id'],'agent'=>AGENT_ID))}"><img src="{$vo.images}"/></a>
     							<div class="details">
-    								<h1><a href="{:U('Home/Recommended/goodDetail', array('goods_id' => $vo['goods_id']))}">{$vo.name}</a></h1>
+    								<h1><a href="{:U('Home/Goods/goodDetail', array('goods_id' => $vo['goods_id'],'agent'=>AGENT_ID))}">{$vo.name}</a></h1>
     								<p>编号:{$vo.goods_sn}</p>
     								<h2>批价:<em>￥{$vo.price}</em></h2>
     								<span class="clear">
@@ -73,9 +74,9 @@
 					<ul class="mg">
                         <foreach name="goodslist" item="vo">
     						<li>
-    							<a href="{:U('Home/Recommended/goodDetail', array('goods_id' => $vo['goods_id']))}"><img src="{$vo.images}"/></a>
+    							<a href="{:U('Home/Goods/goodDetail', array('goods_id' => $vo['goods_id'],'agent'=>AGENT_ID))}"><img src="{$vo.images}"/></a>
     							<div class="details">
-    								<h1><a href="{:U('Home/Recommended/goodDetail', array('goods_id' => $vo['goods_id']))}">{$vo.name}</a></h1>
+    								<h1><a href="{:U('Home/Goods/goodDetail', array('goods_id' => $vo['goods_id'],'agent'=>AGENT_ID))}">{$vo.name}</a></h1>
     								<p>商品编号:{$vo.goods_sn}</p>
     								<h2>批价:<em>￥{$vo.price}</em></h2>
     								<span class="clear">

@@ -3,12 +3,14 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" />
-		<title>南方钟表</title>
+		<title>{$config[name]}</title>
 		<link rel="stylesheet" href="__STYLE__/css/public.css" />
 		<link rel="stylesheet" href="__STYLE__/css/recommend.css" />
 		<script type="text/javascript" src="__STYLE__/js/jquery-1.7.1.min.js" ></script>
         <script type="text/javascript" src="__STYLE__/layer/layer.js"></script>
-		<script>document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';</script>
+		<script type="text/javascript" src="__STYLE__/js/jquery.cookie.js" ></script>
+        <meta content="telephone=no" name="format-detection"> 
+        <script>document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';</script>
 	</head>
 	<body>
 		<div class="header">
@@ -24,13 +26,18 @@
 				<div class="mg clear">
 					<ul>
                         <div class="typeList" style="float:left;">
-                            <li <if condition="!$brandIcon"> class="on"</if>>全部</li>
+                            <li <if condition="!$brandIcon"> class="on"</if> onclick="window.location.href='{:U('goodslist',array('brand_id'=>$brand,'class_id'=>0,'agent'=>AGENT_ID))}'">全部</li>
                             <foreach name="classData" item="v">
-                                <li data-id="{$v.class_id}" <if condition="$brandIcon eq $v['class_id']"> class="on"</if> >{$v.name}</li>
+                                <li onclick="window.location.href='{:U('goodslist',array('brand_id'=>$brand,'class_id'=>$v['class_id'],'agent'=>AGENT_ID))}'"data-id="{$v.class_id}" <if condition="$brandIcon eq $v['class_id']"> class="on"</if> >{$v.name}</li>
                             </foreach>
                         </div>
-						<!-- <li id="priceOrder" data-order="<?php echo $orderNum ? $orderNum : 2; ?>">价格<img src="__STYLE__/img/<?php echo $orderNum == 1 ? up : down; ?>.png"/></li> -->
-						<li id="priceOrder" data-order="<?php echo $orderNum ? $orderNum : 2; ?>">价格<img src="__STYLE__/img/down.png"/></li>
+						<li id="priceOrder" >价格
+                                            <php>if($sorting == 'price'){</php>
+                                                <img src="__STYLE__/img/down.png"/>
+                                            <php>}else{</php>
+                                                <img src="__STYLE__/img/down2.png"/>
+                                            <php>}</php>
+                                            </li>
 					</ul>
 					<a href="javascript:;"><img src="__STYLE__/img/afresh.png"/></a>
 				</div>
@@ -39,67 +46,15 @@
 			<div class="goodsList">
 				<!--两列显示-->
 				<div class="twoCol mg">
-					<ul class="clear">
-                        <foreach name="goodslist" item="vo">
-    						<li>
-    							<a href="{:U('Home/Goods/goodDetail', array('goods_id' => $vo['goods_id'],'agent'=>AGENT_ID))}"><img src="{$vo.images}"/></a>
-    							<div class="details">
-    								<h1><a href="{:U('Home/Goods/goodDetail', array('goods_id' => $vo['goods_id'],'agent'=>AGENT_ID))}">{$vo.name}</a></h1>
-    								<p>编号:{$vo.goods_sn}</p>
-    								<h2>批价:<em>￥{$vo.price}</em></h2>
-    								<span class="clear">
-    									<div class="collect">
-                                            <if condition="$vo.isCollect eq 1">
-                                                <img data-id="{$vo.goods_id}" data-val="{$Think.session.AgentUser}" class="uncollectIco" src="__STYLE__/img/collectA.png"/>
-                                                <b style="color: #7bc2ea;">{$vo.collectNum}</b>
-                                            <elseif condition="$Think.session.AgentUser"/>
-                                                <img data-id="{$vo.goods_id}" data-val="{$Think.session.AgentUser}" class="collectIco" src="__STYLE__/img/collect.png"/>
-                                                <b>{$vo.collectNum}</b>
-                                            <else />
-                                                <a href="{:U('Agent/Index/index')}">
-                                                    <img src="__STYLE__/img/collect.png"/>
-                                                </a>
-                                                <b>{$vo.collectNum}</b>
-                                            </if>
-    									</div>
-    									<div imgurl="http://pan.baidu.com/share/qrcode?w=230&h=230&url=http://<?php echo $_SERVER['HTTP_HOST'];?>{:U('Home/Goods/goodslist')}" class="code"><img src="__STYLE__/img/code.png"/></div>
-    								</span>
-    							</div>
-    						</li>
-                        </foreach>
+					<ul class="clear data">
+                        <!-- 数据放置区 -->
 					</ul>
 				</div>
 
 				<!--一列显示-->
 				<div class="oneCol">
-					<ul class="mg">
-                        <foreach name="goodslist" item="vo">
-    						<li>
-    							<a href="{:U('Home/Goods/goodDetail', array('goods_id' => $vo['goods_id'],'agent'=>AGENT_ID))}"><img src="{$vo.images}"/></a>
-    							<div class="details">
-    								<h1><a href="{:U('Home/Goods/goodDetail', array('goods_id' => $vo['goods_id'],'agent'=>AGENT_ID))}">{$vo.name}</a></h1>
-    								<p>编号:{$vo.goods_sn}</p>
-    								<h2>批价:<em>￥{$vo.price}</em></h2>
-    								<span class="clear">
-    									<div class="collect">
-                                            <if condition="$vo.isCollect eq 1">
-                                                <img data-id="{$vo.goods_id}" data-val="{$Think.session.AgentUser}" class="uncollectIco" src="__STYLE__/img/collectA.png"/>
-                                                <b style="color: #7bc2ea;">{$vo.collectNum}</b>
-                                            <elseif condition="$Think.session.AgentUser"/>
-                                                <img data-id="{$vo.goods_id}" data-val="{$Think.session.AgentUser}" class="collectIco" src="__STYLE__/img/collect.png"/>
-                                                <b>{$vo.collectNum}</b>
-                                            <else />
-                                                <a href="{:U('Agent/Index/index')}">
-                                                    <img src="__STYLE__/img/collect.png"/>
-                                                </a>
-                                                <b>{$vo.collectNum}</b>
-                                            </if>
-    									</div>
-    									<div imgurl="http://pan.baidu.com/share/qrcode?w=230&h=230&url=http://<?php echo $_SERVER['HTTP_HOST'];?>{:U('Home/Goods/goodslist')}" class="code"><img src="__STYLE__/img/code.png"/></div>
-    								</span>
-    							</div>
-    						</li>
-                        </foreach>
+					<ul class="mg data">
+                        <!-- 数据放置区 -->
 					</ul>
 				</div>
 			</div>
@@ -133,108 +88,39 @@
 		<div class="back_top">
 			<img src="__STYLE__/img/back_top.png">
 		</div>
-        <div id="agent" data-val="{$agent}"></div>
-        <div id="brandIcon" data-val="{$brandIcon}"></div>
-        <div id="brand" data-val="{$brand}"></div>
-
-
 		<script>
-
-            // 自定义js
-            $(document).on('click', '.typeList li', function () {
-                var agent = $('#agent').attr('data-val');
-                var classNum = $(this).attr('data-id');
-                if (classNum) {
-                    if (agent) {
-                        var url = "__CONTROLLER__/goodslist/brand_id/" + $('#brand').attr('data-val') + "/class_id/" + classNum + "/agent/" + agent;
-                    } else {
-                        var url = "__CONTROLLER__/goodslist/brand_id/" + $('#brand').attr('data-val') + "/class_id/" + classNum;
-                    }
-                } else {
-                    var url = "__CONTROLLER__/goodslist/brand_id/" + $('#brand').attr('data-val');
-                }
-                window.location.href = url;
-            });
 
             // 排序
             $('#priceOrder').click(function () {
-                if ($('#brandIcon').attr('data-val')) {
-                    var brand_id = '/class_id/' + $('#brandIcon').attr('data-val');
-                } else {
-                    var brand_id = '';
-                }
-                if ($(this).attr('data-order')) {
-                    var orderNum = '/orderNum/' + $(this).attr('data-order');
-                } else {
-                    orderNum = '';
-                }
-
-                url = "__CONTROLLER__/goodslist/brand_id/" + $('#brand').attr('data-val') + brand_id + orderNum;
-                window.location.href = url;
+              var url =  "{:U('goodslist',array('brand_id'=>$brand,'class_id'=>$class,'agent'=>AGENT_ID,'sorting'=>$sorting))}";
+              window.location.href = url;
             });
 
-
-			$(function(){
-				// $('.headNav li').eq(0).addClass('on');
-				// $('.headNav li').click(function(){
-				// 	$(this).addClass('on').siblings('li').removeClass('on');
-				// });
-
-				//收藏
-				$('.collectIco').click(function(){
-                    var goods_id = $(this).attr('data-id');
-                    var agentUser = $(this).attr('data-val');
-                    var that = $(this);
-                    $.post(
-                        '__CONTROLLER__/collect',
-                        {"agent_id":agentUser, "goods_id":goods_id},
-                        function (data) {
-                            if (data.code == 1) {
-                                window.location.reload();
-                            } else {
-                                alert(data.msg);
-                            }
-                        },
-                        'json'
-                    );
-				});
-
-                // 取消收藏
-                $('.uncollectIco').click(function(){
-                    var goods_id = $(this).attr('data-id');
-                    var agentUser = $(this).attr('data-val');
-                    var that = $(this);
-                    $.post(
-                        '__CONTROLLER__/unCollect',
-                        {"agent_id":agentUser, "goods_id":goods_id},
-                        function (data) {
-                            if (data.code == 1) {
-                                window.location.reload();
-                            } else {
-                                alert(data.msg);
-                            }
-                        },
-                        'json'
-                    );
-                });
-
+                $(function(){
 				//排版列表
-				$('.goodsList .twoCol').show();
-				$('.goodsList .oneCol').hide();
-				$('.headNav a').toggle(function(){
-					$('.goodsList .twoCol').hide();
-					$('.goodsList .oneCol').show();
-				},function(){
-					$('.goodsList .twoCol').show();
-					$('.goodsList .oneCol').hide();
+                if($.cookie('typography') == 'oneCol'){
+                    $('.goodsList .oneCol').show();
+                    $('.goodsList .twoCol').hide();
+                }else{
+    				$('.goodsList .twoCol').show();
+    				$('.goodsList .oneCol').hide();
+                }
+
+
+				$('.headNav a').click(function(){
+                    if($.cookie('typography') == 'twoCol'){
+                         $.cookie('typography','oneCol',{expires:7,path:'/'});
+                        $('.goodsList .oneCol').show();
+                        $('.goodsList .twoCol').hide();
+                    }else{
+                        $.cookie('typography','twoCol',{expires:7,path:'/'});
+                        $('.goodsList .twoCol').show();
+                        $('.goodsList .oneCol').hide();
+                    }
 				});
 
 				//二维码
-				$('.goodsList .code').click(function(){
-                    $('.qrCode').fadeIn();
-                    var url = $(this).attr('imgurl');
-                    $('.qrCode>span>img').attr('src',url);
-				});
+				
 				$('.qrCode').click(function(){
                     $(this).fadeOut();
 				});
@@ -249,4 +135,59 @@
 
 
 	</body>
+<script type="text/javascript">
+var page = 0;//滚动分页
+var re = 1;//ajax加载开关
+var url = "{:U('datalist',array('brand_id'=>$brand,'class_id'=>$class,'agent'=>AGENT_ID,'sorting'=>$sorting))}";//默认url 点击分类后改变
+function getdata()
+{   
+        if(re != 1){return;}//上一次ajax没有回来就不执行请求
+        re = 2;//关闭
+        var index = layer.msg('正在加载...', {icon: 16,shade: [0.1,'#CECECE'],time:0});
+        page = page + 1;
+        $.get(url,{p:page ,order:$.cookie('order')},function(data){
+                    if(data){
+                        $('.data').append(data);
+                        re = 1;//打开加载开关
+                    }else{
+                        layer.msg('没有了');
+                        re = 2;//关闭加载开关
+                    }
+                    layer.close(index);//隐藏正在加载的图片
+
+                })
+                
+}
+$(function(){
+    getdata();//默认调用一次
+})
+
+//滚动时加载数据
+window.onscroll=function(){
+    var maxScroll = $(document).height()-$(window).height();//整个文档的高减去可视高=
+    if ($(window).scrollTop() >= maxScroll || page == 1) {getdata();}
+}
+</script>
+<script type="text/javascript">
+//收藏
+function collectIco(goods_id,agentUser)
+{
+   
+    $.post('{:U(collect)}',{"agent_id":agentUser, "goods_id":goods_id},function (data) {
+            if (data.code == 1) {
+                window.location.reload();
+            }
+            layer.msg(data.msg);
+        })
+        
+}
+
+
+//二维码
+function code(obj){
+    $('.qrCode').fadeIn();
+    var url = $(obj).attr('imgurl');
+    $('.qrCode>span>img').attr('src',url);
+}
+</script>
 </html>

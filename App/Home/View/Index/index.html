@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>首页</title>
+	<title>{$config['name']}</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" />
 	<link rel="stylesheet" type="text/css" href="__STYLE__/css/public.css">
 	<link rel="stylesheet" type="text/css" href="__STYLE__/css/home.css">
 	<script type="text/javascript" src="__STYLE__/js/jquery-1.7.1.min.js"></script>
+    <meta content="telephone=no" name="format-detection"> 
 	<script>
 		document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';
 		$(window).resize(function () {
@@ -17,7 +18,7 @@
 <body>
 	<div class="header">
 		<a href="search.html"><img src="__STYLE__/img/search_icon.png"></a>
-		<h3>南方钟表</h3>
+		<h3>{$config['name']}</h3>
 	</div>
 	<div class="content">
 		<ul>

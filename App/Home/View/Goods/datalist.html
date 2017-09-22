@@ -1,0 +1,21 @@
+<foreach name="goodslist" item="vo">
+	<li>
+		<a href="{:U('Home/Goods/goodDetail', array('goods_id' => $vo['goods_id'],'agent'=>AGENT_ID))}"><img src="{$vo.images}"/></a>
+		<div class="details">
+			<h1><a href="{:U('Home/Goods/goodDetail', array('goods_id' => $vo['goods_id'],'agent'=>AGENT_ID))}">{$vo.name}</a></h1>
+			<p>编号:{$vo.goods_sn}</p>
+			<h2>批价:<em>￥{$vo.agent_price}</em></h2>
+			<span class="clear">
+                <div class="collect">
+                <php>if($vo['agent_collection']){</php>
+                    <img onclick="collectIco('{$vo.goods_id}','{$Think.session.AgentUser}')" class="collectIco" src="__STYLE__/img/start_icon_on.png"/>
+                <php>}else{</php>
+                    <img onclick="collectIco('{$vo.goods_id}','{$Think.session.AgentUser}')" class="collectIco" src="__STYLE__/img/start_icon.png"/>
+                <php>}</php>
+                <b>{$vo.collection}</b>
+                </div>
+				<div onclick="code(this)" imgurl="http://pan.baidu.com/share/qrcode?w=270&h=270&url=http://<?php echo $_SERVER['HTTP_HOST'];?>{:U('Home/Goods/goodDetail', array('goods_id' => $vo['goods_id'],'agent'=>AGENT_ID))}" class="code"><img src="__STYLE__/img/code.png"/></div>
+			</span>
+		</div>
+	</li>
+</foreach>
