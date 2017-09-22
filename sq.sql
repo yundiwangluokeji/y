@@ -269,7 +269,7 @@ create table if not exists `yd_address`(
 
 
 /*
---订单表 
+--订单表
 */
 create table if not exists `yd_order`(
 `order_id` int(11) unsigned not null auto_increment primary key,

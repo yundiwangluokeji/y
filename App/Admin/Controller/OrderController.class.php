@@ -23,7 +23,9 @@ class OrderController extends Controller
             ->field('o.order_id, o.order_sn, o.count_price, o.order_status, o.pay_way, o.pay_status, o.shipping_status, o.username, o.mobile, o.address, o.time, o.msg, od.color_num, od.goods_id, od.goods_price, od.goods_num, od.goods_name, od.goods_color, g.images')
             ->where('consignee_id != 0 && buy = 1')
             ->limit($Page->firstRow.','.$Page->listRows)
+            ->order("time desc")
             ->select();
+
         $payWays = ['未支付', '微信支付', '支付宝支付', '账户余额支付', '线下支付'];
         $colors = C('color');
         for ($i = 0; $i < count($orderData); $i++) {
@@ -129,6 +131,7 @@ class OrderController extends Controller
             ->field('o.order_id, o.order_sn, o.count_price, o.order_status, o.pay_way, o.pay_status, o.shipping_status, o.username, o.mobile, o.address, o.time, o.msg, od.color_num, od.goods_id, od.goods_price, od.goods_num, od.goods_name, od.goods_color, g.images')
             ->where('consignee_id != 0 && buy = 0')
             ->limit($Page->firstRow.','.$Page->listRows)
+            ->order("time desc")
             ->select();
         $payWays = ['未支付', '微信支付', '支付宝支付', '账户余额支付', '线下支付'];
         $colors = C('color');
@@ -185,8 +188,8 @@ class OrderController extends Controller
             ->field('o.order_id, o.order_sn, o.count_price, o.order_status, o.pay_way, o.pay_status, o.shipping_status, o.username, o.mobile, o.address, o.time, o.msg, od.color_num, od.goods_id, od.goods_price, od.goods_num, od.goods_name, od.goods_color, g.images')
             ->where('consignee_id = 0')
             ->limit($Page->firstRow.','.$Page->listRows)
+            ->order("time desc")
             ->select();
-
         $payWays = ['未支付', '微信支付', '支付宝支付', '账户余额支付', '线下支付'];
         $colors = C('color');
         for ($i = 0; $i < count($orderData); $i++) {
@@ -222,34 +225,81 @@ class OrderController extends Controller
         $this->display();
     }
 
-
-//    发货
+    //    发货
     public function delivery()
     {
         if (IS_POST) {
             $order_sn = I('post.order_sn');
-            $courier = I('post.courier');
-            $courier_sn = I('post.courier_sn');
-            $updateRes = M('order')->where(array('order_sn' => $order_sn))
-                ->save(array(
-                    'courier' => $courier,
-                    'courier_sn' => $courier_sn,
-                    'shipping_status' => 1
-                ));
-            if ($updateRes) {
-                $this->ajaxReturn(array(
-                    'status' => 1,
-                    'msg' => '发货成功',
-                    'data' => ''
-                ));
+            $order_status = M('order')->field('order_status')->where(array('order_sn' => $order_sn))->find();
+            //    订单状态为1m
+            if ($order_status['order_status'] == 1) {
+                $courier = I('post.courier');
+                $courier_sn = I('post.courier_sn');
+                $updateRes = M('order')->where(array('order_sn' => $order_sn))
+                    ->save(array(
+                        'courier' => $courier,
+                        'courier_sn' => $courier_sn,
+                        'shipping_status' => 1
+                    ));
+                    // 插入数据到agent_goods表
+                if ($updateRes) {
+                    // 查询出订单信息
+                    $agentGoodsData = M('order o')
+                        ->join('__ORDER_GOODS__ og on o.order_id = og.order_id')
+                        ->join('__GOODS__ g on og.goods_id = g.goods_id')
+                        ->field('og.goods_id, og.goods_num, og.goods_color')
+                        ->where('o.order_sn = '.$order_sn)
+                        ->find();
+
+                    //查询agent中是否有数据
+                    $issetGoodData = M('agent_goods')
+                        ->field('agent_color, agent_inventory')
+                        ->where(array('agent_goods_id' => $agentGoodsData['goods_id']))
+                        ->find();
+
+                    //合并处理颜色
+                    $color1 = explode(',', $agentGoodsData['goods_color']);
+                    $color2 = explode(',', $issetGoodData['agent_color']);
+                    $colors = array_merge($color1, $color2);
+                    $colors = array_unique($colors);
+                    $finalColor = '';
+                    for ($i = 0; $i < count($colors); $i++) {
+                        $finalColor .= $colors[$i].',';
+                    }
+
+                    if ($issetGoodData) {
+                        //修改数据
+                        M('agent_goods')
+                            ->where(array('agent_goods_id' => $agentGoodsData['goods_id']))
+                            ->save(array(
+                                'agent_inventory' => ($issetGoodData['agent_inventory'] + $agentGoodsData['goods_num']),
+                                'agent_color' => $finalColor
+                            ));
+
+                    } else {
+                        //插入数据
+                        M('agent_goods')->add($agentGoodsData);
+                    }
+
+                    $this->ajaxReturn(array(
+                        'status' => 1,
+                        'msg' => '发货成功',
+                        'data' => ''
+                    ));
+                } else {
+                    $this->ajaxReturn(array(
+                        'status' => 0,
+                        'msg' => '发货失败',
+                        'data' => ''
+                    ));
+                }
             } else {
                 $this->ajaxReturn(array(
                     'status' => 0,
-                    'msg' => '发货失败',
+                    'msg' => '请等待下级确认',
                     'data' => ''
                 ));
             }
-
         } else {
             $payWays = ['未支付', '微信支付', '支付宝支付', '账户余额支付', '线下支付'];
             $order_sn = I('get.order_sn');
@@ -282,4 +332,5 @@ class OrderController extends Controller
             ));
         }
     }
+
 }

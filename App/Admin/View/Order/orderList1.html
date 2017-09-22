@@ -101,12 +101,10 @@
 							<button class="gopay" order_sn="{$vo.order_sn}">付款</button>
 							<elseif condition="$vo.btnStatus eq 1"/>
 								<a class="tag_blue" href="__CONTROLLER__/delivery/order_sn/{$vo.order_sn}" onclick="return pe_dialog(this, &#39;填写发货信息&#39;, 600, 430, &#39;order_send&#39;)">发 货</a>
-								<!-- <p class="mat5"><a href="" onclick="return pe_dialog(this, &#39;取消订单&#39;, 600, 430, &#39;order_close&#39;)" class="c999">取消订单</a></p> -->
 							<elseif condition="$vo.btnStatus eq 2"/>
 								<button class="btn">已发货</button>
 							<else />
 								<a class="tag_org" href="" onclick="return pe_dialog(this, &#39;订单付款&#39;, 600, 340, &#39;order_pay&#39;)">未定义状态</a>
-								<!-- <p class="mat5"><a href="" onclick="return pe_dialog(this, &#39;取消订单&#39;, 600, 430, &#39;order_close&#39;)" class="c999">取消订单</a></p> -->
 						</if>
 					</td>
 				</tr>

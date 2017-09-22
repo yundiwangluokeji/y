@@ -4,7 +4,7 @@ namespace Admin\Model;
 class GoodsModel extends \Think\Model
 {
     // 查询商品数据
-    public function selectGoodData($where = '')
+    public function selectGoodData($where = '', $Page)
     {
         $goodData = $this->where($where)->limit($Page->firstRow.','.$Page->listRows)->select();
         if ($goodData) {
@@ -151,5 +151,11 @@ class GoodsModel extends \Think\Model
                 'data' => ''
             );
         }
+    }
+
+//    统计数量
+    public function countNum()
+    {
+        return $this->count();
     }
 }
