@@ -170,6 +170,7 @@
                 $('#collectIco').one('click', function () {
                     var goods_id = $('#goods_id').attr('data-val');
                     var agentUser = $('#AgentUser').attr('data-val');
+                    if(!agentUser){layer.msg('请登录后收藏~~~');return;}
                     var that = $(this);
                     $.post(
                         '{:U(collect)}',

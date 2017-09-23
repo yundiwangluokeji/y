@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>搜索</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" />
+	<link rel="stylesheet" type="text/css" href="__STYLE__/css/public.css">
+	<link rel="stylesheet" type="text/css" href="__STYLE__/css/search.css">
+	<script type="text/javascript" src="__STYLE__/js/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="__STYLE__/layer/layer.js"></script>
+	<script>
+		document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';
+		$(window).resize(function () {  
+			document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';
+		 }) 
+	</script>
+</head>
+<body>
+	<div class="header">
+		<form method="get">
+			<a class="back" href="{:U('goodslist',array('agent'=>AGENT_ID))}"><img src="__STYLE__/img/back_last.png"></a>
+			<button type="submit" class="search" href="{:U('Goods/search')}">搜索</button>
+			<i class="line"></i>
+			<div><input name="q" placeholder="请输入搜索词" value="{$q}"></input></div>
+		</form>
+	</div>
+	
+	<div class="content">
+		<div class="items data">
+
+		<!-- 数据放置区域 -->
+			
+		</div>
+		<!-- 内容为空时 display:none;-->
+		<div class="blank">
+			<img src="__STYLE__/img/search_blank.png">
+			<p>没有找到你需要产品</p>
+		</div>
+
+	</div>
+	<div class="mark"></div>
+	<div class="wechat_img">
+		<img src="__STYLE__/img/wechat_img.png">
+	</div>
+	<div class="back_top">
+		<img src="__STYLE__/img/back_top.png">
+	</div>
+</body>
+<script type="text/javascript">
+	$(function(){
+		$('.mark').click(function() {
+			$('.mark').hide();
+			$('.wechat_img').hide();
+		});
+		// 返回顶部
+		$('.back_top').click(function(){
+			$('html,body').animate({scrollTop:0},300)
+		})
+	})
+</script>
+<script type="text/javascript">
+var page = 0;//滚动分页
+var re = 1;//ajax加载开关
+var url = "{:U('Goods/searchdata',array('agent'=>AGENT_ID,'q'=>$q))}";//默认url 点击分类后改变
+function getdata()
+{   
+		if(!'{$q}'){return;}
+        if(re != 1){return;}//上一次ajax没有回来就不执行请求
+        re = 2;//关闭
+        var index = layer.msg('正在加载...', {icon: 16,shade: [0.1,'#CECECE'],time:0});
+        page = page + 1;
+        $.get(url,{p:page},function(data){
+                    if(data){
+                        $('.data').append(data);
+                        re = 1;//打开加载开关
+                    }else{
+                    	if(page == 1){
+                    		$('.blank').show();
+                    	}else{
+                    		
+                        	layer.msg('没有了');
+                    	}
+                        re = 2;//关闭加载开关
+                    }
+                    layer.close(index);//隐藏正在加载的图片
+
+                })
+                
+}
+$(function(){
+    getdata();//默认调用一次
+})
+
+//滚动时加载数据
+window.onscroll=function(){
+    var maxScroll = $(document).height()-$(window).height();//整个文档的高减去可视高=
+    if ($(window).scrollTop() >= maxScroll || page == 1) {getdata();}
+}
+</script>
+<script type="text/javascript">
+//收藏
+function collectIco(obj,goods_id,agentUser)
+{
+    $.post("{:U('Goods/collect')}",{"agent_id":agentUser, "goods_id":goods_id},function (data) {
+            if (data.code == 1) {
+                $(obj).addClass('on');
+                $('.num_'+goods_id).html(parseInt($('.num_'+goods_id).html()) + 1);
+            }
+            layer.msg(data.msg);
+        })
+        
+}
+
+
+//二维码
+function code(obj){
+    // $('.qrCode').fadeIn();
+    var url = $(obj).attr('imgurl');
+    $('.wechat_img>img').attr('src',url);
+    $('.mark').show();
+			$('.wechat_img').show();
+}
+</script>
+</html>

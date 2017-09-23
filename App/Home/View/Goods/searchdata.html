@@ -1,0 +1,17 @@
+<foreach name="data" item="v" key="k">
+<div class="item">
+	<a class="img" href="{:U('Home/Goods/goodDetail', array('goods_id'=>$v['goods_id'],'agent'=>AGENT_ID))}"><img src="{$v.images}"></a>
+	<div class="txt">
+		<h3><a href="{:U('Home/Goods/goodDetail', array('goods_id'=>$v['goods_id'],'agent'=>AGENT_ID))}">{:searchcolor($v['name'],$q)}</a></h3>
+		<p>商品编号:{$v.goods_sn}</p>
+		<div class="bottom">
+			<p>批价：<span style="color: #c3a07d;">￥{$v.price}</span></p>
+			<div class="overflow:hidden;">
+				<p onclick="collectIco(this,'{$v[goods_id]}','{:session('AgentUser')}')" class="bottom_right <?php echo ($v['is_collect'])?'on':'';?>"><span class="num_{$v.goods_id}">{$v.collect}</span> <i class="start"></i>
+				</p>
+				<img onclick="code(this)" imgurl="http://pan.baidu.com/share/qrcode?w=270&h=270&url=http://<?php echo $_SERVER['HTTP_HOST'];?>{:U('Home/Goods/goodDetail', array('goods_id' => $v['goods_id'],'agent'=>AGENT_ID))}"  class="wechat_btn" src="__STYLE__/img/search_wechat_icon.png">
+			</div>
+		</div>
+	</div>
+</div>
+</foreach>			

@@ -176,7 +176,7 @@ class TemporaryController extends Controller
                     }
                     $this->assign('color',substr($color,0,-1));
                     $num = array_sum(session('cart')['color']);
-                    if($num <= 0){$this->_empty('非法访问！');}
+                    // if($num <= 0){$this->_empty('非法访问！');}
                     $this->assign('num',$num);//数量
                     $this->assign('count_price',sprintf("%.2f",$goods2['agent_price'] * array_sum(session('cart')['color'])));//总价
 

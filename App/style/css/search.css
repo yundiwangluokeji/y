@@ -4,7 +4,7 @@
 .header div input{background: #1c2023;border: none; border-radius: 0.6rem; color: #FFFFFF;width: 92%;padding: 0 4%;outline: none;font-size: 0.26rem;}
 .header a{display: block;width: 0.88rem;height: 0.88rem;text-align: center;}
 .header a img{width: 0.35rem;}
-.header a.search{float: right;color: #c3a07d;font-size: 0.28rem;}
+.header .search{float: right;color: #c3a07d;font-size: 0.28rem;background: none;border:none;line-height: 0.9rem;margin-right: 0.2rem;}
 .header a.back{float: left;}
 .header .line{display: block;height: 0.4rem;width: 1px;background: #2f3336;position: absolute;left: 0.9rem;top: 0.26rem;}
 

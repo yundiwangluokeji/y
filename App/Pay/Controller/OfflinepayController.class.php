@@ -35,7 +35,7 @@ class OfflinepayController extends Controller
                 		$data['time'] = date('Y-m-d H:i:s',$data['time']);
                 		$data['total_fee'] = $data['price'];
                 		$data['trade_no'] = '无';
-                		$msg = '线下支付待确定！';
+                		$msg = '线下支付待确认！';
                 		$this->assign('data',$data);
                 		$this->assign('msg',$msg);
                 		$this->display('/Alipay/returnurl');

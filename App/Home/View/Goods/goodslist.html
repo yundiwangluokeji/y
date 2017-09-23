@@ -17,7 +17,7 @@
 			<div class="mg">
 				<a class="goback" href="javascript:history.back();"><img src="__STYLE__/img/back.png"/></a>
 				<h1>商品列表</h1>
-				<a class="search" href=""><img src="__STYLE__/img/search.png"/></a>
+				<a class="search" href="{:U('Goods/search',array('agent'=>AGENT_ID))}"><img src="__STYLE__/img/search.png"/></a>
 			</div>
 		</div>
 
@@ -32,7 +32,7 @@
                             </foreach>
                         </div>
 						<li id="priceOrder" >价格
-                                            <php>if($sorting == 'price'){</php>
+                                            <php>if($sorting == 'price' || $sorting == 'agent_price'){</php>
                                                 <img src="__STYLE__/img/down.png"/>
                                             <php>}else{</php>
                                                 <img src="__STYLE__/img/down2.png"/>
@@ -170,12 +170,13 @@ window.onscroll=function(){
 </script>
 <script type="text/javascript">
 //收藏
-function collectIco(goods_id,agentUser)
+function collectIco(obj,goods_id,agentUser)
 {
-   
+   var imgsrc = '__STYLE__/img/start_icon_on.png';
     $.post('{:U(collect)}',{"agent_id":agentUser, "goods_id":goods_id},function (data) {
             if (data.code == 1) {
-                window.location.reload();
+                $(obj).attr('src',imgsrc);
+                $('.num_'+goods_id).html(parseInt($('.num_'+goods_id).html()) + 1);
             }
             layer.msg(data.msg);
         })
