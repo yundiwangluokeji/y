@@ -2,7 +2,9 @@
 <html>
 <head>
 	<title>充值</title>
+		<link rel="shortcut icon" href="/Public/favicon.ico" type="image/x-icon" />
 	<meta charset="utf-8">
+	<link rel="shortcut icon" href="/Public/favicon.ico" type="image/x-icon" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" />
 	<link rel="stylesheet" type="text/css" href="__STYLE__/css/public.css">
 	<link rel="stylesheet" type="text/css" href="__STYLE__/css/wallet_recharge.css">
@@ -50,9 +52,13 @@
 </body>
 </html>
 <script type="text/javascript">
-	$('.tabs .tabs_item').eq(0).addClass('on');
+	// $('.tabs .tabs_item').eq(0).addClass('on');
+	$('.tabs .tabs_item').eq(1).addClass('on');
+
+
 	$('.tabs .tabs_item').click(function(){
 		var index=$(this).index();
+		if(index == 0){alert('暂不支持微信充值~~~');return;}
 		$(this).addClass('on').siblings('.tabs .tabs_item').removeClass('on');
 		$('.btn .submit').eq(index).show().siblings('.btn .submit').hide();
 	})

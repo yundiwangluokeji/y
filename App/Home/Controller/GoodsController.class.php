@@ -166,6 +166,8 @@ class GoodsController extends PublicController
 
                     }
 
+                    M('agent_goods')->where(array('agent_id'=>AGENT_ID,'agent_goods_id'=>$goods_id))->setInc('agent_click_count',1);
+
 // ------------------------------------------------------
             }else{
                 //总平台商品
@@ -184,6 +186,8 @@ class GoodsController extends PublicController
                 }else{
                         $this->_empty();
                 }
+                    M('goods')->where(array('agent_id'=>AGENT_ID,'goods_id'=>$goods_id))->setInc('agent_click_count',1);
+
             }
         }else{
             $this->_empty();
@@ -262,9 +266,9 @@ class GoodsController extends PublicController
     }
 
 
-   public function _empty()
-   {
-    $this->show('404');exit;
-   }
+   // public function _empty()
+   // {
+   //  $this->show('404');exit;
+   // }
 
 }

@@ -2,6 +2,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
+		<link rel="shortcut icon" href="/Public/favicon.ico" type="image/x-icon" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" />
 		<title>{$goodData.name}</title>
 		<link rel="stylesheet" href="__STYLE__/css/public.css" />
@@ -254,7 +255,7 @@
 // 商品提交
 $(document).ready(function (e) {
     $('#detail_form').on('submit',(function(e) {
-    	if({$inventory} <= 0){layer.msg('此商品库存不足！');return false;}
+    	if('{$inventory}' <= 0){layer.msg('此商品库存不足！');return false;}
     	if("{:session('AgentUser')}" == "{$Think.get.agent}"){layer.msg('不可购买自己的商品！');return false;}
         var formData = new FormData(this);
         formData['type'] = 1;

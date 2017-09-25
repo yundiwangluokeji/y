@@ -1,10 +1,10 @@
 <div class="footer">
-    <a href="">
+    <a href="{:U('Home/Index/index', array('agent' => AGETN_ID))}">
         <img class="shadow" src="__STYLE__/img/index_icon.png">
         <img class="light" src="__STYLE__/img/index_icon_on.png">
         <span>首页</span>
     </a>
-    <a class="on" href="{:U('Home/Recommended/index', array('agent' => $AgentUser))}">
+    <a class="on" href="{:U('Home/Recommended/index', array('agent' => AGETN_ID))}">
         <img class="shadow" src="__STYLE__/img/tuijian_icon.png">
         <img class="light" src="__STYLE__/img/tuijian_icon_on.png">
         <span>推荐</span>

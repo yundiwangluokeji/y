@@ -349,7 +349,7 @@ class BuyController extends Controller
 						//消除session中的商品
 						session('cart',null);
 						
-						$this->addgoods($order_id,$buy);//给用户添加商品
+						// $this->addgoods($order_id,$buy);//给用户添加商品
 						$this->payres('支付成功',1);exit;
 					}else{
 						M()->rollback();

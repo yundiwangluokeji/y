@@ -32,11 +32,9 @@ class PublicController extends Controller {
     }
 
     public function _empty(){
-
-
     	header('HTTP/1.1 404 Not Found'); 
 		header("status: 404 Not Found"); 
-    	echo '页面不存在~~~';
+        $this->display('Public/404');
     }
 
 

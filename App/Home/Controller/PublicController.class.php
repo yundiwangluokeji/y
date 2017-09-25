@@ -13,12 +13,12 @@ class PublicController extends Controller {
         // if(AGENT_ID !=)
     	// session('HomeUser',null);
         //如果不是自己上级的店铺 不允许查看
-        // if(session('AgentUser')){
-        //     $pid = M('agent')->where(array('id'=>session('AgentUser')))->getField('father');
-        //     if(AGENT_ID != $pid && AGENT_ID != session('AgentUser')){
-        //         $this->_empty();exit;
-        //     }
-        // }
+        if(session('AgentUser')){
+            $pid = M('agent')->where(array('id'=>session('AgentUser')))->getField('father');
+            if(AGENT_ID != $pid && AGENT_ID != session('AgentUser')){
+                $this->_empty();exit;
+            }
+        }
         $this->config();//配置
     }
 
@@ -44,10 +44,9 @@ class PublicController extends Controller {
 
     	header('HTTP/1.1 404 Not Found');
 		header("status: 404 Not Found");
-    	echo 'PublicController';
+    	$this->display('Public/404');
     }
 }
-
 
  // 'id' => string '2' (length=1)
  //  'name' => string '云狄科技11' (length=14)
