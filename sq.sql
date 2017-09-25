@@ -174,7 +174,7 @@ create table if not exists `yd_money`(
 `money` varchar(255) not null default '0' COMMENT '货币(分为单位)',
 `updatetime`TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 )engine=innodb default charset="utf8";
-------------------------------------------------------------------------------------------------------------------
+
 /*
 --货币操作记录表
 */

@@ -173,9 +173,10 @@
                     var agentUser = $('#AgentUser').attr('data-val');
                     if(!agentUser){layer.msg('请登录后收藏~~~');return;}
                     var that = $(this);
+                    var agent = {:AGENT_ID};
                     $.post(
-                        '{:U(collect)}',
-                        {"agent_id":agentUser, "goods_id":goods_id},
+                        "{:U('collect')}",
+                        {"agent_id":agentUser, "goods_id":goods_id,'agent':agent},
                         function (data) {
                             if (data.code == 1) {
                                 that.attr('src','__STYLE__/img/collectA.png');

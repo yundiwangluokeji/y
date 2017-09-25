@@ -15,7 +15,7 @@
 if(version_compare(PHP_VERSION,'5.3.0','<'))  die('require PHP > 5.3.0 !');
 
 // 开启调试模式 建议开发阶段开启 部署阶段注释或者设为false
-define('APP_DEBUG',false);
+define('APP_DEBUG',true);
 
 //手机号正则
 define('__MOBILE__','/^(13[0-9]{9})|(14[57][0-9]{8})|(15[012356789][0-9]{8})|(17[0-9]{9})|(18[0-9]{9})$/');

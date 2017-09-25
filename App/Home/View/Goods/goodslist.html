@@ -63,17 +63,17 @@
 		</div>
 
         <div class="footer">
-            <a href="{:U('Home/Index/index')}">
+            <a href="{:U('Home/Index/index',array('agent'=>AGENT_ID))}">
                 <img class="shadow" src="__STYLE__/img/index_icon.png">
                 <img class="light" src="__STYLE__/img/index_icon_on.png">
                 <span>首页</span>
             </a>
-            <a href="{:U('Home/Recommended/index')}">
+            <a href="{:U('Home/Recommended/index',array('agent'=>AGENT_ID))}">
                 <img class="shadow" src="__STYLE__/img/tuijian_icon.png">
                 <img class="light" src="__STYLE__/img/tuijian_icon_on.png">
                 <span>推荐</span>
             </a>
-            <a href="{:U('Agent/Index/index')}">
+            <a href="{:U('Agent/Index/index',array('agent'=>AGENT_ID))}">
                 <img class="shadow" src="__STYLE__/img/us_icon.png">
                 <img class="light" src="__STYLE__/img/us_icon_on.png">
                 <span>我的</span>
@@ -174,7 +174,8 @@ window.onscroll=function(){
 function collectIco(obj,goods_id,agentUser)
 {
    var imgsrc = '__STYLE__/img/start_icon_on.png';
-    $.post('{:U(collect)}',{"agent_id":agentUser, "goods_id":goods_id},function (data) {
+    var agent = {:AGENT_ID};
+    $.post('{:U(collect)}',{"agent_id":agentUser, "goods_id":goods_id,'agent':agent},function (data) {
             if (data.code == 1) {
                 $(obj).attr('src',imgsrc);
                 $('.num_'+goods_id).html(parseInt($('.num_'+goods_id).html()) + 1);

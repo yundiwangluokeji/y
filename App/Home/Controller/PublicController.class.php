@@ -15,6 +15,7 @@ class PublicController extends Controller {
         //如果不是自己上级的店铺 不允许查看
         if(session('AgentUser')){
             $pid = M('agent')->where(array('id'=>session('AgentUser')))->getField('father');
+            // dump($pid);exit;
             if(AGENT_ID != $pid && AGENT_ID != session('AgentUser')){
                 $this->_empty();exit;
             }
