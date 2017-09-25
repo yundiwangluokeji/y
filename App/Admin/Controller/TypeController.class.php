@@ -65,7 +65,7 @@ class TypeController extends PublicController
             $formData = I('post.info');
             $editRes = D('classification')->editType($formData, $class_id);
             if ($editRes['status']) {
-                $this->success($editRes['msg'], 'index');
+                $this->success($editRes['msg']);
             } else {
                 $this->error($editRes['msg']);
             }

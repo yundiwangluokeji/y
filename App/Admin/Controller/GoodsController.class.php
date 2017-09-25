@@ -156,7 +156,7 @@ class GoodsController extends PublicController
             $editRes = D('goods')->editGood($formData, $goods_id);
             // dump($editRes);exit;
             if ($editRes['status']) {
-                $this->success($editRes['msg'], 'index');
+                $this->success($editRes['msg']);
             } else {
                 $this->error($editRes['msg']);
             }
