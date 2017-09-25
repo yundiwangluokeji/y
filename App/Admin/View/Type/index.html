@@ -4,7 +4,7 @@
 	<div class="right" style="height: 571px;">
 	<div class="now" style="width: 1679px;">
 		<a href="Classification of goods.html" class="sel">分类列表（29）</a>
-		<a href="__CONTROLLER__/addtype" id="fabu">添加分类</a>
+		<a href="{:U('addtype')}" id="fabu">添加分类</a>
 		<div class="clear"></div>
 	</div>
 	<div class="right_main">
@@ -24,9 +24,9 @@
     			<td style="background-color: rgb(255, 255, 255);"><input type="text" name="sorting[{$vo.class_id}]" value="{$vo.sorting}" class="inputtext input30 center"></td>
     			<td class="aleft" style="background-color: rgb(255, 255, 255); text-align:center"><a href="" target="_blank">{$vo.name}</a></td>
     			<td style="background-color: rgb(255, 255, 255);">
-    				<a href="__CONTROLLER__/editType/class_id/{$vo.class_id}" class="admin_edit mar3">修改</a>
-    				<a href="__CONTROLLER__/delType/class_id/{$vo.class_id}" class="admin_del mar3" onclick="return pe_cfone(this, &#39;删除&#39;)">删除</a>
-    				<a href="__CONTROLLER__/transferGood/class_id/{$vo.class_id}" class="admin_btn" onclick="return pe_dialog(this, &#39;批量转移商品&#39;, 400, 220)">转移商品</a>
+    				<a href="{:U('editType', array('class_id' => $vo['class_id']))}" class="admin_edit mar3">修改</a>
+    				<a href="{:U('delType', array('class_id' => $vo['class_id']))}" class="admin_del mar3" onclick="return pe_cfone(this, &#39;删除&#39;)">删除</a>
+    				<a href="{:U('transferGood', array('class_id' => $vo['class_id']))}" class="admin_btn" onclick="return pe_dialog(this, &#39;批量转移商品&#39;, 400, 220)">转移商品</a>
     			</td>
     		</tr>
         </foreach>
@@ -37,7 +37,7 @@
 	<div class="right_bottom">
 		<span class="fl mal10">
 			<input type="checkbox" name="checkall" onclick="pe_checkall(this, &#39;category_id&#39;)">
-			<button href="__CONTROLLER__/delType" onclick="return pe_cfall(this, &#39;category_id&#39;, &#39;form&#39;, &#39;批量删除&#39;)">批量删除</button>
+			<button href="{:U('delType')}" onclick="return pe_cfall(this, &#39;category_id&#39;, &#39;form&#39;, &#39;批量删除&#39;)">批量删除</button>
 			<button href="admin.php?mod=category&amp;act=order&amp;token=185dbf0e05b36cd40737acb79e73f95c" onclick="pe_doall(this,&#39;form&#39;)">更新排序</button>
 		</span>
 		<span class="fr fenye"></span>

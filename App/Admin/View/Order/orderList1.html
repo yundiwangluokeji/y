@@ -95,12 +95,12 @@
 						<img src="__STYLE__/images/huo_<if condition='$vo.shipping_status eq 0'>0<else />1</if>.png" title="">
 						<!--<p><a href="Express order.html" class="cblue" onclick="return pe_dialog(this, &#39;打印快递单&#39;, 1000, 600)">[快递单]</a></p>-->
 					</td>
-					<td width="85"><span class="corg">{$vo.orderStatus}</span><p class="mat5"><a href="__CONTROLLER__/orderDetail/order_id/{$vo.order_id}" class="c999">订单详情</a></p></td>
+					<td width="85"><span class="corg">{$vo.orderStatus}</span><p class="mat5"><a href="{:U('orderDetail', array('order_id' => $vo['order_id']) )}" class="c999">订单详情</a></p></td>
 					<td width="85" style="border-right:0;">
 						<if condition="$vo.btnStatus eq 0">
 							<button class="gopay" order_sn="{$vo.order_sn}">付款</button>
 							<elseif condition="$vo.btnStatus eq 1"/>
-								<a class="tag_blue" href="__CONTROLLER__/delivery/order_sn/{$vo.order_sn}" onclick="return pe_dialog(this, &#39;填写发货信息&#39;, 600, 430, &#39;order_send&#39;)">发 货</a>
+								<a class="tag_blue" href="{:U('delivery', array('order_sn' => $vo['order_sn']))}" onclick="return pe_dialog(this, &#39;填写发货信息&#39;, 600, 430, &#39;order_send&#39;)">发 货</a>
 							<elseif condition="$vo.btnStatus eq 2"/>
 								<button class="btn">已发货</button>
 							<else />
@@ -143,7 +143,7 @@ $(function(){
 	$('.gopay').click(function () {
 	    var that = $(this);
 	    $.post(
-	        '__CONTROLLER__/gopay',
+	        '{:U("gopay")}',
 			{'order_sn':that.attr('order_sn')},
 			function (data) {
                 if (data.status != 1) {
@@ -160,7 +160,7 @@ $(function(){
     	$('.mat5').click(function () {
     	    var that = $(this);
     	    $.post(
-    	        '__CONTROLLER__/mat5',
+    	        '{:U("mat5")}',
     			{'order_close':that.attr('order_close')},
     			function (data) {
                     if (data.status != 1) {

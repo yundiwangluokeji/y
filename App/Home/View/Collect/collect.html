@@ -25,10 +25,10 @@
 		<div class="items">
             <foreach item="vo" name="Collect_goods">
     			<div class="item">
-    				<a href="__CONTROLLER__/collectDetail/goods_id/{$vo.goods_id}" class="img">
+    				<a href="{:U('collectDetail', array('goods_id' => $vo['goods_id']))}" class="img">
     					<img src="{$vo.images}">
     				</a>
-    				<h3><a href="__CONTROLLER__/collectDetail/goods_id/{$vo.goods_id}">{$vo.name}</a></h3>
+    				<h3><a href="{:U('collectDetail', array('goods_id' => $vo['goods_id']))}">{$vo.name}</a></h3>
     				<p class="price">批价：<span>￥{$vo.price}</span></p>
     				<div class="btn">
     					<a href="javascript:;">
@@ -53,7 +53,7 @@
 		<div class="txt"><p>确定删除1件商品？</p></div>
 		<div class="btn">
 			<a style="border-right: 1px solid #eeeeee;box-sizing: border-box;" href="">取消</a>
-			<a href="__CONTROLLER__/delGood/goods_id/{$vo.goods_id}">确定</a>
+			<a href="{:U('delGood', array('goods_id' => $vo['goods_id']))}">确定</a>
 		</div>
 	</div>
 

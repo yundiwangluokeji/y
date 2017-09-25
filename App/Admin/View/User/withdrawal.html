@@ -68,7 +68,7 @@ $('.shelvesBtn').click(function () {
         if (confirm('确定已打款？')) {
             var that = $(this);
             $.post(
-                '__CONTROLLER__/changeStatus',
+                '{:U("changeStatus")}',
                 {"id":that.attr('data-id')},
                 function (data) {
                     if (data.status) {

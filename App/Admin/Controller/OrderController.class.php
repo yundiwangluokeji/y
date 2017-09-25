@@ -69,9 +69,14 @@ class OrderController extends Controller
         $orderData = M('order o')
             ->join('__ORDER_GOODS__ od on o.order_id = od.order_id')
             ->join('__GOODS__ g on od.goods_id = g.goods_id')
-            ->field('o.order_id, o.order_sn, o.count_price, o.order_status, o.pay_way, o.pay_status, o.shipping_status, o.username, o.mobile, o.address, o.time, o.msg, o.courier, od.color_num, od.goods_id, od.goods_price, od.goods_num, od.goods_name, od.goods_color, g.images')
+            ->field('o.agent_id, o.order_id, o.order_sn, o.count_price, o.order_status, o.pay_way, o.pay_status, o.shipping_status, o.username, o.mobile, o.address, o.time, o.msg, o.courier, od.color_num, od.goods_id, od.goods_price, od.goods_num, od.goods_name, od.goods_color, g.images')
             ->where(array('o.order_id' => $order_id))
             ->select();
+        if ($orderData[0]['agent_id']) {
+            $orderData[0]['account'] = M('agent')->field('username as account')->where(array('id' => $orderData[0]['agent_id']))->find()['account'];
+        } else {
+            $orderData[0]['account'] = '未登录用户';
+        }
 
         $payWays = ['未支付', '微信支付', '支付宝支付', '账户余额支付', '线下支付'];
         $colors = C('color');
@@ -247,7 +252,7 @@ class OrderController extends Controller
                     $agentGoodsData = M('order o')
                         ->join('__ORDER_GOODS__ og on o.order_id = og.order_id')
                         ->join('__GOODS__ g on og.goods_id = g.goods_id')
-                        ->field('og.goods_id, og.goods_num, og.goods_color')
+                        ->field('og.goods_id, og.goods_num, og.goods_color, o.consignee_id')
                         ->where('o.order_sn = '.$order_sn)
                         ->find();
 
@@ -258,27 +263,38 @@ class OrderController extends Controller
                         ->find();
 
                     //合并处理颜色
-                    $color1 = explode(',', $agentGoodsData['goods_color']);
-                    $color2 = explode(',', $issetGoodData['agent_color']);
-                    $colors = array_merge($color1, $color2);
-                    $colors = array_unique($colors);
-                    $finalColor = '';
-                    for ($i = 0; $i < count($colors); $i++) {
-                        $finalColor .= $colors[$i].',';
-                    }
-
                     if ($issetGoodData) {
+                        $agentGoodsData['goods_color'] = rtrim($agentGoodsData['goods_color'],',');
+                        $issetGoodData['agent_color'] = rtrim($issetGoodData['agent_color'],',');
+                        $color1 = explode(',', $agentGoodsData['goods_color']);
+                        $color2 = explode(',', $issetGoodData['agent_color']);
+                        $colors = array_merge($color1, $color2);
+                        $colors = array_unique($colors);
+                        $finalColor = '';
+                        foreach ($colors as $v) {
+                            $finalColor .= $v.',';
+
+                        }
+                        $inventory = $issetGoodData['agent_inventory'] + $agentGoodsData['goods_num'];
+
                         //修改数据
                         M('agent_goods')
                             ->where(array('agent_goods_id' => $agentGoodsData['goods_id']))
                             ->save(array(
-                                'agent_inventory' => ($issetGoodData['agent_inventory'] + $agentGoodsData['goods_num']),
+                                'agent_inventory' => $inventory,
                                 'agent_color' => $finalColor
                             ));
-
                     } else {
-                        //插入数据
-                        M('agent_goods')->add($agentGoodsData);
+                        if ($agentGoodsData['consignee_id']) {
+                            $infoData['agent_id'] = $agentGoodsData['consignee_id'];
+                            $infoData['agent_goods_id'] = $agentGoodsData['goods_id'];
+                            $infoData['agent_inventory'] = $agentGoodsData['goods_num'];
+                            $infoData['agent_color'] = $agentGoodsData['goods_color'];
+                            $infoData['agent_addtime'] = time();
+
+                            //插入数据
+                            M('agent_goods')->data($infoData)->add();
+                        }
                     }
 
                     $this->ajaxReturn(array(

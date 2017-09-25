@@ -69,14 +69,16 @@ $(function(){
             return false;
         }
         $.post(
-            '__CONTROLLER__/delivery',
+            '{:U("delivery")}',
 			$('#form').serialize(),
 			function (data) {
 				if (data.status != 1) {
 				    alert(data.msg);
-				}
+				} else {
+                    console.log('发货成功');
 //				刷新页面
-                parent.location.reload();
+                    parent.location.reload();
+				}
             },
 			'json'
 		);
