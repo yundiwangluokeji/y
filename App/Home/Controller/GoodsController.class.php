@@ -126,7 +126,7 @@ class GoodsController extends PublicController
             if(AGENT_ID){
                   //商品库存
                     $model = M('agent_goods');
-                    $inventory = $model->where(array('agent_goods_id'=>$goods_id))->getField('agent_inventory');
+                    $inventory = $model->where(array('agent_goods_id'=>$goods_id,'agent_id'=>AGENT_ID))->getField('agent_inventory');
                     $this->assign('inventory',$inventory);
                     //商品信息
                     //代理商的商品浏览权限
@@ -187,6 +187,7 @@ class GoodsController extends PublicController
                         $this->_empty();
                 }
                     M('goods')->where(array('agent_id'=>AGENT_ID,'goods_id'=>$goods_id))->setInc('agent_click_count',1);
+                    $this->assign('inventory',$goodData['inventory']);//库存
 
             }
         }else{

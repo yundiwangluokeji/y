@@ -342,10 +342,17 @@ class BuyController extends Controller
 					//改变支付状态
 					$order['pay_way'] = 3;//支付方式
 					$order['pay_status'] = 1;//支付方式
+
 					$save_status = M('order')->where(array('order_id'=>$order_id,'buy'=>$buy))->save($order);
 
 					if($res && $log_res && $save_status && $seller_res){
 						M()->commit();
+
+						//查询购买用户的层级 如果是一级 给order_status 改成1
+						$level = M('agent')->where(array('id'=>session('AgentUser')))->getField('level');
+						if($level == 1){
+							M('order')->where(array('order_id'=>$order_id,'buy'=>$buy))->save(array('order_status'=>$level));
+						}
 						//消除session中的商品
 						session('cart',null);
 						

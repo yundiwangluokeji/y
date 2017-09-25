@@ -174,7 +174,7 @@ window.onscroll=function(){
 function collectIco(obj,goods_id,agentUser)
 {
    var imgsrc = '__STYLE__/img/start_icon_on.png';
-   var agent = {:AGENT_ID};
+   var agent = '{:AGENT_ID}';
     $.post("{:U('Goods/collect')}",{"agent_id":agentUser, "goods_id":goods_id,'agent':agent},function (data) {
             if (data.code == 1) {
                 // window.location.reload();

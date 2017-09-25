@@ -9,10 +9,10 @@
 							<a href=""><img src="{$v['order_goods']['images']}"/></a>
 							<div class="title" style="width:75%;">
 								<h1><a href="">{$v['order_goods']['goods_name']}</a></h1>
-								<div class="num_color" style="width:60%;float: left;">
+								<div class="num_color" style="width:60%;float: left;white-space:nowrap;overflow: hidden;text-overflow:ellipsis;">
 									<foreach name="v[num_color]" item="vvv" key="key">
 										<foreach name="vvv" item="vvvv" key="kkkk">
-										<p><span>颜色：{$vvvv}</span><span style="margin-left: 0.3rem;">数量：{$kkkk}</span></p>
+										<p><span>颜色：{$vvvv}({$kkkk})</span></p>
 										</foreach>
 									</foreach>
 								</div>

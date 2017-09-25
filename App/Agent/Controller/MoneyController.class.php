@@ -88,10 +88,9 @@ class MoneyController extends PublicController
                 if(!(is_numeric($_POST['money']) && $_POST['money'] > 0)){$this->error('金额不合法!');}
                 $total_fee = $_POST['money'];
                 //收银台页面上，商品展示的超链接，必填
-                $show_url = "http://shoubiao.yundi88.com/Agent/Money/index.html";
+                $show_url = $_SERVER['REQUEST_SCHEME'].'://'.$_SERVER['HTTP_HOST'].U('index');
                 //商品描述，可空
                 $body = '账户充值 金额：'.sprintf("%.2f",$_POST['money']);
-
                 /************************************************************/
                 //构造要请求的参数数组，无需改动
                 $parameter = array(

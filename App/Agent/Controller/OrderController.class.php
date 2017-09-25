@@ -84,7 +84,7 @@ class OrderController extends PublicController
 		// 查询订单商品商品
 		//查询下家和自己卖出的零售商品
 		$where['path']  = array('like', '%_'.session('AgentUser').'_%');
-		M()->execute('SET GLOBAL group_concat_max_len=10240000');
+		// M()->execute('SET GLOBAL group_concat_max_len=10240000');
 		$agent = M('agent')->field('group_concat(id) as id')->where($where)->select()[0]['id'];
 		$agent .= ($agent)?','.session('AgentUser'):session('AgentUser');
 

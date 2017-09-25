@@ -23,10 +23,11 @@ $alipay_config['seller_id']	= $alipay_config['partner'];
 // MD5密钥，安全检验码，由数字和字母组成的32位字符串，查看地址：https://b.alipay.com/order/pidAndKey.htm
 $alipay_config['key']			= '4rad6jnqp35pfhu5z0yobuwim057co3y';
 // 服务器异步通知页面路径  需http://格式的完整路径，不能加?id=123这类自定义参数，必须外网可以正常访问
-$alipay_config['notify_url'] = "http://shoubiao.yundi88.com/Agent/Money/notifyurl.html";
-
+// $alipay_config['notify_url'] = "http://shoubiao.yundi88.com/Agent/Money/notifyurl.html";
+$alipay_config['notify_url'] = $_SERVER['REQUEST_SCHEME'].'://'.$_SERVER['HTTP_HOST'].U('Agent/Money/notifyurl');
 // 页面跳转同步通知页面路径 需http://格式的完整路径，不能加?id=123这类自定义参数，必须外网可以正常访问
-$alipay_config['return_url'] = "http://shoubiao.yundi88.com/Agent/Money/returnurl.html";
+// $alipay_config['return_url'] = "http://shoubiao.yundi88.com/Agent/Money/returnurl.html";
+$alipay_config['return_url'] = $_SERVER['REQUEST_SCHEME'].'://'.$_SERVER['HTTP_HOST'].U('Agent/Money/returnurl');
 
 //签名方式
 $alipay_config['sign_type']    = strtoupper('MD5');
