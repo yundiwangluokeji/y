@@ -6,7 +6,7 @@ class GoodsModel extends \Think\Model
     // 查询商品数据
     public function selectGoodData($where = '', $Page)
     {
-        $goodData = $this->where($where)->limit($Page->firstRow.','.$Page->listRows)->select();
+        $goodData = $this->where($where)->limit($Page->firstRow.','.$Page->listRows)->order("addtime desc")->select();
         if ($goodData) {
             return array(
                 'status' => 1,

@@ -6,7 +6,12 @@ class BrandController extends PublicController
     // 显示品牌
     public function index()
     {
-        $brandData = D('brand')->selectBrandData();
+        $count = D('goods')->countNum();
+        $Page       = new \Think\Page($count,10);// 实例化分页类 传入总记录数和每页显示的记录数(10)
+        $show       = $Page->show();// 分页显示输出
+        $this->assign('page',$show);// 赋值分页输出
+
+        $brandData = D('brand')->selectBrandData($where, $Page);
         if ($brandData['status']) {
             $this->assign('brandData', $brandData['data']);
             $this->display();

@@ -89,7 +89,7 @@ class GoodsController extends PublicController
             $formData['color'] = $str;
             $addRes = D('goods')->addGood($formData);
             if ($addRes['status']) {
-                $this->success($addRes['msg'], 'index');
+                $this->success($addRes['msg']);
             } else {
                 $this->error($addRes['msg']);
             }

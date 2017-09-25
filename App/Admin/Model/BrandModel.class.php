@@ -4,9 +4,9 @@ namespace Admin\Model;
 class BrandModel extends \Think\Model
 {
     // 查询品牌数据
-    public function selectBrandData()
+    public function selectBrandData($where = '', $Page)
     {
-        $brandData = $this->select();
+        $brandData = $this->where($where)->limit($Page->firstRow.','.$Page->listRows)->order("addtime desc")->select();
         if ($brandData) {
             return array(
                 'status' => 1,
