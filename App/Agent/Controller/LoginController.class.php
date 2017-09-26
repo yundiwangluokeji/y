@@ -21,7 +21,7 @@ class LoginController extends Controller
                             $this->login_log($data);
                             $this->ajaxReturn(array('res'=>4,'msg'=>'此用户已被冻结！'));
                     }
-                    session('AgentUser',$res['id']);
+                    session('AgentUser',$res['admin_id']);
                     $data['res'] = 1;
                     $data['msg'] = '登录成功！';
                     $this->login_log($data);

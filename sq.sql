@@ -246,7 +246,6 @@ create table if not exists `yd_login_log`(
 )engine=innodb default charset="utf8";
 
 
--------------------------------------------------------------------------------------------
 
 /*
 --代理商地址表
