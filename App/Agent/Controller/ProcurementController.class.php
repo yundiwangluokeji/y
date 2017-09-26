@@ -6,7 +6,7 @@ class ProcurementController extends PublicController
 	//采购单列表
 	public function index()
 	{
-		// $this->order_goods();
+		
 		$this->display();
 	}
 
@@ -20,7 +20,7 @@ class ProcurementController extends PublicController
 		// $where['agent_id'] = array('eq',session('AgentUser'));
 
 
-		$data = M('order')->where($where)->Page($_GET['p'],10)->select();
+		$data = M('order')->where($where)->Page($_GET['p'],10)->order('order_id desc')->select();
 
 		// dump(M());exit;
 		$model = M('order_goods');
@@ -88,7 +88,7 @@ class ProcurementController extends PublicController
 			//退款到钱包
 			$count_price = M('order')->where(array('order_id'=>$order_id))->getField('count_price') * 10 * 10;//订单总价格 转换成分
 			if($count_price){
-				$money = M('money')->where(array('agent_id'=>session('AgentUser')))->setInc('money',$count_price);
+				$money = M('money')->where(array('agent_id'=>session('AgentUser')))->setInc('money',$count_price);//
 				if($money){
 
 					//货币操作日志
@@ -107,13 +107,33 @@ class ProcurementController extends PublicController
 
 			        //循环扣除上级代理商的货币
 					$path = M('agent')->where(array('id'=>session('AgentUser')))->getField('path');
-					$path = substr($path,2,-3);
+					// $path = substr($path,2,-3);
+					$patharr = explode('_', $path);
 					$patharr = explode('_', $path);
 					rsort($patharr);
+					unset($patharr[0]);
+					unset($patharr[count($patharr)]);
+					$patharr = array_values($patharr);
 					$money_res_s = 1;
 					foreach($patharr as $k=>$v){
-						//查询在上级预定时的价格
-						$money_ = M('order_reservation')->where(array('agent_id'=>$v,'order_id'=>$order_id))->getField('count_price') * 100;//转换成分
+						//查询在上级预定时的价格 上级付出的价格
+						// $money_ = M('order_reservation')->where(array('agent_id'=>$v,'order_id'=>$order_id))->getField('count_price') * 100;//转换成分
+						// 下级给自己的减去给上级的等于赚的 退还赚的钱
+
+						//查询下级当时付我多少钱
+						if($k == 0){
+							$money1 = M('order_reservation')->where(array('agent_id'=>$v,'order_id'=>$order_id))->getField('count_price') * 100;//转换成分
+							$money_ = $count_price - $money1;//应扣除解除者直属上级的金额
+							
+						}else{
+
+							$money2 = M('order_reservation')->where(array('agent_id'=>$patharr[$k - 1],'order_id'=>$order_id))->getField('count_price') * 100;//转换成分 下级当时付给自己的金额
+							$money3 = M('order_reservation')->where(array('agent_id'=>$v,'order_id'=>$order_id))->getField('count_price') * 100;//转换成分 当时付给上级的金额
+							$money_ = $money2 - $money3;//等于当前代理应扣除的金额
+							
+						}
+
+
 						if($money_){
 							$money_res_s *= $ress = M('money')->where(array('agent_id'=>$v))->setDec('money',$money_);
 							//货币操作日志
@@ -206,7 +226,6 @@ class ProcurementController extends PublicController
 
 
 
-			dump($input);
 		}else{
 			$goods_id = I('goods');
 			if($goods_id){
