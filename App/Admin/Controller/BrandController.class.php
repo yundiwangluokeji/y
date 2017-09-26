@@ -32,7 +32,7 @@ class BrandController extends PublicController
 
             $addRes = D('brand')->addBrand($formData);
             if ($addRes['status']) {
-                $this->success($addRes['msg']);
+                $this->success($addRes['msg'], 'index');
             } else {
                 $this->error($addRes['msg']);
             }
@@ -73,7 +73,7 @@ class BrandController extends PublicController
             }
             $editRes = D('brand')->editBrand($formData, $brand_id);
             if ($editRes['status']) {
-                $this->success($editRes['msg']);
+                $this->success($editRes['msg'], 'index');
             } else {
                 $this->error($editRes['msg']);
             }

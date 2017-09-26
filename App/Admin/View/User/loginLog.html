@@ -50,11 +50,23 @@
 				</tbody></table>
 		</form>
 	</div>
-
+    <div class="right_bottom">
+        <div class="pagecut">
+			{$page}
+		</div>
+		<style>
+			.pagecut{text-align:right;}
+			.pagecut a, .current{border:1px #ccc solid; padding:0 10px; border-radius:2px; color:#666; background:#fff;display:inline-block;  height:24px; line-height:24px; font-weight:normal; margin-left:3px;}
+			.pagecut a:hover, .current{background:#1DABDF; color:#fff; border:1px #0D95C7 solid;  padding:0 10px;}
+			.current{ font-weight:bold;}
+		</style>
+		<div class="clear"></div>
+	</div>
 </div>
 	<div class="clear"></div>
 	<!--<div class="foot">Copyright <span class="num">©</span> 2008-2014 <a target="_blank" href="http://www.phpshe.com">灵宝简好网络科技有限公司</a> 版权所有</div>-->
 </div>
+
 <script type="text/javascript">
 function win_init() {
 	$(".left").add(".right").css("height", $(window).height() - $(".pagetop").height());

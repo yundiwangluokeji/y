@@ -97,7 +97,6 @@ class UserController extends PublicController
 
     }
 
-
     //修改
     public function update()
     {
@@ -253,14 +252,14 @@ class UserController extends PublicController
             $data = M('money_log as m')
             ->join('__AGENT__ as a on m.agent_id = a.id')
             ->field('m.id,operation,money,ip,address,res,type,msg,time,username')
-            ->Page($_GET['P'],20)
             ->where(array('m.agent_id' => I('get.id')))
+            ->order('time desc')
             ->select();
         }else {
             $data = M('money_log as m')
                 ->join('__AGENT__ as a on m.agent_id = a.id')
                 ->field('m.id,operation,money,ip,address,res,type,msg,time,username')
-                ->Page($_GET['P'],20)
+                ->order('time desc')
                 ->select();
         }
 
@@ -272,7 +271,7 @@ class UserController extends PublicController
         }
         // 处理操作结果
         for ($i = 0; $i < count($data); $i++) {
-            if ($data[$i]['res'] = '1') {
+            if ($data[$i]['res'] == '1') {
             $data[$i]['res'] = '成功';
             }else {
                 $data[$i]['res'] = '失败';
@@ -280,7 +279,7 @@ class UserController extends PublicController
         }
         // 处理操作内型
         for ($i = 0; $i < count($data); $i++) {
-            if ($data[$i]['type'] = '1') {
+            if ($data[$i]['type'] == '1') {
             $data[$i]['type'] = '收入';
             }else {
                 $data[$i]['type'] = '支出';
@@ -299,17 +298,19 @@ class UserController extends PublicController
             $data = M('topup as t')
             ->join('__AGENT__ as a on t.agent_id = a.id')
             ->field('t.id,pay_type,order,order_sn,res,name,price,url,body,time,username')
-            ->Page($_GET['P'],20)
             ->where(array('t.agent_id' => I('get.id')))
+            ->limit($Page->firstRow.','.$Page->listRows)
+            ->order('time desc')
+            ->order('time desc')
             ->select();
         }else {
             $data = M('topup as t')
                 ->join('__AGENT__ as a on t.agent_id = a.id')
                 ->field('t.id,pay_type,order,order_sn,res,name,price,url,body,time,username')
-                ->Page($_GET['P'],20)
+                ->limit($Page->firstRow.','.$Page->listRows)
+                ->order('time desc')
                 ->select();
         }
-
         for ($i = 0; $i < count($data); $i++) {
             $data[$i]['time'] = date('Y-m-d', $data[$i]['time']);
 
@@ -334,18 +335,25 @@ class UserController extends PublicController
     // 提现申请
     public function withdrawal()
     {
+        $count = M('withdrawal')->count();
+        $Page       = new \Think\Page($count,30);// 实例化分页类 传入总记录数和每页显示的记录数(10)
+        $show       = $Page->show();// 分页显示输出
+        $this->assign('page',$show);// 赋值分页输出
+
         if (I('get.id')) {
             $data = M('withdrawal as w')
             ->join('__AGENT__ as a on w.agent_id = a.id')
             ->field('w.id,pay_type,res,name,amount,a.username,account,time,w.username as usernames')
-            ->Page($_GET['P'],20)
             ->where(array('w.agent_id' => I('get.id')))
+            ->limit($Page->firstRow.','.$Page->listRows)
+            ->order('time desc')
             ->select();
         } else {
             $data = M('withdrawal as w')
             ->join('__AGENT__ as a on w.agent_id = a.id')
             ->field('w.id,pay_type,res,name,amount,a.username,account,time,w.username as usernames')
-            ->Page($_GET['P'],20)
+            ->limit($Page->firstRow.','.$Page->listRows)
+            ->order('time desc')
             ->select();
         }
 
@@ -392,16 +400,23 @@ class UserController extends PublicController
     // 代理商登录日志
     public function loginLog()
     {
+        $count = M('login_log')->count();
+        $Page       = new \Think\Page($count,30);// 实例化分页类 传入总记录数和每页显示的记录数(10)
+        $show       = $Page->show();// 分页显示输出
+        $this->assign('page',$show);// 赋值分页输出
+
         if (I('get.name')) {
             $data = M('login_log')
                 ->field('id,name,ip,address,res,msg,time')
-                ->Page($_GET['P'],20)
+                ->limit($Page->firstRow.','.$Page->listRows)
                 ->where(array('name' => I('get.name')))
+                ->order('time desc')
                 ->select();
         }else {
             $data = M('login_log')
                 ->field('id,name,ip,address,res,msg,time')
-                ->Page($_GET['P'],20)
+                ->limit($Page->firstRow.','.$Page->listRows)
+                ->order('time desc')
                 ->select();
         }
         for ($i = 0; $i < count($data); $i++) {

@@ -17,7 +17,7 @@ class LoginController extends Controller
     			$pass = encryption($input['admin_pw'],$secret);
     			$res = M('admin')->where(array('username'=>$input['admin_name'],'password'=>$pass))->find();
     			if($res){
-    				session('AdminUser',$res['admin_id']);
+    				session('AdminUser',$res['id']);
     				$this->ajaxReturn(array('res'=>2,'msg'=>'登录成功！'));
 
     			}else{

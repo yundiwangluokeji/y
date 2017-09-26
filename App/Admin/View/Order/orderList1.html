@@ -93,7 +93,6 @@
 					<td width="80">
 						<img src="__STYLE__/images/fu_<if condition='$vo.pay_status eq 0'>0<else />1</if>.png" title="">
 						<img src="__STYLE__/images/huo_<if condition='$vo.shipping_status eq 0'>0<else />1</if>.png" title="">
-						<!--<p><a href="Express order.html" class="cblue" onclick="return pe_dialog(this, &#39;打印快递单&#39;, 1000, 600)">[快递单]</a></p>-->
 					</td>
 					<td width="85"><span class="corg">{$vo.orderStatus}</span><p class="mat5"><a href="{:U('orderDetail', array('order_id' => $vo['order_id']) )}" class="c999">订单详情</a></p></td>
 					<td width="85" style="border-right:0;">
@@ -137,7 +136,6 @@
 function win_init() {
 	$(".left").add(".right").css("height", $(window).height() - $(".pagetop").height());
 	$(".now").css("width", $(".right_main").outerWidth());
-	//$(".right_main").css("height", $(window).height() -  $(".pagetop").height() - $(".now:eq(0)").outerHeight() - $(".right_bottom").outerHeight() + 38);
 }
 $(function(){
 	$('.gopay').click(function () {
@@ -155,24 +153,6 @@ $(function(){
 			'json'
 		);
     });
-
-    $(function(){
-    	$('.mat5').click(function () {
-    	    var that = $(this);
-    	    $.post(
-    	        '{:U("mat5")}',
-    			{'order_close':that.attr('order_close')},
-    			function (data) {
-                    if (data.status != 1) {
-                        alert(data.msg);
-                    }
-    //				刷新页面
-                    parent.location.reload();
-                },
-    			'json'
-    		);
-        });
-
 
 	if ($(".right_bottom").height() == 0) {
 		$(".right_bottom").remove();

@@ -12,7 +12,7 @@ class OrderController extends Controller
             ->field('o.order_id, o.order_sn, o.count_price, o.order_status, o.pay_way, o.pay_status, o.shipping_status, o.username, o.mobile, o.address, o.time, o.msg, od.color_num, od.goods_id, od.goods_price, od.goods_num, od.goods_name, od.goods_color, g.images')
             ->where('consignee_id != 0 && buy = 1')
             ->count();
-        $Page       = new \Think\Page($count,5);// 实例化分页类 传入总记录数和每页显示的记录数(10)
+        $Page       = new \Think\Page($count,10);// 实例化分页类 传入总记录数和每页显示的记录数(10)
         $show       = $Page->show();// 分页显示输出
         $this->assign('page',$show);// 赋值分页输出
 
@@ -56,8 +56,6 @@ class OrderController extends Controller
                 $orderData[$i]['orderStatus'] = '状态异常';
             }
         }
-//        dump($orderData);exit;
-
         $this->assign('orderData', $orderData);
         $this->display();
     }
@@ -108,13 +106,11 @@ class OrderController extends Controller
                 $orderData[$i]['btnStatus'] = 3;
                 $orderData[$i]['orderStatus'] = '状态异常';
             }
-
         }
         // dump($orderData);exit;
         $this->assign('orderData', $orderData);
         $this->display();
     }
-
 
      // 预定订单
     public function orderList2()
@@ -125,7 +121,7 @@ class OrderController extends Controller
             ->field('o.order_id, o.order_sn, o.count_price, o.order_status, o.pay_way, o.pay_status, o.shipping_status, o.username, o.mobile, o.address, o.time, o.msg, od.color_num, od.goods_id, od.goods_price, od.goods_num, od.goods_name, od.goods_color, g.images')
             ->where('consignee_id != 0 && buy = 0')
             ->count();
-        $Page       = new \Think\Page($count,5);// 实例化分页类 传入总记录数和每页显示的记录数(10)
+        $Page       = new \Think\Page($count,10);// 实例化分页类 传入总记录数和每页显示的记录数(10)
         $show       = $Page->show();// 分页显示输出
         $this->assign('page',$show);// 赋值分页输出
 
@@ -173,7 +169,6 @@ class OrderController extends Controller
         $this->display();
     }
 
-
     // 零售订单
     public function orderList3()
     {
@@ -182,7 +177,7 @@ class OrderController extends Controller
             ->field('o.order_id, o.order_sn, o.count_price, o.order_status, o.pay_way, o.pay_status, o.shipping_status, o.username, o.mobile, o.address, o.time, o.msg, od.color_num, od.goods_id, od.goods_price, od.goods_num, od.goods_name, od.goods_color, g.images')
             ->where('consignee_id = 0')
             ->count();
-        $Page       = new \Think\Page($count,5);// 实例化分页类 传入总记录数和每页显示的记录数(10)
+        $Page       = new \Think\Page($count,10);// 实例化分页类 传入总记录数和每页显示的记录数(10)
         $show       = $Page->show();// 分页显示输出
         $this->assign('page',$show);// 赋值分页输出
 
@@ -238,6 +233,7 @@ class OrderController extends Controller
             $order_status = M('order')->field('order_status')->where(array('order_sn' => $order_sn))->find();
             //    订单状态为1m
             if ($order_status['order_status'] == 1) {
+                M()->startTrans();
                 $courier = I('post.courier');
                 $courier_sn = I('post.courier_sn');
                 $updateRes = M('order')->where(array('order_sn' => $order_sn))
@@ -252,14 +248,14 @@ class OrderController extends Controller
                     $agentGoodsData = M('order o')
                         ->join('__ORDER_GOODS__ og on o.order_id = og.order_id')
                         ->join('__GOODS__ g on og.goods_id = g.goods_id')
-                        ->field('og.goods_id, og.goods_num, og.goods_color, o.consignee_id')
+                        ->field('og.goods_id, og.goods_num, og.goods_color, o.consignee_id, o.count_price')
                         ->where('o.order_sn = '.$order_sn)
                         ->find();
 
                     //查询agent中是否有数据
                     $issetGoodData = M('agent_goods')
-                        ->field('agent_color, agent_inventory')
-                        ->where(array('agent_goods_id' => $agentGoodsData['goods_id']))
+                        ->field('agent_color, agent_inventory, agent_id, agent_goods_id')
+                        ->where(array('agent_goods_id' => $agentGoodsData['goods_id'], 'agent_id' => $agentGoodsData['consignee_id']))
                         ->find();
 
                     //合并处理颜色
@@ -290,19 +286,22 @@ class OrderController extends Controller
                             $infoData['agent_goods_id'] = $agentGoodsData['goods_id'];
                             $infoData['agent_inventory'] = $agentGoodsData['goods_num'];
                             $infoData['agent_color'] = $agentGoodsData['goods_color'];
+                            $infoData['agent_price'] = $agentGoodsData['count_price'];
+                            $infoData['agent_is_shelves'] = 1;
                             $infoData['agent_addtime'] = time();
 
                             //插入数据
                             M('agent_goods')->data($infoData)->add();
                         }
                     }
-
+                    M()->commit();
                     $this->ajaxReturn(array(
                         'status' => 1,
                         'msg' => '发货成功',
                         'data' => ''
                     ));
                 } else {
+                    M()->rollback();
                     $this->ajaxReturn(array(
                         'status' => 0,
                         'msg' => '发货失败',
@@ -326,7 +325,6 @@ class OrderController extends Controller
         }
     }
 
-
 //    付款
     public function gopay()
     {
@@ -348,5 +346,4 @@ class OrderController extends Controller
             ));
         }
     }
-
 }

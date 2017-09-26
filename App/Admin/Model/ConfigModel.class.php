@@ -23,16 +23,6 @@ class ConfigModel extends \Think\Model
             ));
         }
 
-        foreach ($editRes as $k => $v) {
-            if (!$v) {
-                return array(
-                    'status' => 0,
-                    'msg' => $key.'修改失败，请重试',
-                    'data' => ''
-                );
-            }
-        }
-
         return array(
             'status' => 1,
             'msg' => '修改成功',

@@ -16,6 +16,7 @@
 			<th class="bgtt" width="60">排序
 			</th><th class="bgtt" width="150">品牌名称</th>
 			<th class="bgtt" width="150">品牌图片</th>
+			<!-- <th class="bgtt">品牌简介</th> -->
 			<th class="bgtt" width="110">操作</th>
 		</tr>
         <foreach name="brandData" item="vo">
@@ -25,6 +26,7 @@
 			<td style="background-color: rgb(255, 255, 255);"><input type="text" name="sorting[{$vo.brand_id}]" value="{$vo.sorting}" class="inputtext input30 center"></td>
 			<td style="background-color: rgb(255, 255, 255);"><a href="http://phpshe.com/demo/phpshe/brand/22" target="_blank">{$vo.name}</a></td>
 			<td style="background-color: rgb(255, 255, 255);"><a href="http://phpshe.com/demo/phpshe/brand/22" target="_blank"><img src="{$vo.logo}" style="border:width:140px;height:56px"></a></td>
+			<!-- <td class="aleft" valign="top" style="background-color: rgb(255, 255, 255);">妖精的口袋，与时尚紧密接轨的年轻女装品牌，在淘宝立足不久即登上了电子商务大舞台。妖精的口袋专注于打造独立、自信、优雅、小...</td> -->
 			<td style="background-color: rgb(255, 255, 255);">
 				<a href="{:U('editBrand', array('brand_id' => $vo['brand_id']))}" class="admin_edit mar3">修改</a>
 				<a href="{:U('delBrand', array('brand_id' => $vo['brand_id']))}" class="admin_del" onclick="return pe_cfone(this, &#39;删除&#39;)">删除</a>

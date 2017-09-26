@@ -1,0 +1,164 @@
+<include file="Public/header" /> <!-- 头部 -->
+<div class="content">
+<include file="Public/left" /> <!-- 左边 -->
+	<div class="right" style="height: 894px;">
+	<div class="now" style="width: 1679px;">
+		<a href="javascript:;" class="sel">订单详情</a>
+		<div class="clear"></div>
+	</div>
+	<div class="right_main mab15">
+	<div class="huiyuan_main" style="padding:0 35px 20px;">
+		<div class="liucheng mat20">订单状态</div>
+		<table width="100%" border="0" cellspacing="0" cellpadding="0" class="order_view_bak mat10">
+		<tbody>
+        <foreach item="vo" name="orderData">
+        <tr>
+			<td align="right" width="80">订单编号：</td>
+			<td>{$vo.order_sn}</td>
+		</tr>
+		<tr>
+			<td align="right">当前状态：</td>
+			<td>{$vo.orderStatus}</td>
+		</tr>
+        </foreach>
+		</tbody>
+        </table>
+		<div class="shixian mat20"></div>
+		<div class="liucheng mat20">收货信息</div>
+		<table width="100%" border="0" cellspacing="0" cellpadding="0" class="order_view_bak mat10">
+		<tbody>
+        <foreach item="vo" name="orderData">
+        <tr>
+			<td align="right" width="80">用户帐号：</td>
+			<td><span class="c999">{$vo.account}</span></td>
+		</tr>
+		<tr>
+			<td align="right">姓　　名：</td>
+			<td>{$vo.username}</td>
+		</tr>
+		<tr>
+			<td align="right">手机号码：</td>
+			<td>{$vo.mobile}</td>
+		</tr>
+		<tr>
+			<td align="right">收货地址：</td>
+			<td>{$vo.address}</td>
+		</tr>
+		<tr>
+			<td align="right">订单备注：</td>
+			<td>{$vo.msg}</td>
+		</tr>
+		<tr>
+			<td align="right">快递信息：</td>
+			<td>{$vo.courier}</td>
+		</tr>
+        </foreach>
+		</tbody></table>
+		<div class="shixian mat20"></div>
+		<div class="liucheng mat20">订单信息</div>
+		<table width="100%" border="0" cellspacing="0" cellpadding="0" class="order_view_bak mat10">
+		<tbody>
+            <foreach item="vo" name="orderData">
+        <tr>
+			<td align="right" width="80">下单时间：</td>
+			<td>{$vo.time}</td>
+		</tr>
+		<tr>
+			<td align="right">付款时间：</td>
+			<td>--</td>
+		</tr>
+		<tr>
+			<td align="right">发货时间：</td>
+			<td>--</td>
+		</tr>
+		<tr>
+			<td align="right" width="80">付款方式：</td>
+			<td>{$vo.pay_way}</td>
+		</tr>
+    </foreach>
+		</tbody></table>
+		<div class="shixian mat20"></div>
+		<div class="liucheng mat20">商品清单</div>
+		<table width="100%" border="0" cellspacing="0" cellpadding="0" class="order_view_list mat20">
+    		<tbody>
+            <tr>
+    			<td class="bgtt1" width="" align="center">商品名称</td>
+    			<td class="bgtt1" width="" align="center">商品颜色</td>
+    			<td class="bgtt1" width="90" align="center">单价(元)</td>
+    			<td class="bgtt1" width="90" align="center">数量</td>
+    			<td class="bgtt1" width="110" align="center">小计(元)</td>
+    		</tr>
+            <foreach item="vo" name="orderData">
+                <tr>
+        			<td class="bgtt1" width="100" align="center">{$vo.goods_name}</td>
+        			<td class="bgtt1" width="250" align="center"><foreach name="vo['goods_color']" item="v" key="k">{$v}({$vo.color_num.$k}只)&nbsp;&nbsp;&nbsp;</foreach></td>
+        			<td class="bgtt1" width="90" align="center">{$vo.goods_price}</td>
+        			<td class="bgtt1" width="90" align="center">{$vo.goods_num}</td>
+        			<td class="bgtt1" width="110" align="center">{$vo.count_price}</td>
+        		</tr>
+            </foreach>
+    		</tbody>
+        </table>
+		<div class="dingdan_jiesuan" style="padding:10px; line-height:30px; font-family:微软雅黑; font-size:14px;">
+		<table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tbody>
+            <foreach item="vo" name="orderData">
+            <tr>
+				<td>商品金额：</td>
+				<td width="100">¥ {$vo.count_price}</td>
+			</tr>
+			<!-- <tr>
+				<td>应付金额：</td>
+				<td class="font18 cred strong">¥ </td>
+			</tr> -->
+        </foreach>
+			</tbody></table>
+			<div class="clear"></div>
+		</div>
+	</div>
+	</div>
+</div>
+	<div class="clear"></div>
+	<!--<div class="foot">Copyright <span class="num">©</span> 2008-2014 <a target="_blank" href="http://www.phpshe.com">灵宝简好网络科技有限公司</a> 版权所有</div>-->
+</div>
+<script type="text/javascript">
+$(function(){
+	if ($(".right_bottom").height() == 0) {
+		$(".right_bottom").remove();
+	}
+	if ($(".list tr").length > 1) {
+		$(".right_main").css("padding-bottom", 0);
+	}
+	win_init();
+	$(window).resize(function() {
+		win_init();
+	});
+	if ($(".left .sel").length) {
+		$(".left").scrollTop(localStorage.getItem('left_scrolltop'));
+	}
+	else {
+		localStorage.setItem('left_scrolltop', 0);
+	}
+	$(".left").scroll(function(){
+		localStorage.setItem('left_scrolltop', $(".left").scrollTop());
+	})
+	$(".list").find("td").hover(
+		function(){
+			if ($(this).hasClass("bgtt") || $(this).is("[nosel=1]")) return;
+			$(this).parent("tr").children("td[nosel!=1]").css("background-color", "#fbfbfb");
+		},
+		function(){
+			if ($(this).hasClass("bgtt") || $(this).is("[nosel=1]")) return;
+			$(this).parent("tr").children("td[nosel!=1]").css("background-color", "#fff");
+		}
+	)
+})
+function win_init() {
+	$(".left").add(".right").css("height", $(window).height() - $(".pagetop").height());
+	$(".now").css("width", $(".right_main").outerWidth());
+	//$(".right_main").css("height", $(window).height() -  $(".pagetop").height() - $(".now:eq(0)").outerHeight() - $(".right_bottom").outerHeight() + 38);
+}
+pe_loadscript("http://phpshe.com/demo/phpshe/index.php?mod=notice");
+</script>
+
+</body></html>
