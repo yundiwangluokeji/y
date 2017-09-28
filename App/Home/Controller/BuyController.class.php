@@ -189,7 +189,7 @@ class BuyController extends Controller
 				}
 				$order['order_status'] = 0;//新订单
 				$order['buy'] = 0;//预定
-				$order['pay_status'] = 0;//支付状态
+				$order['pay_status'] = 1;//支付状态
 				$order['shipping_status'] = 0;//发货状态 
 				$address = $this->address($_POST['address'],true);
 				$order['username'] = $address['name'];//收货人姓名 
@@ -235,6 +235,11 @@ class BuyController extends Controller
 				}
 				exit;
 			}else{
+
+					//查询当前商品是否预定过
+            	$reservationgoods = M('agent_goods')->where(array('agent_goods_id'=>session('cart')['goods_id'],'agent_id'=>''.session('AgentUser').''))->getField('agent_goods_id');
+            	if($reservationgoods){$this->error('你已经预定过此商品了！');}
+            	
 
 					$this->address($_GET['address_id']);//地址
 					//查询商品

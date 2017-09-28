@@ -204,6 +204,14 @@ class GoodsController extends PublicController
             $goodData['collectNum'] = $collectNum;
 
             $this->assign('goodData', $goodData);
+
+
+            //查询当前商品是否预定过
+            $reservationgoods = M('agent_goods')->where(array('agent_goods_id'=>$goods_id,'agent_id'=>''.session('AgentUser').''))->getField('agent_goods_id');
+            $this->assign('reservationgoods',$reservationgoods);
+
+
+
             $this->display();
     }
 
@@ -247,7 +255,6 @@ class GoodsController extends PublicController
                 $v['is_collect'] = $collect->where(array('goods_id'=>$v['goods_id'],'agent_id'=>session('AgentUser')))->getField('id');
                 $v['price'] = $v['agent_price'];
             }
-// dump(M());exit;
         }else{
 
             $where['name']  = array('like', '%'.$q.'%');

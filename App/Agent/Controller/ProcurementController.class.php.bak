@@ -85,16 +85,6 @@ class ProcurementController extends PublicController
 				$agentgoods_res = M('agent_goods')->where(array('agent_goods_id'=>$goods_id,'agent_id'=>session('AgentUser')))->delete();
 			}
 
-			if($order_res && $agentgoods_res){
-				M()->commit();
-				$this->ajaxReturn(array('res'=>1,'msg'=>'操作成功'));
-				
-			}else{
-					M()->rollback();
-					$this->ajaxReturn('操作失败！');
-			}
-			exit;//
-
 			//退款到钱包
 			$count_price = M('order')->where(array('order_id'=>$order_id))->getField('count_price') * 10 * 10;//订单总价格 转换成分
 			if($count_price){

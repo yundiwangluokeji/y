@@ -258,6 +258,7 @@ $(document).ready(function (e) {
     $('#detail_form').on('submit',(function(e) {
     	if('{$inventory}' <= 0){layer.msg('此商品库存不足！');return false;}
     	if("{:session('AgentUser')}" == "{$Think.get.agent}"){layer.msg('不可购买自己的商品！');return false;}
+    	if("{$reservationgoods}" && $('input[name=type]').val() == 'reservation'){layer.msg('你已经预定过此商品了！');return false;}
         var formData = new FormData(this);
         formData['type'] = 1;
         e.preventDefault();
