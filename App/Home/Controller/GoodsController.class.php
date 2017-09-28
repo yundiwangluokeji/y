@@ -32,7 +32,7 @@ class GoodsController extends PublicController
 
 
 
-   
+
     //商品列表
     public function datalist()
     {
@@ -138,7 +138,7 @@ class GoodsController extends PublicController
                     }else{
                         $where .= ' and goods_permissions = 2';//没有登录只能查看权限为2的商品
                     }
-                    
+
                     $goodData = $model->where($where)->find();
                     if($goodData){
                         $goodsmodel = M('goods');
@@ -153,13 +153,10 @@ class GoodsController extends PublicController
                         $mainColor = explode(',', $goodData['agent_color']);
                         $originColor = C('color');
                         foreach ($mainColor as $key => $value) {
-                            if($value){
                                 $colors[$value] = $originColor[$value];
-                            }
 
                         }
                         $this->assign('colors', $colors);
-                        // dump($goodData);exit;
                     }else{
 
                             $this->_empty();
@@ -175,11 +172,11 @@ class GoodsController extends PublicController
                 if($goodData){
                         //处理颜色
                         $mainColor = explode(',', $goodData['color']);
+                        // dump($mainColor);exit;
+
                         $originColor = C('color');
                         foreach ($mainColor as $key => $value) {
-                            if($value){
                                 $colors[$value] = $originColor[$value];
-                            }
 
                         }
                         $this->assign('colors', $colors);

@@ -137,102 +137,96 @@ class UserController extends PublicController
     	$status['status'] = $input['status']?0:1;
     	$res = M('agent')->where(array('id'=>$input['agent_id']))->save($status);
     	header('location:'.U('index'));
-
     }
 
     //充值钱
     public function addmoney()
     {
-    		$model = M('money');
-    		if(IS_POST){
-    			$input = I('post.');
-    			if(!$input['agent_id']){$this->error('错误操作！');}
-    			if(!is_numeric($input['money'])){$this->error('请正确输入金额！');}
-    			$data = $model->create($_POST,1);//根据表单提交的POST数据创建数据对象
-            	if(!$data){$this->error($model->getError());}
-            	$money = $data['money'] * 10 * 10;
-            	$res = $model->where(array('agent_id'=>$data['agent_id']))->setInc('money',$money);
-            	$data2['agent_id']  = $data['agent_id'];
-            	$data2['operation'] = 0;//0管理员
-            	$data2['type'] = 1;//0管理员
-            	$data2['money_id']  = $model->where(array('agent_id'=>$data['agent_id']))->getField('id');
-            	$data2['money']  =    '+'.$money;
-            	$data2['ip']  = $_SERVER['REMOTE_ADDR'];
-            	$data2['address']  = getip($_SERVER['REMOTE_ADDR']);
+		$model = M('money');
+		if(IS_POST){
+			$input = I('post.');
+			if(!$input['agent_id']){$this->error('错误操作！');}
+			if(!is_numeric($input['money'])){$this->error('请正确输入金额！');}
+			$data = $model->create($_POST,1);//根据表单提交的POST数据创建数据对象
+        	if(!$data){$this->error($model->getError());}
+        	$money = $data['money'] * 10 * 10;
+        	$res = $model->where(array('agent_id'=>$data['agent_id']))->setInc('money',$money);
+        	$data2['agent_id']  = $data['agent_id'];
+        	$data2['operation'] = 0;//0管理员
+        	$data2['type'] = 1;//0管理员
+        	$data2['money_id']  = $model->where(array('agent_id'=>$data['agent_id']))->getField('id');
+        	$data2['money']  =    '+'.$money;
+        	$data2['ip']  = $_SERVER['REMOTE_ADDR'];
+        	$data2['address']  = getip($_SERVER['REMOTE_ADDR']);
 
-            	$data2['msg']  = '管理员给你充值 '.$input['money'].'元 管理员备注:'.$input['text'];
-            	$data2['time']  = time();
-            	if($res){$data2['res']  = 1;}
-            	M('money_log')->add($data2);
-            	if($res){
-    				$this->success('充值成功！');
-	    		}else{
-	    			$this->error('充值失败！');
-	    		}
+        	$data2['msg']  = '管理员给你充值 '.$input['money'].'元 管理员备注:'.$input['text'];
+        	$data2['time']  = time();
+        	if($res){$data2['res']  = 1;}
+        	M('money_log')->add($data2);
+        	if($res){
+				$this->success('充值成功！');
     		}else{
-    			$agent_id = I('get.agent_id');
-    			$money = $model->where(array('agent_id'=>$agent_id))->find();
-    			if($money){
-    				$money['money'] = sprintf("%.2f", $money['money'] / 10 / 10);//将货币转换为元保留两位小数
-    				$this->assign('money',$money);
-    			}
-		    	$this->display();
+    			$this->error('充值失败！');
     		}
+		}else{
+			$agent_id = I('get.agent_id');
+			$money = $model->where(array('agent_id'=>$agent_id))->find();
+			if($money){
+				$money['money'] = sprintf("%.2f", $money['money'] / 10 / 10);//将货币转换为元保留两位小数
+				$this->assign('money',$money);
+			}
+	    	$this->display();
+		}
 
     }
 
     //扣款
     public function deductmoney()
     {
+	    $model = M('money');
+		if(IS_POST){
+			$input = I('post.');
+			if(!$input['agent_id']){$this->error('错误操作！');}
+			if(!is_numeric($input['money'])){$this->error('请正确输入金额！');}
+			$data = $model->create($_POST,1);//根据表单提交的POST数据创建数据对象
+        	if(!$data){$this->error($model->getError());}
+        	$money = $data['money'] * 10 * 10;
+        	$res = $model->where(array('agent_id'=>$data['agent_id']))->setDec('money',$money);
+        	$data2['agent_id']  = $data['agent_id'];
+        	$data2['operation'] = 0;//0管理员 操作者
+        	$data2['type'] = 0;//0管理员
+        	$data2['money_id']  = $model->where(array('agent_id'=>$data['agent_id']))->getField('id');//被操作者
+        	$data2['money']  =    '-'.$money;
+        	$data2['ip']  = $_SERVER['REMOTE_ADDR'];
+        	$data2['address']  = getip($_SERVER['REMOTE_ADDR']);
 
-    	    $model = M('money');
-    		if(IS_POST){
-    			$input = I('post.');
-    			if(!$input['agent_id']){$this->error('错误操作！');}
-    			if(!is_numeric($input['money'])){$this->error('请正确输入金额！');}
-    			$data = $model->create($_POST,1);//根据表单提交的POST数据创建数据对象
-            	if(!$data){$this->error($model->getError());}
-            	$money = $data['money'] * 10 * 10;
-            	$res = $model->where(array('agent_id'=>$data['agent_id']))->setDec('money',$money);
-            	$data2['agent_id']  = $data['agent_id'];
-            	$data2['operation'] = 0;//0管理员 操作者
-            	$data2['type'] = 0;//0管理员
-            	$data2['money_id']  = $model->where(array('agent_id'=>$data['agent_id']))->getField('id');//被操作者
-            	$data2['money']  =    '-'.$money;
-            	$data2['ip']  = $_SERVER['REMOTE_ADDR'];
-            	$data2['address']  = getip($_SERVER['REMOTE_ADDR']);
-
-            	$data2['msg']  = '管理员扣除 '.$input['money'].'元 管理员备注:'.$input['text'];
-            	$data2['time']  = time();
-            	if($res){$data2['res']  = 1;}
-            	M('money_log')->add($data2);
-            	if($res){
-    				$this->success('扣除成功！');
-	    		}else{
-	    			$this->error('扣除失败！');
-	    		}
+        	$data2['msg']  = '管理员扣除 '.$input['money'].'元 管理员备注:'.$input['text'];
+        	$data2['time']  = time();
+        	if($res){$data2['res']  = 1;}
+        	M('money_log')->add($data2);
+        	if($res){
+				$this->success('扣除成功！');
     		}else{
-    			$agent_id = I('get.agent_id');
-    			$money = $model->where(array('agent_id'=>$agent_id))->find();
-    			if($money){
-    				$money['money'] = sprintf("%.2f", $money['money'] / 10 / 10);//将货币转换为元保留两位小数
-    				$this->assign('money',$money);
-    			}
-		    	$this->display();
+    			$this->error('扣除失败！');
     		}
-
-
+		}else{
+			$agent_id = I('get.agent_id');
+			$money = $model->where(array('agent_id'=>$agent_id))->find();
+			if($money){
+				$money['money'] = sprintf("%.2f", $money['money'] / 10 / 10);//将货币转换为元保留两位小数
+				$this->assign('money',$money);
+			}
+	    	$this->display();
+		}
     }
-
-
 
     // 地址
     public function address()
     {
         if (I('get.id')) {
-            $addressRes = M('address')->field('id,agent_id,name,mobile,province,city,district,twon,address,time')->Page($_GET['P'],20)->where(array('agent_id' => I('get.id')))->select();
+            $addressRes = M('address')->field('id,agent_id,name,mobile,province,city,district,twon,address,time')->where(array('agent_id' => I('get.id')))->order('time desc')->select();
         }else {
-            $addressRes = M('address')->field('id,name,mobile,province,city,district,twon,address,time')->Page($_GET['P'],20)->select();
+            $addressRes = M('address')->field('id,name,mobile,province,city,district,twon,address,time')->order('time desc')->select();
         }
         for ($i = 0; $i < count($addressRes); $i++) {
             $addressRes[$i]['time'] = date('Y-m-d', $addressRes[$i]['time']);

@@ -6,7 +6,7 @@ class BrandController extends PublicController
     // 显示品牌
     public function index()
     {
-        $count = D('goods')->countNum();
+        $count = D('brand')->count();
         $Page       = new \Think\Page($count,10);// 实例化分页类 传入总记录数和每页显示的记录数(10)
         $show       = $Page->show();// 分页显示输出
         $this->assign('page',$show);// 赋值分页输出

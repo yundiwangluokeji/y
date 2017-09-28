@@ -269,7 +269,6 @@ class OrderController extends Controller
                         $finalColor = '';
                         foreach ($colors as $v) {
                             $finalColor .= $v.',';
-
                         }
                         $inventory = $issetGoodData['agent_inventory'] + $agentGoodsData['goods_num'];
 
