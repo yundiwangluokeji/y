@@ -6,6 +6,7 @@ class GoodsController extends PublicController
 
     public function goodslist()
     {
+
         if(AGENT_ID){
             $agent_sorting = I('sorting','agent_price');//排序
             $sorting =  ($agent_sorting == 'agent_price')?'agent_price desc':'agent_price';
@@ -153,7 +154,9 @@ class GoodsController extends PublicController
                         $mainColor = explode(',', $goodData['agent_color']);
                         $originColor = C('color');
                         foreach ($mainColor as $key => $value) {
+                            if($value){
                                 $colors[$value] = $originColor[$value];
+                            }
 
                         }
                         $this->assign('colors', $colors);
@@ -176,7 +179,9 @@ class GoodsController extends PublicController
 
                         $originColor = C('color');
                         foreach ($mainColor as $key => $value) {
+                            if($value){
                                 $colors[$value] = $originColor[$value];
+                            }
 
                         }
                         $this->assign('colors', $colors);
@@ -262,11 +267,5 @@ class GoodsController extends PublicController
         $this->assign('q',$q);
         $this->display();
     }
-
-
-   // public function _empty()
-   // {
-   //  $this->show('404');exit;
-   // }
 
 }

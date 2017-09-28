@@ -217,17 +217,16 @@ class BuyController extends Controller
 				$order_goods['color_num'] = substr($color_num,0,-1);
 				$order_goods['time'] = time();
 				$order_goods_res = M('order_goods')->add($order_goods);
-				$addgoods = $this->addgoods($order_res,0);//给用户添加商品
-				if($order_res && $order_goods_res && $addgoods){
+				if($order_res && $order_goods_res){
 
 					M()->commit();//提交事务
 					//跳转倒支付页面
 					//加密
-					// $orderid = encryption($order_res);//订单id
-					// $buy = encryption(0);//订单类型 预定
-					// session('cart',null);
-					// header('location:'.U('pay').'?order='.urlencode($orderid).'&buy='.urlencode($buy));//加密后在编码(编码解决get特殊符号无法接收)
-					 $this->success('预定成功！',U('Agent/Procurement/index'));
+					$orderid = encryption($order_res);//订单id
+					$buy = encryption(0);//订单类型 预定
+					session('cart',null);
+					header('location:'.U('pay').'?order='.urlencode($orderid).'&buy='.urlencode($buy));//加密后在编码(编码解决get特殊符号无法接收)
+
 
 				}else{
 					M()->rollback();
@@ -413,15 +412,10 @@ class BuyController extends Controller
 		$datas['agent_inventory'] = $order_goods['goods_num'];//是否上架
 		$datas['state'] = $status;//商品状态(1购买的商品,2预定的商品)
 		$datas['time'] = time();//商品状态(1购买的商品,2预定的商品)
-		$res = M('agent_goods')->add($datas);
+		M('agent_goods')->add($datas);
 
 		//改变订单状态
-		$order_res = M('order')->where(array('order_id'=>$order_id))->save(array('shipping_status'=>1));
-		if($res && $order_res){
-			return 1;
-		}else{
-			return false;
-		}
+		M('order')->where(array('order_id'=>$order_id))->save(array('shipping_status'=>1));
 	}
 
 }

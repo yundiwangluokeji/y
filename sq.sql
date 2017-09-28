@@ -164,7 +164,7 @@ create table if not exists `yd_agent`(
 `updatetime`TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 )engine=innodb default charset="utf8";
 
-
+188 8567 8600
 /*
 --代理商钱包 money
 */
@@ -334,26 +334,3 @@ create table if not exists `yd_order_reservation`(
 
 
 
-解除 扣除货币 待测试
-
-
-
-用户名          支出       收入
-useruseruser     2132       0
-useruser         545        2132
-user     					545
-
-
-
-上一级 20629.20  20612.20 
-上上一级 1000532 61.00 10005326.30
-
-
-20076.20  17944.20  -2132
-20618.20   +2132 22205
-53295.30   +545    53840
-
-
-
-10000 -12
-93242 +12 -432 92804

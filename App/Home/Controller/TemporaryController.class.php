@@ -48,10 +48,11 @@ class TemporaryController extends Controller
             $configname = M('agent_config')->where(array('agent_id'=>$goodsdata['agent_id']))->getField('name');
             $this->assign('configname',$configname);
             //查询商品图片和编号
-            $goods = M('goods')->field('name,goods_sn,images')->where(array('goods_id'=>$goods_id))->find();
+            $goods = M('goods')->field('name,goods_sn,images,body')->where(array('goods_id'=>$goods_id))->find();
             $goodData['name'] = $goods['name'];
             $goodData['goods_sn'] = $goods['goods_sn'];
             $goodData['images'] = $goods['images'];
+            $goodData['body'] = $goods['body'];
             $collectNum = M('agent_collection')->where(array('goods_id'=>$goods_id))->count();//收藏量
             $goodData['collectNum'] = $collectNum;
             $this->assign('goodData', $goodData);

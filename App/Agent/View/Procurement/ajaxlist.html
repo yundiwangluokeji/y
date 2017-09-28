@@ -3,7 +3,10 @@
 					<li class="list{$keys}">
 						<h2>
 							<span>商品编号:{$v['order_goods']['goods_sn']}</span>
+							<php>if($v['shipping_status'] == 1){</php>
 							<a href="{:U('editor',array('goods'=>$v['order_goods']['goods_id']))}"><img src="__STYLE__/img/edit.png"/></a>
+							<php>}</php>				
+
 						</h2>
 						<div class="details clear">
 							<a href=""><img src="{$v['order_goods']['images']}"/></a>
@@ -21,6 +24,7 @@
 								</div>
 							</div>
 						</div>
+				<php>if($v['shipping_status'] == 1){</php>
 						<div class="handle">
 							<php>if($v['buy']){</php>
 							<a class="delete" href="javascript:deletes('{$v['ordersn']}',{$keys});">
@@ -38,6 +42,9 @@
 							</a>
 							<php>}</php>
 							<p>合计： <em>￥{$v['count_price']}</em></p>
-						</div>					
+						</div>	
+				<php>}else{</php>
+								<a href="javascript:;" style="width:90%;text-align:right;display: inline-block;color: #C3884C;">待发货</a>
+				<php>}</php>				
 					</li>
 </foreach>

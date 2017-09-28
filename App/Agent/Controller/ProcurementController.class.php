@@ -15,7 +15,7 @@ class ProcurementController extends PublicController
 	{
 		$where['consignee_id'] = array('eq',session('AgentUser'));
 		$where['pay_status'] = array('eq',1);
-		$where['shipping_status'] = array('eq',1);
+		// $where['shipping_status'] = array('eq',1);
 		$where['buy'] = array('eq',I('buy',0));
 		// $where['agent_id'] = array('eq',session('AgentUser'));
 
