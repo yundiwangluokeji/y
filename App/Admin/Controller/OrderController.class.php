@@ -270,6 +270,7 @@ class OrderController extends Controller
                         foreach ($colors as $v) {
                             $finalColor .= $v.',';
                         }
+                        $finalColor = rtrim($finalColor, ',');
                         $inventory = $issetGoodData['agent_inventory'] + $agentGoodsData['goods_num'];
 
                         //修改数据
